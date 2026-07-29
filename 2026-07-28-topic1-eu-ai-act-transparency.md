@@ -53,3 +53,23 @@ What’s your biggest open question on EU AI Act readiness for manufacturing AI?
 
 ### 話題標籤
 #EUAIAct #AIGovernance #AICompliance #ManufacturingAI #SmartFactory #ISO42001
+
+---
+
+### 原始來源網址
+
+- The EU AI Act Newsletter #107: Enforcement Powers Arrive  
+  https://artificialintelligenceact.substack.com/p/the-eu-ai-act-newsletter-107-enforcement  
+  （2026-07-27）
+
+- CDT Europe’s AI Bulletin: July 2026  
+  https://cdt.org/insights/cdt-europes-ai-bulletin-july-2026/  
+  （2026-07-27）
+
+- Digital Omnibus on AI 正式刊登 Official Journal  
+  https://lawandtechnology.eu/en/digital-omnibus-on-ai-official-journal-regulation-2026-1744/  
+  （2026-07-24）
+
+- BSI 發布 BS EN 18286:2026 高風險 AI 品質管理標準  
+  https://itbrief.com.au/story/bsi-sets-ai-quality-standard-for-eu-high-risk-systems  
+  （2026-07-26/27）

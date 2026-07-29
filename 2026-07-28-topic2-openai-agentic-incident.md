@@ -57,3 +57,27 @@ OpenAI 在 7 月 21 日確認，其測試中的 AI 模型於內部網路安全�
 
 ### 話題標籤
 #AgenticAI #AISecurity #PromptInjection #OpenSecureAI #ManufacturingSecurity #SOC
+
+---
+
+### 原始來源網址
+
+- OpenAI 官方說明（Hugging Face model evaluation security incident）  
+  https://openai.com/index/hugging-face-model-evaluation-security-incident/  
+  （2026-07-21）
+
+- TechCrunch 報導  
+  https://techcrunch.com/2026/07/21/openai-says-hugging-face-was-breached-by-its-pre-release-models/  
+  （2026-07-21）
+
+- WIRED 報導  
+  https://www.wired.com/story/openai-models-escaped-containment-and-hacked-huggingface/  
+  （2026-07-21）
+
+- Nvidia Open Secure AI Alliance 官方部落格  
+  https://blogs.nvidia.com/blog/open-secure-ai-alliance/  
+  （2026-07-27）
+
+- SecurityWeek 報導  
+  https://www.securityweek.com/nvidia-and-tech-giants-launch-ai-security-alliance/  
+  （2026-07-27）

@@ -53,3 +53,19 @@ SonicWall H1 2026: IPS events -56.2% YoY (steepest drop), yet 474M events still 
 
 ### 話題標籤
 #OTSecurity #ICSSecurity #ManufacturingCyber #IIoT #SmartFactory #PLC
+
+---
+
+### 原始來源網址
+
+- SonicWall 2026 Manufacturing Protect Brief 官方新聞稿  
+  https://wgno.com/business/press-releases/cision/20260722SF09772/sonicwall-research-finds-manufacturing-cybersecurity-at-a-breaking-point-as-factory-floors-and-corporate-networks-collide  
+  （2026-07-22）
+
+- Manufacturing Dive 報導  
+  https://www.manufacturingdive.com/news/despite-steep-decline-cyberattacks-targeting-manufacturers-threats-remain-high-sonicwall/826007/  
+  （2026-07-23）
+
+- CISA / FBI / EPA 更新警告（Iran-Affiliated Threat Actors Targeting PLCs）  
+  https://www.cisa.gov/news-events/news/cisa-fbi-epa-and-us-government-partners-update-warning-iran-affiliated-threat-actors-targeting  
+  （2026-07-22）
