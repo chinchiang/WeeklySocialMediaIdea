@@ -1,0 +1,185 @@
+/* WeeklySocialMediaIdea — shared page script
+   Features: mark-as-used tracking (localStorage + optional GitHub Gist sync),
+   one-click copy for bilingual draft blocks. */
+(function () {
+  var LS_DATA = 'wsmi-used-v2';
+  var LS_TOKEN = 'wsmi-gh-token';
+  var LS_GIST = 'wsmi-gist-id';
+  var GIST_FILE = 'wsmi-used-posts.json';
+
+  /* ---------- state ---------- */
+  function load() {
+    try {
+      var v2 = JSON.parse(localStorage.getItem(LS_DATA) || 'null');
+      if (v2 && v2.posts) return v2;
+    } catch (e) {}
+    var posts = {};
+    try {
+      (JSON.parse(localStorage.getItem('wsmi-used-posts') || '[]')).forEach(function (id) {
+        posts[id] = { used: true, ts: 1 };
+      });
+    } catch (e) {}
+    return { version: 1, posts: posts };
+  }
+  var state = load();
+  function save() { localStorage.setItem(LS_DATA, JSON.stringify(state)); }
+  function isUsed(id) { var p = state.posts[id]; return !!(p && p.used); }
+  function setUsed(id, on) { state.posts[id] = { used: on, ts: Date.now() }; save(); scheduleSync(); }
+
+  /* ---------- used-marker UI ---------- */
+  var renderers = [];
+  document.querySelectorAll('details.channel[data-post-id]').forEach(function (d) {
+    var id = d.getAttribute('data-post-id');
+    var btn = d.querySelector('.used-btn');
+    function render() {
+      var on = isUsed(id);
+      d.classList.toggle('used', on);
+      if (btn) btn.textContent = on ? '取消「已使用」標示' : '標示為已使用';
+    }
+    if (btn) btn.addEventListener('click', function () { setUsed(id, !isUsed(id)); render(); });
+    renderers.push(render);
+    render();
+  });
+  function renderAll() { renderers.forEach(function (f) { f(); }); }
+
+  /* ---------- copy buttons ---------- */
+  document.querySelectorAll('.copy-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var block = b.closest('.lang-block');
+      var textEl = block && block.querySelector('.draft-text');
+      if (!textEl) return;
+      var txt = textEl.innerText.trim();
+      function done() {
+        var orig = b.dataset.orig || b.textContent;
+        b.dataset.orig = orig;
+        b.classList.add('copied');
+        b.textContent = '已複製 ✓';
+        setTimeout(function () { b.classList.remove('copied'); b.textContent = orig; }, 1400);
+      }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = txt;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done, function () { fallback(); done(); });
+      } else { fallback(); done(); }
+    });
+  });
+
+  /* ---------- GitHub Gist sync ---------- */
+  var syncBtn = document.getElementById('sync-btn');
+  var cfgBtn = document.getElementById('sync-cfg');
+  function token() { return localStorage.getItem(LS_TOKEN) || ''; }
+  function setStatus(txt) { if (syncBtn) syncBtn.textContent = txt; }
+
+  function gh(path, opts) {
+    opts = opts || {};
+    opts.headers = Object.assign({
+      'Authorization': 'Bearer ' + token(),
+      'Accept': 'application/vnd.github+json'
+    }, opts.headers || {});
+    return fetch('https://api.github.com' + path, opts).then(function (r) {
+      if (r.status === 401 || r.status === 403) throw new Error('token-invalid');
+      if (!r.ok) throw new Error('http ' + r.status);
+      return r.status === 204 ? null : r.json();
+    });
+  }
+
+  function findGist() {
+    var cached = localStorage.getItem(LS_GIST);
+    if (cached) return Promise.resolve(cached);
+    return gh('/gists?per_page=100').then(function (list) {
+      var hit = (list || []).filter(function (g) { return g.files && g.files[GIST_FILE]; })[0];
+      if (hit) { localStorage.setItem(LS_GIST, hit.id); return hit.id; }
+      var files = {};
+      files[GIST_FILE] = { content: JSON.stringify(state) };
+      return gh('/gists', {
+        method: 'POST',
+        body: JSON.stringify({ description: 'WeeklySocialMediaIdea used-posts sync', public: false, files: files })
+      }).then(function (g) { localStorage.setItem(LS_GIST, g.id); return g.id; });
+    });
+  }
+
+  function mergeRemote(remote) {
+    if (!remote || !remote.posts) return;
+    Object.keys(remote.posts).forEach(function (id) {
+      var r = remote.posts[id], l = state.posts[id];
+      if (!l || (r.ts || 0) > (l.ts || 0)) state.posts[id] = r;
+    });
+  }
+
+  var syncing = false;
+  function doSync() {
+    if (!token()) { setupToken(); return; }
+    if (syncing) return;
+    syncing = true;
+    setStatus('🔄 同步中…');
+    findGist().then(function (id) {
+      return gh('/gists/' + id).then(function (g) {
+        var f = g.files && g.files[GIST_FILE];
+        var remote = null;
+        try { remote = f ? JSON.parse(f.content) : null; } catch (e) {}
+        mergeRemote(remote);
+        save();
+        renderAll();
+        var files = {};
+        files[GIST_FILE] = { content: JSON.stringify(state) };
+        return gh('/gists/' + id, { method: 'PATCH', body: JSON.stringify({ files: files }) });
+      });
+    }).then(function () {
+      var t = new Date();
+      setStatus('✅ 已同步 ' + ('0' + t.getHours()).slice(-2) + ':' + ('0' + t.getMinutes()).slice(-2));
+    }).catch(function (e) {
+      if (e && e.message === 'token-invalid') {
+        localStorage.removeItem(LS_TOKEN);
+        setStatus('⚠️ Token 無效，點擊重新設定');
+      } else if (e && e.message === 'http 404') {
+        localStorage.removeItem(LS_GIST);
+        setStatus('⚠️ 同步失敗，點擊重試');
+      } else {
+        setStatus('⚠️ 同步失敗，點擊重試');
+      }
+    }).then(function () { syncing = false; });
+  }
+
+  function setupToken() {
+    var t = prompt(
+      '跨裝置同步「已使用」紀錄需要 GitHub Token：\n\n' +
+      '1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)\n' +
+      '2. Generate new token (classic)，只勾選「gist」權限\n' +
+      '3. 貼到下方（Token 只會儲存在此瀏覽器的 localStorage）\n\n' +
+      '紀錄會存到你帳號的一個私密 Gist，每台裝置設定一次即可。'
+    );
+    if (t && t.trim()) { localStorage.setItem(LS_TOKEN, t.trim()); doSync(); }
+  }
+
+  var timer = null;
+  function scheduleSync() {
+    if (!token()) return;
+    clearTimeout(timer);
+    timer = setTimeout(doSync, 1200);
+  }
+
+  if (syncBtn) syncBtn.addEventListener('click', doSync);
+  if (cfgBtn) cfgBtn.addEventListener('click', function () {
+    var cur = token();
+    var t = prompt(cur
+      ? '同步設定：貼上新 Token 並確定即更新；留空並確定 = 移除 Token（停用同步）。'
+      : '輸入 GitHub Token（classic，僅 gist 權限）以啟用跨裝置同步。');
+    if (t === null) return;
+    if (t.trim() === '') {
+      localStorage.removeItem(LS_TOKEN);
+      localStorage.removeItem(LS_GIST);
+      setStatus('🔄 同步');
+    } else {
+      localStorage.setItem(LS_TOKEN, t.trim());
+      doSync();
+    }
+  });
+
+  if (token()) { doSync(); } else { setStatus('🔄 同步'); }
+})();

@@ -83,7 +83,6 @@
       border-radius: 999px;
     }
     .nav-link {
-      margin-left: auto;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--accent);
@@ -94,6 +93,8 @@
       background: var(--surface);
     }
     .nav-link:hover { border-color: var(--accent); text-decoration: none; }
+    button.nav-link { cursor: pointer; font-family: inherit; }
+    .push-right { margin-left: auto; }
     .week-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -290,7 +291,9 @@
       <div class="meta-bar">
         <span class="badge">歷史存檔</span>
         <span class="badge">中英雙語 · 一鍵複製</span>
-        <a class="nav-link" href="index.html">← 回到本週最新</a>
+        <a class="nav-link push-right" href="index.html">← 回到本週最新</a>
+        <button class="nav-link" id="sync-btn" type="button" title="跨裝置同步「已使用」紀錄">🔄 同步</button>
+        <button class="nav-link" id="sync-cfg" type="button" title="同步設定（設定/更換/移除 Token）">⚙</button>
       </div>
     </header>
 
@@ -687,56 +690,6 @@ SonicWall H1 2026: IPS events -56.2% YoY (steepest drop), yet 474M events still 
     </footer>
   </div>
 
-  <script>
-  (function () {
-    var LS_KEY = 'wsmi-used-posts';
-    var used;
-    try { used = new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]')); }
-    catch (e) { used = new Set(); }
-    function save() { localStorage.setItem(LS_KEY, JSON.stringify(Array.from(used))); }
-
-    document.querySelectorAll('details.channel[data-post-id]').forEach(function (d) {
-      var id = d.getAttribute('data-post-id');
-      var btn = d.querySelector('.used-btn');
-      function render() {
-        var on = used.has(id);
-        d.classList.toggle('used', on);
-        if (btn) btn.textContent = on ? '取消「已使用」標示' : '標示為已使用';
-      }
-      if (btn) btn.addEventListener('click', function () {
-        if (used.has(id)) { used.delete(id); } else { used.add(id); }
-        save(); render();
-      });
-      render();
-    });
-
-    document.querySelectorAll('.copy-btn').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var block = b.closest('.lang-block');
-        var textEl = block && block.querySelector('.draft-text');
-        if (!textEl) return;
-        var txt = textEl.innerText.trim();
-        function done() {
-          var orig = b.dataset.orig || b.textContent;
-          b.dataset.orig = orig;
-          b.classList.add('copied');
-          b.textContent = '已複製 ✓';
-          setTimeout(function () { b.classList.remove('copied'); b.textContent = orig; }, 1400);
-        }
-        function fallback() {
-          var ta = document.createElement('textarea');
-          ta.value = txt;
-          document.body.appendChild(ta);
-          ta.select();
-          try { document.execCommand('copy'); } catch (e) {}
-          document.body.removeChild(ta);
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(txt).then(done, function () { fallback(); done(); });
-        } else { fallback(); done(); }
-      });
-    });
-  })();
-  </script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
