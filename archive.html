@@ -98,6 +98,64 @@
     .nav-link:hover { border-color: var(--accent); text-decoration: none; }
     button.nav-link { cursor: pointer; font-family: inherit; }
     .push-right { margin-left: auto; }
+    .team .avatar { cursor: pointer; }
+    .featured-card {
+      display: flex; align-items: center; gap: 1.2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 2px 10px rgba(30, 42, 58, 0.06);
+    }
+    .featured-card .portrait {
+      width: 128px; height: 170px;
+      border-radius: 10px; overflow: hidden;
+      flex-shrink: 0; cursor: pointer;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+    .featured-card .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 10%; display: block; }
+    .featured-label {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; font-size: 0.72rem; font-weight: 700;
+      padding: 0.15rem 0.6rem; border-radius: 999px;
+      margin-bottom: 0.4rem;
+    }
+    .featured-info h2 { font-size: 1.15rem; margin-bottom: 0.15rem; }
+    .featured-info p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .featured-view {
+      font-size: 0.8rem; font-weight: 600;
+      padding: 0.3rem 0.9rem; border-radius: 999px;
+      border: 1px solid var(--accent); color: var(--accent);
+      background: var(--surface); cursor: pointer;
+    }
+    .featured-view:hover { background: var(--accent); color: #fff; }
+    .lightbox {
+      position: fixed; inset: 0; z-index: 60;
+      display: none; align-items: center; justify-content: center;
+      background: rgba(40, 12, 30, 0.78);
+      padding: 2rem 1rem;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox figure { position: relative; text-align: center; }
+    .lightbox img {
+      max-height: 84vh; max-width: 92vw;
+      border-radius: 12px; background: #fff;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    }
+    .lightbox figcaption {
+      margin-top: 0.7rem; color: #fff; font-size: 0.92rem;
+      background: rgba(0, 0, 0, 0.4);
+      display: inline-block; padding: 0.25rem 0.9rem; border-radius: 999px;
+    }
+    .lightbox .lb-close {
+      position: absolute; top: 1rem; right: 1.2rem;
+      font-size: 0.9rem; font-weight: 700;
+      background: rgba(255, 255, 255, 0.92); color: var(--text);
+      border: none; border-radius: 999px; padding: 0.4rem 1rem; cursor: pointer;
+    }
     .week-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -287,10 +345,13 @@
           <p class="subtitle">歷史選題與草稿累積 · 由新到舊排列</p>
         </div>
         <div class="team">
-          <span class="avatar" title="Elisa · SOC 分析師 · 即時威脅監控"><img src="assets/character-analyst.webp" alt="SOC 分析師角色"></span>
-          <span class="avatar" title="Vita · 威脅獵人 · Threat Detected"><img class="pos-hunter" src="assets/character-guardian.webp?v=2" alt="威脅獵人角色"></span>
-          <span class="avatar" title="資安指揮官 · Access Control"><img class="pos-commander" src="assets/character-commander.webp" alt="資安指揮官角色"></span>
-          <span class="avatar" title="數據潛航者 · Deep Analytics"><img class="pos-navigator" src="assets/character-navigator.webp" alt="數據潛航者角色"></span>
+          <span class="avatar" data-char="analyst" title="Elisa · SOC 威脅分析師"><img src="assets/character-analyst.webp" alt="Elisa · SOC 威脅分析師"></span>
+          <span class="avatar" data-char="guardian" title="Vita · 威脅獵人"><img class="pos-hunter" src="assets/character-guardian.webp?v=2" alt="Vita · 威脅獵人"></span>
+          <span class="avatar" data-char="commander" title="資安指揮官 · SOC 指揮與事件應變"><img class="pos-commander" src="assets/character-commander.webp" alt="資安指揮官"></span>
+          <span class="avatar" data-char="navigator" title="數據潛航者 · 深度資料分析"><img class="pos-navigator" src="assets/character-navigator.webp" alt="數據潛航者"></span>
+          <span class="avatar" data-char="anita" title="Anita · 情資蒐集官"><img src="assets/character-anita.webp" alt="Anita · 情資蒐集官"></span>
+          <span class="avatar" data-char="ruby" title="Ruby · 內容發布官"><img src="assets/character-ruby.webp" alt="Ruby · 內容發布官"></span>
+          <span class="avatar" data-char="sindy" title="Sindy · 加密防護官"><img src="assets/character-sindy.webp" alt="Sindy · 加密防護官"></span>
         </div>
       </div>
       <div class="meta-bar">
