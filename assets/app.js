@@ -187,7 +187,7 @@
     { id: 'analyst',   name: 'Elisa',  title: 'SOC 威脅分析師', desc: '即時威脅監控 · Security Operations', src: 'assets/character-analyst.webp?v=3' },
     { id: 'guardian',  name: 'Vita',   title: '威脅獵人',       desc: '主動威脅獵捕 · Threat Detected',     src: 'assets/character-guardian.webp?v=2' },
     { id: 'commander', name: 'Ukami', title: '資安指揮官',     desc: 'SOC 指揮與事件應變',                 src: 'assets/character-commander.webp' },
-    { id: 'navigator', name: '潛航者', title: '數據潛航者',     desc: '深度資料分析 · Deep Analytics',      src: 'assets/character-navigator.webp' },
+    { id: 'navigator', name: 'Malia', title: '數據潛航者',     desc: '深度資料分析 · Deep Analytics',      src: 'assets/character-navigator.webp' },
     { id: 'anita',     name: 'Anita',  title: '情資蒐集官',     desc: '威脅情報與 OSINT',                   src: 'assets/character-anita.webp' },
     { id: 'ruby',      name: 'Ruby',   title: '內容發布官',     desc: '社群與內容傳播',                     src: 'assets/character-ruby.webp' },
     { id: 'sindy',     name: 'Sindy',  title: '加密防護官',     desc: '密碼學與存取控制',                   src: 'assets/character-sindy.webp' }
