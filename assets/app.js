@@ -181,5 +181,80 @@
     }
   });
 
+
+  /* ---------- character roster / featured / lightbox ---------- */
+  var ROSTER = [
+    { id: 'analyst',   name: 'Elisa',  title: 'SOC 威脅分析師', desc: '即時威脅監控 · Security Operations', src: 'assets/character-analyst.webp?v=2' },
+    { id: 'guardian',  name: 'Vita',   title: '威脅獵人',       desc: '主動威脅獵捕 · Threat Detected',     src: 'assets/character-guardian.webp?v=2' },
+    { id: 'commander', name: '指揮官', title: '資安指揮官',     desc: 'SOC 指揮與事件應變',                 src: 'assets/character-commander.webp' },
+    { id: 'navigator', name: '潛航者', title: '數據潛航者',     desc: '深度資料分析 · Deep Analytics',      src: 'assets/character-navigator.webp' },
+    { id: 'anita',     name: 'Anita',  title: '情資蒐集官',     desc: '威脅情報與 OSINT',                   src: 'assets/character-anita.webp' },
+    { id: 'ruby',      name: 'Ruby',   title: '內容發布官',     desc: '社群與內容傳播',                     src: 'assets/character-ruby.webp' },
+    { id: 'sindy',     name: 'Sindy',  title: '加密防護官',     desc: '密碼學與存取控制',                   src: 'assets/character-sindy.webp' }
+  ];
+
+  var lightboxEl = null;
+  function openLightbox(ch) {
+    if (!lightboxEl) {
+      lightboxEl = document.createElement('div');
+      lightboxEl.className = 'lightbox';
+      lightboxEl.innerHTML = '<figure><img alt=""><figcaption></figcaption></figure><button class="lb-close" type="button">✕ 關閉</button>';
+      lightboxEl.addEventListener('click', function (e) {
+        if (e.target === lightboxEl || e.target.classList.contains('lb-close')) closeLightbox();
+      });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+      document.body.appendChild(lightboxEl);
+    }
+    lightboxEl.querySelector('img').src = ch.src;
+    lightboxEl.querySelector('img').alt = ch.name + ' 完整插畫';
+    lightboxEl.querySelector('figcaption').textContent = ch.name + ' · ' + ch.title + ' — ' + ch.desc;
+    lightboxEl.classList.add('open');
+  }
+  function closeLightbox() { if (lightboxEl) lightboxEl.classList.remove('open'); }
+
+  // avatars: click opens full illustration; hide avatars whose image is missing
+  document.querySelectorAll('.team .avatar[data-char]').forEach(function (span) {
+    var ch = ROSTER.filter(function (c) { return c.id === span.getAttribute('data-char'); })[0];
+    if (!ch) return;
+    var img = span.querySelector('img');
+    if (img) {
+      img.addEventListener('error', function () { span.style.display = 'none'; });
+      if (img.complete && img.naturalWidth === 0) span.style.display = 'none';
+    }
+    span.addEventListener('click', function () { openLightbox(ch); });
+  });
+
+  // featured character of the current period (rotates every Mon & Thu)
+  var slot = document.getElementById('featured-slot');
+  if (slot) {
+    var ANCHOR = new Date(2026, 7, 3); // Monday 2026-08-03, local time
+    var days = Math.floor((Date.now() - ANCHOR.getTime()) / 86400000);
+    var periods = Math.floor(days / 7) * 2 + ((days % 7) >= 3 ? 1 : 0);
+    var pending = ROSTER.length;
+    var avail = [];
+    ROSTER.forEach(function (ch) {
+      var probe = new Image();
+      probe.onload = function () { avail.push(ch); if (--pending === 0) renderFeatured(); };
+      probe.onerror = function () { if (--pending === 0) renderFeatured(); };
+      probe.src = ch.src;
+    });
+    function renderFeatured() {
+      if (!avail.length) return;
+      avail.sort(function (a, b) { return ROSTER.indexOf(a) - ROSTER.indexOf(b); });
+      var ch = avail[((periods % avail.length) + avail.length) % avail.length];
+      slot.innerHTML =
+        '<div class="featured-card">' +
+        '<div class="portrait"><img src="' + ch.src + '" alt="' + ch.name + '"></div>' +
+        '<div class="featured-info">' +
+        '<span class="featured-label">★ 本期主打</span>' +
+        '<h2>' + ch.name + ' · ' + ch.title + '</h2>' +
+        '<p>' + ch.desc + '</p>' +
+        '<button class="featured-view" type="button">查看完整插畫</button>' +
+        '</div></div>';
+      slot.querySelector('.featured-view').addEventListener('click', function () { openLightbox(ch); });
+      slot.querySelector('.portrait').addEventListener('click', function () { openLightbox(ch); });
+    }
+  }
+
   if (token()) { doSync(); } else { setStatus('🔄 同步'); }
 })();
