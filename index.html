@@ -103,39 +103,66 @@
     button.nav-link { cursor: pointer; font-family: inherit; }
     .push-right { margin-left: auto; }
     .team .avatar { cursor: pointer; }
-    .featured-card {
-      display: flex; align-items: center; gap: 1.2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1rem 1.2rem;
+    .featured-banner {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 320px;
       margin-bottom: 1.75rem;
-      box-shadow: 0 2px 10px rgba(30, 42, 58, 0.06);
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(30, 42, 58, 0.14);
+      background: #1c1220;
     }
-    .featured-card .portrait {
-      width: 128px; height: 170px;
-      border-radius: 10px; overflow: hidden;
-      flex-shrink: 0; cursor: pointer;
-      background: var(--surface2);
-      border: 1px solid var(--border);
+    .fb-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    .featured-card .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 10%; display: block; }
-    .featured-label {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff; font-size: 0.72rem; font-weight: 700;
-      padding: 0.15rem 0.6rem; border-radius: 999px;
-      margin-bottom: 0.4rem;
+    .fb-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(24, 8, 20, 0.82) 0%, rgba(24, 8, 20, 0.35) 42%, rgba(24, 8, 20, 0) 68%);
     }
-    .featured-info h2 { font-size: 1.15rem; margin-bottom: 0.15rem; }
-    .featured-info p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .fb-info {
+      position: absolute;
+      left: 1.5rem; bottom: 1.2rem; right: 8.5rem;
+      color: #fff;
+    }
+    .fb-badges { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.45rem; }
+    .fb-onair {
+      background: var(--accent2);
+      color: #fff; font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 0.18rem 0.7rem; border-radius: 999px;
+    }
+    .fb-brief {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.28em;
+      color: rgba(255, 255, 255, 0.88);
+      text-transform: uppercase;
+    }
+    .fb-info h2 {
+      font-size: 2.1rem; font-weight: 800;
+      color: #fff; line-height: 1.15;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+    .fb-info p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.88); }
     .featured-view {
-      font-size: 0.8rem; font-weight: 600;
-      padding: 0.3rem 0.9rem; border-radius: 999px;
-      border: 1px solid var(--accent); color: var(--accent);
-      background: var(--surface); cursor: pointer;
+      position: absolute;
+      right: 1.2rem; bottom: 1.2rem;
+      font-size: 0.78rem; font-weight: 600;
+      padding: 0.35rem 0.95rem; border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      color: #fff; background: rgba(0, 0, 0, 0.25);
+      cursor: pointer; backdrop-filter: blur(3px);
     }
-    .featured-view:hover { background: var(--accent); color: #fff; }
+    .featured-view:hover { background: var(--accent); border-color: var(--accent); }
+    @media (max-width: 600px) {
+      .featured-banner { height: 230px; }
+      .fb-info { left: 1rem; bottom: 0.9rem; right: 1rem; }
+      .fb-info h2 { font-size: 1.5rem; }
+      .featured-view { display: none; }
+    }
     .lightbox {
       position: fixed; inset: 0; z-index: 60;
       display: none; align-items: center; justify-content: center;
