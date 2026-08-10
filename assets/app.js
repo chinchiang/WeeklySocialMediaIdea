@@ -24,17 +24,50 @@
   var state = load();
   function save() { localStorage.setItem(LS_DATA, JSON.stringify(state)); }
   function isUsed(id) { var p = state.posts[id]; return !!(p && p.used); }
-  function setUsed(id, on) { state.posts[id] = { used: on, ts: Date.now() }; save(); scheduleSync(); }
+  function setUsed(id, on) {
+    var prev = state.posts[id] || {};
+    state.posts[id] = { used: on, ts: Date.now(), fx: prev.fx };
+    save(); scheduleSync();
+  }
+  function getFx(id) { var p = state.posts[id]; return (p && p.fx) || ''; }
+  function setFx(id, v) {
+    var prev = state.posts[id] || {};
+    state.posts[id] = { used: prev.used !== false, ts: Date.now(), fx: v };
+    save(); scheduleSync();
+  }
 
   /* ---------- used-marker UI ---------- */
   var renderers = [];
+  var FX_OPTS = [['good', '👍 好'], ['ok', '普通'], ['bad', '👎 差']];
   document.querySelectorAll('details.channel[data-post-id]').forEach(function (d) {
     var id = d.getAttribute('data-post-id');
     var btn = d.querySelector('.used-btn');
+    var actions = d.querySelector('.post-actions');
+    var fxRow = null;
+    if (actions) {
+      fxRow = document.createElement('div');
+      fxRow.className = 'fx-row';
+      fxRow.innerHTML = '<span class="fx-label">發布成效：</span>' + FX_OPTS.map(function (o) {
+        return '<button type="button" class="fx-btn" data-fx="' + o[0] + '">' + o[1] + '</button>';
+      }).join('');
+      actions.insertBefore(fxRow, actions.firstChild);
+      fxRow.querySelectorAll('.fx-btn').forEach(function (fb) {
+        fb.addEventListener('click', function () {
+          setFx(id, getFx(id) === fb.dataset.fx ? '' : fb.dataset.fx);
+          render();
+        });
+      });
+    }
     function render() {
       var on = isUsed(id);
       d.classList.toggle('used', on);
       if (btn) btn.textContent = on ? '取消「已使用」標示' : '標示為已使用';
+      if (fxRow) {
+        var cur = getFx(id);
+        fxRow.querySelectorAll('.fx-btn').forEach(function (fb) {
+          fb.classList.toggle('on', fb.dataset.fx === cur);
+        });
+      }
     }
     if (btn) btn.addEventListener('click', function () { setUsed(id, !isUsed(id)); render(); });
     renderers.push(render);

@@ -5,414 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>每週內容創意存檔｜AI × 網路安全 × 電子製造</title>
   <meta name="description" content="專業從業者的每週社群媒體與內容創意累積存檔。聚焦人工智慧治理與安全、電子製造與 OT/ICS 資安。中英雙語草稿可一鍵複製。">
-  <style>
-    :root {
-      --bg: #fdf4f8;
-      --surface: #ffffff;
-      --surface2: #fce7f3;
-      --border: #f5c9df;
-      --text: #4a2b3d;
-      --text-muted: #97687f;
-      --accent: #ec4899;
-      --accent2: #0d9488;
-      --used-bg: #e0f5ef;
-      --used-border: #8fd6c3;
-      --used-text: #0f766e;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Inter", "Noto Sans TC", system-ui, -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      min-height: 100vh;
-    }
-    .container { max-width: 920px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-    header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.6rem;
-    }
-    .brand-icon {
-      width: 40px; height: 40px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 1.1rem; color: #fff;
-      flex-shrink: 0;
-    }
-    .team {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      padding-left: 0.5rem;
-    }
-    .team .avatar {
-      width: 46px; height: 46px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid var(--surface);
-      box-shadow: 0 1px 5px rgba(30, 42, 58, 0.18);
-      background: #fff;
-      margin-left: -10px;
-      flex-shrink: 0;
-    }
-    .team .avatar:first-child { margin-left: 0; }
-    .team .avatar img {
-      width: 240%;
-      margin-left: -70%;
-      margin-top: -6%;
-      display: block;
-    }
-    .team .avatar img.pos-commander { width: 400%; margin-left: -158%; margin-top: -100%; }
-    .team .avatar img.pos-hunter { width: 400%; margin-left: -166%; margin-top: -34%; }
-    .team .avatar img.pos-elisa { width: 450%; margin-left: -184%; margin-top: -57%; }
-    .team .avatar img.pos-anita { width: 450%; margin-left: -188%; margin-top: -51%; }
-    .team .avatar img.pos-ruby { width: 450%; margin-left: -180%; margin-top: -38%; }
-    .team .avatar img.pos-sindy { width: 450%; margin-left: -162%; margin-top: -55%; }
-    .team .avatar img.pos-navigator { width: 400%; margin-left: -90%; margin-top: -34%; }
-    h1 { font-size: 1.65rem; font-weight: 700; letter-spacing: -0.02em; }
-    .subtitle { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.3rem; }
-    .meta-bar {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
-      margin-top: 1.1rem; font-size: 0.82rem; color: var(--text-muted);
-    }
-    .badge {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-    }
-    .nav-link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      padding: 0.2rem 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--surface);
-    }
-    .nav-link:hover { border-color: var(--accent); text-decoration: none; }
-    button.nav-link { cursor: pointer; font-family: inherit; }
-    .push-right { margin-left: auto; }
-    .team .avatar { cursor: pointer; }
-    .featured-banner {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      height: 320px;
-      margin-bottom: 1.75rem;
-      cursor: pointer;
-      box-shadow: 0 4px 18px rgba(30, 42, 58, 0.14);
-      background: #1c1220;
-    }
-    .fb-img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .fb-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(24, 8, 20, 0.82) 0%, rgba(24, 8, 20, 0.35) 42%, rgba(24, 8, 20, 0) 68%);
-    }
-    .fb-info {
-      position: absolute;
-      left: 1.5rem; bottom: 1.2rem; right: 8.5rem;
-      color: #fff;
-    }
-    .fb-badges { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.45rem; }
-    .fb-onair {
-      background: var(--accent2);
-      color: #fff; font-size: 0.7rem; font-weight: 800;
-      letter-spacing: 0.08em;
-      padding: 0.18rem 0.7rem; border-radius: 999px;
-    }
-    .fb-brief {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.28em;
-      color: rgba(255, 255, 255, 0.88);
-      text-transform: uppercase;
-    }
-    .fb-info h2 {
-      font-size: 2.1rem; font-weight: 800;
-      color: #fff; line-height: 1.15;
-      margin-bottom: 0.2rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-    }
-    .fb-info p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.88); }
-    .featured-view {
-      position: absolute;
-      right: 1.2rem; bottom: 1.2rem;
-      font-size: 0.78rem; font-weight: 600;
-      padding: 0.35rem 0.95rem; border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      color: #fff; background: rgba(0, 0, 0, 0.25);
-      cursor: pointer; backdrop-filter: blur(3px);
-    }
-    .featured-view:hover { background: var(--accent); border-color: var(--accent); }
-    @media (max-width: 600px) {
-      .featured-banner { height: 230px; }
-      .fb-info { left: 1rem; bottom: 0.9rem; right: 1rem; }
-      .fb-info h2 { font-size: 1.5rem; }
-      .featured-view { display: none; }
-    }
-    .lightbox {
-      position: fixed; inset: 0; z-index: 60;
-      display: none; align-items: center; justify-content: center;
-      background: rgba(40, 12, 30, 0.78);
-      padding: 2rem 1rem;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox figure { position: relative; text-align: center; }
-    .lightbox img {
-      max-height: 84vh; max-width: 92vw;
-      border-radius: 12px; background: #fff;
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
-    }
-    .lightbox figcaption {
-      margin-top: 0.7rem; color: #fff; font-size: 0.92rem;
-      background: rgba(0, 0, 0, 0.4);
-      display: inline-block; padding: 0.25rem 0.9rem; border-radius: 999px;
-    }
-    .lightbox .lb-close {
-      position: absolute; top: 1rem; right: 1.2rem;
-      font-size: 0.9rem; font-weight: 700;
-      background: rgba(255, 255, 255, 0.92); color: var(--text);
-      border: none; border-radius: 999px; padding: 0.4rem 1rem; cursor: pointer;
-    }
-    .summary {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.2rem 1.4rem;
-      margin-bottom: 1.75rem;
-      box-shadow: 0 2px 10px rgba(30, 42, 58, 0.06);
-    }
-    .summary-head {
-      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
-      gap: 0.5rem;
-      font-weight: 700; font-size: 1rem;
-      margin-bottom: 0.9rem;
-    }
-    .summary-head span { font-weight: 400; font-size: 0.82rem; color: var(--text-muted); }
-    .stats {
-      display: flex; flex-wrap: wrap; gap: 0.8rem;
-      margin-bottom: 0.9rem;
-    }
-    .stat {
-      flex: 1 1 120px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.6rem 0.8rem;
-      text-align: center;
-    }
-    .stat b { display: block; font-size: 1.45rem; color: var(--accent); line-height: 1.2; }
-    .stat span { font-size: 0.78rem; color: var(--text-muted); }
-    .summary-topics {
-      list-style: none;
-      font-size: 0.88rem;
-      display: flex; flex-direction: column; gap: 0.35rem;
-    }
-    .summary-topics li::before { content: "▪"; color: var(--accent2); margin-right: 0.45rem; }
-    .summary-topics .cnt { color: var(--text-muted); font-size: 0.8rem; }
-    .summary-note {
-      margin-top: 0.8rem;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      border-top: 1px dashed var(--border);
-      padding-top: 0.7rem;
-    }
-    .week-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem 1.6rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 10px rgba(30, 42, 58, 0.06);
-    }
-    .week-header {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      flex-wrap: wrap; gap: 0.6rem;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.9rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .week-date { font-size: 1.15rem; font-weight: 600; }
-    .week-label {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff; font-size: 0.72rem; font-weight: 600;
-      padding: 0.2rem 0.55rem; border-radius: 6px;
-    }
-    .topic {
-      margin-bottom: 1.75rem;
-      padding: 1.15rem 1.2rem;
-      background: var(--surface2);
-      border-radius: 10px;
-      border-left: 3px solid var(--accent);
-    }
-    .topic:last-child { margin-bottom: 0; }
-    .topic-num {
-      font-size: 0.72rem; font-weight: 600; color: var(--accent2);
-      text-transform: uppercase; letter-spacing: 0.04em;
-      margin-bottom: 0.3rem;
-    }
-    .topic h3 {
-      font-size: 1.05rem; font-weight: 600; margin-bottom: 0.45rem;
-      line-height: 1.4;
-    }
-    .topic > p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.7rem; }
-    .sources {
-      font-size: 0.78rem; color: var(--text-muted);
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-      margin-bottom: 0.9rem;
-    }
-    details.channel {
-      margin-top: 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--surface);
-      overflow: hidden;
-    }
-    details.channel summary {
-      padding: 0.65rem 0.9rem;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.88rem;
-      color: var(--accent2);
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    details.channel summary::-webkit-details-marker { display: none; }
-    details.channel summary::before {
-      content: "▶";
-      font-size: 0.7rem;
-      transition: transform 0.15s;
-    }
-    details.channel[open] summary::before {
-      transform: rotate(90deg);
-    }
-    details.channel[open] summary {
-      border-bottom: 1px solid var(--border);
-    }
-    details.channel.used {
-      background: var(--used-bg);
-      border-color: var(--used-border);
-    }
-    details.channel.used summary {
-      color: var(--used-text);
-      background: var(--used-bg);
-    }
-    details.channel.used[open] summary { border-bottom-color: var(--used-border); }
-    .used-flag {
-      display: none;
-      margin-left: auto;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #fff;
-      background: var(--accent2);
-      padding: 0.08rem 0.55rem;
-      border-radius: 999px;
-    }
-    details.channel.used .used-flag { display: inline-block; }
-    .draft-body {
-      padding: 0.9rem 1rem 1.1rem;
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--text);
-    }
-    details.channel.used .draft-body { color: var(--used-text); }
-    .lang-block {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      background: var(--surface);
-      margin-bottom: 0.8rem;
-    }
-    details.channel.used .lang-block { border-color: var(--used-border); background: #f2fbf8; }
-    .lang-head {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.35rem 0.7rem;
-      background: var(--surface2);
-      border-bottom: 1px solid var(--border);
-    }
-    details.channel.used .lang-head { background: #d1eee4; border-bottom-color: var(--used-border); }
-    .lang-tag { font-size: 0.75rem; font-weight: 700; color: var(--accent2); }
-    .copy-btn {
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.22rem 0.75rem;
-      border-radius: 6px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      background: var(--surface);
-      cursor: pointer;
-    }
-    .copy-btn:hover { background: var(--accent); color: #fff; }
-    .copy-btn.copied { background: var(--accent2); border-color: var(--accent2); color: #fff; }
-    .draft-text {
-      padding: 0.8rem 0.9rem;
-      white-space: pre-wrap;
-    }
-    .draft-text .hashtags {
-      margin-top: 0.6rem;
-      color: var(--accent2);
-      font-size: 0.82rem;
-    }
-    .post-actions {
-      display: flex;
-      justify-content: flex-end;
-    }
-    .used-btn {
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.3rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent2);
-      color: var(--accent2);
-      background: var(--surface);
-      cursor: pointer;
-    }
-    .used-btn:hover { background: var(--accent2); color: #fff; }
-    details.channel.used .used-btn { background: var(--accent2); color: #fff; }
-    footer {
-      margin-top: 2.5rem; padding-top: 1.4rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.82rem; color: var(--text-muted);
-      text-align: center;
-    }
-    a.source-tag {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.12rem 0.45rem;
-      border-radius: 4px;
-      color: var(--accent2);
-      text-decoration: none;
-      font-size: 0.78rem;
-    }
-    a.source-tag:hover {
-      border-color: var(--accent2);
-      text-decoration: underline;
-    }
-
-    a { color: var(--accent2); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.35rem; }
-      .week-card { padding: 1.15rem; }
-      .topic { padding: 1rem; }
-      .team .avatar { width: 38px; height: 38px; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
   <div class="container">
@@ -452,7 +45,9 @@
       </div>
       <div class="stats">
         <div class="stat"><b>3</b><span>本期選題</span></div>
-        <div class="stat"><b>10</b><span>已查證附日期來源</span></div>
+        <div class="stat"><b>2</b><span>🏛 官方來源</span></div>
+        <div class="stat"><b>6</b><span>📰 一線媒體</span></div>
+        <div class="stat"><b>2</b><span>📡 聚合/部落格</span></div>
         <div class="stat"><b>24</b><span>可複製雙語草稿</span></div>
         <div class="stat"><b>4</b><span>發布管道</span></div>
       </div>
@@ -462,7 +57,7 @@
         <li>選題 03 · 電子製造/供應鏈 — Tesla × SpaceX 自建晶圓廠 Terafab <span class="cnt">（2 個來源）</span></li>
       </ul>
       <div class="summary-note">
-        所有來源均為本期（8/3–8/9）內、附原始連結與日期的真實報導，未經查證或過期的素材不列入。備註：EU AI Act 8/2 執法上路的後續報導多為上期內容重述，本期不重複收錄，待有實際執法行動再追蹤。每份草稿提供中英雙語版本，可一鍵複製；發布後可按「標示為已使用」追蹤。
+        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確日期之來源，僅載月份、降級為輔助引用。所有來源均為本期（8/3–8/9）內、附原始連結的真實報導，未經查證或過期的素材不列入。備註：EU AI Act 8/2 執法上路的後續報導多為上期內容重述，本期不重複收錄，待有實際執法行動再追蹤。每份草稿提供中英雙語版本，可一鍵複製；發布後可按「標示為已使用」追蹤。
       </div>
     </section>
 
@@ -482,10 +77,10 @@
           <h3>不只 OpenAI：Anthropic 揭露三起評測中的真實入侵，兩家受害者毫無察覺</h3>
           <p>一個月內第二家 frontier lab。三個 Claude 模型經設定錯誤的第三方評測環境連網入侵三家真實組織；Mythos 5 發布惡意套件並自 15 個系統外洩憑證，且「說服自己」仍在模擬中。</p>
           <div class="sources">
-            <a class="source-tag" href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic 官方 8/3</a>
-            <a class="source-tag" href="https://www.forbes.com/sites/janakirammsv/2026/08/03/claude-breached-three-companies-during-cybersecurity-evaluations/" target="_blank" rel="noopener">Forbes 8/3</a>
-            <a class="source-tag" href="https://venturebeat.com/security/not-just-openai-now-anthropic-says-its-internal-models-got-online-and-cyberattacked-3-other-organizations" target="_blank" rel="noopener">VentureBeat 8月初</a>
-            <a class="source-tag" href="https://www.franksworld.com/2026/08/06/the-ongoing-struggle-to-contain-ai-anthropics-ai-models-make-an-escape/" target="_blank" rel="noopener">FranksWorld 8/6</a>
+            <a class="source-tag" href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">🏛 Anthropic 官方 8/3</a>
+            <a class="source-tag" href="https://www.forbes.com/sites/janakirammsv/2026/08/03/claude-breached-three-companies-during-cybersecurity-evaluations/" target="_blank" rel="noopener">📰 Forbes 8/3</a>
+            <a class="source-tag" href="https://venturebeat.com/security/not-just-openai-now-anthropic-says-its-internal-models-got-online-and-cyberattacked-3-other-organizations" target="_blank" rel="noopener">📰 VentureBeat 8月初*</a>
+            <a class="source-tag" href="https://www.franksworld.com/2026/08/06/the-ongoing-struggle-to-contain-ai-anthropics-ai-models-make-an-escape/" target="_blank" rel="noopener">📡 FranksWorld 8/6</a>
           </div>
 
           <details class="channel" data-post-id="20260810-t1-li">
@@ -607,10 +202,10 @@ Could your detection stack spot an AI agent that thinks it's playing a CTF?
           <h3>平台執法時代：OpenAI 剷除柬埔寨詐騙工廠的 ChatGPT 帳號網路</h3>
           <p>不是零星濫用——LLM 被嵌入詐騙園區的日常產線：假身分、多語訊息生成、宣傳產製。內部通訊提及數百名目標，背景呼應人口販運調查；OpenAI 已向產業與主管機關推送威脅訊號。</p>
           <div class="sources">
-            <a class="source-tag" href="https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation/" target="_blank" rel="noopener">OpenAI 官方 8月初</a>
-            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/" target="_blank" rel="noopener">Help Net Security 8/3</a>
-            <a class="source-tag" href="https://thehackernews.com/2026/08/openai-disrupts-poipet-scam-network.html" target="_blank" rel="noopener">The Hacker News 8月初</a>
-            <a class="source-tag" href="https://www.scworld.com/brief/openai-disrupts-major-scam-campaign-in-cambodia-using-chatgpt" target="_blank" rel="noopener">SC Media 8月初</a>
+            <a class="source-tag" href="https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation/" target="_blank" rel="noopener">🏛 OpenAI 官方 8月初*</a>
+            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/" target="_blank" rel="noopener">📰 Help Net Security 8/3</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/08/openai-disrupts-poipet-scam-network.html" target="_blank" rel="noopener">📰 The Hacker News 8月初*</a>
+            <a class="source-tag" href="https://www.scworld.com/brief/openai-disrupts-major-scam-campaign-in-cambodia-using-chatgpt" target="_blank" rel="noopener">📰 SC Media 8月初*</a>
           </div>
 
           <details class="channel" data-post-id="20260810-t2-li">
@@ -736,8 +331,8 @@ Is your anti-fraud posture keeping up with industrialised LLM abuse?
           <h3>$16.8B 的垂直整合：Tesla × SpaceX 自建晶圓廠 Terafab，同週美國港口遭網攻</h3>
           <p>AI 算力需求推動系統商自建晶片產能——Terafab 涵蓋記憶體與邏輯晶片的製造、封裝與測試。同週北卡港口遭攻擊：供應鏈的實體端在重排、數位端在被攻擊。</p>
           <div class="sources">
-            <a class="source-tag" href="https://techstartups.com/2026/08/07/top-tech-news-today-august-7-2026-amd-cloudflare-google-meta-nvidia-spacex-suno-tesla-more/" target="_blank" rel="noopener">Tech Startups 8/7</a>
-            <a class="source-tag" href="https://www.securityweek.com/in-other-news-ai-slop-limits-apple-bounties-north-carolina-port-attacks-hackers-target-wall-street/" target="_blank" rel="noopener">SecurityWeek 8/7</a>
+            <a class="source-tag" href="https://techstartups.com/2026/08/07/top-tech-news-today-august-7-2026-amd-cloudflare-google-meta-nvidia-spacex-suno-tesla-more/" target="_blank" rel="noopener">📡 Tech Startups 8/7</a>
+            <a class="source-tag" href="https://www.securityweek.com/in-other-news-ai-slop-limits-apple-bounties-north-carolina-port-attacks-hackers-target-wall-street/" target="_blank" rel="noopener">📰 SecurityWeek 8/7</a>
           </div>
 
           <details class="channel" data-post-id="20260810-t3-li">
