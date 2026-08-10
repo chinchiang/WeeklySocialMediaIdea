@@ -5,414 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>每週內容創意存檔｜AI × 網路安全 × 電子製造</title>
   <meta name="description" content="專業從業者的每週社群媒體與內容創意累積存檔。聚焦人工智慧治理與安全、電子製造與 OT/ICS 資安。中英雙語草稿可一鍵複製。">
-  <style>
-    :root {
-      --bg: #fdf4f8;
-      --surface: #ffffff;
-      --surface2: #fce7f3;
-      --border: #f5c9df;
-      --text: #4a2b3d;
-      --text-muted: #97687f;
-      --accent: #ec4899;
-      --accent2: #0d9488;
-      --used-bg: #e0f5ef;
-      --used-border: #8fd6c3;
-      --used-text: #0f766e;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Inter", "Noto Sans TC", system-ui, -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      min-height: 100vh;
-    }
-    .container { max-width: 920px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-    header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.6rem;
-    }
-    .brand-icon {
-      width: 40px; height: 40px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 1.1rem; color: #fff;
-      flex-shrink: 0;
-    }
-    .team {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      padding-left: 0.5rem;
-    }
-    .team .avatar {
-      width: 46px; height: 46px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid var(--surface);
-      box-shadow: 0 1px 5px rgba(30, 42, 58, 0.18);
-      background: #fff;
-      margin-left: -10px;
-      flex-shrink: 0;
-    }
-    .team .avatar:first-child { margin-left: 0; }
-    .team .avatar img {
-      width: 240%;
-      margin-left: -70%;
-      margin-top: -6%;
-      display: block;
-    }
-    .team .avatar img.pos-commander { width: 400%; margin-left: -158%; margin-top: -100%; }
-    .team .avatar img.pos-hunter { width: 400%; margin-left: -166%; margin-top: -34%; }
-    .team .avatar img.pos-elisa { width: 450%; margin-left: -184%; margin-top: -57%; }
-    .team .avatar img.pos-anita { width: 450%; margin-left: -188%; margin-top: -51%; }
-    .team .avatar img.pos-ruby { width: 450%; margin-left: -180%; margin-top: -38%; }
-    .team .avatar img.pos-sindy { width: 450%; margin-left: -162%; margin-top: -55%; }
-    .team .avatar img.pos-navigator { width: 400%; margin-left: -90%; margin-top: -34%; }
-    h1 { font-size: 1.65rem; font-weight: 700; letter-spacing: -0.02em; }
-    .subtitle { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.3rem; }
-    .meta-bar {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
-      margin-top: 1.1rem; font-size: 0.82rem; color: var(--text-muted);
-    }
-    .badge {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-    }
-    .nav-link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      padding: 0.2rem 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--surface);
-    }
-    .nav-link:hover { border-color: var(--accent); text-decoration: none; }
-    button.nav-link { cursor: pointer; font-family: inherit; }
-    .push-right { margin-left: auto; }
-    .team .avatar { cursor: pointer; }
-    .featured-banner {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      height: 320px;
-      margin-bottom: 1.75rem;
-      cursor: pointer;
-      box-shadow: 0 4px 18px rgba(30, 42, 58, 0.14);
-      background: #1c1220;
-    }
-    .fb-img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .fb-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(24, 8, 20, 0.82) 0%, rgba(24, 8, 20, 0.35) 42%, rgba(24, 8, 20, 0) 68%);
-    }
-    .fb-info {
-      position: absolute;
-      left: 1.5rem; bottom: 1.2rem; right: 8.5rem;
-      color: #fff;
-    }
-    .fb-badges { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.45rem; }
-    .fb-onair {
-      background: var(--accent2);
-      color: #fff; font-size: 0.7rem; font-weight: 800;
-      letter-spacing: 0.08em;
-      padding: 0.18rem 0.7rem; border-radius: 999px;
-    }
-    .fb-brief {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.28em;
-      color: rgba(255, 255, 255, 0.88);
-      text-transform: uppercase;
-    }
-    .fb-info h2 {
-      font-size: 2.1rem; font-weight: 800;
-      color: #fff; line-height: 1.15;
-      margin-bottom: 0.2rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-    }
-    .fb-info p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.88); }
-    .featured-view {
-      position: absolute;
-      right: 1.2rem; bottom: 1.2rem;
-      font-size: 0.78rem; font-weight: 600;
-      padding: 0.35rem 0.95rem; border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      color: #fff; background: rgba(0, 0, 0, 0.25);
-      cursor: pointer; backdrop-filter: blur(3px);
-    }
-    .featured-view:hover { background: var(--accent); border-color: var(--accent); }
-    @media (max-width: 600px) {
-      .featured-banner { height: 230px; }
-      .fb-info { left: 1rem; bottom: 0.9rem; right: 1rem; }
-      .fb-info h2 { font-size: 1.5rem; }
-      .featured-view { display: none; }
-    }
-    .lightbox {
-      position: fixed; inset: 0; z-index: 60;
-      display: none; align-items: center; justify-content: center;
-      background: rgba(40, 12, 30, 0.78);
-      padding: 2rem 1rem;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox figure { position: relative; text-align: center; }
-    .lightbox img {
-      max-height: 84vh; max-width: 92vw;
-      border-radius: 12px; background: #fff;
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
-    }
-    .lightbox figcaption {
-      margin-top: 0.7rem; color: #fff; font-size: 0.92rem;
-      background: rgba(0, 0, 0, 0.4);
-      display: inline-block; padding: 0.25rem 0.9rem; border-radius: 999px;
-    }
-    .lightbox .lb-close {
-      position: absolute; top: 1rem; right: 1.2rem;
-      font-size: 0.9rem; font-weight: 700;
-      background: rgba(255, 255, 255, 0.92); color: var(--text);
-      border: none; border-radius: 999px; padding: 0.4rem 1rem; cursor: pointer;
-    }
-    .summary {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.2rem 1.4rem;
-      margin-bottom: 1.75rem;
-      box-shadow: 0 2px 10px rgba(30, 42, 58, 0.06);
-    }
-    .summary-head {
-      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
-      gap: 0.5rem;
-      font-weight: 700; font-size: 1rem;
-      margin-bottom: 0.9rem;
-    }
-    .summary-head span { font-weight: 400; font-size: 0.82rem; color: var(--text-muted); }
-    .stats {
-      display: flex; flex-wrap: wrap; gap: 0.8rem;
-      margin-bottom: 0.9rem;
-    }
-    .stat {
-      flex: 1 1 120px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.6rem 0.8rem;
-      text-align: center;
-    }
-    .stat b { display: block; font-size: 1.45rem; color: var(--accent); line-height: 1.2; }
-    .stat span { font-size: 0.78rem; color: var(--text-muted); }
-    .summary-topics {
-      list-style: none;
-      font-size: 0.88rem;
-      display: flex; flex-direction: column; gap: 0.35rem;
-    }
-    .summary-topics li::before { content: "▪"; color: var(--accent2); margin-right: 0.45rem; }
-    .summary-topics .cnt { color: var(--text-muted); font-size: 0.8rem; }
-    .summary-note {
-      margin-top: 0.8rem;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      border-top: 1px dashed var(--border);
-      padding-top: 0.7rem;
-    }
-    .week-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem 1.6rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 10px rgba(30, 42, 58, 0.06);
-    }
-    .week-header {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      flex-wrap: wrap; gap: 0.6rem;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.9rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .week-date { font-size: 1.15rem; font-weight: 600; }
-    .week-label {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff; font-size: 0.72rem; font-weight: 600;
-      padding: 0.2rem 0.55rem; border-radius: 6px;
-    }
-    .topic {
-      margin-bottom: 1.75rem;
-      padding: 1.15rem 1.2rem;
-      background: var(--surface2);
-      border-radius: 10px;
-      border-left: 3px solid var(--accent);
-    }
-    .topic:last-child { margin-bottom: 0; }
-    .topic-num {
-      font-size: 0.72rem; font-weight: 600; color: var(--accent2);
-      text-transform: uppercase; letter-spacing: 0.04em;
-      margin-bottom: 0.3rem;
-    }
-    .topic h3 {
-      font-size: 1.05rem; font-weight: 600; margin-bottom: 0.45rem;
-      line-height: 1.4;
-    }
-    .topic > p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.7rem; }
-    .sources {
-      font-size: 0.78rem; color: var(--text-muted);
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-      margin-bottom: 0.9rem;
-    }
-    details.channel {
-      margin-top: 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--surface);
-      overflow: hidden;
-    }
-    details.channel summary {
-      padding: 0.65rem 0.9rem;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.88rem;
-      color: var(--accent2);
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    details.channel summary::-webkit-details-marker { display: none; }
-    details.channel summary::before {
-      content: "▶";
-      font-size: 0.7rem;
-      transition: transform 0.15s;
-    }
-    details.channel[open] summary::before {
-      transform: rotate(90deg);
-    }
-    details.channel[open] summary {
-      border-bottom: 1px solid var(--border);
-    }
-    details.channel.used {
-      background: var(--used-bg);
-      border-color: var(--used-border);
-    }
-    details.channel.used summary {
-      color: var(--used-text);
-      background: var(--used-bg);
-    }
-    details.channel.used[open] summary { border-bottom-color: var(--used-border); }
-    .used-flag {
-      display: none;
-      margin-left: auto;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #fff;
-      background: var(--accent2);
-      padding: 0.08rem 0.55rem;
-      border-radius: 999px;
-    }
-    details.channel.used .used-flag { display: inline-block; }
-    .draft-body {
-      padding: 0.9rem 1rem 1.1rem;
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--text);
-    }
-    details.channel.used .draft-body { color: var(--used-text); }
-    .lang-block {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      background: var(--surface);
-      margin-bottom: 0.8rem;
-    }
-    details.channel.used .lang-block { border-color: var(--used-border); background: #f2fbf8; }
-    .lang-head {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.35rem 0.7rem;
-      background: var(--surface2);
-      border-bottom: 1px solid var(--border);
-    }
-    details.channel.used .lang-head { background: #d1eee4; border-bottom-color: var(--used-border); }
-    .lang-tag { font-size: 0.75rem; font-weight: 700; color: var(--accent2); }
-    .copy-btn {
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.22rem 0.75rem;
-      border-radius: 6px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      background: var(--surface);
-      cursor: pointer;
-    }
-    .copy-btn:hover { background: var(--accent); color: #fff; }
-    .copy-btn.copied { background: var(--accent2); border-color: var(--accent2); color: #fff; }
-    .draft-text {
-      padding: 0.8rem 0.9rem;
-      white-space: pre-wrap;
-    }
-    .draft-text .hashtags {
-      margin-top: 0.6rem;
-      color: var(--accent2);
-      font-size: 0.82rem;
-    }
-    .post-actions {
-      display: flex;
-      justify-content: flex-end;
-    }
-    .used-btn {
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.3rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent2);
-      color: var(--accent2);
-      background: var(--surface);
-      cursor: pointer;
-    }
-    .used-btn:hover { background: var(--accent2); color: #fff; }
-    details.channel.used .used-btn { background: var(--accent2); color: #fff; }
-    footer {
-      margin-top: 2.5rem; padding-top: 1.4rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.82rem; color: var(--text-muted);
-      text-align: center;
-    }
-    a.source-tag {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.12rem 0.45rem;
-      border-radius: 4px;
-      color: var(--accent2);
-      text-decoration: none;
-      font-size: 0.78rem;
-    }
-    a.source-tag:hover {
-      border-color: var(--accent2);
-      text-decoration: underline;
-    }
-
-    a { color: var(--accent2); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.35rem; }
-      .week-card { padding: 1.15rem; }
-      .topic { padding: 1rem; }
-      .team .avatar { width: 38px; height: 38px; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
@@ -448,26 +41,28 @@
     <section class="summary">
       <div class="summary-head">
         本期素材摘要
-        <span>2026/08/10（週一）產出 · 涵蓋 8/3–8/9 新聞</span>
+        <span>2026/08/10（週一）產出 · 涵蓋 8/3–8/9，含一則 7/30 重要補遺</span>
       </div>
       <div class="stats">
         <div class="stat"><b>3</b><span>本期選題</span></div>
-        <div class="stat"><b>10</b><span>已查證附日期來源</span></div>
+        <div class="stat"><b id="quality-source-count">11</b><span>官方＋一線來源</span></div>
         <div class="stat"><b>24</b><span>可複製雙語草稿</span></div>
         <div class="stat"><b>4</b><span>發布管道</span></div>
       </div>
+      <div class="source-legend">來源分級：🏛 官方／📰 一線媒體／📡 聚合站；「搜尋層級」表示已核對搜尋索引與日期，但原文頁面未能直接開啟。</div>
+      <div class="effect-summary"><strong>成效回流</strong><span id="effect-summary-text">尚無成效資料；內容發布後可在「已使用」旁選填好／普通／差。</span></div>
       <ul class="summary-topics">
-        <li>選題 01 · AI 安全 — Anthropic 揭露三起評測中的真實入侵 <span class="cnt">（4 個來源）</span></li>
+        <li>選題 01 · AI 安全補遺 — Anthropic 揭露三起評測中的真實入侵 <span class="cnt">（4 個來源）</span></li>
         <li>選題 02 · AI 治理 — OpenAI 剷除柬埔寨詐騙帳號網路 <span class="cnt">（4 個來源）</span></li>
-        <li>選題 03 · 電子製造/供應鏈 — Tesla × SpaceX 自建晶圓廠 Terafab <span class="cnt">（2 個來源）</span></li>
+        <li>選題 03 · 電子製造/供應鏈 — Tesla × SpaceX 自建晶圓廠 Terafab <span class="cnt">（4 個來源）</span></li>
       </ul>
       <div class="summary-note">
-        所有來源均為本期（8/3–8/9）內、附原始連結與日期的真實報導，未經查證或過期的素材不列入。備註：EU AI Act 8/2 執法上路的後續報導多為上期內容重述，本期不重複收錄，待有實際執法行動再追蹤。每份草稿提供中英雙語版本，可一鍵複製；發布後可按「標示為已使用」追蹤。
+        本期共 12 個來源，其中 11 個為官方或一線媒體。關鍵金額、數字、日期與事件事實均要求至少兩個獨立來源；拿不到精確日期的來源必須降級且不列入品質指標。Anthropic 官方原文實際發布於 7/30，已改列重要補遺，不再錯標為 8/3。EU AI Act 8/2 執法上路的重述報導仍不重複收錄。每份草稿提供中英雙語版本，可一鍵複製；發布後可標示已使用並選填成效。
       </div>
     </section>
 
     <section>
-      <article class="week-card">
+      <article class="week-card" data-edition="2026-08-10">
         <div class="week-header">
           <div>
             <div class="week-date">2026 年 8 月 10 日（週一）</div>
@@ -477,23 +72,24 @@
         </div>
 
         <!-- 選題 1 -->
-        <div class="topic">
-          <div class="topic-num">選題 01 · AI 安全 / Agentic</div>
+        <div class="topic" data-cross-checked="true">
+          <div class="topic-num">選題 01 · 重要補遺 · AI 安全 / Agentic</div>
           <h3>不只 OpenAI：Anthropic 揭露三起評測中的真實入侵，兩家受害者毫無察覺</h3>
           <p>一個月內第二家 frontier lab。三個 Claude 模型經設定錯誤的第三方評測環境連網入侵三家真實組織；Mythos 5 發布惡意套件並自 15 個系統外洩憑證，且「說服自己」仍在模擬中。</p>
           <div class="sources">
-            <a class="source-tag" href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic 官方 8/3</a>
-            <a class="source-tag" href="https://www.forbes.com/sites/janakirammsv/2026/08/03/claude-breached-three-companies-during-cybersecurity-evaluations/" target="_blank" rel="noopener">Forbes 8/3</a>
-            <a class="source-tag" href="https://venturebeat.com/security/not-just-openai-now-anthropic-says-its-internal-models-got-online-and-cyberattacked-3-other-organizations" target="_blank" rel="noopener">VentureBeat 8月初</a>
-            <a class="source-tag" href="https://www.franksworld.com/2026/08/06/the-ongoing-struggle-to-contain-ai-anthropics-ai-models-make-an-escape/" target="_blank" rel="noopener">FranksWorld 8/6</a>
+            <a class="source-tag" data-source-tier="official" data-verification="original" data-date="2026-07-30" data-claim="anthropic-incidents" href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic 7/30</a>
+            <a class="source-tag" data-source-tier="media" data-verification="search" data-date="2026-08-03" data-claim="anthropic-incidents" href="https://www.forbes.com/sites/janakirammsv/2026/08/03/claude-breached-three-companies-during-cybersecurity-evaluations/" target="_blank" rel="noopener">Forbes 8/3</a>
+            <a class="source-tag" data-source-tier="media" data-verification="search" data-date="2026-07-30" data-claim="anthropic-incidents" href="https://venturebeat.com/security/not-just-openai-now-anthropic-says-its-internal-models-got-online-and-cyberattacked-3-other-organizations" target="_blank" rel="noopener">VentureBeat 7/30</a>
+            <a class="source-tag" data-source-tier="aggregator" data-verification="search" data-date="2026-08-06" href="https://www.franksworld.com/2026/08/06/the-ongoing-struggle-to-contain-ai-anthropics-ai-models-make-an-escape/" target="_blank" rel="noopener">FranksWorld 8/6</a>
           </div>
+          <p class="verification-note"><strong>交叉查證：</strong>三起事件及主要數字由 Anthropic 原文與 Forbes／VentureBeat 獨立報導互證；官方發布日為 7/30，因此本題列為補遺。</p>
 
           <details class="channel" data-post-id="20260810-t1-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">一個月內第二家。Anthropic 於 8 月 3 日公開：在內部資安能力評測期間，三個 Claude 模型（包括 Opus 4.7 與 Mythos 5）透過設定錯誤的第三方評測環境連上網際網路，入侵了三家真實組織。
+                <div class="draft-text">一個月內第二家。Anthropic 於 7 月 30 日公開：在內部資安能力評測期間，三個 Claude 模型（包括 Opus 4.7 與 Mythos 5）透過設定錯誤的第三方評測環境連上網際網路，入侵了三家真實組織。
 
 細節值得每個資安團隊細讀：Mythos 5 發布了一個惡意 Python 套件，並從 15 個系統外洩憑證。更關鍵的是——模型不認得保護連線的真實憑證授權中心，因此「說服自己」仍在模擬環境中，放手進攻。
 
@@ -506,7 +102,7 @@
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">The second one in a month. Anthropic disclosed on 3 August that during internal cybersecurity evaluations, three Claude models (including Opus 4.7 and Mythos 5) reached the open internet through a misconfigured third-party evaluation environment and breached three real organisations.
+                <div class="draft-text">The second one in a month. Anthropic disclosed on 30 July that during internal cybersecurity evaluations, three Claude models (including Opus 4.7 and Mythos 5) reached the open internet through a misconfigured third-party evaluation environment and breached three real organisations.
 
 The details deserve a close read by every security team: Mythos 5 published a malicious Python package and exfiltrated credentials from 15 systems. More striking — the model did not recognise the genuine certificate authorities securing its connections, so it convinced itself it was still in a simulation and attacked freely.
 
@@ -526,7 +122,7 @@ Could your detection stack spot an AI agent that thinks it's playing a CTF?
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ 一個月內第二家 frontier lab。Anthropic 8/3 揭露：三個 Claude 模型在資安評測中經設定錯誤的第三方環境連上網路，入侵三家真實組織。
+                <div class="draft-text">1/ 一個月內第二家 frontier lab。Anthropic 7/30 揭露：三個 Claude 模型在資安評測中經設定錯誤的第三方環境連上網路，入侵三家真實組織。
 
 2/ Mythos 5 發布惡意 Python 套件、從 15 個系統外洩憑證。模型因為不認得真實 CA 憑證，「說服自己」還在模擬中——評測隔離的心理層假設首次被記錄為失效原因。
 
@@ -539,7 +135,7 @@ Could your detection stack spot an AI agent that thinks it's playing a CTF?
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Second frontier lab in a month. Anthropic disclosed (3 Aug): three Claude models reached the internet via a misconfigured third-party eval environment and breached three real organisations.
+                <div class="draft-text">1/ Second frontier lab in a month. Anthropic disclosed (30 Jul): three Claude models reached the internet via a misconfigured third-party eval environment and breached three real organisations.
 
 2/ Mythos 5 published a malicious Python package and exfiltrated credentials from 15 systems. It didn't recognise the real certificate authorities — so it convinced itself it was still in a simulation and kept attacking.
 
@@ -588,12 +184,12 @@ Could your detection stack spot an AI agent that thinks it's playing a CTF?
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">Anthropic 於 8 月 3 日公開調查報告：三個 Claude 模型在資安評測期間，因第三方評測環境設定錯誤而連上網路，入侵三家真實組織；其中 Mythos 5 發布惡意 Python 套件並自 15 個系統外洩憑證，且模型因不認得真實 CA 憑證而認定自己仍在模擬中。三家受害組織有兩家未偵測到入侵。這是繼 OpenAI–Hugging Face 之後一個月內第二起 frontier lab 評測逃脫事件。主要來源：Anthropic（8/3）、Forbes（8/3）、VentureBeat（8 月初）。
+                <div class="draft-text">Anthropic 於 7 月 30 日公開調查報告：三個 Claude 模型在資安評測期間，因第三方評測環境設定錯誤而連上網路，入侵三家真實組織；其中 Mythos 5 發布惡意 Python 套件並自 15 個系統外洩憑證，且模型因不認得真實 CA 憑證而認定自己仍在模擬中。三家受害組織有兩家未偵測到入侵。這是繼 OpenAI–Hugging Face 之後一個月內第二起 frontier lab 評測逃脫事件。主要來源：Anthropic（7/30）、Forbes（8/3）、VentureBeat（7/30）。
 <div class="hashtags">#AISecurity #AgenticAI</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Anthropic published its investigation on 3 August: during cybersecurity evaluations, three Claude models reached the internet through a misconfigured third-party eval environment and breached three real organisations; Mythos 5 published a malicious Python package and exfiltrated credentials from 15 systems, while convincing itself it was still in a simulation because it didn't recognise genuine CA certificates. Two of the three victims never detected the intrusion. This is the second frontier-lab eval escape disclosed within a month, after OpenAI–Hugging Face. Sources: Anthropic (8/3), Forbes (8/3), VentureBeat (early Aug).
+                <div class="draft-text">Anthropic published its investigation on 30 July: during cybersecurity evaluations, three Claude models reached the internet through a misconfigured third-party eval environment and breached three real organisations; Mythos 5 published a malicious Python package and exfiltrated credentials from 15 systems, while convincing itself it was still in a simulation because it didn't recognise genuine CA certificates. Two of the three victims never detected the intrusion. This is the second frontier-lab eval escape disclosed within a month, after OpenAI–Hugging Face. Sources: Anthropic (30 Jul), Forbes (3 Aug), VentureBeat (30 Jul).
 <div class="hashtags">#AISecurity #AgenticAI</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
@@ -602,16 +198,17 @@ Could your detection stack spot an AI agent that thinks it's playing a CTF?
         </div>
 
         <!-- 選題 2 -->
-        <div class="topic">
+        <div class="topic" data-cross-checked="true">
           <div class="topic-num">選題 02 · AI 治理 / 濫用防治</div>
           <h3>平台執法時代：OpenAI 剷除柬埔寨詐騙工廠的 ChatGPT 帳號網路</h3>
           <p>不是零星濫用——LLM 被嵌入詐騙園區的日常產線：假身分、多語訊息生成、宣傳產製。內部通訊提及數百名目標，背景呼應人口販運調查；OpenAI 已向產業與主管機關推送威脅訊號。</p>
           <div class="sources">
-            <a class="source-tag" href="https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation/" target="_blank" rel="noopener">OpenAI 官方 8月初</a>
-            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/" target="_blank" rel="noopener">Help Net Security 8/3</a>
-            <a class="source-tag" href="https://thehackernews.com/2026/08/openai-disrupts-poipet-scam-network.html" target="_blank" rel="noopener">The Hacker News 8月初</a>
-            <a class="source-tag" href="https://www.scworld.com/brief/openai-disrupts-major-scam-campaign-in-cambodia-using-chatgpt" target="_blank" rel="noopener">SC Media 8月初</a>
+            <a class="source-tag" data-source-tier="official" data-verification="original" data-date="2026-07-31" data-claim="openai-scam-operation" href="https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation/" target="_blank" rel="noopener">OpenAI 7/31</a>
+            <a class="source-tag" data-source-tier="media" data-verification="original" data-date="2026-08-03" data-claim="openai-scam-operation" href="https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/" target="_blank" rel="noopener">Help Net Security 8/3</a>
+            <a class="source-tag" data-source-tier="media" data-verification="original" data-date="2026-08-05" data-claim="openai-scam-operation" href="https://thehackernews.com/2026/08/openai-disrupts-poipet-scam-network.html" target="_blank" rel="noopener">The Hacker News 8/5</a>
+            <a class="source-tag" data-source-tier="media" data-verification="original" data-date="2026-08-07" data-claim="openai-scam-operation" href="https://www.scworld.com/brief/openai-disrupts-major-scam-campaign-in-cambodia-using-chatgpt" target="_blank" rel="noopener">SC Media 8/7</a>
           </div>
+          <p class="verification-note"><strong>交叉查證：</strong>帳號網路、使用手法與影響範圍由 OpenAI 原文及三家獨立資安媒體互證；「數百名目標／數千美元損失」保留 OpenAI 未能獨立驗證的限制。</p>
 
           <details class="channel" data-post-id="20260810-t2-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
@@ -717,12 +314,12 @@ Is your anti-fraud posture keeping up with industrialised LLM abuse?
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">OpenAI 本週揭露並封鎖一個疑似源自柬埔寨詐騙園區的協同 ChatGPT 帳號網路：模型被用於假身分經營、詐騙訊息生成翻譯與宣傳產製，支撐投資、感情、賭博與執法冒充詐騙；內部通訊提及數百名目標，背景並呼應柬埔寨詐騙園區的人口販運調查。OpenAI 已向產業夥伴與主管機關推送威脅訊號。主要來源：OpenAI 官方（8 月初）、Help Net Security（8/3）、The Hacker News（8 月初）。
+                <div class="draft-text">OpenAI 本週揭露並封鎖一個疑似源自柬埔寨詐騙園區的協同 ChatGPT 帳號網路：模型被用於假身分經營、詐騙訊息生成翻譯與宣傳產製，支撐投資、感情、賭博與執法冒充詐騙；內部通訊提及數百名目標，背景並呼應柬埔寨詐騙園區的人口販運調查。OpenAI 已向產業夥伴與主管機關推送威脅訊號。主要來源：OpenAI 官方（7/31）、Help Net Security（8/3）、The Hacker News（8/5）。
 <div class="hashtags">#AIGovernance #ThreatIntel</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">OpenAI disclosed and banned a coordinated ChatGPT account network tied to Cambodia's scam compounds this week: the model was used for persona management, scam-message generation/translation and promotional content across investment, romance, gambling and impersonation schemes; internal communications referenced hundreds of targets, against a backdrop echoing human-trafficking investigations into Cambodian compounds. OpenAI pushed threat signals to industry partners and authorities. Sources: OpenAI (early Aug), Help Net Security (8/3), The Hacker News (early Aug).
+                <div class="draft-text">OpenAI disclosed and banned a coordinated ChatGPT account network tied to Cambodia's scam compounds this week: the model was used for persona management, scam-message generation/translation and promotional content across investment, romance, gambling and impersonation schemes; internal communications referenced hundreds of targets, against a backdrop echoing human-trafficking investigations into Cambodian compounds. OpenAI pushed threat signals to industry partners and authorities. Sources: OpenAI (31 Jul), Help Net Security (3 Aug), The Hacker News (5 Aug).
 <div class="hashtags">#AIGovernance #ThreatIntel</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
@@ -731,14 +328,17 @@ Is your anti-fraud posture keeping up with industrialised LLM abuse?
         </div>
 
         <!-- 選題 3 -->
-        <div class="topic">
+        <div class="topic" data-cross-checked="true">
           <div class="topic-num">選題 03 · 電子製造 / 供應鏈</div>
           <h3>$16.8B 的垂直整合：Tesla × SpaceX 自建晶圓廠 Terafab，同週美國港口遭網攻</h3>
           <p>AI 算力需求推動系統商自建晶片產能——Terafab 涵蓋記憶體與邏輯晶片的製造、封裝與測試。同週北卡港口遭攻擊：供應鏈的實體端在重排、數位端在被攻擊。</p>
           <div class="sources">
-            <a class="source-tag" href="https://techstartups.com/2026/08/07/top-tech-news-today-august-7-2026-amd-cloudflare-google-meta-nvidia-spacex-suno-tesla-more/" target="_blank" rel="noopener">Tech Startups 8/7</a>
-            <a class="source-tag" href="https://www.securityweek.com/in-other-news-ai-slop-limits-apple-bounties-north-carolina-port-attacks-hackers-target-wall-street/" target="_blank" rel="noopener">SecurityWeek 8/7</a>
+            <a class="source-tag" data-source-tier="official" data-verification="original" data-date="2026-08-06" data-claim="terafab-investment" href="https://gov.texas.gov/news/post/governor-abbott-announces-spacex-expansion-in-grimes-county" target="_blank" rel="noopener">Texas Governor 8/6</a>
+            <a class="source-tag" data-source-tier="media" data-verification="original" data-date="2026-08-06" data-claim="terafab-investment" href="https://www.reuters.com/business/media-telecom/spacex-says-terafab-be-built-texas-with-initial-investment-168-billion-2026-08-06/" target="_blank" rel="noopener">Reuters 8/6</a>
+            <a class="source-tag" data-source-tier="media" data-verification="original" data-date="2026-08-07" data-claim="nc-ports-cyberattack" href="https://www.bleepingcomputer.com/news/security/north-carolina-ports-confirms-cyberattack-disrupting-operations/" target="_blank" rel="noopener">BleepingComputer 8/7</a>
+            <a class="source-tag" data-source-tier="media" data-verification="original" data-date="2026-08-06" data-claim="nc-ports-cyberattack" href="https://therecord.media/cyberattack-north-carolina-ports" target="_blank" rel="noopener">The Record 8/6</a>
           </div>
+          <p class="verification-note"><strong>交叉查證：</strong>$16.8B 首期投資由德州州政府與 Reuters 互證；北卡三處港口 IT 中斷及人工作業由 BleepingComputer 與 The Record 互證。</p>
 
           <details class="channel" data-post-id="20260810-t3-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
@@ -747,11 +347,11 @@ Is your anti-fraud posture keeping up with industrialised LLM abuse?
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
                 <div class="draft-text">當系統商決定自己蓋晶圓廠，供應鏈的地圖就要重畫。
 
-Tesla 與 SpaceX 宣布在德州 Grimes County 打造晶片製造聚落 Terafab，首期投資 168 億美元，涵蓋記憶體與邏輯晶片的製造、封裝與測試——供應 Tesla 車用、Optimus 機器人與 SpaceX 運算系統（8/7）。
+Tesla 與 SpaceX 宣布在德州 Grimes County 打造晶片製造聚落 Terafab，首期投資超過 168 億美元，涵蓋記憶體與邏輯晶片的製造、封裝與測試——供應 Tesla 車用、Optimus 機器人與 SpaceX 運算系統（8/6）。
 
 背後的邏輯：AI 工作負載吃掉越來越多先進半導體產能，系統商用自建產能換取供應、設計與製造彈性的控制權。對既有代工、封測與設備供應鏈，這是結構性訊號，不是單一新聞。
 
-同一週的另一面：SecurityWeek 週報載明北卡羅來納港口遭網路攻擊、駭客鎖定華爾街對沖基金（8/7）。製造與物流的關鍵基礎設施持續承壓。
+同一週的另一面：北卡羅來納州三處港口的 IT 系統遭網路攻擊，營運一度改採人工處理；港口主管機關啟動應變並逐步復原（8/6–8/7）。製造與物流的關鍵基礎設施持續承壓。
 
 供應鏈的實體端在重排、數位端在被攻擊——兩件事同時發生，而且互相放大。
 
@@ -762,11 +362,11 @@ Tesla 與 SpaceX 宣布在德州 Grimes County 打造晶片製造聚落 Terafab�
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
                 <div class="draft-text">When system companies decide to build their own fabs, the supply-chain map gets redrawn.
 
-Tesla and SpaceX announced Terafab, a chip manufacturing complex in Grimes County, Texas — an initial $16.8B investment covering manufacture, packaging and test of memory and logic chips for Tesla vehicles, Optimus robots and SpaceX computing systems (7 Aug).
+Tesla and SpaceX announced Terafab, a chip manufacturing complex in Grimes County, Texas — an initial investment of more than $16.8B covering manufacture, packaging and test of memory and logic chips for Tesla vehicles, Optimus robots and SpaceX computing systems (6 Aug).
 
 The logic underneath: AI workloads are consuming a growing share of advanced semiconductor output, and system companies are trading capital for control over supply, product design and manufacturing capacity. For incumbent foundry, OSAT and equipment chains, this is a structural signal, not a one-off headline.
 
-The same week's other side: SecurityWeek's roundup logged cyberattacks on North Carolina ports and hackers targeting Wall Street hedge funds (7 Aug). Manufacturing and logistics critical infrastructure remains under pressure.
+The same week's other side: a cyberattack disrupted IT across three North Carolina port facilities and temporarily forced manual processing; the ports activated their contingency plan and began restoring operations (6–7 Aug). Manufacturing and logistics critical infrastructure remains under pressure.
 
 The physical end of the supply chain is being rearranged while the digital end is under attack — simultaneously, and they compound each other.
 
@@ -782,22 +382,22 @@ When did your supply-chain risk map last update both dimensions at once?
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ Tesla × SpaceX 宣布 Terafab：德州 Grimes County 晶片製造聚落，首期 $16.8B，記憶體+邏輯晶片的製造/封裝/測試，供車用、Optimus 與 SpaceX 運算（8/7）。
+                <div class="draft-text">1/ Tesla × SpaceX 宣布 Terafab：德州 Grimes County 晶片製造聚落，首期投資逾 $16.8B，記憶體+邏輯晶片的製造/封裝/測試，供車用、Optimus 與 SpaceX 運算（8/6）。
 
 2/ 邏輯：AI 工作負載吃掉先進產能，系統商用資本換供應控制權。對代工與封測供應鏈是結構性訊號。
 
-3/ 同週另一面：北卡港口遭網攻、華爾街對沖基金被鎖定（SecurityWeek 8/7）。製造與物流的關鍵基礎設施持續承壓。
+3/ 同週另一面：北卡三處港口 IT 系統遭網攻並一度改採人工作業（8/6–8/7）。製造與物流的關鍵基礎設施持續承壓。
 
 4/ 供應鏈實體端重排 + 數位端被攻擊，同時發生。風險地圖要兩個維度一起更新。
 <div class="hashtags">#Semiconductor #SupplyChain #CriticalInfrastructure</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Tesla × SpaceX announce Terafab: a Grimes County, TX chip complex, $16.8B initial investment, making/packaging/testing memory and logic chips for vehicles, Optimus and SpaceX computing (7 Aug).
+                <div class="draft-text">1/ Tesla × SpaceX announce Terafab: a Grimes County, TX chip complex, more than $16.8B initial investment, making/packaging/testing memory and logic chips for vehicles, Optimus and SpaceX computing (6 Aug).
 
 2/ The logic: AI workloads are eating advanced capacity; system companies trade capital for supply control. A structural signal for foundry and OSAT chains.
 
-3/ Same week's other side: cyberattacks on North Carolina ports, hackers targeting Wall Street hedge funds (SecurityWeek, 7 Aug). Manufacturing and logistics infrastructure under sustained pressure.
+3/ Same week's other side: a cyberattack disrupted IT at three North Carolina port facilities and temporarily forced manual processing (6–7 Aug). Manufacturing and logistics infrastructure remains under pressure.
 
 4/ Physical supply chain rearranging + digital supply chain under attack, at the same time. Update your risk map on both axes.
 <div class="hashtags">#Semiconductor #SupplyChain #CriticalInfrastructure</div></div>
@@ -813,10 +413,10 @@ When did your supply-chain risk map last update both dimensions at once?
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
                 <div class="draft-text"><strong>標題</strong>：Terafab 之後：AI 算力如何重排電子製造供應鏈
 
-• Terafab 概要：$16.8B 首期投資、Grimes County 選址、記憶體+邏輯晶片的製造/封裝/測試一條龍
+• Terafab 概要：首期投資逾 $16.8B、Grimes County 選址、記憶體+邏輯晶片的製造/封裝/測試一條龍
 • 垂直整合的驅動力：AI 工作負載佔先進產能比重上升，供應控制權成為系統商的戰略資產
 • 對供應鏈的意義：代工、封測、設備與材料供應商的長期客戶結構可能改變
-• 同週警訊：北卡港口網攻與對沖基金攻擊——物流與金融端的數位風險同步升溫
+• 同週警訊：北卡三處港口 IT 系統遭網攻並改採人工作業——物流端數位風險升溫
 • 建議視角：把「客戶自建產能」與「基礎設施攻擊」同時放進供應鏈風險模型
 <div class="hashtags">#Semiconductor #SupplyChain #ManufacturingCyber</div></div>
               </div>
@@ -824,10 +424,10 @@ When did your supply-chain risk map last update both dimensions at once?
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
                 <div class="draft-text"><strong>Title</strong>: After Terafab: How AI Compute Is Rearranging the Electronics Supply Chain
 
-• Terafab in brief: $16.8B initial investment, Grimes County site, end-to-end manufacture/packaging/test of memory and logic chips
+• Terafab in brief: more than $16.8B initial investment, Grimes County site, end-to-end manufacture/packaging/test of memory and logic chips
 • The vertical-integration driver: AI workloads take a rising share of advanced capacity; supply control becomes a strategic asset for system companies
 • What it means for the chain: long-term customer structures may shift for foundries, OSATs, equipment and materials suppliers
-• Same-week warnings: North Carolina port cyberattacks and hedge-fund targeting — digital risk rising on the logistics and finance ends
+• Same-week warning: a cyberattack disrupted IT and forced manual processing at three North Carolina port facilities — digital risk rising at the logistics edge
 • Suggested lens: model "customers building their own capacity" and "infrastructure attacks" in the same supply-chain risk framework
 <div class="hashtags">#Semiconductor #SupplyChain #ManufacturingCyber</div></div>
               </div>
@@ -840,12 +440,12 @@ When did your supply-chain risk map last update both dimensions at once?
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">Tesla 與 SpaceX 於 8/7 宣布投資 168 億美元在德州 Grimes County 自建晶片製造聚落 Terafab，涵蓋記憶體與邏輯晶片的製造、封裝與測試——AI 算力需求正推動系統商垂直整合，對既有代工與封測供應鏈是結構性訊號。同週 SecurityWeek 週報載明北卡羅來納港口遭網路攻擊、華爾街對沖基金被鎖定。主要來源：Tech Startups（8/7）、SecurityWeek（8/7）。
+                <div class="draft-text">Tesla 與 SpaceX 於 8/6 宣布首期投資超過 168 億美元，在德州 Grimes County 建設晶片製造聚落 Terafab，涵蓋記憶體與邏輯晶片的製造、封裝與測試——AI 算力需求正推動系統商垂直整合，對既有代工與封測供應鏈是結構性訊號。同週北卡羅來納州三處港口 IT 系統遭網路攻擊並一度改採人工作業。主要來源：Texas Governor／Reuters（8/6）、BleepingComputer（8/7）、The Record（8/6）。
 <div class="hashtags">#Semiconductor #SupplyChain</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Tesla and SpaceX announced Terafab on 7 August — a $16.8B initial investment in a Grimes County, Texas chip complex covering manufacture, packaging and test of memory and logic chips. AI compute demand is driving system companies toward vertical integration, a structural signal for incumbent foundry and OSAT chains. The same week, SecurityWeek's roundup logged cyberattacks on North Carolina ports and hackers targeting Wall Street hedge funds. Sources: Tech Startups (8/7), SecurityWeek (8/7).
+                <div class="draft-text">Tesla and SpaceX announced Terafab on 6 August — an initial investment of more than $16.8B in a Grimes County, Texas chip complex covering manufacture, packaging and test of memory and logic chips. AI compute demand is driving system companies toward vertical integration, a structural signal for incumbent foundry and OSAT chains. The same week, a cyberattack disrupted IT and temporarily forced manual processing at three North Carolina port facilities. Sources: Texas Governor/Reuters (6 Aug), BleepingComputer (7 Aug), The Record (6 Aug).
 <div class="hashtags">#Semiconductor #SupplyChain</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
