@@ -22,7 +22,11 @@
     return { version: 1, posts: posts };
   }
   var state = load();
-  function save() { localStorage.setItem(LS_DATA, JSON.stringify(state)); }
+  var afterChange = null;   // set once the rollup renderer exists
+  function save() {
+    localStorage.setItem(LS_DATA, JSON.stringify(state));
+    if (afterChange) afterChange();
+  }
   function isUsed(id) { var p = state.posts[id]; return !!(p && p.used); }
   function setUsed(id, on) {
     var prev = state.posts[id] || {};
@@ -122,18 +126,32 @@
     });
   }
 
+  function createGist() {
+    var files = {};
+    files[GIST_FILE] = { content: JSON.stringify(state) };
+    return gh('/gists', {
+      method: 'POST',
+      body: JSON.stringify({ description: 'WeeklySocialMediaIdea used-posts sync', public: false, files: files })
+    }).then(function (g) { localStorage.setItem(LS_GIST, g.id); return g.id; });
+  }
+  // Walk every page before concluding the gist does not exist — stopping at page 1
+  // would create a duplicate gist and split sync state across two files.
+  function searchGistPage(page) {
+    if (page > 10) return Promise.resolve(null);
+    return gh('/gists?per_page=100&page=' + page).then(function (list) {
+      list = list || [];
+      var hit = list.filter(function (g) { return g.files && g.files[GIST_FILE]; })[0];
+      if (hit) return hit.id;
+      if (list.length < 100) return null;
+      return searchGistPage(page + 1);
+    });
+  }
   function findGist() {
     var cached = localStorage.getItem(LS_GIST);
     if (cached) return Promise.resolve(cached);
-    return gh('/gists?per_page=100').then(function (list) {
-      var hit = (list || []).filter(function (g) { return g.files && g.files[GIST_FILE]; })[0];
-      if (hit) { localStorage.setItem(LS_GIST, hit.id); return hit.id; }
-      var files = {};
-      files[GIST_FILE] = { content: JSON.stringify(state) };
-      return gh('/gists', {
-        method: 'POST',
-        body: JSON.stringify({ description: 'WeeklySocialMediaIdea used-posts sync', public: false, files: files })
-      }).then(function (g) { localStorage.setItem(LS_GIST, g.id); return g.id; });
+    return searchGistPage(1).then(function (id) {
+      if (id) { localStorage.setItem(LS_GIST, id); return id; }
+      return createGist();
     });
   }
 
@@ -145,11 +163,13 @@
     });
   }
 
-  var syncing = false;
+  var syncing = false, pendingSync = false;
   function doSync() {
     if (!token()) { setupToken(); return; }
-    if (syncing) return;
+    if (syncing) { pendingSync = true; return; }   // never drop a change made mid-sync
     syncing = true;
+    pendingSync = false;
+    var sentSnapshot = null;
     setStatus('🔄 同步中…');
     findGist().then(function (id) {
       return gh('/gists/' + id).then(function (g) {
@@ -160,10 +180,14 @@
         save();
         renderAll();
         var files = {};
-        files[GIST_FILE] = { content: JSON.stringify(state) };
+        sentSnapshot = JSON.stringify(state);
+        files[GIST_FILE] = { content: sentSnapshot };
         return gh('/gists/' + id, { method: 'PATCH', body: JSON.stringify({ files: files }) });
       });
     }).then(function () {
+      // state changed while the request was in flight -> not actually synced yet
+      if (sentSnapshot !== null && sentSnapshot !== JSON.stringify(state)) pendingSync = true;
+      if (pendingSync) { setStatus('🔄 同步中…'); return; }
       var t = new Date();
       setStatus('✅ 已同步 ' + ('0' + t.getHours()).slice(-2) + ':' + ('0' + t.getMinutes()).slice(-2));
     }).catch(function (e) {
@@ -176,7 +200,10 @@
       } else {
         setStatus('⚠️ 同步失敗，點擊重試');
       }
-    }).then(function () { syncing = false; });
+    }).then(function () {
+      syncing = false;
+      if (pendingSync) { pendingSync = false; setTimeout(doSync, 400); }
+    });
   }
 
   function setupToken() {
@@ -184,8 +211,11 @@
       '跨裝置同步「已使用」紀錄需要 GitHub Token：\n\n' +
       '1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)\n' +
       '2. Generate new token (classic)，只勾選「gist」權限\n' +
-      '3. 貼到下方（Token 只會儲存在此瀏覽器的 localStorage）\n\n' +
-      '紀錄會存到你帳號的一個私密 Gist，每台裝置設定一次即可。'
+      '3. 貼到下方\n\n' +
+      '注意事項：\n' +
+      '• Token 存在此瀏覽器的 localStorage，同網域下的其他 GitHub Pages 專案頁可讀取；不要在公用電腦啟用。\n' +
+      '• 紀錄存於「secret gist」——不公開列出，但知道網址的人可檢視，請勿放敏感資料。\n' +
+      '• 不用時可用 ⚙ 移除，並到 GitHub 設定頁撤銷該 token。'
     );
     if (t && t.trim()) { localStorage.setItem(LS_TOKEN, t.trim()); doSync(); }
   }
@@ -193,6 +223,7 @@
   var timer = null;
   function scheduleSync() {
     if (!token()) return;
+    if (syncing) { pendingSync = true; return; }
     clearTimeout(timer);
     timer = setTimeout(doSync, 1200);
   }
@@ -214,6 +245,38 @@
     }
   });
 
+
+  /* ---------- effectiveness rollup (closes the feedback loop) ---------- */
+  var fxBox = document.getElementById('fx-rollup');
+  function renderRollup() {
+    if (!fxBox) return;
+    var ids = Array.prototype.map.call(
+      document.querySelectorAll('details.channel[data-post-id]'),
+      function (d) { return d.getAttribute('data-post-id'); });
+    var cur = { used: 0, good: 0, ok: 0, bad: 0, rated: 0 };
+    ids.forEach(function (id) {
+      var p = state.posts[id];
+      if (!p || !p.used) return;
+      cur.used++;
+      if (p.fx && cur[p.fx] !== undefined) { cur[p.fx]++; cur.rated++; }
+    });
+    var all = { used: 0, good: 0, ok: 0, bad: 0 };
+    Object.keys(state.posts).forEach(function (id) {
+      var p = state.posts[id];
+      if (!p || !p.used) return;
+      all.used++;
+      if (p.fx && all[p.fx] !== undefined) all[p.fx]++;
+    });
+    fxBox.innerHTML =
+      '<b>本期使用與成效</b>：已使用 ' + cur.used + ' / ' + ids.length +
+      '　已評分 ' + cur.rated +
+      '（👍 ' + cur.good + ' · 普通 ' + cur.ok + ' · 👎 ' + cur.bad + '）' +
+      '<span class="fx-all">歷來累計：已使用 ' + all.used +
+      '（👍 ' + all.good + ' · 普通 ' + all.ok + ' · 👎 ' + all.bad + '）</span>';
+  }
+  renderers.push(renderRollup);
+  afterChange = renderRollup;
+  renderRollup();
 
   /* ---------- character roster / featured / lightbox ---------- */
   var ROSTER = [

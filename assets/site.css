@@ -426,3 +426,13 @@ details.channel.used .fx-row { display: flex; }
 }
 .fx-btn:hover { border-color: var(--accent2); }
 .fx-btn.on { background: var(--accent2); border-color: var(--accent2); color: #fff; }
+
+.fx-rollup {
+  margin-top: 0.8rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.fx-rollup b { color: var(--text); }
+.fx-rollup .fx-all { display: block; margin-top: 0.2rem; font-size: 0.75rem; }
