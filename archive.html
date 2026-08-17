@@ -41,6 +41,409 @@
       <article class="week-card">
         <div class="week-header">
           <div>
+            <div class="week-date">2026 年 8 月 13 日（週四）</div>
+            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/10–8/12 本期重點新聞</div>
+          </div>
+        </div>
+        <!-- 選題 1 -->
+        <div class="topic">
+          <div class="topic-num">選題 01 · 電子製造 / OT 安全</div>
+          <h3>電錶成為勒索入口：六機構聯合警告 Gunra 勒索軟體鎖定關鍵基礎設施</h3>
+          <p>CISA、FBI、NSA、DC3、USSS 與南韓 KNPA 於 8/11 聯合發布警告。初始入口不是釣魚，而是 Fortinet VPN 與 Schneider Electric 電力監控裝置的漏洞——OT 周邊設備已成為勒索軟體的第一站。</p>
+          <div class="sources">
+            <a class="source-tag" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-222a" target="_blank" rel="noopener">🏛 CISA 聯合警告 8/11</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/08/gunra-ransomware-exploits-fortinet-and.html" target="_blank" rel="noopener">📰 The Hacker News 8月*</a>
+            <a class="source-tag" href="https://cybersecasia.net/news/gunra-ransomware-raas-prompts-global-warning-from-us-security-authorities/" target="_blank" rel="noopener">📰 CybersecAsia 8月*</a>
+            <a class="source-tag" href="https://cyberpress.org/gunra-ransomware-bypasses-vpn-mfa/" target="_blank" rel="noopener">📡 CyberPress 8月*</a>
+          </div>
+
+          <details class="channel" data-post-id="20260813-t1-li">
+            <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">六個政府機構、兩個國家，為同一個勒索軟體家族發出聯合警告——而它的入口值得每個製造業資安團隊看一眼。
+
+CISA、FBI、NSA、DC3、美國特勤局與南韓國家警察廳於 8 月 11 日聯合發布 Gunra 勒索軟體警告（AA26-222A）。目標涵蓋醫療、金融、政府與專業服務等關鍵基礎設施。
+
+真正的重點在初始入口：不是釣魚郵件，而是對外暴露的設備。攻擊者利用 Fortinet FortiOS / FortiProxy 的身分驗證繞過漏洞（CVE-2024-55591、CVE-2025-24472），以及 Schneider Electric PowerLogic P5 的漏洞（CVE-2024-5559）取得立足點，再以雙重勒索模式加密資料庫、NAS 與關鍵資產，並破壞備份。
+
+Schneider PowerLogic P5 是電力監控裝置。當一台 OT 周邊設備成為勒索軟體的初始入口，「IT 歸資安、OT 歸工務」的分工就正式失效了。
+
+Gunra 於 2025 年首度出現，2026 年已成熟為完整的 RaaS 生態系——多個犯罪團體共用同一套工具鏈。
+
+你的資產清單裡，那些「只是用來看電力數據」的裝置，上次更新韌體是什麼時候？
+<div class="hashtags">#Ransomware #OTSecurity #CISA #ManufacturingCyber #ICS</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">Six government agencies across two countries issued a joint warning about one ransomware family this week — and its entry point deserves a look from every manufacturing security team.
+
+CISA, the FBI, NSA, DC3, the US Secret Service and South Korea's National Police Agency published the Gunra ransomware advisory (AA26-222A) on 11 August. Targets span healthcare, financial services, government and professional services.
+
+The part that matters is initial access: not phishing, but exposed appliances. Actors exploited authentication-bypass flaws in Fortinet FortiOS / FortiProxy (CVE-2024-55591, CVE-2025-24472) and a flaw in Schneider Electric PowerLogic P5 devices (CVE-2024-5559) to gain a foothold, then ran double extortion — encrypting databases, NAS systems and key assets while destroying backups.
+
+Schneider PowerLogic P5 is a power-monitoring device. Once an OT-adjacent appliance becomes the initial access vector for ransomware, the "IT belongs to security, OT belongs to facilities" split has formally failed.
+
+Gunra first appeared in 2025 and by 2026 had matured into a full RaaS ecosystem — multiple criminal groups sharing one toolchain.
+
+When did you last patch the devices in your inventory that "only read power data"?
+<div class="hashtags">#Ransomware #OTSecurity #CISA #ManufacturingCyber #ICS</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t1-x">
+            <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">1/ 六個機構、兩國聯手：CISA、FBI、NSA、DC3、USSS 與南韓 KNPA 於 8/11 發布 Gunra 勒索軟體聯合警告（AA26-222A）。
+
+2/ 初始入口不是釣魚，是暴露的設備：Fortinet FortiOS/FortiProxy 身分驗證繞過（CVE-2024-55591、CVE-2025-24472）＋ Schneider Electric PowerLogic P5（CVE-2024-5559）。
+
+3/ 進去之後是雙重勒索：竊資料、加密資料庫與 NAS、破壞備份。目標橫跨醫療、金融、政府與專業服務。
+
+4/ 值得停下來想的一點：PowerLogic P5 是電力監控裝置。OT 周邊設備已經是勒索軟體的初始入口，不是附帶損害。
+
+5/ Gunra 2025 年出現、2026 年已是成熟 RaaS。你的邊界設備與電力/樓管裝置，補丁節奏跟得上嗎？
+<div class="hashtags">#Ransomware #OTSecurity #CISA</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">1/ Six agencies, two countries: CISA, FBI, NSA, DC3, USSS and South Korea's KNPA issued a joint Gunra ransomware advisory (AA26-222A) on 11 Aug.
+
+2/ Initial access isn't phishing — it's exposed appliances: Fortinet FortiOS/FortiProxy auth bypass (CVE-2024-55591, CVE-2025-24472) plus Schneider Electric PowerLogic P5 (CVE-2024-5559).
+
+3/ Then double extortion: steal data, encrypt databases and NAS, destroy backups. Targets span healthcare, finance, government and professional services.
+
+4/ Worth pausing on: PowerLogic P5 is a power-monitoring device. OT-adjacent gear is now the initial access vector, not collateral damage.
+
+5/ Gunra emerged in 2025 and is a mature RaaS by 2026. Does your patch cadence cover edge appliances and power/building devices?
+<div class="hashtags">#Ransomware #OTSecurity #CISA</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t1-blog">
+            <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text"><strong>標題</strong>：當電錶成為勒索入口：Gunra 聯合警告對製造業的三個提醒
+
+• 事件概要：CISA/FBI/NSA/DC3/USSS 與南韓 KNPA 於 8/11 發布 Gunra 聯合警告（AA26-222A），涵蓋醫療、金融、政府與專業服務
+• 初始入口分析：Fortinet FortiOS/FortiProxy 身分驗證繞過（CVE-2024-55591、CVE-2025-24472）與 Schneider PowerLogic P5（CVE-2024-5559）
+• 攻擊模式：雙重勒索——資料竊取＋加密資料庫/NAS，並針對備份進行破壞
+• 對製造業的意義：電力監控等 OT 周邊裝置已列入初始入口，資產盤點必須涵蓋「非 IT 管轄」的連網設備
+• 優先行動：邊界設備與 OT 周邊裝置的 CVE 對照、備份離線副本驗證、RaaS 情境的復原演練
+<div class="hashtags">#Ransomware #OTSecurity #ManufacturingCyber</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text"><strong>Title</strong>: When the Power Meter Is the Entry Point: Three Lessons from the Gunra Advisory for Manufacturers
+
+• What happened: CISA/FBI/NSA/DC3/USSS and South Korea's KNPA issued the joint Gunra advisory (AA26-222A) on 11 Aug, covering healthcare, finance, government and professional services
+• Initial access: authentication-bypass flaws in Fortinet FortiOS/FortiProxy (CVE-2024-55591, CVE-2025-24472) and Schneider PowerLogic P5 (CVE-2024-5559)
+• Attack pattern: double extortion — data theft plus encryption of databases and NAS, with backups deliberately destroyed
+• Why manufacturing should care: power-monitoring and other OT-adjacent devices are now listed initial access vectors; asset inventory must cover connected gear outside IT's remit
+• Priorities: map CVEs across edge and OT-adjacent devices, verify offline backup copies, rehearse recovery against a RaaS scenario
+<div class="hashtags">#Ransomware #OTSecurity #ManufacturingCyber</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t1-nl">
+            <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">CISA、FBI、NSA、DC3、美國特勤局與南韓國家警察廳於 8 月 11 日聯合發布 Gunra 勒索軟體警告（AA26-222A）：攻擊者利用 Fortinet FortiOS/FortiProxy 身分驗證繞過漏洞（CVE-2024-55591、CVE-2025-24472）與 Schneider Electric PowerLogic P5 漏洞（CVE-2024-5559）取得初始存取，再以雙重勒索加密資料庫與 NAS 並破壞備份，目標涵蓋醫療、金融、政府與專業服務。建議製造業者立即比對邊界設備與 OT 周邊裝置的漏洞清單。主要來源：CISA（8/11）、The Hacker News（8 月）。
+<div class="hashtags">#Ransomware #OTSecurity</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">On 11 August, CISA, the FBI, NSA, DC3, the US Secret Service and South Korea's National Police Agency issued a joint Gunra ransomware advisory (AA26-222A): actors gain initial access through authentication-bypass flaws in Fortinet FortiOS/FortiProxy (CVE-2024-55591, CVE-2025-24472) and a Schneider Electric PowerLogic P5 flaw (CVE-2024-5559), then run double extortion — encrypting databases and NAS while destroying backups — across healthcare, finance, government and professional services. Manufacturers should immediately reconcile these CVEs against edge and OT-adjacent devices. Sources: CISA (8/11), The Hacker News (Aug).
+<div class="hashtags">#Ransomware #OTSecurity</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+        </div>
+        <!-- 選題 2 -->
+        <div class="topic">
+          <div class="topic-num">選題 02 · OT / 關鍵基礎設施</div>
+          <h3>私有 APN 不等於隔離：波蘭電廠首見經行動專網入侵 OT，Siemens PLC 遭切至 STOP</h3>
+          <p>CERT Polska 於 8/11 公布完整分析：攻擊者自風場經配電業者私有 APN 進入電廠 OT 網路造成汽機停機。主管機關推薦的行動網路隔離架構，未啟用 client isolation 時形同共用網段。</p>
+          <div class="sources">
+            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/11/poland-energy-sector-cyberattack-heating-plant-private-apn/" target="_blank" rel="noopener">📰 Help Net Security 8/11</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/08/hackers-breach-polish-power-plant.html" target="_blank" rel="noopener">📰 The Hacker News 8月*</a>
+            <a class="source-tag" href="https://www.bleepingcomputer.com/news/security/hackers-breached-a-small-polish-energy-plant-via-private-apn-last-year/" target="_blank" rel="noopener">📰 BleepingComputer 8月*</a>
+          </div>
+
+          <details class="channel" data-post-id="20260813-t2-li">
+            <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">「用私有行動網路把 OT 隔離開來」——這個被主管機關推薦的架構，本週被證明並不等於隔離。
+
+CERT Polska 於 8 月 11 日公開一起波蘭汽電共生（CHP）電廠事件的完整分析。攻擊路徑值得逐段細讀：
+
+攻擊者先入侵一座風場，接著透過配電業者（DSO）的私有 APN 橫向移動，進入電廠的 OT 網路，最後把 Siemens PLC 切換到 STOP 模式——實際造成汽機停機。
+
+關鍵環節：一台 Teltonika RUTX50 行動路由器同時具備連往電網設備的序列埠與接上內網的乙太網路埠，成為跨越兩個網域的橋樑。攻擊者反覆以 SSH 登入該路由器，再從那裡鑽進 DSO 的私有 APN；隨後掃描 VNC、HTTP 與 S7、Modbus 等工控協定，找到一台 web 介面仍使用預設管理員憑證的 WAGO PFC200 控制器。
+
+CERT Polska 指出這是首度觀察到攻擊者經由私有 APN 進入 OT 網路。而 FBI 與 EPA 曾建議以行動網路隔離 OT——本案證明：**沒有啟用 client isolation 的私有 APN，不是隔離，只是另一個共用網段。**
+
+CERT 的第一項建議很直接：稽核私有 APN 設定、開啟 client isolation，並從 OT 側把 APN 視為不可信網路來分段與限流。
+
+你的廠區如果有私有 APN 或 4G/5G 專網，client isolation 是開著的嗎？
+<div class="hashtags">#OTSecurity #ICS #PrivateNetworks #SmartFactory #CriticalInfrastructure</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">"Isolate OT behind a private cellular network" — an architecture regulators have recommended — was shown this week not to be isolation at all.
+
+On 11 August, CERT Polska published its full analysis of an incident at a Polish combined heat and power plant. The path deserves a careful read:
+
+Attackers first compromised a wind farm, pivoted through the distribution system operator's private APN into the plant's OT network, and ultimately put Siemens PLCs into STOP mode — physically halting a turbine.
+
+The pivot point: a Teltonika RUTX50 cellular router with both a serial link to grid equipment and an Ethernet port on the compromised internal network — a bridge across two domains. Logs show the attacker repeatedly logging in over SSH, then tunnelling into the DSO's private APN. From there they scanned for VNC, HTTP and industrial protocols including S7 and Modbus, and found a WAGO PFC200 controller still running default admin credentials on its web interface.
+
+CERT Polska calls this the first observed case of attackers reaching an OT network through a private APN. The FBI and EPA have recommended cellular isolation for OT — this case proves the point: **a private APN without client isolation enabled is not isolation, just another shared segment.**
+
+CERT's first recommendation is blunt: audit the private APN configuration, switch on client isolation, and treat the APN as untrusted from the OT side — segment and restrict traffic accordingly.
+
+If your plant runs a private APN or a dedicated 4G/5G network, is client isolation actually turned on?
+<div class="hashtags">#OTSecurity #ICS #PrivateNetworks #SmartFactory #CriticalInfrastructure</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t2-x">
+            <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">1/ CERT Polska 8/11 公布：攻擊者從一座風場出發，經配電業者的私有 APN 進入波蘭 CHP 電廠 OT 網路，把 Siemens PLC 切到 STOP——汽機停機。
+
+2/ 橋樑是一台 Teltonika RUTX50：一邊序列埠連電網設備、一邊乙太網路接內網。攻擊者反覆 SSH 登入，再鑽進 DSO 的私有 APN。
+
+3/ 進到 OT 後掃 VNC、HTTP、S7、Modbus，找到一台 WAGO PFC200——web 介面還在用預設管理員帳密。
+
+4/ CERT 說這是首見經私有 APN 進入 OT 的案例。FBI/EPA 曾推薦用行動專網隔離 OT；本案證明沒開 client isolation 就不叫隔離。
+
+5/ 行動項目：稽核私有 APN 設定、開啟 client isolation、從 OT 側把 APN 當不可信網路分段。有專網的廠區今天就能查。
+<div class="hashtags">#OTSecurity #ICS #PrivateAPN</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">1/ CERT Polska (11 Aug): attackers pivoted from a compromised wind farm through the DSO's private APN into a Polish CHP plant's OT network and put Siemens PLCs into STOP mode — halting a turbine.
+
+2/ The bridge: a Teltonika RUTX50 router with a serial link to grid equipment on one side and Ethernet on the compromised internal network on the other. Repeated SSH logins, then a tunnel into the private APN.
+
+3/ Inside OT they scanned VNC, HTTP, S7 and Modbus — and found a WAGO PFC200 still using default admin credentials on its web UI.
+
+4/ CERT calls it the first observed OT intrusion via a private APN. FBI/EPA have recommended cellular isolation for OT; this proves it isn't isolation without client isolation enabled.
+
+5/ Actions: audit the private APN config, enable client isolation, treat the APN as untrusted from the OT side. If you run a private network, you can check this today.
+<div class="hashtags">#OTSecurity #ICS #PrivateAPN</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t2-blog">
+            <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text"><strong>標題</strong>：私有 APN 不等於隔離：波蘭電廠事件對智慧工廠專網的警訊
+
+• 攻擊鏈：風場遭入侵 → 經 DSO 私有 APN 橫向 → 進入 CHP 電廠 OT 網路 → Siemens PLC 切入 STOP，汽機停機
+• 關鍵設備：Teltonika RUTX50 同時連接電網序列埠與內網乙太網路，成為跨網域橋樑；攻擊者以 SSH 反覆登入
+• 基礎衛生失守：OT 內掃描 VNC/HTTP/S7/Modbus，發現 WAGO PFC200 仍使用預設管理員憑證
+• 架構層教訓：FBI/EPA 推薦的行動網路隔離，未啟用 client isolation 時形同共用網段
+• 給智慧工廠的清單：專網設定稽核、client isolation、OT 側視 APN 為不可信、跨企業連線的信任邊界重畫
+• 註：事件本身發生於去年 12 月，本週公布的是 CERT Polska 的完整技術分析
+<div class="hashtags">#OTSecurity #ICS #SmartFactory</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text"><strong>Title</strong>: A Private APN Is Not Isolation: What the Polish Plant Incident Means for Smart-Factory Private Networks
+
+• Kill chain: wind farm compromised → pivot through the DSO's private APN → into the CHP plant's OT network → Siemens PLCs set to STOP, turbine halted
+• The pivot device: a Teltonika RUTX50 bridging a serial link to grid equipment and Ethernet on the internal network; attacker logged in repeatedly over SSH
+• Basic hygiene failure: scanning VNC/HTTP/S7/Modbus inside OT surfaced a WAGO PFC200 still on default admin credentials
+• Architectural lesson: the cellular isolation model recommended by FBI/EPA behaves like a shared segment unless client isolation is enabled
+• Smart-factory checklist: audit private network config, enable client isolation, treat the APN as untrusted from OT, redraw trust boundaries for cross-company links
+• Note: the incident occurred last December; what was published this week is CERT Polska's full technical analysis
+<div class="hashtags">#OTSecurity #ICS #SmartFactory</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t2-nl">
+            <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">CERT Polska 於 8 月 11 日公布波蘭汽電共生電廠遭入侵的完整分析：攻擊者自一座風場出發，經配電業者的私有 APN 橫向進入電廠 OT 網路，將 Siemens PLC 切換至 STOP 模式造成停機；途中利用一台 Teltonika RUTX50 路由器跨越網域，並發現仍使用預設憑證的 WAGO PFC200 控制器。CERT 指此為首見經私有 APN 進入 OT 的案例，建議立即稽核專網設定並啟用 client isolation。主要來源：Help Net Security（8/11）、The Hacker News（8 月）、BleepingComputer（8 月）。
+<div class="hashtags">#OTSecurity #ICS</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">On 11 August CERT Polska published its full analysis of an intrusion at a Polish combined heat and power plant: attackers pivoted from a compromised wind farm through the distribution operator's private APN into the plant's OT network and set Siemens PLCs to STOP, halting a turbine. A Teltonika RUTX50 router bridged the domains, and a WAGO PFC200 controller was found still running default credentials. CERT calls it the first observed OT intrusion via a private APN and urges operators to audit private-network configuration and enable client isolation. Sources: Help Net Security (8/11), The Hacker News (Aug), BleepingComputer (Aug).
+<div class="hashtags">#OTSecurity #ICS</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+        </div>
+        <!-- 選題 3 -->
+        <div class="topic">
+          <div class="topic-num">選題 03 · 電子製造 / 供應鏈安全</div>
+          <h3>矽層的補丁節奏：Intel 與 AMD 合計修補 80+ 漏洞，TDX 提權動搖機密運算假設</h3>
+          <p>8/11 晶片 Patch Tuesday：Intel 同日發布 20260811 微碼更新處理八項問題，多項為權限提升。產線主機的韌體與微碼更新，是製造業長期被忽略的維運缺口。</p>
+          <div class="sources">
+            <a class="source-tag" href="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01379.html" target="_blank" rel="noopener">🏛 Intel Security Center 8/11</a>
+            <a class="source-tag" href="https://www.phoronix.com/news/Intel-CPU-Microcode-20260811" target="_blank" rel="noopener">📰 Phoronix 8/11</a>
+            <a class="source-tag" href="https://www.securityweek.com/chipmaker-patch-tuesday-intel-amd-fix-over-80-vulnerabilities-combined/" target="_blank" rel="noopener">📰 SecurityWeek 8月*</a>
+          </div>
+
+          <details class="channel" data-post-id="20260813-t3-li">
+            <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">8 月 11 日的晶片 Patch Tuesday：Intel 與 AMD 合計修補超過 80 個漏洞。對管理大量工控主機與工作站的製造業，這是一次值得排程的維運窗口。
+
+Intel 同日發布 20260811 微碼更新，修正八項安全問題；其中多項屬於權限提升：
+
+• INTEL-SA-01379：Intel TDX 於 Xeon 6 平台的高風險提權
+• INTEL-SA-01428：影響全系列 Intel Core Ultra 與 Xeon 6 的提權
+• INTEL-SA-01435：Xeon 6 因 Ring 3 存取控制不當導致的提權
+• INTEL-SA-01442：Xeon 韌體控制流程錯誤，另有輸入驗證不當的第二個 CVE
+
+TDX 那項特別值得注意：機密運算的整個信任假設，就建立在「即使主機被攻陷，機密 VM 仍受保護」之上。當提權漏洞出現在這一層，把敏感製程資料或模型放進 TEE 的風險模型就需要重新評估。
+
+微碼與韌體更新的現實挑戰在製造現場更明顯：產線主機不能隨時重開、供應商映像檔更新落後、許多工控 PC 根本不在 IT 的補丁管理範圍內。
+
+你的韌體/微碼更新，是有排程的維運項目，還是「等出事再說」？
+<div class="hashtags">#Semiconductor #FirmwareSecurity #ConfidentialComputing #ManufacturingIT #PatchManagement</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">Chipmaker Patch Tuesday on 11 August: Intel and AMD fixed more than 80 vulnerabilities combined. For manufacturers running fleets of industrial hosts and workstations, this is a maintenance window worth scheduling.
+
+Intel shipped microcode release 20260811 the same day, addressing eight security issues — several of them privilege escalation:
+
+• INTEL-SA-01379: high-severity escalation around Intel TDX on Xeon 6
+• INTEL-SA-01428: escalation affecting all Intel Core Ultra CPUs and Xeon 6
+• INTEL-SA-01435: escalation on Xeon 6 from improper access controls within Ring 3
+• INTEL-SA-01442: escalation on Xeon from incorrect control flow in firmware, with a second CVE for improper input validation
+
+The TDX item deserves particular attention: the entire trust assumption of confidential computing rests on "even if the host is compromised, the confidential VM stays protected." When privilege escalation appears at that layer, the risk model for putting sensitive process data or models inside a TEE needs revisiting.
+
+The practical difficulty is sharper on a factory floor: production hosts cannot reboot on demand, vendor images lag upstream fixes, and many industrial PCs sit entirely outside IT's patch management.
+
+Is firmware and microcode updating a scheduled maintenance item for you — or a "deal with it when something breaks" item?
+<div class="hashtags">#Semiconductor #FirmwareSecurity #ConfidentialComputing #ManufacturingIT #PatchManagement</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t3-x">
+            <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">1/ 8/11 晶片 Patch Tuesday：Intel + AMD 合計修補 80+ 漏洞。Intel 同日推出 20260811 微碼更新，修正 8 項安全問題。
+
+2/ 多項是權限提升：INTEL-SA-01379（Xeon 6 的 TDX 提權）、01428（全系列 Core Ultra + Xeon 6）、01435（Ring 3 存取控制不當）、01442（韌體控制流程錯誤）。
+
+3/ TDX 那項最值得停下來想：機密運算的前提是「主機被攻陷，機密 VM 仍安全」。提權出現在這層，TEE 的信任假設要重新評估。
+
+4/ 製造現場的難處：產線主機不能說重開就重開、供應商映像檔落後、很多工控 PC 不在補丁管理範圍。
+
+5/ 建議：把微碼/韌體更新排進正式維運窗口，並先盤點哪些產線資產跑 Xeon 6 / Core Ultra。
+<div class="hashtags">#Semiconductor #FirmwareSecurity #PatchTuesday</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">1/ Chipmaker Patch Tuesday (11 Aug): Intel + AMD fixed 80+ vulnerabilities combined. Intel also shipped microcode 20260811 the same day, covering 8 security issues.
+
+2/ Several are privilege escalation: INTEL-SA-01379 (TDX on Xeon 6), 01428 (all Core Ultra + Xeon 6), 01435 (improper Ring 3 access controls), 01442 (incorrect control flow in firmware).
+
+3/ The TDX one is worth pausing on: confidential computing assumes "host compromised, confidential VM still safe." Escalation at that layer means revisiting your TEE trust model.
+
+4/ The factory-floor difficulty: production hosts can't reboot on demand, vendor images lag, and many industrial PCs sit outside patch management entirely.
+
+5/ Suggestion: put microcode/firmware updates in a real maintenance window, and start by inventorying which production assets run Xeon 6 / Core Ultra.
+<div class="hashtags">#Semiconductor #FirmwareSecurity #PatchTuesday</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t3-blog">
+            <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text"><strong>標題</strong>：矽層的補丁節奏：8/11 晶片 Patch Tuesday 對製造業資產管理的挑戰
+
+• 規模：Intel 與 AMD 於 8/11 合計修補 80+ 漏洞；Intel 同日發布 20260811 微碼更新，涵蓋 8 項安全問題
+• 重點提權：INTEL-SA-01379（Xeon 6 TDX）、01428（Core Ultra 全系列與 Xeon 6）、01435（Ring 3 存取控制）、01442（韌體控制流程與輸入驗證）
+• 機密運算的信任重估：TDX 層級的提權，直接影響「把敏感製程資料放進 TEE」的風險假設
+• 製造現場的落差：產線主機重啟窗口有限、供應商映像檔更新落後、工控 PC 常不在 IT 補丁管理內
+• 建議做法：建立矽層/韌體資產清單、與設備供應商約定微碼更新 SLA、把 firmware 納入年度維運排程
+<div class="hashtags">#Semiconductor #FirmwareSecurity #PatchManagement</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text"><strong>Title</strong>: Patch Cadence at the Silicon Layer: What 11 Aug Chipmaker Patch Tuesday Means for Manufacturing Asset Management
+
+• Scale: Intel and AMD fixed 80+ vulnerabilities combined on 11 Aug; Intel also released microcode 20260811 covering eight security issues
+• Key escalations: INTEL-SA-01379 (TDX on Xeon 6), 01428 (all Core Ultra and Xeon 6), 01435 (Ring 3 access controls), 01442 (firmware control flow and input validation)
+• Rethinking confidential computing trust: escalation at the TDX layer directly affects the assumption behind putting sensitive process data in a TEE
+• The factory gap: limited reboot windows for production hosts, vendor images lagging upstream fixes, industrial PCs outside IT patch management
+• Recommended: build a silicon/firmware asset inventory, agree microcode-update SLAs with equipment vendors, put firmware into the annual maintenance schedule
+<div class="hashtags">#Semiconductor #FirmwareSecurity #PatchManagement</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260813-t3-nl">
+            <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">8 月 11 日晶片 Patch Tuesday：Intel 與 AMD 合計修補超過 80 個漏洞，Intel 同日發布 20260811 微碼更新處理八項安全問題，其中多項為權限提升，包括 Xeon 6 上的 Intel TDX（INTEL-SA-01379）、影響 Core Ultra 全系列與 Xeon 6 的 INTEL-SA-01428，以及 Ring 3 存取控制不當的 INTEL-SA-01435。TDX 層級提權將影響機密運算的信任假設。建議製造業者盤點產線資產的處理器型號並排定韌體維運窗口。主要來源：Intel Security Center（8/11）、Phoronix（8/11）、SecurityWeek（8 月）。
+<div class="hashtags">#Semiconductor #FirmwareSecurity</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">Chipmaker Patch Tuesday, 11 August: Intel and AMD fixed more than 80 vulnerabilities combined, and Intel shipped microcode release 20260811 the same day covering eight security issues — several of them privilege escalation, including Intel TDX on Xeon 6 (INTEL-SA-01379), INTEL-SA-01428 affecting all Core Ultra CPUs and Xeon 6, and INTEL-SA-01435 from improper Ring 3 access controls. Escalation at the TDX layer affects the trust assumptions behind confidential computing. Manufacturers should inventory processor models across production assets and schedule a firmware maintenance window. Sources: Intel Security Center (8/11), Phoronix (8/11), SecurityWeek (Aug).
+<div class="hashtags">#Semiconductor #FirmwareSecurity</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <article class="week-card">
+        <div class="week-header">
+          <div>
             <div class="week-date">2026 年 8 月 10 日（週一）</div>
             <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/3–8/9 本期重點新聞</div>
           </div>
