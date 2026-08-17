@@ -43,24 +43,23 @@
     <section class="summary">
       <div class="summary-head">
         本期素材摘要
-        <span>2026/08/13（週四）產出 · 涵蓋 8/10–8/12 新聞</span>
+        <span>2026/08/17（週一）產出 · 涵蓋 8/13–8/16 新聞</span>
       </div>
       <div class="stats">
-        <div class="stat"><b>3</b><span>本期選題</span></div>
-        <div class="stat"><b>2</b><span>🏛 官方來源</span></div>
-        <div class="stat"><b>7</b><span>📰 一線媒體</span></div>
-        <div class="stat"><b>1</b><span>📡 聚合/部落格</span></div>
-        <div class="stat"><b>24</b><span>可複製雙語草稿</span></div>
+        <div class="stat"><b>2</b><span>本期選題</span></div>
+        <div class="stat"><b>0</b><span>🏛 官方來源</span></div>
+        <div class="stat"><b>6</b><span>📰 一線媒體</span></div>
+        <div class="stat"><b>2</b><span>📡 聚合/部落格</span></div>
+        <div class="stat"><b>16</b><span>可複製雙語草稿</span></div>
         <div class="stat"><b>4</b><span>發布管道</span></div>
       </div>
       <ul class="summary-topics">
-        <li>選題 01 · OT 安全 — Gunra 勒索軟體六機構聯合警告 <span class="cnt">（4 個來源）</span></li>
-        <li>選題 02 · 關鍵基礎設施 — 波蘭電廠首見經私有 APN 入侵 OT <span class="cnt">（3 個來源）</span></li>
-        <li>選題 03 · 電子製造 — 晶片 Patch Tuesday 與 TDX 提權 <span class="cnt">（3 個來源）</span></li>
+        <li>選題 01 · AI 安全/供應鏈 — LiteLLM 事件實際規模與 Trivy 根因 <span class="cnt">（4 個來源）</span></li>
+        <li>選題 02 · OT/冷鏈 — Claroty 揭露冷凍控制器漏洞 <span class="cnt">（4 個來源）</span></li>
       </ul>
       <div class="fx-rollup" id="fx-rollup"></div>
       <div class="summary-note">
-        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確日期之來源，僅載月份、降級為輔助引用。關鍵數字（CVE 編號、機構名單、設備型號）均經兩個以上獨立來源交叉確認。查證備註：選題 02 的入侵事件發生於去年 12 月，本期收錄的是 CERT Polska 於 8/11 公布的完整技術分析（新揭露而非舊聞）；本期未發現 8/10–8/12 區間內具體、可查證的 AI 治理新進展，EU AI Act 相關報導多為 8/2 執法上路的回顧重述，依規則不重複收錄。
+        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確日期之來源，僅載月份、降級為輔助引用。<strong>本期僅兩個選題</strong>：8/13–8/16 區間內通過查證的素材不足三則，依規則寧缺勿濫，不以舊聞或未查證素材湊數。已排除的候選（皆落在上期 8/10–8/12 區間，依「不重複」規則不予收錄）：Lazarus 利用 Windows kernel 零日 CVE-2026-68820（Check Point 8/11–12）、Meta 模型於評測中入侵外部系統（8/5–6）、Rapid7 裁員 12%（董事會 8/7 通過、8/10 隨財報公布）、北韓 IT 人員滲透美國聯邦機構（8/11）、Veracode GenAI 程式碼安全報告（7/28）。本期亦無 🏛 官方一手來源可引用——CISA 於區間內未發布與本主題相關之公告，CloudSEK 與 Claroty 原始報告依固定分級屬產業研究（📰）。
       </div>
     </section>
 
@@ -68,134 +67,142 @@
       <article class="week-card">
         <div class="week-header">
           <div>
-            <div class="week-date">2026 年 8 月 13 日（週四）</div>
-            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/10–8/12 本期重點新聞</div>
+            <div class="week-date">2026 年 8 月 17 日（週一）</div>
+            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/13–8/16 本期重點新聞</div>
           </div>
           <span class="week-label">最新一期</span>
         </div>
         <!-- 選題 1 -->
         <div class="topic">
-          <div class="topic-num">選題 01 · 電子製造 / OT 安全</div>
-          <h3>電錶成為勒索入口：六機構聯合警告 Gunra 勒索軟體鎖定關鍵基礎設施</h3>
-          <p>CISA、FBI、NSA、DC3、USSS 與南韓 KNPA 於 8/11 聯合發布警告。初始入口不是釣魚，而是 Fortinet VPN 與 Schneider Electric 電力監控裝置的漏洞——OT 周邊設備已成為勒索軟體的第一站。</p>
+          <div class="topic-num">選題 01 · AI 安全 / 供應鏈</div>
+          <h3>當安全工具成為供應鏈入口：LiteLLM 事件實際波及 2,500 家組織，根因追至 Trivy</h3>
+          <p>CloudSEK 追蹤報告揭露 3 月 LiteLLM 供應鏈事件的真實規模：2,500+ 組織、43 萬+ CI/CD pipeline。後續更正指出根因是 Aqua Security 的 Trivy 掃描器遭入侵，經 CI 自動安裝擴散至 AI gateway。</p>
           <div class="sources">
-            <a class="source-tag" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-222a" target="_blank" rel="noopener">🏛 CISA 聯合警告 8/11</a>
-            <a class="source-tag" href="https://thehackernews.com/2026/08/gunra-ransomware-exploits-fortinet-and.html" target="_blank" rel="noopener">📰 The Hacker News 8月*</a>
-            <a class="source-tag" href="https://cybersecasia.net/news/gunra-ransomware-raas-prompts-global-warning-from-us-security-authorities/" target="_blank" rel="noopener">📰 CybersecAsia 8月*</a>
-            <a class="source-tag" href="https://cyberpress.org/gunra-ransomware-bypasses-vpn-mfa/" target="_blank" rel="noopener">📡 CyberPress 8月*</a>
+            <a class="source-tag" href="https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/" target="_blank" rel="noopener">📰 SecurityWeek 8/14*</a>
+            <a class="source-tag" href="https://www.securityweek.com/trivy-not-litellm-behind-the-2500-org-compromise/" target="_blank" rel="noopener">📰 SecurityWeek 根因更正 8月*</a>
+            <a class="source-tag" href="https://www.scworld.com/brief/litellm-supply-chain-attack-impacted-over-2500-organizations" target="_blank" rel="noopener">📰 SC Media 8月*</a>
+            <a class="source-tag" href="https://www.heise.de/en/news/LiteLLM-attack-Over-2500-companies-affected-11412943.html" target="_blank" rel="noopener">📰 heise online 8月*</a>
           </div>
 
-          <details class="channel" data-post-id="20260813-t1-li">
+          <details class="channel" data-post-id="20260817-t1-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">六個政府機構、兩個國家，為同一個勒索軟體家族發出聯合警告——而它的入口值得每個製造業資安團隊看一眼。
+                <div class="draft-text">一次 40 分鐘的惡意套件上架，最後盤點出 2,500 家組織與 43 萬條 CI/CD pipeline 受影響——而真正的起點還不是它。
 
-CISA、FBI、NSA、DC3、美國特勤局與南韓國家警察廳於 8 月 11 日聯合發布 Gunra 勒索軟體警告（AA26-222A）。目標涵蓋醫療、金融、政府與專業服務等關鍵基礎設施。
+CloudSEK 本期公布的追蹤報告顯示：今年 3 月 LiteLLM 供應鏈事件的波及範圍遠超原本估計。LiteLLM 是眾多 AI 應用的 LLM gateway，1.82.7 與 1.82.8 兩個版本（3 月 24 日發布）夾帶竊取憑證的程式碼，外洩內容包括發布憑證、雲端金鑰、SSH 金鑰、各式 token，以及 AI 供應商 API 金鑰。
 
-真正的重點在初始入口：不是釣魚郵件，而是對外暴露的設備。攻擊者利用 Fortinet FortiOS / FortiProxy 的身分驗證繞過漏洞（CVE-2024-55591、CVE-2025-24472），以及 Schneider Electric PowerLogic P5 的漏洞（CVE-2024-5559）取得立足點，再以雙重勒索模式加密資料庫、NAS 與關鍵資產，並破壞備份。
+更值得資安團隊注意的是後續更正：SecurityWeek 追蹤報導指出，這 2,500 家組織的實際根因是 Aqua Security 的 Trivy 漏洞掃描器遭入侵——LiteLLM 的 CI pipeline 自動安裝了被汙染的 Trivy 版本，才導致自身被汙染。
 
-Schneider PowerLogic P5 是電力監控裝置。當一台 OT 周邊設備成為勒索軟體的初始入口，「IT 歸資安、OT 歸工務」的分工就正式失效了。
+換句話說：一個「用來檢查安全的工具」被攻陷，經由 CI 自動化擴散到下游的 AI 基礎設施，再擴散到使用它的數千家企業。
 
-Gunra 於 2025 年首度出現，2026 年已成熟為完整的 RaaS 生態系——多個犯罪團體共用同一套工具鏈。
+對正在導入 AI 的製造與科技企業，這串連鎖有三個具體提醒：
+• 你的 CI pipeline 自動安裝哪些工具？那些工具本身的供應鏈誰在看？
+• AI gateway 持有的是「所有 AI 供應商的金鑰」——它的權限集中度值得單獨做風險評估
+• 惡意版本只存活 40 分鐘仍造成這個規模，代表偵測時間窗必須以分鐘計，而非以天計
 
-你的資產清單裡，那些「只是用來看電力數據」的裝置，上次更新韌體是什麼時候？
-<div class="hashtags">#Ransomware #OTSecurity #CISA #ManufacturingCyber #ICS</div></div>
+你的建置流程裡，安全工具本身有被納入供應鏈盤點嗎？
+<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps #CICD #LiteLLM</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Six government agencies across two countries issued a joint warning about one ransomware family this week — and its entry point deserves a look from every manufacturing security team.
+                <div class="draft-text">A malicious package that was live for 40 minutes ended up implicating 2,500 organisations and 430,000 CI/CD pipelines — and it wasn't even the origin.
 
-CISA, the FBI, NSA, DC3, the US Secret Service and South Korea's National Police Agency published the Gunra ransomware advisory (AA26-222A) on 11 August. Targets span healthcare, financial services, government and professional services.
+CloudSEK's tracking report published this week shows the March LiteLLM supply chain incident reached far wider than first estimated. LiteLLM is the LLM gateway behind many AI applications; versions 1.82.7 and 1.82.8 (published 24 March) carried credential-stealing code that exposed publishing credentials, cloud keys, SSH keys, tokens and AI provider API keys.
 
-The part that matters is initial access: not phishing, but exposed appliances. Actors exploited authentication-bypass flaws in Fortinet FortiOS / FortiProxy (CVE-2024-55591, CVE-2025-24472) and a flaw in Schneider Electric PowerLogic P5 devices (CVE-2024-5559) to gain a foothold, then ran double extortion — encrypting databases, NAS systems and key assets while destroying backups.
+The follow-up correction matters more for security teams: SecurityWeek reports the actual root cause behind those 2,500 organisations was the compromise of Aqua Security's Trivy vulnerability scanner — LiteLLM's own CI pipeline automatically installed the poisoned Trivy build, which is how LiteLLM itself became poisoned.
 
-Schneider PowerLogic P5 is a power-monitoring device. Once an OT-adjacent appliance becomes the initial access vector for ransomware, the "IT belongs to security, OT belongs to facilities" split has formally failed.
+Put plainly: a tool built to check security was compromised, spread through CI automation into downstream AI infrastructure, and from there into thousands of enterprises.
 
-Gunra first appeared in 2025 and by 2026 had matured into a full RaaS ecosystem — multiple criminal groups sharing one toolchain.
+Three concrete takeaways for manufacturers and tech companies adopting AI:
+• Which tools does your CI pipeline install automatically — and who is watching those tools' own supply chains?
+• An AI gateway holds keys to every AI provider you use; that concentration of privilege deserves its own risk assessment
+• A 40-minute exposure window produced this blast radius, so detection windows have to be measured in minutes, not days
 
-When did you last patch the devices in your inventory that "only read power data"?
-<div class="hashtags">#Ransomware #OTSecurity #CISA #ManufacturingCyber #ICS</div></div>
+Are your security tools themselves inside your supply chain inventory?
+<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps #CICD #LiteLLM</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260813-t1-x">
+          <details class="channel" data-post-id="20260817-t1-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ 六個機構、兩國聯手：CISA、FBI、NSA、DC3、USSS 與南韓 KNPA 於 8/11 發布 Gunra 勒索軟體聯合警告（AA26-222A）。
+                <div class="draft-text">1/ CloudSEK 追蹤報告：3 月 LiteLLM 供應鏈事件實際波及 2,500+ 組織、43 萬+ CI/CD pipeline。惡意版本 1.82.7/1.82.8（3/24 發布）只存活約 40 分鐘。
 
-2/ 初始入口不是釣魚，是暴露的設備：Fortinet FortiOS/FortiProxy 身分驗證繞過（CVE-2024-55591、CVE-2025-24472）＋ Schneider Electric PowerLogic P5（CVE-2024-5559）。
+2/ 外洩內容不只原始碼憑證：發布憑證、雲端金鑰、SSH 金鑰、各類 token，還有 AI 供應商 API 金鑰。
 
-3/ 進去之後是雙重勒索：竊資料、加密資料庫與 NAS、破壞備份。目標橫跨醫療、金融、政府與專業服務。
+3/ 後續更正才是重點：SecurityWeek 指出根因是 Aqua Security 的 Trivy 掃描器遭入侵——LiteLLM 的 CI 自動安裝了被汙染的 Trivy。
 
-4/ 值得停下來想的一點：PowerLogic P5 是電力監控裝置。OT 周邊設備已經是勒索軟體的初始入口，不是附帶損害。
+4/ 也就是說：安全工具被攻陷 → 經 CI 自動化汙染 AI gateway → 再擴散到數千家使用者。這是「檢查者本身被攻陷」的教科書案例。
 
-5/ Gunra 2025 年出現、2026 年已是成熟 RaaS。你的邊界設備與電力/樓管裝置，補丁節奏跟得上嗎？
-<div class="hashtags">#Ransomware #OTSecurity #CISA</div></div>
+5/ 行動項目：盤點 CI 自動安裝的工具鏈、對 AI gateway 的金鑰集中度單獨評估、把偵測窗口目標訂在分鐘級。
+<div class="hashtags">#SupplyChainSecurity #AISecurity #CICD</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Six agencies, two countries: CISA, FBI, NSA, DC3, USSS and South Korea's KNPA issued a joint Gunra ransomware advisory (AA26-222A) on 11 Aug.
+                <div class="draft-text">1/ CloudSEK tracking report: March's LiteLLM supply chain incident actually reached 2,500+ organisations and 430,000+ CI/CD pipelines. The malicious versions 1.82.7/1.82.8 (published 24 Mar) were live for roughly 40 minutes.
 
-2/ Initial access isn't phishing — it's exposed appliances: Fortinet FortiOS/FortiProxy auth bypass (CVE-2024-55591, CVE-2025-24472) plus Schneider Electric PowerLogic P5 (CVE-2024-5559).
+2/ What leaked went well beyond source credentials: publishing credentials, cloud keys, SSH keys, assorted tokens — and AI provider API keys.
 
-3/ Then double extortion: steal data, encrypt databases and NAS, destroy backups. Targets span healthcare, finance, government and professional services.
+3/ The correction is the real story: SecurityWeek reports the root cause was a compromise of Aqua Security's Trivy scanner — LiteLLM's CI automatically installed the poisoned Trivy build.
 
-4/ Worth pausing on: PowerLogic P5 is a power-monitoring device. OT-adjacent gear is now the initial access vector, not collateral damage.
+4/ So: a security tool is compromised → CI automation poisons an AI gateway → thousands of downstream users are exposed. A textbook "the checker itself was compromised" case.
 
-5/ Gunra emerged in 2025 and is a mature RaaS by 2026. Does your patch cadence cover edge appliances and power/building devices?
-<div class="hashtags">#Ransomware #OTSecurity #CISA</div></div>
+5/ Actions: inventory what your CI installs automatically, risk-assess the key concentration inside your AI gateway, and target minute-scale detection windows.
+<div class="hashtags">#SupplyChainSecurity #AISecurity #CICD</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260813-t1-blog">
+          <details class="channel" data-post-id="20260817-t1-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text"><strong>標題</strong>：當電錶成為勒索入口：Gunra 聯合警告對製造業的三個提醒
+                <div class="draft-text"><strong>標題</strong>：當安全工具成為供應鏈入口：LiteLLM 事件的真實根因與 AI 基礎設施風險
 
-• 事件概要：CISA/FBI/NSA/DC3/USSS 與南韓 KNPA 於 8/11 發布 Gunra 聯合警告（AA26-222A），涵蓋醫療、金融、政府與專業服務
-• 初始入口分析：Fortinet FortiOS/FortiProxy 身分驗證繞過（CVE-2024-55591、CVE-2025-24472）與 Schneider PowerLogic P5（CVE-2024-5559）
-• 攻擊模式：雙重勒索——資料竊取＋加密資料庫/NAS，並針對備份進行破壞
-• 對製造業的意義：電力監控等 OT 周邊裝置已列入初始入口，資產盤點必須涵蓋「非 IT 管轄」的連網設備
-• 優先行動：邊界設備與 OT 周邊裝置的 CVE 對照、備份離線副本驗證、RaaS 情境的復原演練
-<div class="hashtags">#Ransomware #OTSecurity #ManufacturingCyber</div></div>
+• 事件規模：CloudSEK 追蹤指出 3 月 LiteLLM 供應鏈事件波及 2,500+ 組織、430,000+ CI/CD pipeline
+• 外洩範圍：發布憑證、雲端金鑰、SSH 金鑰、各式 token 與 AI 供應商 API 金鑰（LiteLLM 1.82.7 / 1.82.8，3 月 24 日發布，存活約 40 分鐘）
+• 根因更正：SecurityWeek 追蹤報導指出 2,500 家組織的實際源頭是 Aqua Security Trivy 遭入侵，LiteLLM CI 自動安裝汙染版本而受害
+• 結構性教訓：安全掃描工具位於 CI 的高信任位置，一旦被攻陷即成為最有效的擴散途徑
+• AI 專屬風險：AI gateway 集中持有多家供應商金鑰，權限集中度需獨立評估
+• 建議做法：CI 自動安裝清單盤點、工具供應鏈的 SBOM 與版本鎖定、AI 金鑰輪替與最小權限、分鐘級偵測目標
+<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text"><strong>Title</strong>: When the Power Meter Is the Entry Point: Three Lessons from the Gunra Advisory for Manufacturers
+                <div class="draft-text"><strong>Title</strong>: When the Security Tool Is the Entry Point: the Real Root Cause of the LiteLLM Incident and AI Infrastructure Risk
 
-• What happened: CISA/FBI/NSA/DC3/USSS and South Korea's KNPA issued the joint Gunra advisory (AA26-222A) on 11 Aug, covering healthcare, finance, government and professional services
-• Initial access: authentication-bypass flaws in Fortinet FortiOS/FortiProxy (CVE-2024-55591, CVE-2025-24472) and Schneider PowerLogic P5 (CVE-2024-5559)
-• Attack pattern: double extortion — data theft plus encryption of databases and NAS, with backups deliberately destroyed
-• Why manufacturing should care: power-monitoring and other OT-adjacent devices are now listed initial access vectors; asset inventory must cover connected gear outside IT's remit
-• Priorities: map CVEs across edge and OT-adjacent devices, verify offline backup copies, rehearse recovery against a RaaS scenario
-<div class="hashtags">#Ransomware #OTSecurity #ManufacturingCyber</div></div>
+• Scale: CloudSEK's tracking puts March's LiteLLM supply chain incident at 2,500+ organisations and 430,000+ CI/CD pipelines
+• What leaked: publishing credentials, cloud keys, SSH keys, assorted tokens and AI provider API keys (LiteLLM 1.82.7 / 1.82.8, published 24 March, live roughly 40 minutes)
+• Root-cause correction: SecurityWeek reports the actual origin for those 2,500 organisations was the compromise of Aqua Security's Trivy, which LiteLLM's CI installed automatically
+• Structural lesson: security scanners sit in a high-trust position inside CI; once compromised they become the most effective propagation path available
+• AI-specific risk: an AI gateway concentrates keys for multiple providers — that concentration needs its own assessment
+• Recommended: inventory what CI installs automatically, apply SBOM and version pinning to tooling, rotate AI keys under least privilege, target minute-scale detection
+<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260813-t1-nl">
+          <details class="channel" data-post-id="20260817-t1-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">CISA、FBI、NSA、DC3、美國特勤局與南韓國家警察廳於 8 月 11 日聯合發布 Gunra 勒索軟體警告（AA26-222A）：攻擊者利用 Fortinet FortiOS/FortiProxy 身分驗證繞過漏洞（CVE-2024-55591、CVE-2025-24472）與 Schneider Electric PowerLogic P5 漏洞（CVE-2024-5559）取得初始存取，再以雙重勒索加密資料庫與 NAS 並破壞備份，目標涵蓋醫療、金融、政府與專業服務。建議製造業者立即比對邊界設備與 OT 周邊裝置的漏洞清單。主要來源：CISA（8/11）、The Hacker News（8 月）。
-<div class="hashtags">#Ransomware #OTSecurity</div></div>
+                <div class="draft-text">CloudSEK 追蹤報告指出，今年 3 月的 LiteLLM 供應鏈事件實際波及超過 2,500 家組織與 43 萬條 CI/CD pipeline；惡意版本 1.82.7 與 1.82.8 於 3 月 24 日發布、存活約 40 分鐘，外洩發布憑證、雲端與 SSH 金鑰、各類 token 及 AI 供應商 API 金鑰。SecurityWeek 後續報導更正根因：實際源頭為 Aqua Security 的 Trivy 掃描器遭入侵，LiteLLM 的 CI 自動安裝汙染版本而受害。建議企業立即盤點 CI 自動安裝的工具鏈並輪替 AI 金鑰。主要來源：SecurityWeek（8/14 及後續）、SC Media（8 月）、heise online（8 月）。
+<div class="hashtags">#SupplyChainSecurity #AISecurity</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">On 11 August, CISA, the FBI, NSA, DC3, the US Secret Service and South Korea's National Police Agency issued a joint Gunra ransomware advisory (AA26-222A): actors gain initial access through authentication-bypass flaws in Fortinet FortiOS/FortiProxy (CVE-2024-55591, CVE-2025-24472) and a Schneider Electric PowerLogic P5 flaw (CVE-2024-5559), then run double extortion — encrypting databases and NAS while destroying backups — across healthcare, finance, government and professional services. Manufacturers should immediately reconcile these CVEs against edge and OT-adjacent devices. Sources: CISA (8/11), The Hacker News (Aug).
-<div class="hashtags">#Ransomware #OTSecurity</div></div>
+                <div class="draft-text">CloudSEK's tracking report finds that March's LiteLLM supply chain incident actually affected more than 2,500 organisations and 430,000 CI/CD pipelines; the malicious versions 1.82.7 and 1.82.8, published on 24 March and live for roughly 40 minutes, exposed publishing credentials, cloud and SSH keys, assorted tokens and AI provider API keys. SecurityWeek's follow-up corrects the root cause: the actual origin was the compromise of Aqua Security's Trivy scanner, which LiteLLM's CI installed automatically. Enterprises should inventory CI-installed tooling and rotate AI keys now. Sources: SecurityWeek (8/14 and follow-up), SC Media (Aug), heise online (Aug).
+<div class="hashtags">#SupplyChainSecurity #AISecurity</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
@@ -203,265 +210,141 @@ When did you last patch the devices in your inventory that "only read power data
         </div>
         <!-- 選題 2 -->
         <div class="topic">
-          <div class="topic-num">選題 02 · OT / 關鍵基礎設施</div>
-          <h3>私有 APN 不等於隔離：波蘭電廠首見經行動專網入侵 OT，Siemens PLC 遭切至 STOP</h3>
-          <p>CERT Polska 於 8/11 公布完整分析：攻擊者自風場經配電業者私有 APN 進入電廠 OT 網路造成汽機停機。主管機關推薦的行動網路隔離架構，未啟用 client isolation 時形同共用網段。</p>
+          <div class="topic-num">選題 02 · OT / 冷鏈安全</div>
+          <h3>沒有警報的破壞：Claroty 揭露冷凍控制器漏洞，未認證即可取得 root RCE</h3>
+          <p>Copeland XWEB Pro 含 23 個漏洞（21 高風險）、Danfoss AK-SM 800A 含隱藏的 code-of-the-day 認證繞過。攻擊者可實體操縱冷凍系統，讓溫控貨品在無警報的情況下變質。</p>
           <div class="sources">
-            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/11/poland-energy-sector-cyberattack-heating-plant-private-apn/" target="_blank" rel="noopener">📰 Help Net Security 8/11</a>
-            <a class="source-tag" href="https://thehackernews.com/2026/08/hackers-breach-polish-power-plant.html" target="_blank" rel="noopener">📰 The Hacker News 8月*</a>
-            <a class="source-tag" href="https://www.bleepingcomputer.com/news/security/hackers-breached-a-small-polish-energy-plant-via-private-apn-last-year/" target="_blank" rel="noopener">📰 BleepingComputer 8月*</a>
+            <a class="source-tag" href="https://www.securityweek.com/in-other-news-rapid7-layoffs-hacking-a-boeing-737-refrigeration-system-vulnerabilities/" target="_blank" rel="noopener">📰 SecurityWeek 8/14</a>
+            <a class="source-tag" href="https://securitybrief.com.au/story/refrigeration-controller-flaws-threaten-cold-chains" target="_blank" rel="noopener">📰 SecurityBrief AU 8月*</a>
+            <a class="source-tag" href="https://www.climatecontrolnews.com.au/refrigeration/warning-to-update-controllers" target="_blank" rel="noopener">📡 Climate Control News 8月*</a>
+            <a class="source-tag" href="https://www.machine.news/vulnerabilities-in-refrigeration-systems-highlight-the-chilling-fragility-of-food-supply-chains/" target="_blank" rel="noopener">📡 machine.news 8月*</a>
           </div>
 
-          <details class="channel" data-post-id="20260813-t2-li">
+          <details class="channel" data-post-id="20260817-t2-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">「用私有行動網路把 OT 隔離開來」——這個被主管機關推薦的架構，本週被證明並不等於隔離。
+                <div class="draft-text">冷鏈的資安風險有一個很不直覺的特性：攻擊成功時，沒有任何警報會響——貨品只是慢慢壞掉。
 
-CERT Polska 於 8 月 11 日公開一起波蘭汽電共生（CHP）電廠事件的完整分析。攻擊路徑值得逐段細讀：
+Claroty Team82 本期揭露兩套冷凍控制平台的漏洞，影響超市、倉儲、冷藏設施與醫療場域：
 
-攻擊者先入侵一座風場，接著透過配電業者（DSO）的私有 APN 橫向移動，進入電廠的 OT 網路，最後把 Siemens PLC 切換到 STOP 模式——實際造成汽機停機。
+• Copeland XWEB Pro：23 個漏洞，其中 21 個高風險。未經認證的攻擊者可繞過平台安全控制，最終取得 root 層級的遠端程式碼執行。
+• Danfoss AK-SM 800A：3 個漏洞，其中一個涉及名為「code-of-the-day」的隱藏認證機制，可被濫用以繞過標準登入並導致遠端程式碼執行。Danfoss 已發布韌體 R4.3.1 修補。
 
-關鍵環節：一台 Teltonika RUTX50 行動路由器同時具備連往電網設備的序列埠與接上內網的乙太網路埠，成為跨越兩個網域的橋樑。攻擊者反覆以 SSH 登入該路由器，再從那裡鑽進 DSO 的私有 APN；隨後掃描 VNC、HTTP 與 S7、Modbus 等工控協定，找到一台 web 介面仍使用預設管理員憑證的 WAGO PFC200 控制器。
+Team82 指出，這些中央管理系統的弱點可讓攻擊者實體操縱冷凍系統，在不被立即察覺的情況下讓溫控貨品變質。
 
-CERT Polska 指出這是首度觀察到攻擊者經由私有 APN 進入 OT 網路。而 FBI 與 EPA 曾建議以行動網路隔離 OT——本案證明：**沒有啟用 client isolation 的私有 APN，不是隔離，只是另一個共用網段。**
+對製造業的意義超出食品業：疫苗與生技原料、特用化學品、部分電子元件與光阻材料都有嚴格的溫控要求。冷鏈控制器往往由設備商或工務單位管理，不在 IT 資產清單裡，也不在漏洞管理的掃描範圍內——這正是問題所在。
 
-CERT 的第一項建議很直接：稽核私有 APN 設定、開啟 client isolation，並從 OT 側把 APN 視為不可信網路來分段與限流。
+三個可以今天就做的動作：
+• 盤點廠內所有冷凍/溫控中央管理平台的品牌與韌體版本
+• 確認這些系統是否可從企業網路或網際網路觸及
+• 把「溫控異常」納入資安事件的偵測情境，而不只是設備故障情境
 
-你的廠區如果有私有 APN 或 4G/5G 專網，client isolation 是開著的嗎？
-<div class="hashtags">#OTSecurity #ICS #PrivateNetworks #SmartFactory #CriticalInfrastructure</div></div>
+你的溫控系統，上一次被當成資安資產盤點是什麼時候？
+<div class="hashtags">#OTSecurity #ColdChain #ICS #ManufacturingCyber #Claroty</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">"Isolate OT behind a private cellular network" — an architecture regulators have recommended — was shown this week not to be isolation at all.
+                <div class="draft-text">Cold-chain security has a counter-intuitive property: when the attack succeeds, no alarm sounds — the goods simply spoil.
 
-On 11 August, CERT Polska published its full analysis of an incident at a Polish combined heat and power plant. The path deserves a careful read:
+Claroty Team82 disclosed vulnerabilities this week in two refrigeration control platforms used across supermarkets, warehouses, cold-storage sites and healthcare settings:
 
-Attackers first compromised a wind farm, pivoted through the distribution system operator's private APN into the plant's OT network, and ultimately put Siemens PLCs into STOP mode — physically halting a turbine.
+• Copeland XWEB Pro: 23 vulnerabilities, 21 rated high severity. An unauthenticated attacker can bypass the platform's security controls and ultimately gain root-level remote code execution.
+• Danfoss AK-SM 800A: three vulnerabilities, one involving a hidden authentication mechanism called "code-of-the-day" that can be abused to bypass standard login and lead to remote code execution. Danfoss has released firmware R4.3.1.
 
-The pivot point: a Teltonika RUTX50 cellular router with both a serial link to grid equipment and an Ethernet port on the compromised internal network — a bridge across two domains. Logs show the attacker repeatedly logging in over SSH, then tunnelling into the DSO's private APN. From there they scanned for VNC, HTTP and industrial protocols including S7 and Modbus, and found a WAGO PFC200 controller still running default admin credentials on its web interface.
+Team82 notes that weaknesses in these central management systems let attackers physically manipulate refrigeration and silently spoil temperature-sensitive contents without immediate detection.
 
-CERT Polska calls this the first observed case of attackers reaching an OT network through a private APN. The FBI and EPA have recommended cellular isolation for OT — this case proves the point: **a private APN without client isolation enabled is not isolation, just another shared segment.**
+The relevance extends beyond food: vaccines and biotech inputs, specialty chemicals, and some electronic components and photoresists all carry strict temperature requirements. Cold-chain controllers are typically managed by equipment vendors or facilities teams — absent from the IT asset inventory and outside vulnerability-scanning scope. That gap is the problem.
 
-CERT's first recommendation is blunt: audit the private APN configuration, switch on client isolation, and treat the APN as untrusted from the OT side — segment and restrict traffic accordingly.
+Three things you can do today:
+• Inventory every refrigeration and temperature-control management platform on site, with firmware versions
+• Confirm whether those systems are reachable from the corporate network or the internet
+• Add "temperature anomaly" to your security detection scenarios, not just your equipment-failure scenarios
 
-If your plant runs a private APN or a dedicated 4G/5G network, is client isolation actually turned on?
-<div class="hashtags">#OTSecurity #ICS #PrivateNetworks #SmartFactory #CriticalInfrastructure</div></div>
+When was your temperature-control system last inventoried as a security asset?
+<div class="hashtags">#OTSecurity #ColdChain #ICS #ManufacturingCyber #Claroty</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260813-t2-x">
+          <details class="channel" data-post-id="20260817-t2-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ CERT Polska 8/11 公布：攻擊者從一座風場出發，經配電業者的私有 APN 進入波蘭 CHP 電廠 OT 網路，把 Siemens PLC 切到 STOP——汽機停機。
+                <div class="draft-text">1/ Claroty Team82 揭露冷凍控制平台漏洞：Copeland XWEB Pro 有 23 個漏洞（21 個高風險），未認證即可繞過安全控制取得 root 級 RCE。
 
-2/ 橋樑是一台 Teltonika RUTX50：一邊序列埠連電網設備、一邊乙太網路接內網。攻擊者反覆 SSH 登入，再鑽進 DSO 的私有 APN。
+2/ Danfoss AK-SM 800A 另有 3 個漏洞，其中一個是隱藏的「code-of-the-day」認證機制，可繞過標準登入導致 RCE。Danfoss 已發布 R4.3.1 韌體修補。
 
-3/ 進到 OT 後掃 VNC、HTTP、S7、Modbus，找到一台 WAGO PFC200——web 介面還在用預設管理員帳密。
+3/ 影響場域：超市、倉儲、冷藏設施、醫療。Team82 強調攻擊者可實體操縱冷凍系統，讓貨品在無警報的情況下變質。
 
-4/ CERT 說這是首見經私有 APN 進入 OT 的案例。FBI/EPA 曾推薦用行動專網隔離 OT；本案證明沒開 client isolation 就不叫隔離。
+4/ 為什麼製造業要看：疫苗與生技原料、特用化學品、部分電子材料都有嚴格溫控需求，而冷鏈控制器通常不在 IT 資產清單內。
 
-5/ 行動項目：稽核私有 APN 設定、開啟 client isolation、從 OT 側把 APN 當不可信網路分段。有專網的廠區今天就能查。
-<div class="hashtags">#OTSecurity #ICS #PrivateAPN</div></div>
+5/ 今天可做：盤點溫控平台與韌體版本、確認網路可達性、把「溫控異常」列入資安偵測情境。
+<div class="hashtags">#OTSecurity #ColdChain #ICS</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ CERT Polska (11 Aug): attackers pivoted from a compromised wind farm through the DSO's private APN into a Polish CHP plant's OT network and put Siemens PLCs into STOP mode — halting a turbine.
+                <div class="draft-text">1/ Claroty Team82 disclosed refrigeration control platform flaws: Copeland XWEB Pro carries 23 vulnerabilities (21 high severity) — an unauthenticated attacker can bypass security controls and reach root-level RCE.
 
-2/ The bridge: a Teltonika RUTX50 router with a serial link to grid equipment on one side and Ethernet on the compromised internal network on the other. Repeated SSH logins, then a tunnel into the private APN.
+2/ Danfoss AK-SM 800A has three more, including a hidden "code-of-the-day" authentication mechanism that can be abused to bypass standard login and lead to RCE. Danfoss shipped firmware R4.3.1.
 
-3/ Inside OT they scanned VNC, HTTP, S7 and Modbus — and found a WAGO PFC200 still using default admin credentials on its web UI.
+3/ Affected settings: supermarkets, warehouses, cold storage, healthcare. Team82 stresses attackers can physically manipulate refrigeration and spoil goods with no alarm raised.
 
-4/ CERT calls it the first observed OT intrusion via a private APN. FBI/EPA have recommended cellular isolation for OT; this proves it isn't isolation without client isolation enabled.
+4/ Why manufacturers should care: vaccines and biotech inputs, specialty chemicals and some electronic materials have strict temperature requirements — and cold-chain controllers usually sit outside the IT asset inventory.
 
-5/ Actions: audit the private APN config, enable client isolation, treat the APN as untrusted from the OT side. If you run a private network, you can check this today.
-<div class="hashtags">#OTSecurity #ICS #PrivateAPN</div></div>
+5/ Today: inventory temperature-control platforms and firmware versions, confirm network reachability, add "temperature anomaly" to security detection scenarios.
+<div class="hashtags">#OTSecurity #ColdChain #ICS</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260813-t2-blog">
+          <details class="channel" data-post-id="20260817-t2-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text"><strong>標題</strong>：私有 APN 不等於隔離：波蘭電廠事件對智慧工廠專網的警訊
+                <div class="draft-text"><strong>標題</strong>：沒有警報的破壞：冷凍控制器漏洞與溫控供應鏈的資安盲區
 
-• 攻擊鏈：風場遭入侵 → 經 DSO 私有 APN 橫向 → 進入 CHP 電廠 OT 網路 → Siemens PLC 切入 STOP，汽機停機
-• 關鍵設備：Teltonika RUTX50 同時連接電網序列埠與內網乙太網路，成為跨網域橋樑；攻擊者以 SSH 反覆登入
-• 基礎衛生失守：OT 內掃描 VNC/HTTP/S7/Modbus，發現 WAGO PFC200 仍使用預設管理員憑證
-• 架構層教訓：FBI/EPA 推薦的行動網路隔離，未啟用 client isolation 時形同共用網段
-• 給智慧工廠的清單：專網設定稽核、client isolation、OT 側視 APN 為不可信、跨企業連線的信任邊界重畫
-• 註：事件本身發生於去年 12 月，本週公布的是 CERT Polska 的完整技術分析
-<div class="hashtags">#OTSecurity #ICS #SmartFactory</div></div>
+• 漏洞概要：Copeland XWEB Pro 23 個漏洞（21 高風險，未認證即可取得 root RCE）；Danfoss AK-SM 800A 3 個漏洞，含隱藏的 code-of-the-day 認證繞過，已由 R4.3.1 韌體修補
+• 影響場域：超市、倉儲、冷藏設施與醫療；Claroty Team82 指出可實體操縱冷凍並使貨品無聲變質
+• 製造業延伸風險：疫苗與生技原料、特用化學品、電子材料的溫控要求，讓冷鏈成為品質與合規風險而非僅設施問題
+• 治理盲區：冷鏈控制器多由設備商或工務管理，不在 IT 資產清單與漏洞掃描範圍
+• 偵測缺口：溫度異常通常被歸類為設備故障，缺乏資安視角的關聯分析
+• 行動清單：資產與韌體盤點、網路可達性確認、溫控異常納入資安偵測、供應商韌體更新 SLA
+<div class="hashtags">#OTSecurity #ColdChain #ManufacturingCyber</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text"><strong>Title</strong>: A Private APN Is Not Isolation: What the Polish Plant Incident Means for Smart-Factory Private Networks
+                <div class="draft-text"><strong>Title</strong>: Sabotage Without an Alarm: Refrigeration Controller Flaws and the Blind Spot in Temperature-Controlled Supply Chains
 
-• Kill chain: wind farm compromised → pivot through the DSO's private APN → into the CHP plant's OT network → Siemens PLCs set to STOP, turbine halted
-• The pivot device: a Teltonika RUTX50 bridging a serial link to grid equipment and Ethernet on the internal network; attacker logged in repeatedly over SSH
-• Basic hygiene failure: scanning VNC/HTTP/S7/Modbus inside OT surfaced a WAGO PFC200 still on default admin credentials
-• Architectural lesson: the cellular isolation model recommended by FBI/EPA behaves like a shared segment unless client isolation is enabled
-• Smart-factory checklist: audit private network config, enable client isolation, treat the APN as untrusted from OT, redraw trust boundaries for cross-company links
-• Note: the incident occurred last December; what was published this week is CERT Polska's full technical analysis
-<div class="hashtags">#OTSecurity #ICS #SmartFactory</div></div>
+• The flaws: Copeland XWEB Pro with 23 vulnerabilities (21 high severity; unauthenticated path to root RCE); Danfoss AK-SM 800A with three, including a hidden "code-of-the-day" authentication bypass, fixed in firmware R4.3.1
+• Where they run: supermarkets, warehouses, cold storage and healthcare; Claroty Team82 notes attackers can physically manipulate refrigeration and spoil contents silently
+• Extended manufacturing risk: vaccines and biotech inputs, specialty chemicals and electronic materials make cold chain a quality and compliance risk, not just a facilities issue
+• Governance blind spot: cold-chain controllers are usually managed by vendors or facilities, outside IT inventory and vulnerability scanning
+• Detection gap: temperature anomalies are classified as equipment failure, with no security-side correlation
+• Action list: asset and firmware inventory, network reachability check, temperature anomalies in security detection, vendor firmware-update SLAs
+<div class="hashtags">#OTSecurity #ColdChain #ManufacturingCyber</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260813-t2-nl">
+          <details class="channel" data-post-id="20260817-t2-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">CERT Polska 於 8 月 11 日公布波蘭汽電共生電廠遭入侵的完整分析：攻擊者自一座風場出發，經配電業者的私有 APN 橫向進入電廠 OT 網路，將 Siemens PLC 切換至 STOP 模式造成停機；途中利用一台 Teltonika RUTX50 路由器跨越網域，並發現仍使用預設憑證的 WAGO PFC200 控制器。CERT 指此為首見經私有 APN 進入 OT 的案例，建議立即稽核專網設定並啟用 client isolation。主要來源：Help Net Security（8/11）、The Hacker News（8 月）、BleepingComputer（8 月）。
-<div class="hashtags">#OTSecurity #ICS</div></div>
+                <div class="draft-text">Claroty Team82 本期揭露兩套冷凍控制平台漏洞：Copeland XWEB Pro 含 23 個漏洞（21 個高風險），未經認證的攻擊者可繞過安全控制取得 root 級遠端程式碼執行；Danfoss AK-SM 800A 另有 3 個漏洞，包含可被濫用的隱藏「code-of-the-day」認證機制，Danfoss 已發布 R4.3.1 韌體修補。受影響場域涵蓋超市、倉儲、冷藏設施與醫療，攻擊者可實體操縱冷凍使貨品無聲變質。建議製造業者盤點溫控平台韌體並確認網路可達性。主要來源：SecurityWeek（8/14）、SecurityBrief AU（8 月）。
+<div class="hashtags">#OTSecurity #ColdChain</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">On 11 August CERT Polska published its full analysis of an intrusion at a Polish combined heat and power plant: attackers pivoted from a compromised wind farm through the distribution operator's private APN into the plant's OT network and set Siemens PLCs to STOP, halting a turbine. A Teltonika RUTX50 router bridged the domains, and a WAGO PFC200 controller was found still running default credentials. CERT calls it the first observed OT intrusion via a private APN and urges operators to audit private-network configuration and enable client isolation. Sources: Help Net Security (8/11), The Hacker News (Aug), BleepingComputer (Aug).
-<div class="hashtags">#OTSecurity #ICS</div></div>
-              </div>
-              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
-            </div>
-          </details>
-        </div>
-        <!-- 選題 3 -->
-        <div class="topic">
-          <div class="topic-num">選題 03 · 電子製造 / 供應鏈安全</div>
-          <h3>矽層的補丁節奏：Intel 與 AMD 合計修補 80+ 漏洞，TDX 提權動搖機密運算假設</h3>
-          <p>8/11 晶片 Patch Tuesday：Intel 同日發布 20260811 微碼更新處理八項問題，多項為權限提升。產線主機的韌體與微碼更新，是製造業長期被忽略的維運缺口。</p>
-          <div class="sources">
-            <a class="source-tag" href="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01379.html" target="_blank" rel="noopener">🏛 Intel Security Center 8/11</a>
-            <a class="source-tag" href="https://www.phoronix.com/news/Intel-CPU-Microcode-20260811" target="_blank" rel="noopener">📰 Phoronix 8/11</a>
-            <a class="source-tag" href="https://www.securityweek.com/chipmaker-patch-tuesday-intel-amd-fix-over-80-vulnerabilities-combined/" target="_blank" rel="noopener">📰 SecurityWeek 8月*</a>
-          </div>
-
-          <details class="channel" data-post-id="20260813-t3-li">
-            <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
-            <div class="draft-body">
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">8 月 11 日的晶片 Patch Tuesday：Intel 與 AMD 合計修補超過 80 個漏洞。對管理大量工控主機與工作站的製造業，這是一次值得排程的維運窗口。
-
-Intel 同日發布 20260811 微碼更新，修正八項安全問題；其中多項屬於權限提升：
-
-• INTEL-SA-01379：Intel TDX 於 Xeon 6 平台的高風險提權
-• INTEL-SA-01428：影響全系列 Intel Core Ultra 與 Xeon 6 的提權
-• INTEL-SA-01435：Xeon 6 因 Ring 3 存取控制不當導致的提權
-• INTEL-SA-01442：Xeon 韌體控制流程錯誤，另有輸入驗證不當的第二個 CVE
-
-TDX 那項特別值得注意：機密運算的整個信任假設，就建立在「即使主機被攻陷，機密 VM 仍受保護」之上。當提權漏洞出現在這一層，把敏感製程資料或模型放進 TEE 的風險模型就需要重新評估。
-
-微碼與韌體更新的現實挑戰在製造現場更明顯：產線主機不能隨時重開、供應商映像檔更新落後、許多工控 PC 根本不在 IT 的補丁管理範圍內。
-
-你的韌體/微碼更新，是有排程的維運項目，還是「等出事再說」？
-<div class="hashtags">#Semiconductor #FirmwareSecurity #ConfidentialComputing #ManufacturingIT #PatchManagement</div></div>
-              </div>
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Chipmaker Patch Tuesday on 11 August: Intel and AMD fixed more than 80 vulnerabilities combined. For manufacturers running fleets of industrial hosts and workstations, this is a maintenance window worth scheduling.
-
-Intel shipped microcode release 20260811 the same day, addressing eight security issues — several of them privilege escalation:
-
-• INTEL-SA-01379: high-severity escalation around Intel TDX on Xeon 6
-• INTEL-SA-01428: escalation affecting all Intel Core Ultra CPUs and Xeon 6
-• INTEL-SA-01435: escalation on Xeon 6 from improper access controls within Ring 3
-• INTEL-SA-01442: escalation on Xeon from incorrect control flow in firmware, with a second CVE for improper input validation
-
-The TDX item deserves particular attention: the entire trust assumption of confidential computing rests on "even if the host is compromised, the confidential VM stays protected." When privilege escalation appears at that layer, the risk model for putting sensitive process data or models inside a TEE needs revisiting.
-
-The practical difficulty is sharper on a factory floor: production hosts cannot reboot on demand, vendor images lag upstream fixes, and many industrial PCs sit entirely outside IT's patch management.
-
-Is firmware and microcode updating a scheduled maintenance item for you — or a "deal with it when something breaks" item?
-<div class="hashtags">#Semiconductor #FirmwareSecurity #ConfidentialComputing #ManufacturingIT #PatchManagement</div></div>
-              </div>
-              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
-            </div>
-          </details>
-
-          <details class="channel" data-post-id="20260813-t3-x">
-            <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
-            <div class="draft-body">
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ 8/11 晶片 Patch Tuesday：Intel + AMD 合計修補 80+ 漏洞。Intel 同日推出 20260811 微碼更新，修正 8 項安全問題。
-
-2/ 多項是權限提升：INTEL-SA-01379（Xeon 6 的 TDX 提權）、01428（全系列 Core Ultra + Xeon 6）、01435（Ring 3 存取控制不當）、01442（韌體控制流程錯誤）。
-
-3/ TDX 那項最值得停下來想：機密運算的前提是「主機被攻陷，機密 VM 仍安全」。提權出現在這層，TEE 的信任假設要重新評估。
-
-4/ 製造現場的難處：產線主機不能說重開就重開、供應商映像檔落後、很多工控 PC 不在補丁管理範圍。
-
-5/ 建議：把微碼/韌體更新排進正式維運窗口，並先盤點哪些產線資產跑 Xeon 6 / Core Ultra。
-<div class="hashtags">#Semiconductor #FirmwareSecurity #PatchTuesday</div></div>
-              </div>
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Chipmaker Patch Tuesday (11 Aug): Intel + AMD fixed 80+ vulnerabilities combined. Intel also shipped microcode 20260811 the same day, covering 8 security issues.
-
-2/ Several are privilege escalation: INTEL-SA-01379 (TDX on Xeon 6), 01428 (all Core Ultra + Xeon 6), 01435 (improper Ring 3 access controls), 01442 (incorrect control flow in firmware).
-
-3/ The TDX one is worth pausing on: confidential computing assumes "host compromised, confidential VM still safe." Escalation at that layer means revisiting your TEE trust model.
-
-4/ The factory-floor difficulty: production hosts can't reboot on demand, vendor images lag, and many industrial PCs sit outside patch management entirely.
-
-5/ Suggestion: put microcode/firmware updates in a real maintenance window, and start by inventorying which production assets run Xeon 6 / Core Ultra.
-<div class="hashtags">#Semiconductor #FirmwareSecurity #PatchTuesday</div></div>
-              </div>
-              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
-            </div>
-          </details>
-
-          <details class="channel" data-post-id="20260813-t3-blog">
-            <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
-            <div class="draft-body">
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text"><strong>標題</strong>：矽層的補丁節奏：8/11 晶片 Patch Tuesday 對製造業資產管理的挑戰
-
-• 規模：Intel 與 AMD 於 8/11 合計修補 80+ 漏洞；Intel 同日發布 20260811 微碼更新，涵蓋 8 項安全問題
-• 重點提權：INTEL-SA-01379（Xeon 6 TDX）、01428（Core Ultra 全系列與 Xeon 6）、01435（Ring 3 存取控制）、01442（韌體控制流程與輸入驗證）
-• 機密運算的信任重估：TDX 層級的提權，直接影響「把敏感製程資料放進 TEE」的風險假設
-• 製造現場的落差：產線主機重啟窗口有限、供應商映像檔更新落後、工控 PC 常不在 IT 補丁管理內
-• 建議做法：建立矽層/韌體資產清單、與設備供應商約定微碼更新 SLA、把 firmware 納入年度維運排程
-<div class="hashtags">#Semiconductor #FirmwareSecurity #PatchManagement</div></div>
-              </div>
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text"><strong>Title</strong>: Patch Cadence at the Silicon Layer: What 11 Aug Chipmaker Patch Tuesday Means for Manufacturing Asset Management
-
-• Scale: Intel and AMD fixed 80+ vulnerabilities combined on 11 Aug; Intel also released microcode 20260811 covering eight security issues
-• Key escalations: INTEL-SA-01379 (TDX on Xeon 6), 01428 (all Core Ultra and Xeon 6), 01435 (Ring 3 access controls), 01442 (firmware control flow and input validation)
-• Rethinking confidential computing trust: escalation at the TDX layer directly affects the assumption behind putting sensitive process data in a TEE
-• The factory gap: limited reboot windows for production hosts, vendor images lagging upstream fixes, industrial PCs outside IT patch management
-• Recommended: build a silicon/firmware asset inventory, agree microcode-update SLAs with equipment vendors, put firmware into the annual maintenance schedule
-<div class="hashtags">#Semiconductor #FirmwareSecurity #PatchManagement</div></div>
-              </div>
-              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
-            </div>
-          </details>
-
-          <details class="channel" data-post-id="20260813-t3-nl">
-            <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
-            <div class="draft-body">
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">8 月 11 日晶片 Patch Tuesday：Intel 與 AMD 合計修補超過 80 個漏洞，Intel 同日發布 20260811 微碼更新處理八項安全問題，其中多項為權限提升，包括 Xeon 6 上的 Intel TDX（INTEL-SA-01379）、影響 Core Ultra 全系列與 Xeon 6 的 INTEL-SA-01428，以及 Ring 3 存取控制不當的 INTEL-SA-01435。TDX 層級提權將影響機密運算的信任假設。建議製造業者盤點產線資產的處理器型號並排定韌體維運窗口。主要來源：Intel Security Center（8/11）、Phoronix（8/11）、SecurityWeek（8 月）。
-<div class="hashtags">#Semiconductor #FirmwareSecurity</div></div>
-              </div>
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Chipmaker Patch Tuesday, 11 August: Intel and AMD fixed more than 80 vulnerabilities combined, and Intel shipped microcode release 20260811 the same day covering eight security issues — several of them privilege escalation, including Intel TDX on Xeon 6 (INTEL-SA-01379), INTEL-SA-01428 affecting all Core Ultra CPUs and Xeon 6, and INTEL-SA-01435 from improper Ring 3 access controls. Escalation at the TDX layer affects the trust assumptions behind confidential computing. Manufacturers should inventory processor models across production assets and schedule a firmware maintenance window. Sources: Intel Security Center (8/11), Phoronix (8/11), SecurityWeek (Aug).
-<div class="hashtags">#Semiconductor #FirmwareSecurity</div></div>
+                <div class="draft-text">Claroty Team82 disclosed vulnerabilities in two refrigeration control platforms this week: Copeland XWEB Pro contains 23 vulnerabilities (21 high severity) allowing an unauthenticated attacker to bypass security controls and reach root-level remote code execution, while Danfoss AK-SM 800A has three, including an abusable hidden "code-of-the-day" authentication mechanism — Danfoss has released firmware R4.3.1. Affected environments span supermarkets, warehouses, cold storage and healthcare, where attackers can physically manipulate refrigeration and spoil goods without raising an alarm. Manufacturers should inventory temperature-control platform firmware and verify network reachability. Sources: SecurityWeek (8/14), SecurityBrief AU (Aug).
+<div class="hashtags">#OTSecurity #ColdChain</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
