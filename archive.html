@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>過去週次存檔｜每週內容創意存檔</title>
+  <title>過去期數存檔｜每週內容創意存檔</title>
   <meta name="description" content="每週內容創意的歷史存檔頁。累積過去各週的選題與中英雙語可複製草稿。">
   <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -15,7 +15,7 @@
       <div class="brand">
         <div class="brand-icon">AI</div>
         <div>
-          <h1>過去週次存檔</h1>
+          <h1>過去期數存檔</h1>
           <p class="subtitle">歷史選題與草稿累積 · 由新到舊排列</p>
         </div>
         <div class="team">
@@ -38,6 +38,292 @@
     </header>
 
     <section>
+      <article class="week-card">
+        <div class="week-header">
+          <div>
+            <div class="week-date">2026 年 8 月 17 日（週一）</div>
+            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/13–8/16 本期重點新聞</div>
+          </div>
+        </div>
+        <!-- 選題 1 -->
+        <div class="topic">
+          <div class="topic-num">選題 01 · AI 安全 / 供應鏈</div>
+          <h3>當安全工具成為供應鏈入口：LiteLLM 事件實際波及 2,500 家組織，根因追至 Trivy</h3>
+          <p>CloudSEK 追蹤報告揭露 3 月 LiteLLM 供應鏈事件的真實規模：2,500+ 組織、43 萬+ CI/CD pipeline。後續更正指出根因是 Aqua Security 的 Trivy 掃描器遭入侵，經 CI 自動安裝擴散至 AI gateway。</p>
+          <div class="sources">
+            <a class="source-tag" href="https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/" target="_blank" rel="noopener">📰 SecurityWeek 8/14*</a>
+            <a class="source-tag" href="https://www.securityweek.com/trivy-not-litellm-behind-the-2500-org-compromise/" target="_blank" rel="noopener">📰 SecurityWeek 根因更正 8月*</a>
+            <a class="source-tag" href="https://www.scworld.com/brief/litellm-supply-chain-attack-impacted-over-2500-organizations" target="_blank" rel="noopener">📰 SC Media 8月*</a>
+            <a class="source-tag" href="https://www.heise.de/en/news/LiteLLM-attack-Over-2500-companies-affected-11412943.html" target="_blank" rel="noopener">📰 heise online 8月*</a>
+          </div>
+
+          <details class="channel" data-post-id="20260817-t1-li">
+            <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">一次 40 分鐘的惡意套件上架，最後盤點出 2,500 家組織與 43 萬條 CI/CD pipeline 受影響——而真正的起點還不是它。
+
+CloudSEK 本期公布的追蹤報告顯示：今年 3 月 LiteLLM 供應鏈事件的波及範圍遠超原本估計。LiteLLM 是眾多 AI 應用的 LLM gateway，1.82.7 與 1.82.8 兩個版本（3 月 24 日發布）夾帶竊取憑證的程式碼，外洩內容包括發布憑證、雲端金鑰、SSH 金鑰、各式 token，以及 AI 供應商 API 金鑰。
+
+更值得資安團隊注意的是後續更正：SecurityWeek 追蹤報導指出，這 2,500 家組織的實際根因是 Aqua Security 的 Trivy 漏洞掃描器遭入侵——LiteLLM 的 CI pipeline 自動安裝了被汙染的 Trivy 版本，才導致自身被汙染。
+
+換句話說：一個「用來檢查安全的工具」被攻陷，經由 CI 自動化擴散到下游的 AI 基礎設施，再擴散到使用它的數千家企業。
+
+對正在導入 AI 的製造與科技企業，這串連鎖有三個具體提醒：
+• 你的 CI pipeline 自動安裝哪些工具？那些工具本身的供應鏈誰在看？
+• AI gateway 持有的是「所有 AI 供應商的金鑰」——它的權限集中度值得單獨做風險評估
+• 惡意版本只存活 40 分鐘仍造成這個規模，代表偵測時間窗必須以分鐘計，而非以天計
+
+你的建置流程裡，安全工具本身有被納入供應鏈盤點嗎？
+<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps #CICD #LiteLLM</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">A malicious package that was live for 40 minutes ended up implicating 2,500 organisations and 430,000 CI/CD pipelines — and it wasn't even the origin.
+
+CloudSEK's tracking report published this week shows the March LiteLLM supply chain incident reached far wider than first estimated. LiteLLM is the LLM gateway behind many AI applications; versions 1.82.7 and 1.82.8 (published 24 March) carried credential-stealing code that exposed publishing credentials, cloud keys, SSH keys, tokens and AI provider API keys.
+
+The follow-up correction matters more for security teams: SecurityWeek reports the actual root cause behind those 2,500 organisations was the compromise of Aqua Security's Trivy vulnerability scanner — LiteLLM's own CI pipeline automatically installed the poisoned Trivy build, which is how LiteLLM itself became poisoned.
+
+Put plainly: a tool built to check security was compromised, spread through CI automation into downstream AI infrastructure, and from there into thousands of enterprises.
+
+Three concrete takeaways for manufacturers and tech companies adopting AI:
+• Which tools does your CI pipeline install automatically — and who is watching those tools' own supply chains?
+• An AI gateway holds keys to every AI provider you use; that concentration of privilege deserves its own risk assessment
+• A 40-minute exposure window produced this blast radius, so detection windows have to be measured in minutes, not days
+
+Are your security tools themselves inside your supply chain inventory?
+<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps #CICD #LiteLLM</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260817-t1-x">
+            <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">1/ CloudSEK 追蹤報告：3 月 LiteLLM 供應鏈事件實際波及 2,500+ 組織、43 萬+ CI/CD pipeline。惡意版本 1.82.7/1.82.8（3/24 發布）只存活約 40 分鐘。
+
+2/ 外洩內容不只原始碼憑證：發布憑證、雲端金鑰、SSH 金鑰、各類 token，還有 AI 供應商 API 金鑰。
+
+3/ 後續更正才是重點：SecurityWeek 指出根因是 Aqua Security 的 Trivy 掃描器遭入侵——LiteLLM 的 CI 自動安裝了被汙染的 Trivy。
+
+4/ 也就是說：安全工具被攻陷 → 經 CI 自動化汙染 AI gateway → 再擴散到數千家使用者。這是「檢查者本身被攻陷」的教科書案例。
+
+5/ 行動項目：盤點 CI 自動安裝的工具鏈、對 AI gateway 的金鑰集中度單獨評估、把偵測窗口目標訂在分鐘級。
+<div class="hashtags">#SupplyChainSecurity #AISecurity #CICD</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">1/ CloudSEK tracking report: March's LiteLLM supply chain incident actually reached 2,500+ organisations and 430,000+ CI/CD pipelines. The malicious versions 1.82.7/1.82.8 (published 24 Mar) were live for roughly 40 minutes.
+
+2/ What leaked went well beyond source credentials: publishing credentials, cloud keys, SSH keys, assorted tokens — and AI provider API keys.
+
+3/ The correction is the real story: SecurityWeek reports the root cause was a compromise of Aqua Security's Trivy scanner — LiteLLM's CI automatically installed the poisoned Trivy build.
+
+4/ So: a security tool is compromised → CI automation poisons an AI gateway → thousands of downstream users are exposed. A textbook "the checker itself was compromised" case.
+
+5/ Actions: inventory what your CI installs automatically, risk-assess the key concentration inside your AI gateway, and target minute-scale detection windows.
+<div class="hashtags">#SupplyChainSecurity #AISecurity #CICD</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260817-t1-blog">
+            <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text"><strong>標題</strong>：當安全工具成為供應鏈入口：LiteLLM 事件的真實根因與 AI 基礎設施風險
+
+• 事件規模：CloudSEK 追蹤指出 3 月 LiteLLM 供應鏈事件波及 2,500+ 組織、430,000+ CI/CD pipeline
+• 外洩範圍：發布憑證、雲端金鑰、SSH 金鑰、各式 token 與 AI 供應商 API 金鑰（LiteLLM 1.82.7 / 1.82.8，3 月 24 日發布，存活約 40 分鐘）
+• 根因更正：SecurityWeek 追蹤報導指出 2,500 家組織的實際源頭是 Aqua Security Trivy 遭入侵，LiteLLM CI 自動安裝汙染版本而受害
+• 結構性教訓：安全掃描工具位於 CI 的高信任位置，一旦被攻陷即成為最有效的擴散途徑
+• AI 專屬風險：AI gateway 集中持有多家供應商金鑰，權限集中度需獨立評估
+• 建議做法：CI 自動安裝清單盤點、工具供應鏈的 SBOM 與版本鎖定、AI 金鑰輪替與最小權限、分鐘級偵測目標
+<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text"><strong>Title</strong>: When the Security Tool Is the Entry Point: the Real Root Cause of the LiteLLM Incident and AI Infrastructure Risk
+
+• Scale: CloudSEK's tracking puts March's LiteLLM supply chain incident at 2,500+ organisations and 430,000+ CI/CD pipelines
+• What leaked: publishing credentials, cloud keys, SSH keys, assorted tokens and AI provider API keys (LiteLLM 1.82.7 / 1.82.8, published 24 March, live roughly 40 minutes)
+• Root-cause correction: SecurityWeek reports the actual origin for those 2,500 organisations was the compromise of Aqua Security's Trivy, which LiteLLM's CI installed automatically
+• Structural lesson: security scanners sit in a high-trust position inside CI; once compromised they become the most effective propagation path available
+• AI-specific risk: an AI gateway concentrates keys for multiple providers — that concentration needs its own assessment
+• Recommended: inventory what CI installs automatically, apply SBOM and version pinning to tooling, rotate AI keys under least privilege, target minute-scale detection
+<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260817-t1-nl">
+            <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">CloudSEK 追蹤報告指出，今年 3 月的 LiteLLM 供應鏈事件實際波及超過 2,500 家組織與 43 萬條 CI/CD pipeline；惡意版本 1.82.7 與 1.82.8 於 3 月 24 日發布、存活約 40 分鐘，外洩發布憑證、雲端與 SSH 金鑰、各類 token 及 AI 供應商 API 金鑰。SecurityWeek 後續報導更正根因：實際源頭為 Aqua Security 的 Trivy 掃描器遭入侵，LiteLLM 的 CI 自動安裝汙染版本而受害。建議企業立即盤點 CI 自動安裝的工具鏈並輪替 AI 金鑰。主要來源：SecurityWeek（8/14 及後續）、SC Media（8 月）、heise online（8 月）。
+<div class="hashtags">#SupplyChainSecurity #AISecurity</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">CloudSEK's tracking report finds that March's LiteLLM supply chain incident actually affected more than 2,500 organisations and 430,000 CI/CD pipelines; the malicious versions 1.82.7 and 1.82.8, published on 24 March and live for roughly 40 minutes, exposed publishing credentials, cloud and SSH keys, assorted tokens and AI provider API keys. SecurityWeek's follow-up corrects the root cause: the actual origin was the compromise of Aqua Security's Trivy scanner, which LiteLLM's CI installed automatically. Enterprises should inventory CI-installed tooling and rotate AI keys now. Sources: SecurityWeek (8/14 and follow-up), SC Media (Aug), heise online (Aug).
+<div class="hashtags">#SupplyChainSecurity #AISecurity</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+        </div>
+        <!-- 選題 2 -->
+        <div class="topic">
+          <div class="topic-num">選題 02 · OT / 冷鏈安全</div>
+          <h3>沒有警報的破壞：Claroty 揭露冷凍控制器漏洞，未認證即可取得 root RCE</h3>
+          <p>Copeland XWEB Pro 含 23 個漏洞（21 高風險）、Danfoss AK-SM 800A 含隱藏的 code-of-the-day 認證繞過。攻擊者可實體操縱冷凍系統，讓溫控貨品在無警報的情況下變質。</p>
+          <div class="sources">
+            <a class="source-tag" href="https://www.securityweek.com/in-other-news-rapid7-layoffs-hacking-a-boeing-737-refrigeration-system-vulnerabilities/" target="_blank" rel="noopener">📰 SecurityWeek 8/14</a>
+            <a class="source-tag" href="https://securitybrief.com.au/story/refrigeration-controller-flaws-threaten-cold-chains" target="_blank" rel="noopener">📰 SecurityBrief AU 8月*</a>
+            <a class="source-tag" href="https://www.climatecontrolnews.com.au/refrigeration/warning-to-update-controllers" target="_blank" rel="noopener">📡 Climate Control News 8月*</a>
+            <a class="source-tag" href="https://www.machine.news/vulnerabilities-in-refrigeration-systems-highlight-the-chilling-fragility-of-food-supply-chains/" target="_blank" rel="noopener">📡 machine.news 8月*</a>
+          </div>
+
+          <details class="channel" data-post-id="20260817-t2-li">
+            <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">冷鏈的資安風險有一個很不直覺的特性：攻擊成功時，沒有任何警報會響——貨品只是慢慢壞掉。
+
+Claroty Team82 本期揭露兩套冷凍控制平台的漏洞，影響超市、倉儲、冷藏設施與醫療場域：
+
+• Copeland XWEB Pro：23 個漏洞，其中 21 個高風險。未經認證的攻擊者可繞過平台安全控制，最終取得 root 層級的遠端程式碼執行。
+• Danfoss AK-SM 800A：3 個漏洞，其中一個涉及名為「code-of-the-day」的隱藏認證機制，可被濫用以繞過標準登入並導致遠端程式碼執行。Danfoss 已發布韌體 R4.3.1 修補。
+
+Team82 指出，這些中央管理系統的弱點可讓攻擊者實體操縱冷凍系統，在不被立即察覺的情況下讓溫控貨品變質。
+
+對製造業的意義超出食品業：疫苗與生技原料、特用化學品、部分電子元件與光阻材料都有嚴格的溫控要求。冷鏈控制器往往由設備商或工務單位管理，不在 IT 資產清單裡，也不在漏洞管理的掃描範圍內——這正是問題所在。
+
+三個可以今天就做的動作：
+• 盤點廠內所有冷凍/溫控中央管理平台的品牌與韌體版本
+• 確認這些系統是否可從企業網路或網際網路觸及
+• 把「溫控異常」納入資安事件的偵測情境，而不只是設備故障情境
+
+你的溫控系統，上一次被當成資安資產盤點是什麼時候？
+<div class="hashtags">#OTSecurity #ColdChain #ICS #ManufacturingCyber #Claroty</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">Cold-chain security has a counter-intuitive property: when the attack succeeds, no alarm sounds — the goods simply spoil.
+
+Claroty Team82 disclosed vulnerabilities this week in two refrigeration control platforms used across supermarkets, warehouses, cold-storage sites and healthcare settings:
+
+• Copeland XWEB Pro: 23 vulnerabilities, 21 rated high severity. An unauthenticated attacker can bypass the platform's security controls and ultimately gain root-level remote code execution.
+• Danfoss AK-SM 800A: three vulnerabilities, one involving a hidden authentication mechanism called "code-of-the-day" that can be abused to bypass standard login and lead to remote code execution. Danfoss has released firmware R4.3.1.
+
+Team82 notes that weaknesses in these central management systems let attackers physically manipulate refrigeration and silently spoil temperature-sensitive contents without immediate detection.
+
+The relevance extends beyond food: vaccines and biotech inputs, specialty chemicals, and some electronic components and photoresists all carry strict temperature requirements. Cold-chain controllers are typically managed by equipment vendors or facilities teams — absent from the IT asset inventory and outside vulnerability-scanning scope. That gap is the problem.
+
+Three things you can do today:
+• Inventory every refrigeration and temperature-control management platform on site, with firmware versions
+• Confirm whether those systems are reachable from the corporate network or the internet
+• Add "temperature anomaly" to your security detection scenarios, not just your equipment-failure scenarios
+
+When was your temperature-control system last inventoried as a security asset?
+<div class="hashtags">#OTSecurity #ColdChain #ICS #ManufacturingCyber #Claroty</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260817-t2-x">
+            <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">1/ Claroty Team82 揭露冷凍控制平台漏洞：Copeland XWEB Pro 有 23 個漏洞（21 個高風險），未認證即可繞過安全控制取得 root 級 RCE。
+
+2/ Danfoss AK-SM 800A 另有 3 個漏洞，其中一個是隱藏的「code-of-the-day」認證機制，可繞過標準登入導致 RCE。Danfoss 已發布 R4.3.1 韌體修補。
+
+3/ 影響場域：超市、倉儲、冷藏設施、醫療。Team82 強調攻擊者可實體操縱冷凍系統，讓貨品在無警報的情況下變質。
+
+4/ 為什麼製造業要看：疫苗與生技原料、特用化學品、部分電子材料都有嚴格溫控需求，而冷鏈控制器通常不在 IT 資產清單內。
+
+5/ 今天可做：盤點溫控平台與韌體版本、確認網路可達性、把「溫控異常」列入資安偵測情境。
+<div class="hashtags">#OTSecurity #ColdChain #ICS</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">1/ Claroty Team82 disclosed refrigeration control platform flaws: Copeland XWEB Pro carries 23 vulnerabilities (21 high severity) — an unauthenticated attacker can bypass security controls and reach root-level RCE.
+
+2/ Danfoss AK-SM 800A has three more, including a hidden "code-of-the-day" authentication mechanism that can be abused to bypass standard login and lead to RCE. Danfoss shipped firmware R4.3.1.
+
+3/ Affected settings: supermarkets, warehouses, cold storage, healthcare. Team82 stresses attackers can physically manipulate refrigeration and spoil goods with no alarm raised.
+
+4/ Why manufacturers should care: vaccines and biotech inputs, specialty chemicals and some electronic materials have strict temperature requirements — and cold-chain controllers usually sit outside the IT asset inventory.
+
+5/ Today: inventory temperature-control platforms and firmware versions, confirm network reachability, add "temperature anomaly" to security detection scenarios.
+<div class="hashtags">#OTSecurity #ColdChain #ICS</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260817-t2-blog">
+            <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text"><strong>標題</strong>：沒有警報的破壞：冷凍控制器漏洞與溫控供應鏈的資安盲區
+
+• 漏洞概要：Copeland XWEB Pro 23 個漏洞（21 高風險，未認證即可取得 root RCE）；Danfoss AK-SM 800A 3 個漏洞，含隱藏的 code-of-the-day 認證繞過，已由 R4.3.1 韌體修補
+• 影響場域：超市、倉儲、冷藏設施與醫療；Claroty Team82 指出可實體操縱冷凍並使貨品無聲變質
+• 製造業延伸風險：疫苗與生技原料、特用化學品、電子材料的溫控要求，讓冷鏈成為品質與合規風險而非僅設施問題
+• 治理盲區：冷鏈控制器多由設備商或工務管理，不在 IT 資產清單與漏洞掃描範圍
+• 偵測缺口：溫度異常通常被歸類為設備故障，缺乏資安視角的關聯分析
+• 行動清單：資產與韌體盤點、網路可達性確認、溫控異常納入資安偵測、供應商韌體更新 SLA
+<div class="hashtags">#OTSecurity #ColdChain #ManufacturingCyber</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text"><strong>Title</strong>: Sabotage Without an Alarm: Refrigeration Controller Flaws and the Blind Spot in Temperature-Controlled Supply Chains
+
+• The flaws: Copeland XWEB Pro with 23 vulnerabilities (21 high severity; unauthenticated path to root RCE); Danfoss AK-SM 800A with three, including a hidden "code-of-the-day" authentication bypass, fixed in firmware R4.3.1
+• Where they run: supermarkets, warehouses, cold storage and healthcare; Claroty Team82 notes attackers can physically manipulate refrigeration and spoil contents silently
+• Extended manufacturing risk: vaccines and biotech inputs, specialty chemicals and electronic materials make cold chain a quality and compliance risk, not just a facilities issue
+• Governance blind spot: cold-chain controllers are usually managed by vendors or facilities, outside IT inventory and vulnerability scanning
+• Detection gap: temperature anomalies are classified as equipment failure, with no security-side correlation
+• Action list: asset and firmware inventory, network reachability check, temperature anomalies in security detection, vendor firmware-update SLAs
+<div class="hashtags">#OTSecurity #ColdChain #ManufacturingCyber</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260817-t2-nl">
+            <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">Claroty Team82 本期揭露兩套冷凍控制平台漏洞：Copeland XWEB Pro 含 23 個漏洞（21 個高風險），未經認證的攻擊者可繞過安全控制取得 root 級遠端程式碼執行；Danfoss AK-SM 800A 另有 3 個漏洞，包含可被濫用的隱藏「code-of-the-day」認證機制，Danfoss 已發布 R4.3.1 韌體修補。受影響場域涵蓋超市、倉儲、冷藏設施與醫療，攻擊者可實體操縱冷凍使貨品無聲變質。建議製造業者盤點溫控平台韌體並確認網路可達性。主要來源：SecurityWeek（8/14）、SecurityBrief AU（8 月）。
+<div class="hashtags">#OTSecurity #ColdChain</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">Claroty Team82 disclosed vulnerabilities in two refrigeration control platforms this week: Copeland XWEB Pro contains 23 vulnerabilities (21 high severity) allowing an unauthenticated attacker to bypass security controls and reach root-level remote code execution, while Danfoss AK-SM 800A has three, including an abusable hidden "code-of-the-day" authentication mechanism — Danfoss has released firmware R4.3.1. Affected environments span supermarkets, warehouses, cold storage and healthcare, where attackers can physically manipulate refrigeration and spoil goods without raising an alarm. Manufacturers should inventory temperature-control platform firmware and verify network reachability. Sources: SecurityWeek (8/14), SecurityBrief AU (Aug).
+<div class="hashtags">#OTSecurity #ColdChain</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+        </div>
+      </article>
       <article class="week-card">
         <div class="week-header">
           <div>
