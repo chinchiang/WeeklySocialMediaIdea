@@ -15,7 +15,7 @@
 建議啟用 **GitHub Pages**（Settings → Pages → Source: Deploy from a branch → main / root），即可獲得公開網址。
 
 ## 本週檔案結構
-- `2026-07-28-topic1-*.md` … `topic3-*.md`：三個獨立選題完整草稿（LinkedIn / X / 部落格 / 簡訊）
+- `<日期>-topic1-*.md` … `topic4-*.md`：每期 3–4 個獨立選題的完整草稿（LinkedIn / X / 部落格 / 簡訊）
 - `index.html`：專業靜態存檔網站
 
 每週一新增新的 Markdown 與更新 `index.html`。

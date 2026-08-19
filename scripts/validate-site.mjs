@@ -63,8 +63,8 @@ const editionKey = edition?.replaceAll('-', '');
 
 // topics never nest, so splitting on the opening tag is unambiguous
 const topics = current.split('<div class="topic">').slice(1);
-check(topics.length >= 2 && topics.length <= 3,
-  `index.html: expected 2-3 topics, found ${topics.length}`);
+check(topics.length >= 2 && topics.length <= 4,
+  `index.html: expected 2-4 topics, found ${topics.length}`);
 
 /* ---------- 3. channels and post-id integrity ---------- */
 const channelRe = /<details class="channel" data-post-id="([^"]+)">([\s\S]*?)<\/details>/g;
@@ -85,7 +85,7 @@ collectIds(index, 'index.html');
 collectIds(archive, 'archive.html');
 
 for (const [, id, body] of currentChannels) {
-  check(new RegExp(`^${editionKey}-t[1-3]-(li|x|blog|nl)$`).test(id),
+  check(new RegExp(`^${editionKey}-t[1-4]-(li|x|blog|nl)$`).test(id),
     `bad post-id "${id}" — expected ${editionKey}-tN-{li|x|blog|nl}`);
   const langs = [...body.matchAll(/<div class="lang-block">([\s\S]*?)<\/div>\s*<\/div>/g)];
   check((body.match(/class="lang-block"/g) || []).length === 2,
