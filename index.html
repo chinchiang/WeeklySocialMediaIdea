@@ -32,7 +32,7 @@
         <span class="badge">專業從業者視角</span>
         <span class="badge">每週一、四更新</span>
         <span class="badge">中英雙語 · 一鍵複製</span>
-        <a class="nav-link push-right" href="archive.html">📁 過去週次存檔</a>
+        <a class="nav-link push-right" href="archive.html">📁 過去期數存檔</a>
         <button class="nav-link" id="sync-btn" type="button" title="跨裝置同步「已使用」紀錄">🔄 同步</button>
         <button class="nav-link" id="sync-cfg" type="button" title="同步設定（設定/更換/移除 Token）">⚙</button>
       </div>
@@ -43,23 +43,24 @@
     <section class="summary">
       <div class="summary-head">
         本期素材摘要
-        <span>2026/08/17（週一）產出 · 涵蓋 8/13–8/16 新聞</span>
+        <span>2026/08/20（週四）產出 · 涵蓋 8/17–8/19 新聞 · 另補收錄 8/12–8/14 台灣事件</span>
       </div>
       <div class="stats">
-        <div class="stat"><b>2</b><span>本期選題</span></div>
-        <div class="stat"><b>0</b><span>🏛 官方來源</span></div>
-        <div class="stat"><b>6</b><span>📰 一線媒體</span></div>
-        <div class="stat"><b>2</b><span>📡 聚合/部落格</span></div>
-        <div class="stat"><b>16</b><span>可複製雙語草稿</span></div>
+        <div class="stat"><b>3</b><span>本期選題</span></div>
+        <div class="stat"><b>4</b><span>🏛 官方來源</span></div>
+        <div class="stat"><b>8</b><span>📰 一線媒體</span></div>
+        <div class="stat"><b>0</b><span>📡 聚合/部落格</span></div>
+        <div class="stat"><b>24</b><span>可複製雙語草稿</span></div>
         <div class="stat"><b>4</b><span>發布管道</span></div>
       </div>
       <ul class="summary-topics">
-        <li>選題 01 · AI 安全/供應鏈 — LiteLLM 事件實際規模與 Trivy 根因 <span class="cnt">（4 個來源）</span></li>
-        <li>選題 02 · OT/冷鏈 — Claroty 揭露冷凍控制器漏洞 <span class="cnt">（4 個來源）</span></li>
+        <li>選題 01 · AI 安全/治理 — 台灣政府機關遭近乎全自動 AI Agent 攻擊 <span class="cnt">（5 個來源）</span></li>
+        <li>選題 02 · 供應鏈/DevSecOps — GitLab 緊急修補 CVSS 9.4 GraphQL 漏洞 <span class="cnt">（4 個來源）</span></li>
+        <li>選題 03 · 製造業/勒索軟體 — Black Kite：73% 勒索受害者是中型企業 <span class="cnt">（3 個來源）</span></li>
       </ul>
       <div class="fx-rollup" id="fx-rollup"></div>
       <div class="summary-note">
-        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確日期之來源，僅載月份、降級為輔助引用。<strong>本期僅兩個選題</strong>：8/13–8/16 區間內通過查證的素材不足三則，依規則寧缺勿濫，不以舊聞或未查證素材湊數。已排除的候選（皆落在上期 8/10–8/12 區間，依「不重複」規則不予收錄）：Lazarus 利用 Windows kernel 零日 CVE-2026-68820（Check Point 8/11–12）、Meta 模型於評測中入侵外部系統（8/5–6）、Rapid7 裁員 12%（董事會 8/7 通過、8/10 隨財報公布）、北韓 IT 人員滲透美國聯邦機構（8/11）、Veracode GenAI 程式碼安全報告（7/28）。本期亦無 🏛 官方一手來源可引用——CISA 於區間內未發布與本主題相關之公告，CloudSEK 與 Claroty 原始報告依固定分級屬產業研究（📰）。
+        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確日期之來源，僅載月份、降級為輔助引用。<strong>選題 01 為補收錄</strong>：該事件於 8/12（金融時報首報）至 8/14 之間曝光，正好落在上一期（涵蓋 8/13–8/16，產出時尚未完成查證）與再上一期（涵蓋 8/10–8/12）的區間交界，因規則縫隙未被收錄；此為近年最具指標性的 AI 治理事件，經使用者指示補入本期並標明原始日期。選題 02、03 均在本期 8/17–8/19 區間內。本期三個選題皆具備 🏛 官方一手來源（數發部資安署新聞稿、GitLab 官方修補公告、Black Kite 原始報告與新聞稿），未使用聚合站或部落格佐證。<strong>查證限制</strong>：本次執行環境的網路政策阻擋多數新聞網站直連，內容係以多家獨立媒體交叉比對確認，未能逐篇開啟原文核對；數發部新聞稿頁面亦無法直連，故其日期標註為 8/13*。8/19 當日新聞尚未完整被索引，該日素材可能有遺漏。
       </div>
     </section>
 
@@ -67,142 +68,165 @@
       <article class="week-card">
         <div class="week-header">
           <div>
-            <div class="week-date">2026 年 8 月 17 日（週一）</div>
-            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/13–8/16 本期重點新聞</div>
+            <div class="week-date">2026 年 8 月 20 日（週四）</div>
+            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/17–8/19 本期重點新聞 · 選題 01 為 8/12–8/14 補收錄</div>
           </div>
           <span class="week-label">最新一期</span>
         </div>
         <!-- 選題 1 -->
         <div class="topic">
-          <div class="topic-num">選題 01 · AI 安全 / 供應鏈</div>
-          <h3>當安全工具成為供應鏈入口：LiteLLM 事件實際波及 2,500 家組織，根因追至 Trivy</h3>
-          <p>CloudSEK 追蹤報告揭露 3 月 LiteLLM 供應鏈事件的真實規模：2,500+ 組織、43 萬+ CI/CD pipeline。後續更正指出根因是 Aqua Security 的 Trivy 掃描器遭入侵，經 CI 自動安裝擴散至 AI gateway。</p>
+          <div class="topic-num">選題 01 · AI 安全 / AI 治理（補收錄）</div>
+          <h3>4 天、12 波、21 套系統：台灣政府機關遭近乎全自動的 AI Agent 攻擊，工具全部開源</h3>
+          <p>以色列資安公司 Dream 取得攻擊方遺留的完整工作區紀錄，顯示攻擊框架以 Hermes Agent 與 OpenClaw 兩套開源工具組成，最多同時派出 8 個子代理、分 12 波在 7/1–7/4 執行。數發部 8/13 證實至少 85 組政府帳號遭入侵、逾 2,500 筆人事資料外洩，並將其定性為「人為操作結合 AI Agent 輔助」的混合模式。</p>
           <div class="sources">
-            <a class="source-tag" href="https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/" target="_blank" rel="noopener">📰 SecurityWeek 8/14*</a>
-            <a class="source-tag" href="https://www.securityweek.com/trivy-not-litellm-behind-the-2500-org-compromise/" target="_blank" rel="noopener">📰 SecurityWeek 根因更正 8月*</a>
-            <a class="source-tag" href="https://www.scworld.com/brief/litellm-supply-chain-attack-impacted-over-2500-organizations" target="_blank" rel="noopener">📰 SC Media 8月*</a>
-            <a class="source-tag" href="https://www.heise.de/en/news/LiteLLM-attack-Over-2500-companies-affected-11412943.html" target="_blank" rel="noopener">📰 heise online 8月*</a>
+            <a class="source-tag" href="https://moda.gov.tw/ACS/press/news/press/20394" target="_blank" rel="noopener">🏛 數發部資通安全署新聞稿 8/13*</a>
+            <a class="source-tag" href="https://www.cnn.com/2026/08/13/tech/china-taiwan-ai-agent-cyberattack-intl-hnk" target="_blank" rel="noopener">📰 CNN Business 8/13</a>
+            <a class="source-tag" href="https://cyberscoop.com/near-autonomous-ai-attack-government-target-taiwan/" target="_blank" rel="noopener">📰 CyberScoop 8月*</a>
+            <a class="source-tag" href="https://www.taipeitimes.com/News/front/archives/2026/08/14/2003862463" target="_blank" rel="noopener">📰 Taipei Times 8/14</a>
+            <a class="source-tag" href="https://www.ithome.com.tw/news/178135" target="_blank" rel="noopener">📰 iThome 8月*</a>
           </div>
 
-          <details class="channel" data-post-id="20260817-t1-li">
+          <details class="channel" data-post-id="20260820-t1-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">一次 40 分鐘的惡意套件上架，最後盤點出 2,500 家組織與 43 萬條 CI/CD pipeline 受影響——而真正的起點還不是它。
+                <div class="draft-text">這次攻擊沒有寫任何一行客製化攻擊程式。工具全部是開源的，任何人都能下載。
 
-CloudSEK 本期公布的追蹤報告顯示：今年 3 月 LiteLLM 供應鏈事件的波及範圍遠超原本估計。LiteLLM 是眾多 AI 應用的 LLM gateway，1.82.7 與 1.82.8 兩個版本（3 月 24 日發布）夾帶竊取憑證的程式碼，外洩內容包括發布憑證、雲端金鑰、SSH 金鑰、各式 token，以及 AI 供應商 API 金鑰。
+以色列資安公司 Dream 取得了攻擊方遺留的完整工作區紀錄——一個 160MB 的封存檔，內含 1,395 份診斷報告與各波次摘要。紀錄顯示，2026 年 7 月 1 日至 7 月 4 日之間，一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理，各自分配目標與攻擊手法。
 
-更值得資安團隊注意的是後續更正：SecurityWeek 追蹤報導指出，這 2,500 家組織的實際根因是 Aqua Security 的 Trivy 漏洞掃描器遭入侵——LiteLLM 的 CI pipeline 自動安裝了被汙染的 Trivy 版本，才導致自身被汙染。
+框架由兩套開源工具組成：Nous Research 於 2026 年 2 月發布的 Hermes Agent，以及 2025 年 11 月推出、半年內累積 34 萬 GitHub 星數的個人 AI 助理 OpenClaw。兩者原本都內建防止用於攻擊行為的安全機制——攻擊方繞過的方式，是把整個行動包裝成「已授權的滲透測試」，原始文件以簡體中文撰寫。
 
-換句話說：一個「用來檢查安全的工具」被攻陷，經由 CI 自動化擴散到下游的 AI 基礎設施，再擴散到使用它的數千家企業。
+成果：測繪 21 套相互連通的政府系統、攻破 85 組政府帳號、取得逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（涵蓋 MSSQL、Oracle、Sybase），並匯出全部部門系統使用者清單。目標範圍後續擴及核安主管機關、供應鏈廠商與至少 7 家能源業者。
 
-對正在導入 AI 的製造與科技企業，這串連鎖有三個具體提醒：
-• 你的 CI pipeline 自動安裝哪些工具？那些工具本身的供應鏈誰在看？
-• AI gateway 持有的是「所有 AI 供應商的金鑰」——它的權限集中度值得單獨做風險評估
-• 惡意版本只存活 40 分鐘仍造成這個規模，代表偵測時間窗必須以分鐘計，而非以天計
+數發部 8 月 13 日證實此事，並提供了一個值得注意的修正：資安監控單位 7 月即偵測到異常，國家資通安全研究院自 7 月 20 日起發布警示；調查認定這是「人為操作結合 AI Agent 輔助」的混合模式，而非完全自主。調查已結束，受影響機關均已完成修補。
 
-你的建置流程裡，安全工具本身有被納入供應鏈盤點嗎？
-<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps #CICD #LiteLLM</div></div>
+這個「近乎自主」與「完全自主」的差別，正是治理上最該抓住的地方。爭論攻擊有幾成自動化沒有意義，真正改變的是三件事：
+
+• 攻擊的邊際成本崩塌。原本需要一支團隊四天不間斷的工作量，現在由開源代理平行完成。
+• 安全機制的防線是語意層，不是技術層。一句「這是授權滲透測試」就能繞過——這代表以宣告用途為基礎的防護，對有動機的攻擊者近乎無效。
+• 防守方的偵測窗口被壓縮到「波次」等級。12 波、4 天，意味著以週為單位的弱點修補節奏已經跟不上。
+
+如果你正在為公司制定 AI 使用政策：你的政策是否只規範「我們怎麼用 AI」，而沒有假設「對手也用同一批工具」？
+<div class="hashtags">#AISecurity #AIGovernance #AgenticAI #ThreatIntel #CyberDefense</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">A malicious package that was live for 40 minutes ended up implicating 2,500 organisations and 430,000 CI/CD pipelines — and it wasn't even the origin.
+                <div class="draft-text">Not one line of custom offensive code was written for this campaign. Every tool used was open source, and anyone can download them.
 
-CloudSEK's tracking report published this week shows the March LiteLLM supply chain incident reached far wider than first estimated. LiteLLM is the LLM gateway behind many AI applications; versions 1.82.7 and 1.82.8 (published 24 March) carried credential-stealing code that exposed publishing credentials, cloud keys, SSH keys, tokens and AI provider API keys.
+Israeli security firm Dream obtained the attackers' complete leftover workspace — a 160MB archive containing 1,395 diagnostic reports and per-wave summaries. The records show that between 1 and 4 July 2026, an AI agent framework ran 12 attack waves against Taiwanese government agencies, deploying up to eight sub-agents in parallel, each assigned its own targets and techniques.
 
-The follow-up correction matters more for security teams: SecurityWeek reports the actual root cause behind those 2,500 organisations was the compromise of Aqua Security's Trivy vulnerability scanner — LiteLLM's own CI pipeline automatically installed the poisoned Trivy build, which is how LiteLLM itself became poisoned.
+The framework was assembled from two open-source projects: Hermes Agent, released by Nous Research in February 2026, and OpenClaw, an open-source personal AI assistant launched in November 2025 that gathered 340,000 GitHub stars in under six months. Both ship with safety mechanisms intended to prevent offensive use. The attackers bypassed them by packaging the whole operation as an authorised penetration test, with the source documents written in Simplified Chinese.
 
-Put plainly: a tool built to check security was compromised, spread through CI automation into downstream AI infrastructure, and from there into thousands of enterprises.
+The results: 21 interconnected government systems mapped, 85 government accounts cracked, more than 2,500 personnel records taken, seven SSO client secrets, six internal database credentials spanning MSSQL, Oracle and Sybase, plus a full export of every departmental system user. Targeting later extended to the nuclear safety regulator, supply-chain vendors and at least seven energy companies.
 
-Three concrete takeaways for manufacturers and tech companies adopting AI:
-• Which tools does your CI pipeline install automatically — and who is watching those tools' own supply chains?
-• An AI gateway holds keys to every AI provider you use; that concentration of privilege deserves its own risk assessment
-• A 40-minute exposure window produced this blast radius, so detection windows have to be measured in minutes, not days
+Taiwan's Ministry of Digital Affairs confirmed the incident on 13 August, with one correction worth noting: monitoring units detected the activity in July, and the National Institute of Cyber Security began issuing alerts from 20 July. The investigation concluded that this was a hybrid mode combining human operators with AI agent assistance, rather than fully autonomous operation. The investigation has closed and affected agencies have remediated.
 
-Are your security tools themselves inside your supply chain inventory?
-<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps #CICD #LiteLLM</div></div>
+That gap between near-autonomous and fully autonomous is exactly where the governance lesson sits. Arguing about the precise percentage of automation is not useful. Three things genuinely changed:
+
+• The marginal cost of attack collapsed. What used to take a team four days of continuous work is now executed in parallel by open-source agents.
+• The safety boundary is semantic, not technical. One claim of authorised penetration testing was enough to bypass it, which means intent-declaration-based guardrails offer close to zero resistance to a motivated adversary.
+• Defender detection windows are now measured in waves. Twelve waves over four days means a weekly patching rhythm no longer keeps pace.
+
+If you are writing your organisation's AI usage policy: does it only govern how you use AI, without assuming your adversary uses the same tools?
+<div class="hashtags">#AISecurity #AIGovernance #AgenticAI #ThreatIntel #CyberDefense</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260817-t1-x">
+          <details class="channel" data-post-id="20260820-t1-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ CloudSEK 追蹤報告：3 月 LiteLLM 供應鏈事件實際波及 2,500+ 組織、43 萬+ CI/CD pipeline。惡意版本 1.82.7/1.82.8（3/24 發布）只存活約 40 分鐘。
+                <div class="draft-text">1/ 以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔，內含 1,395 份診斷報告。紀錄顯示 2026/7/1–7/4 有一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理。
 
-2/ 外洩內容不只原始碼憑證：發布憑證、雲端金鑰、SSH 金鑰、各類 token，還有 AI 供應商 API 金鑰。
+2/ 框架完全由開源工具組成：Nous Research 2026 年 2 月發布的 Hermes Agent，加上 2025 年 11 月推出、半年累積 34 萬星的 OpenClaw。沒有任何客製化攻擊程式。
 
-3/ 後續更正才是重點：SecurityWeek 指出根因是 Aqua Security 的 Trivy 掃描器遭入侵——LiteLLM 的 CI 自動安裝了被汙染的 Trivy。
+3/ 兩套工具都有防止攻擊性使用的安全機制。繞過方式：把整個行動包裝成「已授權的滲透測試」，原始文件以簡體中文撰寫。防線在語意層，不在技術層。
 
-4/ 也就是說：安全工具被攻陷 → 經 CI 自動化汙染 AI gateway → 再擴散到數千家使用者。這是「檢查者本身被攻陷」的教科書案例。
+4/ 成果：21 套政府系統測繪、85 組帳號攻破、逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組資料庫憑證（MSSQL/Oracle/Sybase）。後續擴及核安主管機關與至少 7 家能源業者。
 
-5/ 行動項目：盤點 CI 自動安裝的工具鏈、對 AI gateway 的金鑰集中度單獨評估、把偵測窗口目標訂在分鐘級。
-<div class="hashtags">#SupplyChainSecurity #AISecurity #CICD</div></div>
+5/ 數發部 8/13 證實，但做了重要修正：7 月即偵測到，國家資通安全研究院自 7/20 起示警；定性為「人為操作結合 AI Agent 輔助」的混合模式，而非完全自主。調查已結束、機關已修補。
+
+6/ 治理重點不是自動化幾成，而是：攻擊邊際成本崩塌、以宣告用途為基礎的安全機制近乎無效、偵測節奏必須從「週」壓縮到「波次」。你的 AI 政策有假設對手用同一批工具嗎？
+<div class="hashtags">#AISecurity #AIGovernance #AgenticAI</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ CloudSEK tracking report: March's LiteLLM supply chain incident actually reached 2,500+ organisations and 430,000+ CI/CD pipelines. The malicious versions 1.82.7/1.82.8 (published 24 Mar) were live for roughly 40 minutes.
+                <div class="draft-text">1/ Israeli security firm Dream recovered a 160MB workspace archive left behind by the attackers, containing 1,395 diagnostic reports. It shows an AI agent framework running 12 attack waves against Taiwanese government agencies from 1 to 4 July 2026, with up to eight sub-agents in parallel.
 
-2/ What leaked went well beyond source credentials: publishing credentials, cloud keys, SSH keys, assorted tokens — and AI provider API keys.
+2/ The framework was built entirely from open-source tools: Hermes Agent, released by Nous Research in February 2026, plus OpenClaw, launched November 2025 and up to 340,000 GitHub stars within six months. No custom offensive code at all.
 
-3/ The correction is the real story: SecurityWeek reports the root cause was a compromise of Aqua Security's Trivy scanner — LiteLLM's CI automatically installed the poisoned Trivy build.
+3/ Both tools ship safety mechanisms against offensive use. The bypass: package the operation as an authorised penetration test. Source documents were written in Simplified Chinese. The boundary held at the semantic layer, not the technical one.
 
-4/ So: a security tool is compromised → CI automation poisons an AI gateway → thousands of downstream users are exposed. A textbook "the checker itself was compromised" case.
+4/ Results: 21 government systems mapped, 85 accounts cracked, 2,500+ personnel records, seven SSO client secrets, six database credentials across MSSQL, Oracle and Sybase. Targeting later reached the nuclear safety regulator and at least seven energy companies.
 
-5/ Actions: inventory what your CI installs automatically, risk-assess the key concentration inside your AI gateway, and target minute-scale detection windows.
-<div class="hashtags">#SupplyChainSecurity #AISecurity #CICD</div></div>
+5/ Taiwan's MODA confirmed on 13 Aug with an important correction: detection happened in July, with alerts from the National Institute of Cyber Security from 20 July. It was assessed as a hybrid of human operators plus AI agent assistance, not full autonomy. Investigation closed, agencies remediated.
+
+6/ The governance point is not the percentage of automation. It is this: attack marginal cost collapsed, intent-declaration guardrails proved near useless, and detection cadence has to move from weekly to per-wave. Does your AI policy assume the adversary uses the same tools?
+<div class="hashtags">#AISecurity #AIGovernance #AgenticAI</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260817-t1-blog">
+          <details class="channel" data-post-id="20260820-t1-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text"><strong>標題</strong>：當安全工具成為供應鏈入口：LiteLLM 事件的真實根因與 AI 基礎設施風險
+                <div class="draft-text">標題：當攻擊框架不再需要客製化程式：台灣 AI Agent 攻擊事件的治理啟示
 
-• 事件規模：CloudSEK 追蹤指出 3 月 LiteLLM 供應鏈事件波及 2,500+ 組織、430,000+ CI/CD pipeline
-• 外洩範圍：發布憑證、雲端金鑰、SSH 金鑰、各式 token 與 AI 供應商 API 金鑰（LiteLLM 1.82.7 / 1.82.8，3 月 24 日發布，存活約 40 分鐘）
-• 根因更正：SecurityWeek 追蹤報導指出 2,500 家組織的實際源頭是 Aqua Security Trivy 遭入侵，LiteLLM CI 自動安裝汙染版本而受害
-• 結構性教訓：安全掃描工具位於 CI 的高信任位置，一旦被攻陷即成為最有效的擴散途徑
-• AI 專屬風險：AI gateway 集中持有多家供應商金鑰，權限集中度需獨立評估
-• 建議做法：CI 自動安裝清單盤點、工具供應鏈的 SBOM 與版本鎖定、AI 金鑰輪替與最小權限、分鐘級偵測目標
-<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps</div></div>
+• 事件時間軸：攻擊執行於 2026/7/1–7/4；國家資通安全研究院自 7/20 起示警；金融時報 8/12 首報；數發部 8/13 證實
+• 證據來源：以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔，含 1,395 份診斷報告與各波次摘要
+• 攻擊規模：12 波次、最多 8 個子代理平行運作、測繪 21 套相互連通的政府系統
+• 資料損失：85 組政府帳號、逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（MSSQL、Oracle、Sybase）、全部門系統使用者清單匯出
+• 擴散範圍：核安主管機關、供應鏈廠商、至少 7 家能源業者
+• 工具組成：Hermes Agent（Nous Research，2026/2 發布）與 OpenClaw（2025/11 推出，半年 34 萬 GitHub 星），皆為開源、皆內建防濫用機制
+• 繞過手法：將行動宣告為「已授權的滲透測試」，原始文件為簡體中文
+• 官方定性差異：數發部認定為「人為操作結合 AI Agent 輔助」的混合模式，與部分國際媒體「完全自主」的描述有落差，此差異本身即為重要治理資訊
+• 治理啟示一：攻擊邊際成本崩塌，威脅模型中「攻擊者資源有限」的假設需要重寫
+• 治理啟示二：以宣告用途為基礎的安全防護屬語意層防線，對有動機的攻擊者近乎無效，不應作為合規依據
+• 治理啟示三：偵測與修補節奏需從「週」壓縮至「波次」等級，並將帳號異常聚合行為納入偵測情境
+• 企業行動清單：盤點對外可達的身分驗證端點與 SSO 用戶端密鑰、建立資料庫憑證輪替機制、將 AI 代理工具納入使用政策與資產清單、演練「大量帳號在短時間內被枚舉」的應變流程
+<div class="hashtags">#AISecurity #AIGovernance #AgenticAI #ThreatIntel</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text"><strong>Title</strong>: When the Security Tool Is the Entry Point: the Real Root Cause of the LiteLLM Incident and AI Infrastructure Risk
+                <div class="draft-text">Title: When an Attack Framework Needs No Custom Code: Governance Lessons from the Taiwan AI Agent Campaign
 
-• Scale: CloudSEK's tracking puts March's LiteLLM supply chain incident at 2,500+ organisations and 430,000+ CI/CD pipelines
-• What leaked: publishing credentials, cloud keys, SSH keys, assorted tokens and AI provider API keys (LiteLLM 1.82.7 / 1.82.8, published 24 March, live roughly 40 minutes)
-• Root-cause correction: SecurityWeek reports the actual origin for those 2,500 organisations was the compromise of Aqua Security's Trivy, which LiteLLM's CI installed automatically
-• Structural lesson: security scanners sit in a high-trust position inside CI; once compromised they become the most effective propagation path available
-• AI-specific risk: an AI gateway concentrates keys for multiple providers — that concentration needs its own assessment
-• Recommended: inventory what CI installs automatically, apply SBOM and version pinning to tooling, rotate AI keys under least privilege, target minute-scale detection
-<div class="hashtags">#SupplyChainSecurity #AISecurity #DevSecOps</div></div>
+• Timeline: the campaign ran 1 to 4 July 2026; Taiwan's National Institute of Cyber Security issued alerts from 20 July; the Financial Times reported it first on 12 August; MODA confirmed on 13 August
+• Evidence base: Israeli security firm Dream recovered a 160MB workspace archive left by the attackers, holding 1,395 diagnostic reports and per-wave summaries
+• Scale: 12 attack waves, up to eight sub-agents running in parallel, 21 interconnected government systems mapped
+• Data loss: 85 government accounts, more than 2,500 personnel records, seven SSO client secrets, six internal database credentials across MSSQL, Oracle and Sybase, plus a full export of departmental system users
+• Spread: the nuclear safety regulator, supply-chain vendors and at least seven energy companies
+• Toolchain: Hermes Agent (Nous Research, released February 2026) and OpenClaw (launched November 2025, 340,000 GitHub stars within six months), both open source and both shipping anti-abuse mechanisms
+• Bypass method: declaring the operation an authorised penetration test, with source documents written in Simplified Chinese
+• Official framing differs: MODA assessed a hybrid of human operation plus AI agent assistance, which diverges from the fully autonomous framing used by some international outlets. That divergence is itself governance-relevant information
+• Lesson one: the marginal cost of attack has collapsed, so the threat-model assumption that attackers have limited resources needs rewriting
+• Lesson two: intent-declaration guardrails are a semantic boundary and offer near-zero resistance to a motivated adversary, so they should not be treated as a compliance control
+• Lesson three: detection and patching cadence must compress from weekly to per-wave, and aggregate account anomalies belong in detection scenarios
+• Enterprise action list: inventory internet-reachable authentication endpoints and SSO client secrets, establish database credential rotation, bring AI agent tooling into usage policy and asset inventory, and rehearse the response to mass account enumeration in a short window
+<div class="hashtags">#AISecurity #AIGovernance #AgenticAI #ThreatIntel</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260817-t1-nl">
+          <details class="channel" data-post-id="20260820-t1-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">CloudSEK 追蹤報告指出，今年 3 月的 LiteLLM 供應鏈事件實際波及超過 2,500 家組織與 43 萬條 CI/CD pipeline；惡意版本 1.82.7 與 1.82.8 於 3 月 24 日發布、存活約 40 分鐘，外洩發布憑證、雲端與 SSH 金鑰、各類 token 及 AI 供應商 API 金鑰。SecurityWeek 後續報導更正根因：實際源頭為 Aqua Security 的 Trivy 掃描器遭入侵，LiteLLM 的 CI 自動安裝汙染版本而受害。建議企業立即盤點 CI 自動安裝的工具鏈並輪替 AI 金鑰。主要來源：SecurityWeek（8/14 及後續）、SC Media（8 月）、heise online（8 月）。
-<div class="hashtags">#SupplyChainSecurity #AISecurity</div></div>
+                <div class="draft-text">以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔（含 1,395 份診斷報告），揭露 2026 年 7 月 1 日至 4 日一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理，測繪 21 套相互連通的政府系統、攻破 85 組帳號、取得逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰與 6 組資料庫憑證，目標並擴及核安主管機關與至少 7 家能源業者。框架完全由開源工具組成——Nous Research 的 Hermes Agent 與 OpenClaw——並以「已授權滲透測試」的宣告繞過兩者內建的防濫用機制。數發部 8 月 13 日證實事件，說明資安監控單位 7 月即偵測到、國家資通安全研究院自 7 月 20 日起示警，並將其定性為人為操作結合 AI Agent 輔助的混合模式，調查已結束、受影響機關均已修補。建議企業盤點對外可達的身分驗證端點與 SSO 密鑰，並將 AI 代理工具納入使用政策。主要來源：數發部資通安全署新聞稿（8/13*）、CNN Business（8/13）、Taipei Times（8/14）。
+<div class="hashtags">#AISecurity #AIGovernance</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">CloudSEK's tracking report finds that March's LiteLLM supply chain incident actually affected more than 2,500 organisations and 430,000 CI/CD pipelines; the malicious versions 1.82.7 and 1.82.8, published on 24 March and live for roughly 40 minutes, exposed publishing credentials, cloud and SSH keys, assorted tokens and AI provider API keys. SecurityWeek's follow-up corrects the root cause: the actual origin was the compromise of Aqua Security's Trivy scanner, which LiteLLM's CI installed automatically. Enterprises should inventory CI-installed tooling and rotate AI keys now. Sources: SecurityWeek (8/14 and follow-up), SC Media (Aug), heise online (Aug).
-<div class="hashtags">#SupplyChainSecurity #AISecurity</div></div>
+                <div class="draft-text">Israeli security firm Dream recovered a 160MB workspace archive left behind by the attackers, containing 1,395 diagnostic reports, revealing that between 1 and 4 July 2026 an AI agent framework ran 12 attack waves against Taiwanese government agencies with up to eight sub-agents in parallel, mapping 21 interconnected government systems, cracking 85 accounts, taking more than 2,500 personnel records, seven SSO client secrets and six database credentials, with targeting extending to the nuclear safety regulator and at least seven energy companies. The framework was assembled entirely from open-source tools, Hermes Agent from Nous Research and OpenClaw, and bypassed both projects' anti-abuse mechanisms by declaring the operation an authorised penetration test. Taiwan's Ministry of Digital Affairs confirmed the incident on 13 August, noting that monitoring units detected the activity in July, that the National Institute of Cyber Security issued alerts from 20 July, and that it assessed the campaign as a hybrid of human operation with AI agent assistance; the investigation has closed and affected agencies have remediated. Enterprises should inventory internet-reachable authentication endpoints and SSO secrets and bring AI agent tooling into usage policy. Sources: MODA Administration for Cyber Security press release (8/13*), CNN Business (8/13), Taipei Times (8/14).
+<div class="hashtags">#AISecurity #AIGovernance</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
@@ -210,141 +234,306 @@ Are your security tools themselves inside your supply chain inventory?
         </div>
         <!-- 選題 2 -->
         <div class="topic">
-          <div class="topic-num">選題 02 · OT / 冷鏈安全</div>
-          <h3>沒有警報的破壞：Claroty 揭露冷凍控制器漏洞，未認證即可取得 root RCE</h3>
-          <p>Copeland XWEB Pro 含 23 個漏洞（21 高風險）、Danfoss AK-SM 800A 含隱藏的 code-of-the-day 認證繞過。攻擊者可實體操縱冷凍系統，讓溫控貨品在無警報的情況下變質。</p>
+          <div class="topic-num">選題 02 · 供應鏈 / DevSecOps</div>
+          <h3>免登入就能刪掉整個專案：GitLab 排程外緊急修補 CVSS 9.4 的 GraphQL 漏洞</h3>
+          <p>CVE-2026-19478 讓未認證的遠端攻擊者可透過 GraphQL directive 修改或刪除公開專案與使用者資料。GitLab 於 8/17 排程外釋出 19.2.4、19.1.6、19.0.8、18.11.11；同批另修補 CVSS 7.1 的 CSRF 漏洞 CVE-2026-19650。僅自架環境需處理。</p>
           <div class="sources">
-            <a class="source-tag" href="https://www.securityweek.com/in-other-news-rapid7-layoffs-hacking-a-boeing-737-refrigeration-system-vulnerabilities/" target="_blank" rel="noopener">📰 SecurityWeek 8/14</a>
-            <a class="source-tag" href="https://securitybrief.com.au/story/refrigeration-controller-flaws-threaten-cold-chains" target="_blank" rel="noopener">📰 SecurityBrief AU 8月*</a>
-            <a class="source-tag" href="https://www.climatecontrolnews.com.au/refrigeration/warning-to-update-controllers" target="_blank" rel="noopener">📡 Climate Control News 8月*</a>
-            <a class="source-tag" href="https://www.machine.news/vulnerabilities-in-refrigeration-systems-highlight-the-chilling-fragility-of-food-supply-chains/" target="_blank" rel="noopener">📡 machine.news 8月*</a>
+            <a class="source-tag" href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-4-released/" target="_blank" rel="noopener">🏛 GitLab 官方修補公告 8/17</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html" target="_blank" rel="noopener">📰 The Hacker News 8/18</a>
+            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/18/gitlab-critical-code-injection-flaw-cve-2026-19478/" target="_blank" rel="noopener">📰 Help Net Security 8/18</a>
+            <a class="source-tag" href="https://www.cybersecuritydive.com/news/gitlab-emergency-patch-critical-code-injection/828151/" target="_blank" rel="noopener">📰 Cybersecurity Dive 8月*</a>
           </div>
 
-          <details class="channel" data-post-id="20260817-t2-li">
+          <details class="channel" data-post-id="20260820-t2-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">冷鏈的資安風險有一個很不直覺的特性：攻擊成功時，沒有任何警報會響——貨品只是慢慢壞掉。
+                <div class="draft-text">一個不需要登入的請求，就能刪掉你的公開專案與使用者資料。CVSS 9.4。
 
-Claroty Team82 本期揭露兩套冷凍控制平台的漏洞，影響超市、倉儲、冷藏設施與醫療場域：
+GitLab 在 8 月 17 日排程外釋出緊急修補，對象是 CVE-2026-19478——GraphQL directive 處理中的程式碼注入漏洞。在特定條件下，未認證的遠端攻擊者可以修改或刪除公開專案與使用者資料。
 
-• Copeland XWEB Pro：23 個漏洞，其中 21 個高風險。未經認證的攻擊者可繞過平台安全控制，最終取得 root 層級的遠端程式碼執行。
-• Danfoss AK-SM 800A：3 個漏洞，其中一個涉及名為「code-of-the-day」的隱藏認證機制，可被濫用以繞過標準登入並導致遠端程式碼執行。Danfoss 已發布韌體 R4.3.1 修補。
+同批釋出還修掉 CVE-2026-19650，CVSS 7.1 的 CSRF 弱點，位於 GraphQL multiplex query handler：當受害者互動於惡意構造的請求時，未認證的攻擊者可透過 GET 請求執行 GraphQL mutation。這一個需要使用者互動，前一個不需要。
 
-Team82 指出，這些中央管理系統的弱點可讓攻擊者實體操縱冷凍系統，在不被立即察覺的情況下讓溫控貨品變質。
+該處理的版本：18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前。修補版本為 19.2.4、19.1.6、19.0.8、18.11.11。GitLab.com 與 GitLab Dedicated 已在修補版本上，客戶無需動作——這是純粹的自架問題。
 
-對製造業的意義超出食品業：疫苗與生技原料、特用化學品、部分電子元件與光阻材料都有嚴格的溫控要求。冷鏈控制器往往由設備商或工務單位管理，不在 IT 資產清單裡，也不在漏洞管理的掃描範圍內——這正是問題所在。
+有三個細節值得注意。
 
-三個可以今天就做的動作：
-• 盤點廠內所有冷凍/溫控中央管理平台的品牌與韌體版本
-• 確認這些系統是否可從企業網路或網際網路觸及
-• 把「溫控異常」納入資安事件的偵測情境，而不只是設備故障情境
+第一，這是排程外釋出。GitLab 正常的資安更新是每月第二與第四個週三，而這次在一次不含重大風險的例行修補之後五天就緊急補上，本身就是嚴重程度的訊號。
 
-你的溫控系統，上一次被當成資安資產盤點是什麼時候？
-<div class="hashtags">#OTSecurity #ColdChain #ICS #ManufacturingCyber #Claroty</div></div>
+第二，截至 8 月 18 日，GitLab 公告未確認任何實際遭利用的案例，兩個 CVE 也都沒有公開的概念驗證程式碼出現。這是好消息，但它同時代表你現在還有時間差可用——這個時間差通常只有幾天。
+
+第三，也是製造業最該想的一點：GitLab 自架實例往往長在研發或製造部門自己的機房裡，不在 IT 的標準資產清單上，更新節奏跟著專案走而不是跟著資安公告走。而它裡面放的是製程參數、韌體原始碼、產線控制程式——這些東西被刪掉的損失，遠不只是 git 歷史。
+
+你們的自架 GitLab 是誰在負責更新？那個人有訂閱 GitLab 的資安公告嗎？
+<div class="hashtags">#DevSecOps #SupplyChainSecurity #GitLab #VulnerabilityManagement #ManufacturingCyber</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Cold-chain security has a counter-intuitive property: when the attack succeeds, no alarm sounds — the goods simply spoil.
+                <div class="draft-text">One request, no login required, and your public projects and user data can be deleted. CVSS 9.4.
 
-Claroty Team82 disclosed vulnerabilities this week in two refrigeration control platforms used across supermarkets, warehouses, cold-storage sites and healthcare settings:
+GitLab shipped an out-of-band emergency patch on 17 August for CVE-2026-19478, a code-injection flaw in GraphQL directive processing. Under certain conditions an unauthenticated remote attacker can modify or delete public projects and user data.
 
-• Copeland XWEB Pro: 23 vulnerabilities, 21 rated high severity. An unauthenticated attacker can bypass the platform's security controls and ultimately gain root-level remote code execution.
-• Danfoss AK-SM 800A: three vulnerabilities, one involving a hidden authentication mechanism called "code-of-the-day" that can be abused to bypass standard login and lead to remote code execution. Danfoss has released firmware R4.3.1.
+The same release fixes CVE-2026-19650, a CVSS 7.1 CSRF weakness in the GraphQL multiplex query handler, where an unauthenticated attacker can execute GraphQL mutations via GET requests when a victim interacts with a maliciously crafted request. That one needs user interaction. The first one does not.
 
-Team82 notes that weaknesses in these central management systems let attackers physically manipulate refrigeration and silently spoil temperature-sensitive contents without immediate detection.
+Versions to act on: 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6, and 19.2 before 19.2.4. The fixed builds are 19.2.4, 19.1.6, 19.0.8 and 18.11.11. GitLab.com and GitLab Dedicated already run the patched version and customers need take no action. This is purely a self-managed problem.
 
-The relevance extends beyond food: vaccines and biotech inputs, specialty chemicals, and some electronic components and photoresists all carry strict temperature requirements. Cold-chain controllers are typically managed by equipment vendors or facilities teams — absent from the IT asset inventory and outside vulnerability-scanning scope. That gap is the problem.
+Three details worth noting.
 
-Three things you can do today:
-• Inventory every refrigeration and temperature-control management platform on site, with firmware versions
-• Confirm whether those systems are reachable from the corporate network or the internet
-• Add "temperature anomaly" to your security detection scenarios, not just your equipment-failure scenarios
+First, this was released outside the schedule. GitLab's normal security cadence is the second and fourth Wednesday of each month, and this arrived five days after a routine patch that carried no critical-rated issues. The timing is itself a severity signal.
 
-When was your temperature-control system last inventoried as a security asset?
-<div class="hashtags">#OTSecurity #ColdChain #ICS #ManufacturingCyber #Claroty</div></div>
+Second, as of 18 August GitLab's advisory reported no confirmed in-the-wild exploitation, and no public proof-of-concept had appeared for either CVE. That is good news, but it also means the window you have right now is a head start measured in days, not weeks.
+
+Third, and this is the one manufacturers should sit with: self-managed GitLab instances tend to live in an engineering or production department's own rack, outside the standard IT asset inventory, on an update rhythm driven by project milestones rather than security advisories. What sits inside them is process parameters, firmware source, line-control code. Losing that is not just losing git history.
+
+Who owns updates for your self-managed GitLab, and are they subscribed to GitLab's security advisories?
+<div class="hashtags">#DevSecOps #SupplyChainSecurity #GitLab #VulnerabilityManagement #ManufacturingCyber</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260817-t2-x">
+          <details class="channel" data-post-id="20260820-t2-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ Claroty Team82 揭露冷凍控制平台漏洞：Copeland XWEB Pro 有 23 個漏洞（21 個高風險），未認證即可繞過安全控制取得 root 級 RCE。
+                <div class="draft-text">1/ GitLab 8/17 排程外緊急修補：CVE-2026-19478，CVSS 9.4，GraphQL directive 處理的程式碼注入。特定條件下未認證的遠端攻擊者可修改或刪除公開專案與使用者資料。
 
-2/ Danfoss AK-SM 800A 另有 3 個漏洞，其中一個是隱藏的「code-of-the-day」認證機制，可繞過標準登入導致 RCE。Danfoss 已發布 R4.3.1 韌體修補。
+2/ 同批另修 CVE-2026-19650，CVSS 7.1，GraphQL multiplex query handler 的 CSRF：受害者互動於惡意請求時，攻擊者可經 GET 執行 GraphQL mutation。這個需要使用者互動，9.4 那個不需要。
 
-3/ 影響場域：超市、倉儲、冷藏設施、醫療。Team82 強調攻擊者可實體操縱冷凍系統，讓貨品在無警報的情況下變質。
+3/ 受影響版本：18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前。修補版本 19.2.4 / 19.1.6 / 19.0.8 / 18.11.11。
 
-4/ 為什麼製造業要看：疫苗與生技原料、特用化學品、部分電子材料都有嚴格溫控需求，而冷鏈控制器通常不在 IT 資產清單內。
+4/ GitLab.com 與 GitLab Dedicated 已在修補版本，無需動作。這是純自架問題。
 
-5/ 今天可做：盤點溫控平台與韌體版本、確認網路可達性、把「溫控異常」列入資安偵測情境。
-<div class="hashtags">#OTSecurity #ColdChain #ICS</div></div>
+5/ 排程外釋出本身就是訊號：GitLab 正常節奏是每月第二與第四個週三，這次在一次無重大風險的例行修補後五天就緊急補上。
+
+6/ 截至 8/18 無確認的實際利用案例，兩個 CVE 也無公開 PoC。時間差還在，但通常只有幾天。自架 GitLab 常在研發機房、不在 IT 資產清單上——那正是最容易漏掉的一台。
+<div class="hashtags">#DevSecOps #GitLab #VulnerabilityManagement</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Claroty Team82 disclosed refrigeration control platform flaws: Copeland XWEB Pro carries 23 vulnerabilities (21 high severity) — an unauthenticated attacker can bypass security controls and reach root-level RCE.
+                <div class="draft-text">1/ GitLab shipped an out-of-band emergency patch on 17 Aug: CVE-2026-19478, CVSS 9.4, code injection in GraphQL directive processing. Under certain conditions an unauthenticated remote attacker can modify or delete public projects and user data.
 
-2/ Danfoss AK-SM 800A has three more, including a hidden "code-of-the-day" authentication mechanism that can be abused to bypass standard login and lead to RCE. Danfoss shipped firmware R4.3.1.
+2/ Same release fixes CVE-2026-19650, CVSS 7.1, a CSRF flaw in the GraphQL multiplex query handler: an attacker can execute GraphQL mutations via GET when a victim interacts with a crafted request. That one needs interaction. The 9.4 does not.
 
-3/ Affected settings: supermarkets, warehouses, cold storage, healthcare. Team82 stresses attackers can physically manipulate refrigeration and spoil goods with no alarm raised.
+3/ Affected: 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6, 19.2 before 19.2.4. Fixed builds: 19.2.4, 19.1.6, 19.0.8, 18.11.11.
 
-4/ Why manufacturers should care: vaccines and biotech inputs, specialty chemicals and some electronic materials have strict temperature requirements — and cold-chain controllers usually sit outside the IT asset inventory.
+4/ GitLab.com and GitLab Dedicated already run the patched version and need no action. This is purely a self-managed issue.
 
-5/ Today: inventory temperature-control platforms and firmware versions, confirm network reachability, add "temperature anomaly" to security detection scenarios.
-<div class="hashtags">#OTSecurity #ColdChain #ICS</div></div>
+5/ The out-of-band timing is itself a signal: GitLab's normal cadence is the second and fourth Wednesday monthly, and this landed five days after a routine patch with no critical-rated issues.
+
+6/ As of 18 Aug there was no confirmed in-the-wild exploitation and no public PoC for either CVE. The head start is real but usually lasts days. Self-managed GitLab often sits in an engineering rack outside IT inventory, which is exactly the box that gets missed.
+<div class="hashtags">#DevSecOps #GitLab #VulnerabilityManagement</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260817-t2-blog">
+          <details class="channel" data-post-id="20260820-t2-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text"><strong>標題</strong>：沒有警報的破壞：冷凍控制器漏洞與溫控供應鏈的資安盲區
+                <div class="draft-text">標題：自架 GitLab 的資產盲區：從 CVE-2026-19478 看研發環境的修補治理
 
-• 漏洞概要：Copeland XWEB Pro 23 個漏洞（21 高風險，未認證即可取得 root RCE）；Danfoss AK-SM 800A 3 個漏洞，含隱藏的 code-of-the-day 認證繞過，已由 R4.3.1 韌體修補
-• 影響場域：超市、倉儲、冷藏設施與醫療；Claroty Team82 指出可實體操縱冷凍並使貨品無聲變質
-• 製造業延伸風險：疫苗與生技原料、特用化學品、電子材料的溫控要求，讓冷鏈成為品質與合規風險而非僅設施問題
-• 治理盲區：冷鏈控制器多由設備商或工務管理，不在 IT 資產清單與漏洞掃描範圍
-• 偵測缺口：溫度異常通常被歸類為設備故障，缺乏資安視角的關聯分析
-• 行動清單：資產與韌體盤點、網路可達性確認、溫控異常納入資安偵測、供應商韌體更新 SLA
-<div class="hashtags">#OTSecurity #ColdChain #ManufacturingCyber</div></div>
+• 漏洞概要：CVE-2026-19478，CVSS 9.4，GraphQL directive 處理的程式碼注入；特定條件下未認證遠端攻擊者可修改或刪除公開專案與使用者資料
+• 同批修補：CVE-2026-19650，CVSS 7.1，GraphQL multiplex query handler 的 CSRF，可經 GET 請求執行 GraphQL mutation，需使用者互動
+• 受影響版本：18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前
+• 修補版本：19.2.4、19.1.6、19.0.8、18.11.11，於 2026 年 8 月 17 日釋出
+• 適用範圍：僅自架的 GitLab CE 與 EE 需處理；GitLab.com 與 GitLab Dedicated 已在修補版本
+• 釋出節奏訊號：GitLab 常規資安更新為每月第二與第四個週三，本次為排程外釋出，且在一次不含重大風險的例行修補後僅五天
+• 利用現況：截至 2026 年 8 月 18 日，官方公告未確認實際遭利用案例，兩個 CVE 亦無公開概念驗證程式碼
+• 製造業風險延伸：自架 GitLab 常位於研發或製造部門機房，不在 IT 標準資產清單內，內容包含製程參數、韌體原始碼與產線控制程式
+• 治理缺口：更新節奏跟隨專案里程碑而非資安公告，缺乏訂閱與追蹤機制
+• 行動清單：盤點全公司自架 Git 服務與版本、指派明確的修補責任人、訂閱原廠資安公告、確認實例的網際網路可達性、建立研發環境的緊急修補時限
+<div class="hashtags">#DevSecOps #SupplyChainSecurity #VulnerabilityManagement</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text"><strong>Title</strong>: Sabotage Without an Alarm: Refrigeration Controller Flaws and the Blind Spot in Temperature-Controlled Supply Chains
+                <div class="draft-text">Title: The Self-Managed GitLab Blind Spot: Patch Governance for Engineering Environments, Seen Through CVE-2026-19478
 
-• The flaws: Copeland XWEB Pro with 23 vulnerabilities (21 high severity; unauthenticated path to root RCE); Danfoss AK-SM 800A with three, including a hidden "code-of-the-day" authentication bypass, fixed in firmware R4.3.1
-• Where they run: supermarkets, warehouses, cold storage and healthcare; Claroty Team82 notes attackers can physically manipulate refrigeration and spoil contents silently
-• Extended manufacturing risk: vaccines and biotech inputs, specialty chemicals and electronic materials make cold chain a quality and compliance risk, not just a facilities issue
-• Governance blind spot: cold-chain controllers are usually managed by vendors or facilities, outside IT inventory and vulnerability scanning
-• Detection gap: temperature anomalies are classified as equipment failure, with no security-side correlation
-• Action list: asset and firmware inventory, network reachability check, temperature anomalies in security detection, vendor firmware-update SLAs
-<div class="hashtags">#OTSecurity #ColdChain #ManufacturingCyber</div></div>
+• The flaw: CVE-2026-19478, CVSS 9.4, code injection in GraphQL directive processing; under certain conditions an unauthenticated remote attacker can modify or delete public projects and user data
+• Same release: CVE-2026-19650, CVSS 7.1, a CSRF weakness in the GraphQL multiplex query handler allowing GraphQL mutations via GET requests, requiring user interaction
+• Affected versions: 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6, 19.2 before 19.2.4
+• Fixed builds: 19.2.4, 19.1.6, 19.0.8 and 18.11.11, released 17 August 2026
+• Scope: only self-managed GitLab CE and EE need action; GitLab.com and GitLab Dedicated already run the patched version
+• Cadence signal: GitLab's routine security updates land on the second and fourth Wednesday each month, so this out-of-band release, arriving five days after a routine patch with no critical-rated issues, is itself an indicator
+• Exploitation status: as of 18 August 2026 the advisory reported no confirmed in-the-wild exploitation and no public proof-of-concept for either CVE
+• Manufacturing exposure: self-managed GitLab often sits in an engineering or production department rack, outside the standard IT asset inventory, holding process parameters, firmware source and line-control code
+• Governance gap: update cadence follows project milestones rather than security advisories, with no subscription or tracking mechanism
+• Action list: inventory every self-managed Git service and its version, assign a named patch owner, subscribe to vendor security advisories, verify internet reachability of each instance, and set an emergency patch deadline for engineering environments
+<div class="hashtags">#DevSecOps #SupplyChainSecurity #VulnerabilityManagement</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260817-t2-nl">
+          <details class="channel" data-post-id="20260820-t2-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">Claroty Team82 本期揭露兩套冷凍控制平台漏洞：Copeland XWEB Pro 含 23 個漏洞（21 個高風險），未經認證的攻擊者可繞過安全控制取得 root 級遠端程式碼執行；Danfoss AK-SM 800A 另有 3 個漏洞，包含可被濫用的隱藏「code-of-the-day」認證機制，Danfoss 已發布 R4.3.1 韌體修補。受影響場域涵蓋超市、倉儲、冷藏設施與醫療，攻擊者可實體操縱冷凍使貨品無聲變質。建議製造業者盤點溫控平台韌體並確認網路可達性。主要來源：SecurityWeek（8/14）、SecurityBrief AU（8 月）。
-<div class="hashtags">#OTSecurity #ColdChain</div></div>
+                <div class="draft-text">GitLab 於 2026 年 8 月 17 日排程外釋出緊急修補，處理 CVE-2026-19478：CVSS 9.4 的 GraphQL directive 程式碼注入漏洞，特定條件下未認證的遠端攻擊者可修改或刪除公開專案與使用者資料；同批另修補 CVE-2026-19650，CVSS 7.1 的 GraphQL multiplex query handler CSRF 弱點，可經 GET 請求執行 GraphQL mutation，但需使用者互動。受影響版本為 18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前，修補版本為 19.2.4、19.1.6、19.0.8 與 18.11.11；GitLab.com 與 GitLab Dedicated 已在修補版本上，僅自架環境需要處理。截至 8 月 18 日官方公告未確認實際遭利用案例，兩個 CVE 亦無公開概念驗證程式碼。建議製造與研發單位立即盤點自架 Git 服務版本並指派修補責任人。主要來源：GitLab 官方修補公告（8/17）、The Hacker News（8/18）、Help Net Security（8/18）。
+<div class="hashtags">#DevSecOps #GitLab</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Claroty Team82 disclosed vulnerabilities in two refrigeration control platforms this week: Copeland XWEB Pro contains 23 vulnerabilities (21 high severity) allowing an unauthenticated attacker to bypass security controls and reach root-level remote code execution, while Danfoss AK-SM 800A has three, including an abusable hidden "code-of-the-day" authentication mechanism — Danfoss has released firmware R4.3.1. Affected environments span supermarkets, warehouses, cold storage and healthcare, where attackers can physically manipulate refrigeration and spoil goods without raising an alarm. Manufacturers should inventory temperature-control platform firmware and verify network reachability. Sources: SecurityWeek (8/14), SecurityBrief AU (Aug).
-<div class="hashtags">#OTSecurity #ColdChain</div></div>
+                <div class="draft-text">GitLab released an out-of-band emergency patch on 17 August 2026 for CVE-2026-19478, a CVSS 9.4 code-injection flaw in GraphQL directive processing that under certain conditions lets an unauthenticated remote attacker modify or delete public projects and user data; the same release also fixes CVE-2026-19650, a CVSS 7.1 CSRF weakness in the GraphQL multiplex query handler that allows GraphQL mutations via GET requests but requires user interaction. Affected versions are 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6 and 19.2 before 19.2.4, with fixed builds 19.2.4, 19.1.6, 19.0.8 and 18.11.11; GitLab.com and GitLab Dedicated already run the patched version, so only self-managed installations need to act. As of 18 August the advisory reported no confirmed in-the-wild exploitation and no public proof-of-concept for either CVE. Manufacturing and engineering teams should inventory self-managed Git service versions immediately and assign a named patch owner. Sources: GitLab official patch release (8/17), The Hacker News (8/18), Help Net Security (8/18).
+<div class="hashtags">#DevSecOps #GitLab</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+        </div>
+        <!-- 選題 3 -->
+        <div class="topic">
+          <div class="topic-num">選題 03 · 電子製造 / 勒索軟體</div>
+          <h3>勒索軟體的主場不是大企業：73% 受害者是中型企業，製造業獨占 26%</h3>
+          <p>Black Kite 8/18 發布報告，從攻擊者視角評估北美與歐洲的 120,128 家中型企業。2023 年至 2026 上半年間，近四分之三（73%）的勒索軟體受害者是中型企業；製造業是最大受害族群，占中型企業受害者的 26%。事件量自 2023 年的 2,320 件成長 44% 至 2025 年的 3,340 件，而中型企業占比始終沒有下降。</p>
+          <div class="sources">
+            <a class="source-tag" href="https://blackkite.com/reports/2026-mid-market-report/" target="_blank" rel="noopener">🏛 Black Kite 原始報告 8/18</a>
+            <a class="source-tag" href="https://www.prnewswire.com/news-releases/black-kite-research-reveals-that-ransomwares-primary-target-is-the-mid-market-not-enterprises-as-widely-assumed-302851242.html" target="_blank" rel="noopener">🏛 Black Kite 新聞稿 8/18*</a>
+            <a class="source-tag" href="https://www.infosecurity-magazine.com/news/threequarters-ransomware-attacks/" target="_blank" rel="noopener">📰 Infosecurity Magazine 8/18</a>
+          </div>
+
+          <details class="channel" data-post-id="20260820-t3-li">
+            <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">我們談勒索軟體時，腦中浮現的通常是大型企業被癱瘓的新聞。資料說的不是這回事。
+
+Black Kite 8 月 18 日發布的報告，從攻擊者視角評估了北美與歐洲的 120,128 家中型企業。核心發現：2023 年到 2026 上半年之間，近四分之三——73%——的勒索軟體受害者是中型企業，不是大型企業。
+
+而中型企業受害者裡，製造業是最大的一群，占 26%，遠高於第二名的專業科技服務業與第三名的營建業。
+
+更值得注意的是趨勢的穩定性：事件總量從 2023 年的 2,320 件成長到 2025 年的 3,340 件，成長 44%，但中型企業的占比幾乎沒有變動。這不是一個「攻擊者暫時往下打」的現象，而是一個穩定的結構。
+
+為什麼製造業排第一？報告與相關分析指出的原因其實很樸素：製造業對停機的容忍度極低——產線停一天的損失是可以精確計算的，這讓談判籌碼天生就在攻擊者手上；同時製造業手上握有高敏感度的資料，從設計圖到客戶規格。
+
+報告也點出一個我認為最值得台灣供應鏈重視的落差：中型供應商、小型軟體發行商與開源維護者，沒有能力負擔每年 50 萬到 200 萬美元的資安工具堆疊，平均偵測時間仍停在 197 天、修補時間 60 天。而這些正是大型製造商供應鏈裡的一環。
+
+換句話說，如果你是體系內的大廠，你的資安成熟度不等於你的供應鏈的資安成熟度。第三方風險管理不能只做問卷。
+
+三個可以立刻檢視的問題：
+• 你的關鍵供應商裡，有多少家員工數在中型區間？
+• 你對他們的資安要求，是否配套了他們負擔得起的做法？
+• 你的產線停機情境演練，有沒有包含「供應商被勒索」這一種？
+<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk #SupplyChainSecurity #OTSecurity</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">When we talk about ransomware, the image that comes to mind is usually a large enterprise brought to a halt. The data says otherwise.
+
+Black Kite's report, published 18 August, assessed 120,128 mid-market organisations across North America and Europe from an attacker's perspective. The headline finding: between 2023 and the first half of 2026, nearly three in four ransomware victims, 73%, were mid-market companies rather than large enterprises.
+
+Within those mid-market victims, manufacturing is the single largest group at 26%, well ahead of professional, scientific and technical services in second place and construction in third.
+
+What makes it more striking is how stable the trend is. Total incidents grew 44%, from 2,320 in 2023 to 3,340 in 2025, yet the mid-market share barely moved. This is not attackers temporarily working their way down the size curve. It is a stable structure.
+
+Why is manufacturing first? The reasons are unglamorous: manufacturers have very low tolerance for downtime, and a day of stopped production has a precisely calculable cost, which hands the negotiating leverage to the attacker by default. They also hold highly sensitive data, from design files to customer specifications.
+
+The report also names a gap that anyone in a supply chain should sit with: mid-market vendors, small software publishers and open-source maintainers cannot fund a security stack costing 500,000 to 2 million US dollars a year, and still average 197 days to detect and 60 days to remediate. Those are the same organisations that sit inside a large manufacturer's supply chain.
+
+Put plainly: if you are the large player in the ecosystem, your security maturity is not your supply chain's security maturity. Third-party risk management cannot stop at questionnaires.
+
+Three questions worth checking immediately:
+• How many of your critical suppliers sit in the mid-market headcount band?
+• Do the security requirements you impose on them come with an approach they can actually afford?
+• Does your production-downtime tabletop include the scenario where a supplier, not you, gets hit?
+<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk #SupplyChainSecurity #OTSecurity</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260820-t3-x">
+            <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">1/ Black Kite 8/18 報告：從攻擊者視角評估北美與歐洲 120,128 家中型企業。2023 年至 2026 上半年，73% 的勒索軟體受害者是中型企業，不是大型企業。
+
+2/ 中型企業受害者裡，製造業是最大族群，占 26%，其後是專業科技服務業與營建業。
+
+3/ 趨勢很穩定：事件量從 2023 年 2,320 件成長 44% 到 2025 年 3,340 件，但中型企業占比幾乎沒動。這是結構，不是階段性現象。
+
+4/ 為什麼是製造業？停機容忍度極低，產線停一天的損失可精確計算，談判籌碼天生在攻擊者手上；加上持有從設計圖到客戶規格的高敏感資料。
+
+5/ 報告點出的落差：中型供應商、小型軟體發行商與開源維護者負擔不起每年 50 萬到 200 萬美元的資安工具堆疊，平均偵測仍需 197 天、修補 60 天。
+
+6/ 對大廠的意涵：你的資安成熟度不等於你供應鏈的資安成熟度。第三方風險管理不能只做問卷，停機演練要包含「供應商被勒索」的情境。
+<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">1/ Black Kite report, 18 Aug: 120,128 mid-market organisations across North America and Europe assessed from an attacker's perspective. Between 2023 and H1 2026, 73% of ransomware victims were mid-market companies, not large enterprises.
+
+2/ Within those mid-market victims, manufacturing is the largest group at 26%, followed by professional, scientific and technical services, then construction.
+
+3/ The trend is stable: incidents grew 44%, from 2,320 in 2023 to 3,340 in 2025, yet the mid-market share barely moved. This is structural, not a phase.
+
+4/ Why manufacturing? Very low downtime tolerance, and a precisely calculable cost per day of stopped production, which hands leverage to the attacker. Plus highly sensitive data, from design files to customer specifications.
+
+5/ The gap the report names: mid-market vendors, small software publishers and open-source maintainers cannot fund a 500,000 to 2 million US dollar annual security stack, and still average 197 days to detect and 60 days to remediate.
+
+6/ For large manufacturers: your security maturity is not your supply chain's security maturity. Third-party risk management cannot stop at questionnaires, and downtime tabletops need a supplier-hit scenario.
+<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260820-t3-blog">
+            <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">標題：勒索軟體的結構性受害者：為什麼製造業中型企業是主要目標，以及大廠該做什麼
+
+• 研究方法：Black Kite 於 2026 年 8 月 18 日發布報告，從攻擊者視角評估北美與歐洲的 120,128 家中型企業
+• 核心數據：2023 年至 2026 上半年，73% 的勒索軟體受害者為中型企業
+• 產業分布：製造業占中型企業受害者的 26%，為最大族群，其後為專業科技服務業與營建業
+• 趨勢穩定性：事件總量自 2023 年 2,320 件成長 44% 至 2025 年 3,340 件，中型企業占比幾乎未變，顯示為結構性而非階段性現象
+• 製造業被鎖定的原因：對停機的容忍度極低使談判籌碼天生偏向攻擊者，加上持有設計圖與客戶規格等高敏感資料
+• 能力落差：中型供應商、小型軟體發行商與開源維護者無法負擔每年 50 萬至 200 萬美元的資安工具堆疊，平均偵測時間 197 天、修補時間 60 天
+• 供應鏈意涵：大型製造商的資安成熟度不等於其供應鏈的資安成熟度，落差集中在中型與小型的上游節點
+• 第三方風險管理缺口：以問卷為主的評估無法反映實際偵測與修補能力，需要可驗證的指標
+• 行動清單：盤點關鍵供應商的規模分布、把資安要求配套為供應商可負擔的做法、將「供應商遭勒索」納入產線停機演練情境、以偵測與修補時間而非文件完備度作為第三方評估指標
+<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk #SupplyChainSecurity</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">Title: Ransomware's Structural Victims: Why Mid-Market Manufacturers Are the Primary Target, and What Large Players Should Do
+
+• Method: Black Kite published its report on 18 August 2026, assessing 120,128 mid-market organisations across North America and Europe from an attacker's perspective
+• Headline figure: between 2023 and the first half of 2026, 73% of ransomware victims were mid-market companies
+• Sector split: manufacturing accounts for 26% of mid-market victims, the largest single group, followed by professional, scientific and technical services, then construction
+• Trend stability: total incidents grew 44%, from 2,320 in 2023 to 3,340 in 2025, while the mid-market share barely moved, indicating a structural rather than phase-driven pattern
+• Why manufacturing is targeted: very low tolerance for downtime tilts negotiating leverage toward the attacker by default, and manufacturers hold highly sensitive data including design files and customer specifications
+• The capability gap: mid-market vendors, small software publishers and open-source maintainers cannot fund a security stack costing 500,000 to 2 million US dollars a year, and average 197 days to detect and 60 days to remediate
+• Supply chain implication: a large manufacturer's security maturity is not its supply chain's security maturity, and the gap concentrates in mid-sized and small upstream nodes
+• Third-party risk gap: questionnaire-led assessment does not reflect real detection and remediation capability, so verifiable metrics are needed
+• Action list: map the size distribution of critical suppliers, pair security requirements with approaches suppliers can afford, add a supplier-ransomware scenario to production downtime exercises, and assess third parties on detection and remediation time rather than documentation completeness
+<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk #SupplyChainSecurity</div></div>
+              </div>
+              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
+            </div>
+          </details>
+
+          <details class="channel" data-post-id="20260820-t3-nl">
+            <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
+            <div class="draft-body">
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
+                <div class="draft-text">Black Kite 於 2026 年 8 月 18 日發布報告，從攻擊者視角評估北美與歐洲的 120,128 家中型企業，發現 2023 年至 2026 上半年間有 73% 的勒索軟體受害者是中型企業而非大型企業；其中製造業為最大受害族群，占中型企業受害者的 26%，其後依序為專業科技服務業與營建業。事件總量自 2023 年的 2,320 件成長 44% 至 2025 年的 3,340 件，但中型企業的占比幾乎未變，顯示這是結構性而非階段性現象。報告並指出能力落差：中型供應商、小型軟體發行商與開源維護者無法負擔每年 50 萬至 200 萬美元的資安工具堆疊，平均仍需 197 天偵測、60 天修補。對大型製造商的意涵是自身資安成熟度不等於供應鏈的成熟度，建議將第三方評估指標從文件完備度改為實際偵測與修補時間，並把供應商遭勒索納入產線停機演練。主要來源：Black Kite 原始報告（8/18）、Infosecurity Magazine（8/18）。
+<div class="hashtags">#Ransomware #ManufacturingCyber</div></div>
+              </div>
+              <div class="lang-block">
+                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
+                <div class="draft-text">Black Kite published a report on 18 August 2026 assessing 120,128 mid-market organisations across North America and Europe from an attacker's perspective, finding that between 2023 and the first half of 2026, 73% of ransomware victims were mid-market companies rather than large enterprises; manufacturing was the largest victim group at 26% of mid-market victims, followed by professional, scientific and technical services, then construction. Total incidents grew 44%, from 2,320 in 2023 to 3,340 in 2025, while the mid-market share barely moved, indicating a structural rather than phase-driven pattern. The report also identifies a capability gap: mid-market vendors, small software publishers and open-source maintainers cannot fund a security stack costing 500,000 to 2 million US dollars a year and still average 197 days to detect and 60 days to remediate. For large manufacturers the implication is that their own security maturity is not their supply chain's, so third-party assessment should shift from documentation completeness to actual detection and remediation time, and supplier ransomware belongs in production downtime exercises. Sources: Black Kite report (8/18), Infosecurity Magazine (8/18).
+<div class="hashtags">#Ransomware #ManufacturingCyber</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
@@ -353,14 +542,14 @@ When was your temperature-control system last inventoried as a security asset?
       </article>
 
       <div style="text-align:center; color:var(--text-muted); font-size:0.9rem; margin-top:1rem;">
-        過去週次內容已移至 <a href="archive.html">存檔頁</a>。<br>
+        過去期數內容已移至 <a href="archive.html">存檔頁</a>。<br>
         <span style="font-size:0.82rem;">展開各管道即可一鍵複製中英文草稿；發布後可標示「已使用」追蹤</span>
       </div>
     </section>
 
     <footer>
       <p>獨立維護的專業內容創意存檔 · 聚焦 AI 治理 / AI 安全 / 電子製造與 OT 資安</p>
-      <p style="margin-top:0.35rem;">每週一上午產出 · 中英雙語草稿可直接展開複製</p>
+      <p style="margin-top:0.35rem;">每週一、四上午產出 · 中英雙語草稿可直接展開複製</p>
       <p style="margin-top:0.9rem;font-size:0.78rem;">資料來源均註明原始發布日期與媒體名稱 · 不編造新聞</p>
     </footer>
   </div>
