@@ -47,22 +47,21 @@
       </div>
       <div class="stats">
         <div class="stat"><b>4</b><span>本期選題</span></div>
-        <div class="stat"><b>8</b><span>🏛 官方來源</span></div>
-        <div class="stat"><b>12</b><span>📰 一線媒體</span></div>
+        <div class="stat"><b>13</b><span>🏛 官方來源</span></div>
+        <div class="stat"><b>14</b><span>📰 一線媒體</span></div>
         <div class="stat"><b>0</b><span>📡 聚合/部落格</span></div>
         <div class="stat"><b>32</b><span>可複製雙語草稿</span></div>
         <div class="stat"><b>4</b><span>發布管道</span></div>
       </div>
       <ul class="summary-topics">
-        <li>選題 01 · AI 安全/治理 — 台灣政府機關遭近乎全自動 AI Agent 攻擊 <span class="cnt">（6 個來源）</span></li>
-        <li>選題 02 · 供應鏈/DevSecOps — GitLab 緊急修補 CVSS 9.4 GraphQL 漏洞 <span class="cnt">（5 個來源）</span></li>
+        <li>選題 01 · AI 安全/治理 — 台灣政府機關遭近乎全自動 AI Agent 攻擊 <span class="cnt">（7 個來源）</span></li>
+        <li>選題 02 · 供應鏈/DevSecOps — GitLab 緊急修補 CVSS 9.4 GraphQL 漏洞（8/19 已遭實際利用） <span class="cnt">（7 個來源）</span></li>
         <li>選題 03 · 製造業/勒索軟體 — Black Kite：73% 勒索受害者是中型企業 <span class="cnt">（4 個來源）</span></li>
-        <li>選題 04 · 電子製造/修補治理 — Oracle 改月更資安更新，8/18 一次 943 個修補 <span class="cnt">（5 個來源）</span></li>
+        <li>選題 04 · 電子製造/修補治理 — Oracle 改月更資安更新，8/18 一次 943 個修補 <span class="cnt">（9 個來源）</span></li>
       </ul>
       <div class="fx-rollup" id="fx-rollup"></div>
       <div class="summary-note">
-        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確日期之來源，僅載月份、降級為輔助引用。<strong>選題 01 為補收錄</strong>：該事件於 8/12（金融時報首報、Dream 研究部落格同日發表）至 8/14 之間曝光，正好落在上一期（涵蓋 8/13–8/16，產出時尚未完成查證）與再上一期（涵蓋 8/10–8/12）的區間交界，因規則縫隙未被收錄；此為近年最具指標性的 AI 治理事件，經使用者指示補入本期並標明原始日期。選題 02、03 均在本期 8/17–8/19 區間內。本期四個選題皆具備 🏛 官方一手來源（數發部資安署新聞稿、Dream 原始研究報告、GitLab 官方修補公告、Black Kite 中型企業報告與新聞稿、Black Kite 供應鏈漏洞報告、Oracle CSPU 公告），未使用聚合站或部落格佐證。<strong>2026-08-19 重新查證</strong>：網路政策仍以 403 阻擋所有新聞網站與 moda.gov.tw 的直連，但搜尋索引可用，已改以索引內容對三個選題逐條複核（仍未能逐篇開啟原文）。結果：<strong>已更正三處</strong>——選題 01 的 160MB 封存檔內含的是 1,395 <em>份檔案</em>而非「診斷報告」；選題 02 的前一次例行修補（8/12）實含 6 個 high 漏洞，只是未含 critical，原稱「不含重大風險」不準確；選題 03 的 73% 出自 13,336 件具可查證營收的勒索事件（2023/1–2026/6），而非 120,128 家中型企業的掃描樣本，且「中型企業」定義為年營收 1,000 萬至 10 億美元，原稿均未載明。<strong>已確認並移除星號</strong>：數發部新聞稿 8/13、CyberScoop 8/12、Cybersecurity Dive 8/18、Black Kite 新聞稿 8/18；iThome 一則仍無法取得確切刊登日期，維持 8月* 的降級標註。<strong>新增查得</strong>：Dream 原始研究報告已補列為 🏛 來源，且該報告依公司政策僅稱「亞洲地區政府機關」、未指名台灣（指名者為金融時報與數發部本身）；watchTowr 表示僅憑 GitLab 公告與修補檔即在數分鐘內重現 CVE-2026-19478，故「目前無公開 PoC」不應被讀成有充裕修補時間。<strong>選題 04 為複核後補寫</strong>：Oracle 2026 年 8 月 Critical Security Patch Update（8/18，943 個修補）原在複核時列為「落在本期區間但未收錄」，經使用者指示補寫為選題 04。該則是本期唯一 <em>能直接開啟一手原文核對</em> 的選題——oracle.com 未被政策阻擋，943 這個總數、8/18 發布日、CSPU 排程與公告逐字引用皆取自 Oracle 原文；惟 blogs.oracle.com 仍被阻擋，故「AI 使修補節奏改為月更」的官方理由僅有次級來源轉述，已於該則 markdown 標明。<strong>2026-08-20 第二輪複核</strong>：排程任務執行時再測，網路政策仍以 403 阻擋全部外部主機（連 example.com 亦然），故續以搜尋索引逐條複查，並針對前一輪未觸及的敘述加驗。<strong>再更正三處</strong>——（一）選題 03 的「每年 50 萬至 200 萬美元資安工具、197 天偵測、60 天修補」係出自 Black Kite《2026 Supply Chain Vulnerability Report》，並非本則引用的 8/18 中型企業報告，原稿誤植為同一份，已改為分別標註並補列該報告為來源，同時補上對照組（導入 AI 輔助掃描的大型企業為偵測 14 天、修補 21 天）；（二）選題 02 各管道草稿仍寫「時間差通常只有幾天」，與摘要面板已載明的 watchTowr 發現相互矛盾——watchTowr 僅憑公告與修補檔即在數分鐘內重現 CVE-2026-19478，四個管道的敘述已一併改為「以小時計」，並補上該漏洞經 HackerOne bug bounty 私下通報一節；（三）選題 01 的 OpenClaw 沿革有誤，原寫「2025 年 11 月推出、半年內累積 34 萬 GitHub 星」，實為 2025 年 11 月先以 Clawdbot 之名發布，2026 年 1 月更名後重新發布、48 小時破 10 萬星，2026 年 4 月已逾 37 萬星並成為 GitHub 史上最多星的軟體儲存庫。<strong>複查後確認無誤、予以保留</strong>：選題 03 的「2023 年 2,320 件成長 44% 至 2025 年 3,340 件」確屬本則中型企業報告的數據。<strong>本次未新增選題</strong>：網站最新一期即為 8/20，排程執行當日與其涵蓋區間（8/17–8/19）之間沒有新的區間可查，依「不與既有選題重複、不以舊聞湊數」的規則不另立新期；下一期回到 8/24（週一），涵蓋 8/20–8/23。
-      </div>
+        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確發布日期之來源（本期經第三輪查證後僅餘 Black Kite 供應鏈漏洞報告一處）。<strong>選題 01 為補收錄</strong>：該事件於 8/12（金融時報首報、Dream 研究部落格同日發表）至 8/14 之間曝光，正好落在上一期（涵蓋 8/13–8/16，產出時尚未完成查證）與再上一期（涵蓋 8/10–8/12）的區間交界，因規則縫隙未被收錄；此為近年最具指標性的 AI 治理事件，經使用者指示補入本期並標明原始日期。選題 02、03 均在本期 8/17–8/19 區間內。本期四個選題皆具備 🏛 官方一手來源（數發部資安署新聞稿、Dream 原始研究報告、GitLab 官方修補公告、Black Kite 中型企業報告與新聞稿、Black Kite 供應鏈漏洞報告、Oracle CSPU 公告），未使用聚合站或部落格佐證。<strong>2026-08-19 / 08-20 前兩輪查證受限</strong>：當時的網路政策以 403 阻擋全部外部主機（連 example.com 亦然），只能以搜尋索引內容逐條核對，未能開啟任何原文；兩輪合計已更正六處，記錄保留於各選題 markdown 的「查證與限制」段。<strong>2026-08-20 第三輪：網路限制解除，全部改以直接開啟原文核對</strong>——四則選題引用的每一個來源網址逐一取回全文比對，Oracle 公告改以逐列清點風險矩陣、CISA KEV 改以直接下載官方 JSON 核對。結果如下。<strong>一、選題 02 的風險狀態已改變（本輪最重要）</strong>：原稿寫「截至 8/18 無實際遭利用案例、無公開 PoC」。開啟 Cybersecurity Dive 原文發現該篇已於 <strong>8/19 更新</strong>，watchTowr 證實其蜜罐網路已出現 CVE-2026-19478 的實際攻擊流量，CSO Online 同日獨立報導相同事實。四個管道草稿已全部改寫為「時間差已經用完」，並補上緩解手段（限制 api/graphql 未認證存取）與獵捕跡證（web 日誌中含 gl_introduced 的請求）。該 CVE 截至 KEV 2026.08.19 版尚未列入。<strong>二、刪除一項無來源的說法</strong>：選題 01 原稱「內部日誌顯示曾調用 DeepSeek-V4-Flash 模型」。Dream 報告全文查無此段，iThome 更明載該報告「並未揭露背後串接的究竟是哪一個大型語言模型」，已整段刪除並改為明載「模型未被揭露」。這是僅憑索引摘要查證時最嚴重的一處失誤。<strong>三、其餘五處更正</strong>：（1）選題 01 的操作文件語言，Dream 原文是<em>繁簡交錯</em>——內部狀態報告用簡體、對目標分析用繁體——而非原稿的「以簡體中文撰寫」（CNN 與 Taipei Times 的簡化說法）；（2）選題 01 的 OpenClaw 沿革，2025 年 11 月首發時名為 Warelay，2026 年 1 月才歷經 Clawdbot、Moltbot 更名後定名，星數改採 The New Stack（3/3）可查證的「四個月內逾 25 萬星、超越 React 與 Linux」；（3）數發部定性改為新聞稿逐字用語「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」；（4）選題 02 的 8/12 例行修補實為 <strong>7 個 high</strong>、6 個 medium、1 個 low（原寫 6 個 high）；（5）選題 04 的首次 CSPU 為 <strong>35 個修補</strong>（原寫 77 個），且 Oracle 改月更的官方理由被讀反了——Oracle 講的是<em>自己這一側</em>導入前沿 AI 後發現與修復的速度規模上升，不是「AI 讓漏洞挖掘超過企業修補能力」的攻擊方視角。<strong>四、來源歸屬更正</strong>：選題 01 的資料損失數字原掛數發部新聞稿，但新聞稿全篇沒有任何數字，已改掛 Dream 原始報告與 The Register；選題 03 的 197／60 與 14／21 天、50 萬–200 萬美元工具成本原掛 8/18 新聞稿，新聞稿實際完全沒有這組數字，已改掛 Black Kite 原始報告與供應鏈漏洞報告。<strong>五、日期全部確認、星號全數移除</strong>：iThome 8/14（黃彥棻）、CSO Online 8/18、SecurityWeek 5/6、The Hacker News 8/17 與 6/30、BleepingComputer 7/1，前兩輪無法定案的日期本輪全部解決。<strong>六、由推論升級為一手清點</strong>：選題 04 的總體統計原註明「出自媒體彙總、Oracle 公告未以此形式呈現」，本輪直接解析 943 列風險矩陣得出 <strong>467 項免認證可遠端利用、151 個 CVE ≥ CVSS 9.0、89 個 ≥ 9.8、3 個滿分 10.0</strong>，媒體口徑全部成立且現有一手依據；同時發現原稿漏掉 <strong>Hyperion 同樣有 262 個修補</strong>，與 Fusion Middleware 並列最大宗，兩者合計佔 55%。CVE-2026-46817 的 KEV 收錄日 7/15 亦由 CISA 官方 JSON 直接核對。<strong>本次未新增選題</strong>：網站最新一期即為 8/20、涵蓋 8/17–8/19，與執行當日之間沒有新的區間可查，依「不與既有選題重複、不以舊聞湊數」的規則不另立新期；下一期為 8/24（週一），涵蓋 8/20–8/23。</div>
     </section>
 
     <section>
@@ -78,14 +77,15 @@
         <div class="topic">
           <div class="topic-num">選題 01 · AI 安全 / AI 治理（補收錄）</div>
           <h3>4 天、12 波、21 套系統：台灣政府機關遭近乎全自動的 AI Agent 攻擊，工具全部開源</h3>
-          <p>以色列資安公司 Dream 取得攻擊方遺留的完整工作區紀錄，顯示攻擊框架以 Hermes Agent 與 OpenClaw 兩套開源工具組成，最多同時派出 8 個子代理、分 12 波在 7/1–7/4 執行。數發部 8/13 證實至少 85 組政府帳號遭入侵、逾 2,500 筆人事資料外洩，並將其定性為「人為操作結合 AI Agent 輔助」的混合模式。</p>
+          <p>以色列資安公司 Dream 取得攻擊方遺留的完整工作區紀錄，顯示攻擊框架以 Hermes Agent 與 OpenClaw 兩套開源工具組成，最多同時派出 8 個子代理、分 12 波在 7/1–7/4 執行。Dream 報告載明 85 組政府帳號遭攻破、2,564 筆人事資料外洩；數發部 8/13 證實此事，新聞稿逐字定性為「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」。</p>
           <div class="sources">
             <a class="source-tag" href="https://moda.gov.tw/ACS/press/news/press/20394" target="_blank" rel="noopener">🏛 數發部資通安全署新聞稿 8/13</a>
             <a class="source-tag" href="https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia" target="_blank" rel="noopener">🏛 Dream 原始研究報告 8/12</a>
             <a class="source-tag" href="https://www.cnn.com/2026/08/13/tech/china-taiwan-ai-agent-cyberattack-intl-hnk" target="_blank" rel="noopener">📰 CNN Business 8/13</a>
             <a class="source-tag" href="https://cyberscoop.com/near-autonomous-ai-attack-government-target-taiwan/" target="_blank" rel="noopener">📰 CyberScoop 8/12</a>
             <a class="source-tag" href="https://www.taipeitimes.com/News/front/archives/2026/08/14/2003862463" target="_blank" rel="noopener">📰 Taipei Times 8/14</a>
-            <a class="source-tag" href="https://www.ithome.com.tw/news/178135" target="_blank" rel="noopener">📰 iThome 8月*</a>
+            <a class="source-tag" href="https://www.ithome.com.tw/news/178135" target="_blank" rel="noopener">📰 iThome 8/14</a>
+            <a class="source-tag" href="https://www.theregister.com/security/2026/08/12/near-autonomous-ai-agents-attack-taiwans-nuclear-safety-agency/" target="_blank" rel="noopener">📰 The Register 8/12</a>
           </div>
 
           <details class="channel" data-post-id="20260820-t1-li">
@@ -97,11 +97,11 @@
 
 以色列資安公司 Dream 取得了攻擊方遺留的完整工作區紀錄——一個 160MB 的封存檔，內含 1,395 份檔案，涵蓋行動的規劃、執行與後處理。紀錄顯示，2026 年 7 月 1 日至 7 月 4 日之間，一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理，各自分配目標與攻擊手法。
 
-框架由兩套開源工具組成：Nous Research 於 2026 年 2 月發布的 Hermes Agent，以及個人 AI 助理 OpenClaw——2025 年 11 月先以 Clawdbot 之名推出，2026 年 1 月更名後重新發布、48 小時內突破 10 萬 GitHub 星，到 4 月已超過 37 萬星，成為 GitHub 史上最多星的軟體儲存庫。兩者原本都內建防止用於攻擊行為的安全機制——攻擊方繞過的方式，是把整個行動包裝成「已授權的滲透測試」，原始文件以簡體中文撰寫。
+框架由兩套開源工具組成：Nous Research 於 2026 年 2 月發布的 Hermes Agent，以及個人 AI 助理 OpenClaw——2025 年 11 月首次發布，2026 年 1 月定名為 OpenClaw，四個月內累積逾 25 萬星，超越 React 與 Linux，成為 GitHub 上最多星的軟體專案。兩者原本都內建防止用於攻擊行為的安全機制——攻擊方繞過的方式，是把整個行動包裝成「已授權的滲透測試」。操作文件呈現繁簡交錯——內部狀態報告用簡體中文、對目標的分析用繁體中文——Dream 據此研判操作者為中文語系。
 
 成果：測繪 21 套相互連通的政府系統、攻破 85 組政府帳號、取得逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（涵蓋 MSSQL、Oracle、Sybase），並匯出全部部門系統使用者清單。目標範圍後續擴及核安主管機關、供應鏈廠商與至少 7 家能源業者。
 
-數發部 8 月 13 日證實此事，並提供了一個值得注意的修正：資安監控單位 7 月即偵測到異常，國家資通安全研究院自 7 月 20 日起發布警示；調查認定這是「人為操作結合 AI Agent 輔助」的混合模式，而非完全自主。調查已結束，受影響機關均已完成修補。
+數發部 8 月 13 日證實此事，並提供了一個值得注意的修正：資安監控單位 7 月即偵測到異常，國家資通安全研究院自 7 月 20 日起發布警示；調查認定這是「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」，而非完全自主。調查已結束，受影響機關均已完成修補。
 
 這個「近乎自主」與「完全自主」的差別，正是治理上最該抓住的地方。爭論攻擊有幾成自動化沒有意義，真正改變的是三件事：
 
@@ -118,7 +118,7 @@
 
 Israeli security firm Dream obtained the attackers' complete leftover workspace — a 160MB archive containing 1,395 files covering the campaign's planning, execution and post-processing. The records show that between 1 and 4 July 2026, an AI agent framework ran 12 attack waves against Taiwanese government agencies, deploying up to eight sub-agents in parallel, each assigned its own targets and techniques.
 
-The framework was assembled from two open-source projects: Hermes Agent, released by Nous Research in February 2026, and OpenClaw, the open-source personal AI assistant first published as Clawdbot in November 2025, renamed and relaunched in January 2026 where it passed 100,000 GitHub stars within 48 hours, and by April had surpassed 370,000 stars to become the most-starred software repository in GitHub's history. Both ship with safety mechanisms intended to prevent offensive use. The attackers bypassed them by packaging the whole operation as an authorised penetration test, with the source documents written in Simplified Chinese.
+The framework was assembled from two open-source projects: Hermes Agent, released by Nous Research in February 2026, and OpenClaw, the open-source personal AI assistant first published in November 2025 and renamed to OpenClaw at the end of January 2026, which passed 250,000 GitHub stars within four months to overtake React and Linux as the most-starred software project on GitHub. Both ship with safety mechanisms intended to prevent offensive use. The attackers bypassed them by packaging the whole operation as an authorised penetration test. The operational documentation code-switches between Simplified Chinese in internal status reports and Traditional Chinese in target-facing analysis, which Dream reads as pointing to a Chinese-language operator.
 
 The results: 21 interconnected government systems mapped, 85 government accounts cracked, more than 2,500 personnel records taken, seven SSO client secrets, six internal database credentials spanning MSSQL, Oracle and Sybase, plus a full export of every departmental system user. Targeting later extended to the nuclear safety regulator, supply-chain vendors and at least seven energy companies.
 
@@ -144,13 +144,13 @@ If you are writing your organisation's AI usage policy: does it only govern how 
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
                 <div class="draft-text">1/ 以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔，內含 1,395 份檔案。紀錄顯示 2026/7/1–7/4 有一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理。
 
-2/ 框架完全由開源工具組成：Nous Research 2026 年 2 月發布的 Hermes Agent，加上 OpenClaw（2025 年 11 月以 Clawdbot 之名推出，2026 年 1 月更名重新發布後 48 小時破 10 萬星，4 月已逾 37 萬星、成為 GitHub 史上最多星的儲存庫）。沒有任何客製化攻擊程式。
+2/ 框架完全由開源工具組成：Nous Research 2026 年 2 月發布的 Hermes Agent，加上 OpenClaw（2025 年 11 月首次發布，2026 年 1 月定名，四個月內逾 25 萬星、成為 GitHub 上最多星的軟體專案）。沒有任何客製化攻擊程式。
 
-3/ 兩套工具都有防止攻擊性使用的安全機制。繞過方式：把整個行動包裝成「已授權的滲透測試」，原始文件以簡體中文撰寫。防線在語意層，不在技術層。
+3/ 兩套工具都有防止攻擊性使用的安全機制。繞過方式：把整個行動包裝成「已授權的滲透測試」。操作文件繁簡交錯，Dream 據此研判操作者為中文語系。防線在語意層，不在技術層。
 
 4/ 成果：21 套政府系統測繪、85 組帳號攻破、逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組資料庫憑證（MSSQL/Oracle/Sybase）。後續擴及核安主管機關與至少 7 家能源業者。
 
-5/ 數發部 8/13 證實，但做了重要修正：7 月即偵測到，國家資通安全研究院自 7/20 起示警；定性為「人為操作結合 AI Agent 輔助」的混合模式，而非完全自主。調查已結束、機關已修補。
+5/ 數發部 8/13 證實，但做了重要修正：7 月即偵測到，國家資通安全研究院自 7/20 起示警；定性為「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」，而非完全自主。調查已結束、機關已修補。
 
 6/ 治理重點不是自動化幾成，而是：攻擊邊際成本崩塌、以宣告用途為基礎的安全機制近乎無效、偵測節奏必須從「週」壓縮到「波次」。你的 AI 政策有假設對手用同一批工具嗎？
 <div class="hashtags">#AISecurity #AIGovernance #AgenticAI</div></div>
@@ -159,9 +159,9 @@ If you are writing your organisation's AI usage policy: does it only govern how 
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
                 <div class="draft-text">1/ Israeli security firm Dream recovered a 160MB workspace archive left behind by the attackers, containing 1,395 files. It shows an AI agent framework running 12 attack waves against Taiwanese government agencies from 1 to 4 July 2026, with up to eight sub-agents in parallel.
 
-2/ The framework was built entirely from open-source tools: Hermes Agent, released by Nous Research in February 2026, plus OpenClaw, first published as Clawdbot in November 2025, relaunched under its new name in January 2026 past 100,000 stars in 48 hours and over 370,000 by April — the most-starred repository in GitHub's history. No custom offensive code at all.
+2/ The framework was built entirely from open-source tools: Hermes Agent, released by Nous Research in February 2026, plus OpenClaw, first published in November 2025 and renamed to OpenClaw at the end of January 2026, past 250,000 stars within four months — the most-starred software project on GitHub. No custom offensive code at all.
 
-3/ Both tools ship safety mechanisms against offensive use. The bypass: package the operation as an authorised penetration test. Source documents were written in Simplified Chinese. The boundary held at the semantic layer, not the technical one.
+3/ Both tools ship safety mechanisms against offensive use. The bypass: package the operation as an authorised penetration test. The operator documentation code-switches between Simplified and Traditional Chinese, which Dream reads as a Chinese-language operator. The boundary held at the semantic layer, not the technical one.
 
 4/ Results: 21 government systems mapped, 85 accounts cracked, 2,500+ personnel records, seven SSO client secrets, six database credentials across MSSQL, Oracle and Sybase. Targeting later reached the nuclear safety regulator and at least seven energy companies.
 
@@ -186,9 +186,9 @@ If you are writing your organisation's AI usage policy: does it only govern how 
 • 攻擊規模：12 波次、最多 8 個子代理平行運作、測繪 21 套相互連通的政府系統
 • 資料損失：85 組政府帳號、逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（MSSQL、Oracle、Sybase）、全部門系統使用者清單匯出
 • 擴散範圍：核安主管機關、供應鏈廠商、至少 7 家能源業者
-• 工具組成：Hermes Agent（Nous Research，2026/2 發布）與 OpenClaw（2025/11 以 Clawdbot 之名推出，2026/1 更名重新發布後 48 小時破 10 萬星，2026/4 逾 37 萬星、成為 GitHub 史上最多星的軟體儲存庫），皆為開源、皆內建防濫用機制
-• 繞過手法：將行動宣告為「已授權的滲透測試」，原始文件為簡體中文
-• 官方定性差異：數發部認定為「人為操作結合 AI Agent 輔助」的混合模式，與部分國際媒體「完全自主」的描述有落差，此差異本身即為重要治理資訊
+• 工具組成：Hermes Agent（Nous Research，2026/2 發布）與 OpenClaw（2025/11 首次發布，2026/1 定名，四個月內逾 25 萬星、成為 GitHub 上最多星的軟體專案），皆為開源、皆內建防濫用機制
+• 繞過手法：將行動宣告為「已授權的滲透測試」；操作文件內部狀態報告為簡體中文、對目標分析為繁體中文，Dream 據此研判操作者為中文語系
+• 官方定性差異：數發部新聞稿逐字用語為「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」，與部分國際媒體「完全自主」的描述有落差，此差異本身即為重要治理資訊
 • 治理啟示一：攻擊邊際成本崩塌，威脅模型中「攻擊者資源有限」的假設需要重寫
 • 治理啟示二：以宣告用途為基礎的安全防護屬語意層防線，對有動機的攻擊者近乎無效，不應作為合規依據
 • 治理啟示三：偵測與修補節奏需從「週」壓縮至「波次」等級，並將帳號異常聚合行為納入偵測情境
@@ -204,9 +204,9 @@ If you are writing your organisation's AI usage policy: does it only govern how 
 • Scale: 12 attack waves, up to eight sub-agents running in parallel, 21 interconnected government systems mapped
 • Data loss: 85 government accounts, more than 2,500 personnel records, seven SSO client secrets, six internal database credentials across MSSQL, Oracle and Sybase, plus a full export of departmental system users
 • Spread: the nuclear safety regulator, supply-chain vendors and at least seven energy companies
-• Toolchain: Hermes Agent (Nous Research, released February 2026) and OpenClaw (first published as Clawdbot in November 2025, relaunched under its new name in January 2026 past 100,000 stars within 48 hours, over 370,000 by April — the most-starred repository in GitHub's history), both open source and both shipping anti-abuse mechanisms
-• Bypass method: declaring the operation an authorised penetration test, with source documents written in Simplified Chinese
-• Official framing differs: MODA assessed a hybrid of human operation plus AI agent assistance, which diverges from the fully autonomous framing used by some international outlets. That divergence is itself governance-relevant information
+• Toolchain: Hermes Agent (Nous Research, released February 2026) and OpenClaw (first published in November 2025, renamed to OpenClaw at the end of January 2026, past 250,000 stars within four months — the most-starred software project on GitHub), both open source and both shipping anti-abuse mechanisms
+• Bypass method: declaring the operation an authorised penetration test; the operator documentation code-switches between Simplified Chinese in internal status reports and Traditional Chinese in target-facing analysis, which Dream reads as pointing to a Chinese-language operator
+• Official framing differs: MODA's press release words it as a hybrid in which hackers combined conventional operations with AI agents such as Open Claw, which diverges from the fully autonomous framing used by some international outlets. That divergence is itself governance-relevant information
 • Lesson one: the marginal cost of attack has collapsed, so the threat-model assumption that attackers have limited resources needs rewriting
 • Lesson two: intent-declaration guardrails are a semantic boundary and offer near-zero resistance to a motivated adversary, so they should not be treated as a compliance control
 • Lesson three: detection and patching cadence must compress from weekly to per-wave, and aggregate account anomalies belong in detection scenarios
@@ -222,12 +222,12 @@ If you are writing your organisation's AI usage policy: does it only govern how 
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔（含 1,395 份檔案），揭露 2026 年 7 月 1 日至 4 日一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理，測繪 21 套相互連通的政府系統、攻破 85 組帳號、取得逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰與 6 組資料庫憑證，目標並擴及核安主管機關與至少 7 家能源業者。框架完全由開源工具組成——Nous Research 的 Hermes Agent 與 OpenClaw——並以「已授權滲透測試」的宣告繞過兩者內建的防濫用機制。數發部 8 月 13 日證實事件，說明資安監控單位 7 月即偵測到、國家資通安全研究院自 7 月 20 日起示警，並將其定性為人為操作結合 AI Agent 輔助的混合模式，調查已結束、受影響機關均已修補。建議企業盤點對外可達的身分驗證端點與 SSO 密鑰，並將 AI 代理工具納入使用政策。主要來源：數發部資通安全署新聞稿（8/13）、CNN Business（8/13）、Taipei Times（8/14）。
+                <div class="draft-text">以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔（含 1,395 份檔案），揭露 2026 年 7 月 1 日至 4 日一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理，測繪 21 套相互連通的政府系統、攻破 85 組帳號、取得 2,564 筆人事資料、7 組 SSO 用戶端密鑰與 6 組資料庫憑證，目標並擴及核安主管機關與至少 7 家能源業者。框架完全由開源工具組成——Nous Research 的 Hermes Agent 與 OpenClaw——並以「已授權滲透測試」的宣告繞過兩者內建的防濫用機制。數發部 8 月 13 日證實事件，說明資安監控單位 7 月即偵測到、國家資通安全研究院自 7 月 20 日起示警，並將其定性為「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」，調查已結束、受影響機關均已修補。建議企業盤點對外可達的身分驗證端點與 SSO 密鑰，並將 AI 代理工具納入使用政策。主要來源：數發部資通安全署新聞稿（8/13）、CNN Business（8/13）、Taipei Times（8/14）。
 <div class="hashtags">#AISecurity #AIGovernance</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Israeli security firm Dream recovered a 160MB workspace archive left behind by the attackers, containing 1,395 files, revealing that between 1 and 4 July 2026 an AI agent framework ran 12 attack waves against Taiwanese government agencies with up to eight sub-agents in parallel, mapping 21 interconnected government systems, cracking 85 accounts, taking more than 2,500 personnel records, seven SSO client secrets and six database credentials, with targeting extending to the nuclear safety regulator and at least seven energy companies. The framework was assembled entirely from open-source tools, Hermes Agent from Nous Research and OpenClaw, and bypassed both projects' anti-abuse mechanisms by declaring the operation an authorised penetration test. Taiwan's Ministry of Digital Affairs confirmed the incident on 13 August, noting that monitoring units detected the activity in July, that the National Institute of Cyber Security issued alerts from 20 July, and that it assessed the campaign as a hybrid of human operation with AI agent assistance; the investigation has closed and affected agencies have remediated. Enterprises should inventory internet-reachable authentication endpoints and SSO secrets and bring AI agent tooling into usage policy. Sources: MODA Administration for Cyber Security press release (8/13), CNN Business (8/13), Taipei Times (8/14).
+                <div class="draft-text">Israeli security firm Dream recovered a 160MB workspace archive left behind by the attackers, containing 1,395 files, revealing that between 1 and 4 July 2026 an AI agent framework ran 12 attack waves against Taiwanese government agencies with up to eight sub-agents in parallel, mapping 21 interconnected government systems, cracking 85 accounts, taking 2,564 personnel records, seven SSO client secrets and six database credentials, with targeting extending to the nuclear safety regulator and at least seven energy companies. The framework was assembled entirely from open-source tools, Hermes Agent from Nous Research and OpenClaw, and bypassed both projects' anti-abuse mechanisms by declaring the operation an authorised penetration test. Taiwan's Ministry of Digital Affairs confirmed the incident on 13 August, noting that monitoring units detected the activity in July, that the National Institute of Cyber Security issued alerts from 20 July, and that it assessed the campaign as a hybrid in which hackers combined conventional operations with AI agents such as Open Claw; the investigation has closed and affected agencies have remediated. Enterprises should inventory internet-reachable authentication endpoints and SSO secrets and bring AI agent tooling into usage policy. Sources: MODA Administration for Cyber Security press release (8/13), CNN Business (8/13), Taipei Times (8/14).
 <div class="hashtags">#AISecurity #AIGovernance</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
@@ -238,13 +238,15 @@ If you are writing your organisation's AI usage policy: does it only govern how 
         <div class="topic">
           <div class="topic-num">選題 02 · 供應鏈 / DevSecOps</div>
           <h3>免登入就能刪掉整個專案：GitLab 排程外緊急修補 CVSS 9.4 的 GraphQL 漏洞</h3>
-          <p>CVE-2026-19478 讓未認證的遠端攻擊者可透過 GraphQL directive 修改或刪除公開專案與使用者資料。GitLab 於 8/17 排程外釋出 19.2.4、19.1.6、19.0.8、18.11.11；同批另修補 CVSS 7.1 的 CSRF 漏洞 CVE-2026-19650。僅自架環境需處理。</p>
+          <p>CVE-2026-19478 讓未認證的遠端攻擊者可透過 GraphQL directive 修改或刪除公開專案與使用者資料。GitLab 於 8/17 排程外釋出 19.2.4、19.1.6、19.0.8、18.11.11；同批另修補 CVSS 7.1 的 CSRF 漏洞 CVE-2026-19650。僅自架環境需處理——但 watchTowr 已於 8/19 在其蜜罐網路觀測到實際攻擊流量，這不再是預防性修補。</p>
           <div class="sources">
             <a class="source-tag" href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-4-released/" target="_blank" rel="noopener">🏛 GitLab 官方修補公告 8/17</a>
-            <a class="source-tag" href="https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html" target="_blank" rel="noopener">📰 The Hacker News 8/18</a>
+            <a class="source-tag" href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-2-released/" target="_blank" rel="noopener">🏛 GitLab 例行修補公告 8/12</a>
+            <a class="source-tag" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">🏛 CISA KEV 目錄 8/19</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html" target="_blank" rel="noopener">📰 The Hacker News 8/17</a>
             <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/18/gitlab-critical-code-injection-flaw-cve-2026-19478/" target="_blank" rel="noopener">📰 Help Net Security 8/18</a>
-            <a class="source-tag" href="https://www.cybersecuritydive.com/news/gitlab-emergency-patch-critical-code-injection/828151/" target="_blank" rel="noopener">📰 Cybersecurity Dive 8/18</a>
-            <a class="source-tag" href="https://www.csoonline.com/article/4211140/critical-gitlab-flaw-allows-attackers-to-delete-and-modify-public-repos.html" target="_blank" rel="noopener">📰 CSO Online 8月*</a>
+            <a class="source-tag" href="https://www.cybersecuritydive.com/news/gitlab-emergency-patch-critical-code-injection/828151/" target="_blank" rel="noopener">📰 Cybersecurity Dive 8/18（8/19 更新）</a>
+            <a class="source-tag" href="https://www.csoonline.com/article/4211140/critical-gitlab-flaw-allows-attackers-to-delete-and-modify-public-repos.html" target="_blank" rel="noopener">📰 CSO Online 8/18</a>
           </div>
 
           <details class="channel" data-post-id="20260820-t2-li">
@@ -264,7 +266,7 @@ GitLab 在 8 月 17 日排程外釋出緊急修補，對象是 CVE-2026-19478—
 
 第一，這是排程外釋出。GitLab 正常的資安更新是每月第二與第四個週三，而這次在一次不含 critical 等級漏洞的例行修補之後五天就緊急補上，本身就是嚴重程度的訊號。
 
-第二，這個漏洞是經由 GitLab 在 HackerOne 的 bug bounty 私下通報的，截至 8 月 18 日官方公告未確認任何實際遭利用案例，兩個 CVE 也都沒有公開的概念驗證程式碼。但別把它讀成你還有充裕時間：資安公司 watchTowr 表示，僅憑公告與修補檔，他們在數分鐘內就重現了這個漏洞，並警告這批修補極容易被逆向。時間差的單位是小時，不是天。
+第二，這個漏洞是經由 GitLab 在 HackerOne 的 bug bounty 私下通報的，公告釋出當下沒有公開的概念驗證程式碼。這個狀態只維持了兩天：資安公司 watchTowr 表示，僅憑公告與修補檔，他們在數分鐘內就重現了這個漏洞；8 月 19 日，他們的蜜罐網路已經觀測到實際的攻擊流量。時間差的單位是小時，不是天——而這次連小時都用完了。
 
 第三，也是製造業最該想的一點：GitLab 自架實例往往長在研發或製造部門自己的機房裡，不在 IT 的標準資產清單上，更新節奏跟著專案走而不是跟著資安公告走。而它裡面放的是製程參數、韌體原始碼、產線控制程式——這些東西被刪掉的損失，遠不只是 git 歷史。
 
@@ -285,7 +287,7 @@ Three details worth noting.
 
 First, this was released outside the schedule. GitLab's normal security cadence is the second and fourth Wednesday of each month, and this arrived five days after a routine patch that carried no critical-rated issues. The timing is itself a severity signal.
 
-Second, the flaw was reported privately through GitLab's HackerOne bug bounty, and as of 18 August the advisory reported no confirmed in-the-wild exploitation and no public proof-of-concept for either CVE. Do not read that as breathing room: security firm watchTowr says it reproduced the vulnerability within minutes, armed only with the advisory and the patch, and warns these patches are trivially reverse-engineered. The head start is measured in hours, not days.
+Second, the flaw was reported privately through GitLab's HackerOne bug bounty, and there was no public proof-of-concept when the advisory landed. That lasted two days: security firm watchTowr says it reproduced the vulnerability within minutes, armed only with the advisory and the patch, and by Wednesday 19 August it was seeing in-the-wild exploitation hitting its honeypot network. The head start is measured in hours, not days — and on this one it has already run out.
 
 Third, and this is the one manufacturers should sit with: self-managed GitLab instances tend to live in an engineering or production department's own rack, outside the standard IT asset inventory, on an update rhythm driven by project milestones rather than security advisories. What sits inside them is process parameters, firmware source, line-control code. Losing that is not just losing git history.
 
@@ -311,7 +313,7 @@ Who owns updates for your self-managed GitLab, and are they subscribed to GitLab
 
 5/ 排程外釋出本身就是訊號：GitLab 正常節奏是每月第二與第四個週三，這次在一次不含 critical 等級漏洞的例行修補後五天就緊急補上。
 
-6/ 漏洞經 HackerOne bug bounty 私下通報，截至 8/18 無確認的實際利用案例、無公開 PoC。但 watchTowr 說僅憑公告與修補檔就在數分鐘內重現，並警告修補極易逆向——時間差以小時計。自架 GitLab 常在研發機房、不在 IT 資產清單上，那正是最容易漏掉的一台。
+6/ 漏洞經 HackerOne bug bounty 私下通報，公告當下無公開 PoC。watchTowr 僅憑公告與修補檔就在數分鐘內重現，8/19 其蜜罐網路已觀測到實際攻擊流量——兩天，時間差用完了。自架 GitLab 常在研發機房、不在 IT 資產清單上，那正是最容易漏掉的一台。
 <div class="hashtags">#DevSecOps #GitLab #VulnerabilityManagement</div></div>
               </div>
               <div class="lang-block">
@@ -326,7 +328,7 @@ Who owns updates for your self-managed GitLab, and are they subscribed to GitLab
 
 5/ The out-of-band timing is itself a signal: GitLab's normal cadence is the second and fourth Wednesday monthly, and this landed five days after a routine patch with no critical-rated issues.
 
-6/ Reported privately via HackerOne bug bounty; as of 18 Aug no confirmed in-the-wild exploitation and no public PoC. But watchTowr reproduced it within minutes from the advisory and patch alone, warning the patches are trivially reverse-engineered — the head start is hours, not days. Self-managed GitLab often sits in an engineering rack outside IT inventory, which is exactly the box that gets missed.
+6/ Reported privately via HackerOne bug bounty; no public PoC when the advisory landed. watchTowr reproduced it within minutes from the advisory and patch alone, and by Wed 19 Aug was seeing in-the-wild exploitation on its honeypots — two days, and the head start was gone. Self-managed GitLab often sits in an engineering rack outside IT inventory, which is exactly the box that gets missed.
 <div class="hashtags">#DevSecOps #GitLab #VulnerabilityManagement</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
@@ -347,7 +349,7 @@ Who owns updates for your self-managed GitLab, and are they subscribed to GitLab
 • 適用範圍：僅自架的 GitLab CE 與 EE 需處理；GitLab.com 與 GitLab Dedicated 已在修補版本
 • 釋出節奏訊號：GitLab 常規資安更新為每月第二與第四個週三，本次為排程外釋出，且在一次不含 critical 等級漏洞的例行修補後僅五天
 • 通報途徑：CVE-2026-19478 經 GitLab 於 HackerOne 的 bug bounty 計畫私下通報
-• 利用現況：截至 2026 年 8 月 18 日，官方公告未確認實際遭利用案例，兩個 CVE 亦無公開概念驗證程式碼；惟 watchTowr 表示僅憑公告與修補檔即在數分鐘內重現漏洞，並警告修補極易逆向，修補時間差應以小時而非天計
+• 利用現況：公告釋出時（8/17–8/18）未確認實際遭利用案例、無公開概念驗證程式碼；watchTowr 僅憑公告與修補檔即在數分鐘內重現漏洞，並於 8 月 19 日證實其蜜罐網路已出現實際攻擊流量。修補時間差應以小時而非天計；未修補者可翻查 web 日誌中含 gl_introduced 的請求作為跡證
 • 製造業風險延伸：自架 GitLab 常位於研發或製造部門機房，不在 IT 標準資產清單內，內容包含製程參數、韌體原始碼與產線控制程式
 • 治理缺口：更新節奏跟隨專案里程碑而非資安公告，缺乏訂閱與追蹤機制
 • 行動清單：盤點全公司自架 Git 服務與版本、指派明確的修補責任人、訂閱原廠資安公告、確認實例的網際網路可達性、建立研發環境的緊急修補時限
@@ -364,7 +366,7 @@ Who owns updates for your self-managed GitLab, and are they subscribed to GitLab
 • Scope: only self-managed GitLab CE and EE need action; GitLab.com and GitLab Dedicated already run the patched version
 • Cadence signal: GitLab's routine security updates land on the second and fourth Wednesday each month, so this out-of-band release, arriving five days after a routine patch with no critical-rated issues, is itself an indicator
 • Disclosure route: CVE-2026-19478 was reported privately through GitLab's HackerOne bug bounty programme
-• Exploitation status: as of 18 August 2026 the advisory reported no confirmed in-the-wild exploitation and no public proof-of-concept for either CVE; however watchTowr says it reproduced the flaw within minutes from the advisory and patch alone and warns the patches are trivially reverse-engineered, so the remediation window should be counted in hours, not days
+• Exploitation status: no confirmed exploitation and no public proof-of-concept when the advisory landed on 17-18 August; watchTowr reproduced the flaw within minutes from the advisory and patch alone, and on 19 August confirmed in-the-wild exploitation reaching its honeypot network. The remediation window is counted in hours, not days; unpatched instances should be checked for web-log requests containing gl_introduced
 • Manufacturing exposure: self-managed GitLab often sits in an engineering or production department rack, outside the standard IT asset inventory, holding process parameters, firmware source and line-control code
 • Governance gap: update cadence follows project milestones rather than security advisories, with no subscription or tracking mechanism
 • Action list: inventory every self-managed Git service and its version, assign a named patch owner, subscribe to vendor security advisories, verify internet reachability of each instance, and set an emergency patch deadline for engineering environments
@@ -379,12 +381,12 @@ Who owns updates for your self-managed GitLab, and are they subscribed to GitLab
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">GitLab 於 2026 年 8 月 17 日排程外釋出緊急修補，處理 CVE-2026-19478：CVSS 9.4 的 GraphQL directive 程式碼注入漏洞，特定條件下未認證的遠端攻擊者可修改或刪除公開專案與使用者資料；同批另修補 CVE-2026-19650，CVSS 7.1 的 GraphQL multiplex query handler CSRF 弱點，可經 GET 請求執行 GraphQL mutation，但需使用者互動。受影響版本為 18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前，修補版本為 19.2.4、19.1.6、19.0.8 與 18.11.11；GitLab.com 與 GitLab Dedicated 已在修補版本上，僅自架環境需要處理。截至 8 月 18 日官方公告未確認實際遭利用案例，兩個 CVE 亦無公開概念驗證程式碼，但 watchTowr 表示僅憑公告與修補檔即在數分鐘內重現漏洞，修補時間差應以小時計。建議製造與研發單位立即盤點自架 Git 服務版本並指派修補責任人。主要來源：GitLab 官方修補公告（8/17）、The Hacker News（8/18）、Help Net Security（8/18）。
+                <div class="draft-text">GitLab 於 2026 年 8 月 17 日排程外釋出緊急修補，處理 CVE-2026-19478：CVSS 9.4 的 GraphQL directive 程式碼注入漏洞，特定條件下未認證的遠端攻擊者可修改或刪除公開專案與使用者資料；同批另修補 CVE-2026-19650，CVSS 7.1 的 GraphQL multiplex query handler CSRF 弱點，可經 GET 請求執行 GraphQL mutation，但需使用者互動。受影響版本為 18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前，修補版本為 19.2.4、19.1.6、19.0.8 與 18.11.11；GitLab.com 與 GitLab Dedicated 已在修補版本上，僅自架環境需要處理。公告釋出時未確認實際遭利用案例、無公開概念驗證程式碼，但 watchTowr 僅憑公告與修補檔即在數分鐘內重現漏洞，並於 8 月 19 日證實蜜罐網路已出現實際攻擊流量，修補時間差應以小時計。建議製造與研發單位立即盤點自架 Git 服務版本並指派修補責任人。主要來源：GitLab 官方修補公告（8/17）、The Hacker News（8/18）、Help Net Security（8/18）。
 <div class="hashtags">#DevSecOps #GitLab</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">GitLab released an out-of-band emergency patch on 17 August 2026 for CVE-2026-19478, a CVSS 9.4 code-injection flaw in GraphQL directive processing that under certain conditions lets an unauthenticated remote attacker modify or delete public projects and user data; the same release also fixes CVE-2026-19650, a CVSS 7.1 CSRF weakness in the GraphQL multiplex query handler that allows GraphQL mutations via GET requests but requires user interaction. Affected versions are 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6 and 19.2 before 19.2.4, with fixed builds 19.2.4, 19.1.6, 19.0.8 and 18.11.11; GitLab.com and GitLab Dedicated already run the patched version, so only self-managed installations need to act. As of 18 August the advisory reported no confirmed in-the-wild exploitation and no public proof-of-concept for either CVE, but watchTowr says it reproduced the flaw within minutes from the advisory and patch alone, so the remediation window should be counted in hours. Manufacturing and engineering teams should inventory self-managed Git service versions immediately and assign a named patch owner. Sources: GitLab official patch release (8/17), The Hacker News (8/18), Help Net Security (8/18).
+                <div class="draft-text">GitLab released an out-of-band emergency patch on 17 August 2026 for CVE-2026-19478, a CVSS 9.4 code-injection flaw in GraphQL directive processing that under certain conditions lets an unauthenticated remote attacker modify or delete public projects and user data; the same release also fixes CVE-2026-19650, a CVSS 7.1 CSRF weakness in the GraphQL multiplex query handler that allows GraphQL mutations via GET requests but requires user interaction. Affected versions are 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6 and 19.2 before 19.2.4, with fixed builds 19.2.4, 19.1.6, 19.0.8 and 18.11.11; GitLab.com and GitLab Dedicated already run the patched version, so only self-managed installations need to act. There was no confirmed exploitation and no public proof-of-concept when the advisory landed, but watchTowr reproduced the flaw within minutes from the advisory and patch alone and confirmed in-the-wild exploitation on its honeypot network on 19 August, so the remediation window is counted in hours. Manufacturing and engineering teams should inventory self-managed Git service versions immediately and assign a named patch owner. Sources: GitLab official patch release (8/17), The Hacker News (8/18), Help Net Security (8/18).
 <div class="hashtags">#DevSecOps #GitLab</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
@@ -549,13 +551,17 @@ Three questions worth checking immediately:
         <div class="topic">
           <div class="topic-num">選題 04 · 電子製造 / 修補治理</div>
           <h3>你的維護窗口還按季排，原廠已經改成月更：Oracle 8/18 一次 943 個修補</h3>
-          <p>Oracle 於 8/18 釋出當月 Critical Security Patch Update，943 個新資安修補、逾 1,000 個 CVE，其中逾 460 個免認證即可遠端利用、近 90 個 CVSS 9.8 以上；Fusion Middleware 一家就佔 262 個。更關鍵的是節奏：Oracle 自 2026 年 5 月起在季度 CPU 之外新增每月 CSPU，據報導理由是 AI 輔助的漏洞挖掘速度已超過企業以季為單位修補的能力。而製造業的 ERP 停機維護窗口，多半還是按季排的。</p>
+          <p>Oracle 於 8/18 釋出當月 Critical Security Patch Update，943 個新資安修補；逐列清點公告風險矩陣為 467 項免認證即可遠端利用、89 個 CVSS 9.8 以上、3 個滿分 10.0，Fusion Middleware 與 Hyperion 各佔 262 個、合計 55%。更關鍵的是節奏：Oracle 自 2026 年 5 月起在季度 CPU 之外新增每月 CSPU，官方理由是自身導入前沿 AI 後，漏洞發現與修復的速度與規模皆提升，月更可讓客戶不必等到下一個季度循環。而製造業的 ERP 停機維護窗口，多半還是按季排的。</p>
           <div class="sources">
             <a class="source-tag" href="https://www.oracle.com/security-alerts/cspuaug2026.html" target="_blank" rel="noopener">🏛 Oracle 官方 CSPU 公告 8/18</a>
             <a class="source-tag" href="https://www.oracle.com/security-alerts/" target="_blank" rel="noopener">🏛 Oracle 官方資安公告總表</a>
             <a class="source-tag" href="https://www.helpnetsecurity.com/2026/05/05/oracle-monthly-security-updates/" target="_blank" rel="noopener">📰 Help Net Security 5/5</a>
-            <a class="source-tag" href="https://www.securityweek.com/oracle-debuts-monthly-critical-security-patch-updates/" target="_blank" rel="noopener">📰 SecurityWeek 5月*</a>
-            <a class="source-tag" href="https://thehackernews.com/2026/06/oracle-e-business-suite-flaw-cve-2026.html" target="_blank" rel="noopener">📰 The Hacker News 6月*</a>
+            <a class="source-tag" href="https://blogs.oracle.com/security/update-monthly-critical-security-patch-updates-cspus-begin-may-28-2026" target="_blank" rel="noopener">🏛 Oracle 官方部落格 5/4</a>
+            <a class="source-tag" href="https://www.oracle.com/security-alerts/cspumay2026.html" target="_blank" rel="noopener">🏛 Oracle 5 月 CSPU 公告 5/28</a>
+            <a class="source-tag" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">🏛 CISA KEV 目錄 8/19</a>
+            <a class="source-tag" href="https://www.securityweek.com/oracle-debuts-monthly-critical-security-patch-updates/" target="_blank" rel="noopener">📰 SecurityWeek 5/6</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/06/oracle-e-business-suite-flaw-cve-2026.html" target="_blank" rel="noopener">📰 The Hacker News 6/30</a>
+            <a class="source-tag" href="https://www.bleepingcomputer.com/news/security/over-900-oracle-e-business-instances-exposed-to-ongoing-attacks/" target="_blank" rel="noopener">📰 BleepingComputer 7/1</a>
           </div>
 
           <details class="channel" data-post-id="20260820-t4-li">
@@ -565,11 +571,11 @@ Three questions worth checking immediately:
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
                 <div class="draft-text">如果你的 ERP 維護窗口還是按季排的，有個壞消息：原廠已經不按季了。
 
-Oracle 在 8 月 18 日釋出當月的 Critical Security Patch Update，一次 943 個資安修補，橫跨二十多個產品家族、解決逾 1,000 個 CVE。其中逾 460 個免認證即可遠端利用，逾 150 個屬 critical 等級，近 90 個 CVSS 達 9.8 以上。
+Oracle 在 8 月 18 日釋出當月的 Critical Security Patch Update，一次 943 個資安修補，橫跨二十多個產品家族。逐列清點公告的風險矩陣：467 項免認證即可遠端利用、151 個 CVE 的 CVSS 達 9.0 以上、89 個達 9.8 以上、3 個滿分 10.0。
 
-風險不是平均分布的。Fusion Middleware 一家就佔了 262 個修補，其中 182 個免認證可遠端利用，最高 CVSS 達 10.0；E-Business Suite 的最高分是 9.8。也就是說，壓力集中在中介層與應用層，不是資料庫本身——而中介層往往正是最少人願意動的那一段。
+風險不是平均分布的。Fusion Middleware 與 Hyperion 各佔 262 個修補（免認證可遠端利用分別為 182 與 107 個，兩者都有 CVSS 10.0 的項目），兩家合計 524 個、佔本次的 55%；E-Business Suite 120 個。相對地，Oracle Database Products 全部只有 17 個，資料庫本體只有 6 個。壓力壓倒性地集中在中介層與績效管理套件，不是資料庫本身——而那往往正是最少人願意動的那一段。
 
-但真正的重點是節奏。Oracle 自 2026 年 5 月起新增每月 CSPU，排在 2、3、5、6、8、9、11、12 月的第三個週二，補上季度 CPU 之間的空窗；季度 CPU 仍然照舊、仍然累積。理由據報導是：AI 輔助的漏洞挖掘速度，已經超過企業以季為單位修補的能力。
+但真正的重點是節奏。Oracle 自 2026 年 5 月起新增每月 CSPU，排在 2、3、5、6、8、9、11、12 月的第三個週二，補上季度 CPU 之間的空窗；季度 CPU 仍然照舊、仍然累積。Oracle 給的理由值得一字不漏地讀：「最新一代 AI 正在改變軟體漏洞被發現與修復的方式，提升了發現與修復的速度與規模」，因此改為月更，讓客戶「不必等到下一個季度循環就能更早套用重大修補」。注意這是原廠自述自己這一側變快了——不是在說攻擊者變快。對你的意義一樣直接：供給端加快，你的維護窗口沒動，差額就是曝險。
 
 對電子製造業來說，這件事的意義很具體。E-Business Suite、JD Edwards、PeopleSoft、Supply Chain 是 ERP 與供應鏈的骨幹，而產線的停機維護窗口幾乎都是按季排的。原廠節奏變成三倍，你的窗口沒變——中間那段差額，就是曝險。
 
@@ -588,11 +594,11 @@ Oracle 自己在公告裡寫了一句話，值得原文引用：「在部分案�
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
                 <div class="draft-text">If your ERP maintenance window is still scheduled by the quarter, here is the bad news: the vendor no longer works that way.
 
-On 18 August Oracle shipped its monthly Critical Security Patch Update: 943 security patches spanning more than two dozen product families and resolving over 1,000 CVEs. More than 460 are remotely exploitable without authentication, more than 150 are critical, and nearly 90 carry a CVSS score of 9.8 or higher.
+On 18 August Oracle shipped its monthly Critical Security Patch Update: 943 security patches spanning more than two dozen product families. Counted row by row from the advisory's own risk matrices: 467 are remotely exploitable without authentication, 151 CVEs score CVSS 9.0 or above, 89 reach 9.8 or above, and 3 are a straight 10.0.
 
-The risk is not evenly spread. Fusion Middleware alone accounts for 262 patches, 182 of them remotely exploitable without authentication, with a top CVSS of 10.0. E-Business Suite tops out at 9.8. The pressure sits in the middleware and application tiers rather than the database itself, and middleware is usually the layer nobody wants to touch.
+The risk is not evenly spread. Fusion Middleware and Hyperion take 262 patches each — 182 and 107 respectively remotely exploitable without authentication, both containing CVSS 10.0 entries — which is 524 patches, 55% of the release, between two product families. E-Business Suite takes 120. Oracle Database Products, by contrast, account for 17 in total, with just 6 in the database itself. The pressure sits overwhelmingly in the middleware and performance-management tiers rather than the database, and that is usually the layer nobody wants to touch.
 
-The real story is the cadence. Since May 2026 Oracle has added a monthly CSPU on the third Tuesday of February, March, May, June, August, September, November and December, filling the gaps between the quarterly CPUs, which continue unchanged and remain cumulative. The reported rationale: AI-assisted vulnerability discovery has outpaced the ability of enterprises to remediate on a quarterly schedule.
+The real story is the cadence. Since May 2026 Oracle has added a monthly CSPU on the third Tuesday of February, March, May, June, August, September, November and December, filling the gaps between the quarterly CPUs, which continue unchanged and remain cumulative. Oracle's own stated rationale is worth reading exactly: "The latest generation of AI is transforming how software vulnerabilities are identified and fixed, increasing the speed and scale of discovery and remediation," and the monthly cadence "enables customers in customer-managed environments to reduce exposure by applying critical fixes sooner, without waiting for the next quarterly cycle." Note that this is the vendor describing its own side getting faster, not the attackers. The implication for you is the same: supply speeds up, your maintenance window does not, and the difference is exposure.
 
 For electronics manufacturing the implication is concrete. E-Business Suite, JD Edwards, PeopleSoft and Supply Chain are the backbone of ERP and supply-chain operations, and production maintenance windows are almost always planned by the quarter. The vendor's cadence just tripled while your window did not. That difference is your exposure.
 
@@ -616,13 +622,13 @@ Three questions worth asking today:
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ Oracle 8/18 釋出當月 CSPU：943 個資安修補，橫跨二十多個產品家族、解決逾 1,000 個 CVE。逾 460 個免認證可遠端利用，逾 150 個 critical，近 90 個 CVSS 9.8 以上。
+                <div class="draft-text">1/ Oracle 8/18 釋出當月 CSPU：943 個資安修補，橫跨二十多個產品家族。逐列清點：467 項免認證可遠端利用、151 個 CVE 達 CVSS 9.0 以上、89 個達 9.8 以上、3 個滿分 10.0。
 
-2/ 風險不平均。Fusion Middleware 一家佔 262 個修補、182 個免認證可遠端利用，最高 CVSS 10.0；E-Business Suite 最高 9.8。壓力在中介層與應用層，不在資料庫。
+2/ 風險不平均。Fusion Middleware 與 Hyperion 各 262 個修補（182 與 107 個免認證可遠端利用，都含 CVSS 10.0），合計佔 55%；資料庫本體只有 6 個。壓力在中介層與應用層，不在資料庫。
 
 3/ 但重點是節奏：Oracle 自 2026 年 5 月起新增每月 CSPU，排在 2、3、5、6、8、9、11、12 月的第三個週二，補季度 CPU 的空窗。季度 CPU 照舊、仍累積，兩者並行不是取代。
 
-4/ 理由據報導是：AI 輔助的漏洞挖掘速度已超過企業以季為單位修補的能力。這句話值得製造業的資安與 IT 主管一起讀一次。
+4/ Oracle 自己給的理由：導入前沿 AI 模型後，「發現與修復的速度與規模」都提升，所以季度交付不夠用，改成月更讓客戶更早套用。是原廠這一側變快，不是攻擊者變快——但對你的維護窗口是同一件事。
 
 5/ 對製造業的具體意義：EBS、JD Edwards、PeopleSoft、Supply Chain 是 ERP 骨幹，而產線停機維護窗口幾乎都按季排。原廠節奏變三倍、你的窗口沒變，差額就是曝險。
 
@@ -631,13 +637,13 @@ Three questions worth asking today:
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Oracle shipped its monthly CSPU on 18 Aug: 943 security patches across more than two dozen product families, resolving over 1,000 CVEs. More than 460 remotely exploitable without authentication, more than 150 critical, nearly 90 at CVSS 9.8 or above.
+                <div class="draft-text">1/ Oracle shipped its monthly CSPU on 18 Aug: 943 security patches across more than two dozen product families. Counted from the advisory's risk matrices: 467 remotely exploitable without authentication, 151 CVEs at CVSS 9.0 or above, 89 at 9.8 or above, 3 at a straight 10.0.
 
-2/ The risk is not even. Fusion Middleware alone takes 262 patches, 182 of them remotely exploitable without authentication, top CVSS 10.0. E-Business Suite tops out at 9.8. The pressure is in middleware and applications, not the database.
+2/ The risk is not even. Fusion Middleware and Hyperion take 262 patches each (182 and 107 remotely exploitable without authentication, both with CVSS 10.0 entries) — 55% of the release between them. The database itself takes 6. The pressure is in middleware and applications, not the database.
 
 3/ The real story is cadence: since May 2026 Oracle adds a monthly CSPU on the third Tuesday of Feb, Mar, May, Jun, Aug, Sep, Nov and Dec, filling the gaps between quarterly CPUs. The CPUs continue and stay cumulative. This is addition, not replacement.
 
-4/ The reported rationale: AI-assisted vulnerability discovery has outpaced enterprises' ability to remediate on a quarterly schedule. That sentence deserves a joint read by manufacturing security and IT leadership.
+4/ Oracle's own rationale: with frontier AI models in the loop, the "speed and scale of discovery and remediation" went up, so a quarterly drop no longer fits and monthly CSPUs let customers apply fixes sooner. That is the vendor's own side speeding up, not the attackers' — but for your maintenance window it amounts to the same thing.
 
 5/ Why it matters in manufacturing: EBS, JD Edwards, PeopleSoft and Supply Chain are the ERP backbone, and production maintenance windows are planned by the quarter. The vendor cadence tripled, your window did not, and the difference is exposure.
 
@@ -655,11 +661,11 @@ Three questions worth asking today:
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
                 <div class="draft-text">標題：當原廠把修補改成月更：Oracle 的節奏轉變對製造業 ERP 的意義
 
-• 本次規模：Oracle 於 2026 年 8 月 18 日釋出 CSPU，943 個新資安修補、橫跨二十多個產品家族、解決逾 1,000 個 CVE；逾 460 個免認證可遠端利用、逾 150 個 critical、近 90 個 CVSS 9.8 以上
-• 風險分布：Fusion Middleware 262 個修補（182 個免認證可遠端利用，最高 CVSS 10.0）、E-Business Suite 120 個修補（27 個免認證可遠端利用，最高 CVSS 9.8）——壓力集中在中介層與應用層，不在資料庫
+• 本次規模：Oracle 於 2026 年 8 月 18 日釋出 CSPU，943 個新資安修補、橫跨二十多個產品家族；逐列清點為 467 項免認證可遠端利用、151 個 CVE 達 CVSS 9.0 以上、89 個達 9.8 以上、3 個滿分 10.0，風險矩陣涵蓋 925 個不重複 CVE
+• 風險分布：Fusion Middleware 與 Hyperion 各 262 個修補（免認證可遠端利用 182 與 107 個，皆含 CVSS 10.0）、E-Business Suite 120 個（27 個免認證可遠端利用）、Oracle Database Products 合計僅 17 個——壓力集中在中介層與績效管理套件，不在資料庫
 • 節奏改變：自 2026 年 5 月起新增每月 CSPU，排定於 2、3、5、6、8、9、11、12 月的第三個週二，與 1、4、7、10 月的季度 CPU 並行；季度 CPU 仍為累積式，涵蓋先前各月 CSPU
 • 2026 年實際日程：5/28（首次，未依第三週二）、6/16、8/18、9/15、11/17、12/15，下一次季度 CPU 為 10/20
-• 官方理由（次級來源轉述）：AI 輔助的漏洞挖掘速度已超過企業以季為單位修補的能力
+• 官方理由（Oracle 官方部落格逐字）：最新一代 AI 正在改變軟體漏洞被發現與修復的方式，提升了發現與修復的速度與規模；月更讓客戶不必等到下一個季度循環就能更早套用重大修補
 • Oracle 的責任歸屬句：公告載明「在部分案例中，據報攻擊者之所以得手，是因為目標客戶未套用已提供的 Oracle 修補」
 • 實際遭利用案例：E-Business Suite 的 CVE-2026-46817（Oracle Payments，CVSS 9.8，影響 12.2.3 至 12.2.15），CISA 於 7 月 15 日列入 KEV，逾 900 個對外暴露實例遭持續攻擊
 • 製造業的結構問題一：ERP 停機維護窗口按季排，原廠節奏已改月更，兩者之間的差額就是曝險，且這個差額沒有任何人在正式追蹤
@@ -673,11 +679,11 @@ Three questions worth asking today:
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
                 <div class="draft-text">Title: When the Vendor Goes Monthly: What Oracle's Cadence Shift Means for Manufacturing ERP
 
-• Scale: Oracle's Critical Security Patch Update of 18 August 2026 delivered 943 new security patches across more than two dozen product families, resolving over 1,000 CVEs; more than 460 are remotely exploitable without authentication, more than 150 are critical, and nearly 90 score CVSS 9.8 or higher
-• Risk distribution: Fusion Middleware took 262 patches (182 remotely exploitable without authentication, top CVSS 10.0) and E-Business Suite 120 patches (27 remotely exploitable without authentication, top CVSS 9.8), so the pressure sits in the middleware and application tiers rather than the database
+• Scale: Oracle's Critical Security Patch Update of 18 August 2026 delivered 943 new security patches across more than two dozen product families; counted row by row, 467 are remotely exploitable without authentication, 151 CVEs score CVSS 9.0 or above, 89 reach 9.8 or above and 3 are a straight 10.0, across 925 distinct CVEs in the risk matrices
+• Risk distribution: Fusion Middleware and Hyperion took 262 patches each (182 and 107 remotely exploitable without authentication, both with CVSS 10.0 entries), E-Business Suite 120 (27 remotely exploitable without authentication) and Oracle Database Products 17 in total, so the pressure sits in the middleware and performance-management tiers rather than the database
 • Cadence change: since May 2026 a monthly CSPU lands on the third Tuesday of February, March, May, June, August, September, November and December, running alongside the quarterly CPUs of January, April, July and October, which remain cumulative and still contain the fixes from prior monthly CSPUs
 • Actual 2026 dates: 28 May (the first, off the third-Tuesday pattern), 16 June, 18 August, 15 September, 17 November and 15 December, with the next quarterly CPU on 20 October
-• Reported rationale: AI-assisted vulnerability discovery has outpaced enterprises' ability to remediate on a quarterly schedule
+• Stated rationale (Oracle's own blog, verbatim): the latest generation of AI is transforming how software vulnerabilities are identified and fixed, increasing the speed and scale of discovery and remediation; the monthly cadence lets customers apply critical fixes sooner without waiting for the next quarterly cycle
 • Oracle's own attribution: the advisory states that "in some instances, it has been reported that attackers have been successful because targeted customers had failed to apply available Oracle patches"
 • Exploited in the wild: CVE-2026-46817 in E-Business Suite (Oracle Payments, CVSS 9.8, affecting 12.2.3 through 12.2.15), added to CISA's Known Exploited Vulnerabilities catalog on 15 July, with more than 900 internet-exposed instances reported under sustained attack
 • Structural problem one: ERP maintenance windows are planned quarterly while the vendor now ships monthly, and nobody formally tracks the gap between the two
@@ -696,12 +702,12 @@ Three questions worth asking today:
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">Oracle 於 2026 年 8 月 18 日釋出當月 Critical Security Patch Update，一次 943 個新資安修補，橫跨二十多個產品家族、解決逾 1,000 個 CVE；其中逾 460 個免認證即可遠端利用、逾 150 個屬 critical 等級、近 90 個 CVSS 達 9.8 以上。風險高度集中：Fusion Middleware 一家佔 262 個修補（182 個免認證可遠端利用，最高 CVSS 10.0），E-Business Suite 最高 CVSS 9.8。更值得注意的是節奏本身——Oracle 自 2026 年 5 月起在季度 CPU 之外新增每月 CSPU，排定於 2、3、5、6、8、9、11、12 月的第三個週二釋出，季度 CPU 仍維持累積式，兩者並行而非取代；據報導其理由是 AI 輔助的漏洞挖掘速度已超過企業以季為單位修補的能力。Oracle 在公告中載明，部分案例中攻擊者之所以得手，是因為目標客戶未套用已提供的修補；E-Business Suite 的 CVE-2026-46817（CVSS 9.8）已遭實際利用，CISA 於 7 月 15 日列入 KEV。對電子製造業的意涵：EBS、JD Edwards、PeopleSoft 與 Supply Chain 是 ERP 骨幹，而停機維護窗口多半按季排定，原廠節奏與維護窗口之間的差額即為曝險。建議把 ERP 維護窗口改為月度並指派缺口責任人、將中介層元件在資產清單中獨立列管、盤點所有對外可達的 EBS 入口。主要來源：Oracle 官方 CSPU 公告（8/18）、Oracle 官方資安公告總表、Help Net Security（5/5）。
+                <div class="draft-text">Oracle 於 2026 年 8 月 18 日釋出當月 Critical Security Patch Update，一次 943 個新資安修補，橫跨二十多個產品家族；逐列清點公告風險矩陣為 467 項免認證即可遠端利用、151 個 CVE 達 CVSS 9.0 以上、89 個達 9.8 以上、3 個滿分 10.0。風險高度集中：Fusion Middleware 與 Hyperion 各佔 262 個修補（免認證可遠端利用 182 與 107 個，皆含 CVSS 10.0），合計佔 55%，而 Oracle Database Products 合計僅 17 個。更值得注意的是節奏本身——Oracle 自 2026 年 5 月起在季度 CPU 之外新增每月 CSPU，排定於 2、3、5、6、8、9、11、12 月的第三個週二釋出，季度 CPU 仍維持累積式，兩者並行而非取代；Oracle 官方給的理由是自身導入前沿 AI 模型後，漏洞發現與修復的速度與規模皆提升，月更可讓客戶不必等到下一個季度循環。Oracle 在公告中載明，部分案例中攻擊者之所以得手，是因為目標客戶未套用已提供的修補；E-Business Suite 的 CVE-2026-46817（CVSS 9.8）已遭實際利用，CISA 於 7 月 15 日列入 KEV。對電子製造業的意涵：EBS、JD Edwards、PeopleSoft 與 Supply Chain 是 ERP 骨幹，而停機維護窗口多半按季排定，原廠節奏與維護窗口之間的差額即為曝險。建議把 ERP 維護窗口改為月度並指派缺口責任人、將中介層元件在資產清單中獨立列管、盤點所有對外可達的 EBS 入口。主要來源：Oracle 官方 CSPU 公告（8/18）、Oracle 官方資安公告總表、Help Net Security（5/5）。
 <div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Oracle released its monthly Critical Security Patch Update on 18 August 2026, delivering 943 new security patches across more than two dozen product families and resolving over 1,000 CVEs; more than 460 are remotely exploitable without authentication, more than 150 are critical, and nearly 90 score CVSS 9.8 or higher. The risk is concentrated: Fusion Middleware alone accounts for 262 patches, 182 of them remotely exploitable without authentication and topping out at CVSS 10.0, while E-Business Suite peaks at 9.8. The cadence matters more than the count. Since May 2026 Oracle has run a monthly CSPU on the third Tuesday of February, March, May, June, August, September, November and December, alongside quarterly CPUs that remain cumulative, an addition rather than a replacement; the reported rationale is that AI-assisted vulnerability discovery has outpaced enterprises' ability to remediate on a quarterly schedule. Oracle's advisory notes that in some instances attackers succeeded because targeted customers had failed to apply available patches, and CVE-2026-46817 in E-Business Suite (CVSS 9.8) is already exploited in the wild, added to CISA's Known Exploited Vulnerabilities catalog on 15 July. For electronics manufacturing the implication is direct: EBS, JD Edwards, PeopleSoft and Supply Chain form the ERP backbone while maintenance windows are planned quarterly, and the gap between vendor cadence and maintenance window is exposure. Recommended actions are to move the ERP maintenance window to monthly with an owner for the residual gap, inventory middleware components separately, and enumerate every internet-reachable EBS entry point. Sources: Oracle CSPU advisory (8/18), Oracle security alerts index, Help Net Security (5/5).
+                <div class="draft-text">Oracle released its monthly Critical Security Patch Update on 18 August 2026, delivering 943 new security patches across more than two dozen product families; counted row by row from the advisory, 467 are remotely exploitable without authentication, 151 CVEs score CVSS 9.0 or above, 89 reach 9.8 or above and 3 are a straight 10.0. The risk is concentrated: Fusion Middleware and Hyperion take 262 patches each (182 and 107 remotely exploitable without authentication, both with CVSS 10.0 entries), 55% of the release between them, while Oracle Database Products account for 17 in total. The cadence matters more than the count. Since May 2026 Oracle has run a monthly CSPU on the third Tuesday of February, March, May, June, August, September, November and December, alongside quarterly CPUs that remain cumulative, an addition rather than a replacement; Oracle's stated rationale is that the latest generation of AI has increased the speed and scale of its own vulnerability discovery and remediation, so the monthly cadence lets customers apply critical fixes without waiting for the next quarterly cycle. Oracle's advisory notes that in some instances attackers succeeded because targeted customers had failed to apply available patches, and CVE-2026-46817 in E-Business Suite (CVSS 9.8) is already exploited in the wild, added to CISA's Known Exploited Vulnerabilities catalog on 15 July. For electronics manufacturing the implication is direct: EBS, JD Edwards, PeopleSoft and Supply Chain form the ERP backbone while maintenance windows are planned quarterly, and the gap between vendor cadence and maintenance window is exposure. Recommended actions are to move the ERP maintenance window to monthly with an owner for the residual gap, inventory middleware components separately, and enumerate every internet-reachable EBS entry point. Sources: Oracle CSPU advisory (8/18), Oracle security alerts index, Help Net Security (5/5).
 <div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
