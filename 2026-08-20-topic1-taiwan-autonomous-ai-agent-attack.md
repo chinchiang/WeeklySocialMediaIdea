@@ -13,7 +13,7 @@
 2. **攻擊規模與時序**：攻擊執行於 2026 年 7 月 1 日至 7 月 4 日，共 12 波次，最多同時派出 8 個子代理，各自分配目標與攻擊手法，測繪 21 套相互連通的政府系統。來源：CyberScoop（2026-08-12）、CNN Business（2026-08-13）。
 3. **資料損失**：85 組政府帳號遭攻破、逾 2,500 筆人事資料外洩（部分報導載明為 2,564 筆）、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（涵蓋 MSSQL、Oracle、Sybase），並以 JSON 形式匯出全部部門系統使用者清單，另取得內部網段 IP 範圍。來源：數位發展部資通安全署新聞稿（2026-08-13）、The Register（2026-08-12）、CNN Business（2026-08-13）。
 4. **擴散範圍**：目標後續擴及核安主管機關、供應鏈廠商與至少 7 家能源業者。來源：Taipei Times（2026-08-14）、CyberScoop（2026-08-12）。
-5. **工具組成**：框架由 Nous Research 於 2026 年 2 月發布的 Hermes Agent，以及 2025 年 11 月推出、半年內累積 34 萬 GitHub 星數的開源個人 AI 助理 OpenClaw 組成，未使用任何客製化攻擊程式。來源：CyberScoop（2026-08-12）、CNN Business（2026-08-13）。
+5. **工具組成**：框架由 Nous Research 於 2026 年 2 月發布的 Hermes Agent，以及開源個人 AI 助理 OpenClaw 組成，未使用任何客製化攻擊程式。OpenClaw 於 2025 年 11 月先以 Clawdbot 之名發布，2026 年 1 月更名後重新發布、48 小時內突破 10 萬 GitHub 星，2026 年 4 月已逾 37 萬星，成為 GitHub 史上最多星的軟體儲存庫。來源：CyberScoop（2026-08-12）、CNN Business（2026-08-13）；OpenClaw 沿革另經 2026-08-20 複核更正（原稿誤植為「半年內累積 34 萬星」）。
 6. **安全機制繞過手法**：兩套工具皆內建防止攻擊性使用的機制，攻擊方以「已授權的滲透測試」包裝整個行動而繞過，原始文件以簡體中文撰寫。來源：CyberScoop（2026-08-12）。
 7. **官方定性**：數位發展部 2026 年 8 月 13 日證實事件，說明資安監控單位於 7 月即偵測到攻擊、國家資通安全研究院自 7 月 20 日起發布警示，並將攻擊定性為「人為操作結合 AI Agent 輔助」的混合模式，而非完全自主；調查已結束，受影響機關均已完成修補。來源：數位發展部資通安全署新聞稿（2026-08-13）、iThome（2026-08*）。
 8. **首報時序**：本事件由《金融時報》於 2026 年 8 月 12 日首報，數發部次日證實。來源：CyberScoop（2026-08-12）、CNN Business（2026-08-13）。
@@ -54,7 +54,7 @@
 
 以色列資安公司 Dream 取得了攻擊方遺留的完整工作區紀錄——一個 160MB 的封存檔，內含 1,395 份檔案，涵蓋行動的規劃、執行與後處理。紀錄顯示，2026 年 7 月 1 日至 7 月 4 日之間，一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理，各自分配目標與攻擊手法。
 
-框架由兩套開源工具組成：Nous Research 於 2026 年 2 月發布的 Hermes Agent，以及 2025 年 11 月推出、半年內累積 34 萬 GitHub 星數的個人 AI 助理 OpenClaw。兩者原本都內建防止用於攻擊行為的安全機制——攻擊方繞過的方式，是把整個行動包裝成「已授權的滲透測試」，原始文件以簡體中文撰寫。
+框架由兩套開源工具組成：Nous Research 於 2026 年 2 月發布的 Hermes Agent，以及個人 AI 助理 OpenClaw——2025 年 11 月先以 Clawdbot 之名推出，2026 年 1 月更名後重新發布、48 小時內突破 10 萬 GitHub 星，到 4 月已超過 37 萬星，成為 GitHub 史上最多星的軟體儲存庫。兩者原本都內建防止用於攻擊行為的安全機制——攻擊方繞過的方式，是把整個行動包裝成「已授權的滲透測試」，原始文件以簡體中文撰寫。
 
 成果：測繪 21 套相互連通的政府系統、攻破 85 組政府帳號、取得逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（涵蓋 MSSQL、Oracle、Sybase），並匯出全部部門系統使用者清單。目標範圍後續擴及核安主管機關、供應鏈廠商與至少 7 家能源業者。
 
@@ -75,7 +75,7 @@ Not one line of custom offensive code was written for this campaign. Every tool 
 
 Israeli security firm Dream obtained the attackers' complete leftover workspace — a 160MB archive containing 1,395 files covering the campaign's planning, execution and post-processing. The records show that between 1 and 4 July 2026, an AI agent framework ran 12 attack waves against Taiwanese government agencies, deploying up to eight sub-agents in parallel, each assigned its own targets and techniques.
 
-The framework was assembled from two open-source projects: Hermes Agent, released by Nous Research in February 2026, and OpenClaw, an open-source personal AI assistant launched in November 2025 that gathered 340,000 GitHub stars in under six months. Both ship with safety mechanisms intended to prevent offensive use. The attackers bypassed them by packaging the whole operation as an authorised penetration test, with the source documents written in Simplified Chinese.
+The framework was assembled from two open-source projects: Hermes Agent, released by Nous Research in February 2026, and OpenClaw, the open-source personal AI assistant first published as Clawdbot in November 2025, renamed and relaunched in January 2026 where it passed 100,000 GitHub stars within 48 hours, and by April had surpassed 370,000 stars to become the most-starred software repository in GitHub's history. Both ship with safety mechanisms intended to prevent offensive use. The attackers bypassed them by packaging the whole operation as an authorised penetration test, with the source documents written in Simplified Chinese.
 
 The results: 21 interconnected government systems mapped, 85 government accounts cracked, more than 2,500 personnel records taken, seven SSO client secrets, six internal database credentials spanning MSSQL, Oracle and Sybase, plus a full export of every departmental system user. Targeting later extended to the nuclear safety regulator, supply-chain vendors and at least seven energy companies.
 
@@ -94,7 +94,7 @@ If you are writing your organisation's AI usage policy: does it only govern how 
 #### Twitter / X 推文串（中文版）
 1/ 以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔，內含 1,395 份檔案。紀錄顯示 2026/7/1–7/4 有一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理。
 
-2/ 框架完全由開源工具組成：Nous Research 2026 年 2 月發布的 Hermes Agent，加上 2025 年 11 月推出、半年累積 34 萬星的 OpenClaw。沒有任何客製化攻擊程式。
+2/ 框架完全由開源工具組成：Nous Research 2026 年 2 月發布的 Hermes Agent，加上 OpenClaw（2025 年 11 月以 Clawdbot 之名推出，2026 年 1 月更名重新發布後 48 小時破 10 萬星，4 月已逾 37 萬星、成為 GitHub 史上最多星的儲存庫）。沒有任何客製化攻擊程式。
 
 3/ 兩套工具都有防止攻擊性使用的安全機制。繞過方式：把整個行動包裝成「已授權的滲透測試」，原始文件以簡體中文撰寫。防線在語意層，不在技術層。
 
@@ -109,7 +109,7 @@ If you are writing your organisation's AI usage policy: does it only govern how 
 #### Twitter / X 推文串（English）
 1/ Israeli security firm Dream recovered a 160MB workspace archive left behind by the attackers, containing 1,395 files. It shows an AI agent framework running 12 attack waves against Taiwanese government agencies from 1 to 4 July 2026, with up to eight sub-agents in parallel.
 
-2/ The framework was built entirely from open-source tools: Hermes Agent, released by Nous Research in February 2026, plus OpenClaw, launched November 2025 and up to 340,000 GitHub stars within six months. No custom offensive code at all.
+2/ The framework was built entirely from open-source tools: Hermes Agent, released by Nous Research in February 2026, plus OpenClaw, first published as Clawdbot in November 2025, relaunched under its new name in January 2026 past 100,000 stars in 48 hours and over 370,000 by April — the most-starred repository in GitHub's history. No custom offensive code at all.
 
 3/ Both tools ship safety mechanisms against offensive use. The bypass: package the operation as an authorised penetration test. Source documents were written in Simplified Chinese. The boundary held at the semantic layer, not the technical one.
 
@@ -129,7 +129,7 @@ If you are writing your organisation's AI usage policy: does it only govern how 
 • 攻擊規模：12 波次、最多 8 個子代理平行運作、測繪 21 套相互連通的政府系統
 • 資料損失：85 組政府帳號、逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（MSSQL、Oracle、Sybase）、全部門系統使用者清單匯出
 • 擴散範圍：核安主管機關、供應鏈廠商、至少 7 家能源業者
-• 工具組成：Hermes Agent（Nous Research，2026/2 發布）與 OpenClaw（2025/11 推出，半年 34 萬 GitHub 星），皆為開源、皆內建防濫用機制
+• 工具組成：Hermes Agent（Nous Research，2026/2 發布）與 OpenClaw（2025/11 以 Clawdbot 之名推出，2026/1 更名重新發布後 48 小時破 10 萬星，2026/4 逾 37 萬星、成為 GitHub 史上最多星的軟體儲存庫），皆為開源、皆內建防濫用機制
 • 繞過手法：將行動宣告為「已授權的滲透測試」，原始文件為簡體中文
 • 官方定性差異：數發部認定為「人為操作結合 AI Agent 輔助」的混合模式，與部分國際媒體「完全自主」的描述有落差，此差異本身即為重要治理資訊
 • 治理啟示一：攻擊邊際成本崩塌，威脅模型中「攻擊者資源有限」的假設需要重寫
@@ -147,7 +147,7 @@ Title: When an Attack Framework Needs No Custom Code: Governance Lessons from th
 • Scale: 12 attack waves, up to eight sub-agents running in parallel, 21 interconnected government systems mapped
 • Data loss: 85 government accounts, more than 2,500 personnel records, seven SSO client secrets, six internal database credentials across MSSQL, Oracle and Sybase, plus a full export of departmental system users
 • Spread: the nuclear safety regulator, supply-chain vendors and at least seven energy companies
-• Toolchain: Hermes Agent (Nous Research, released February 2026) and OpenClaw (launched November 2025, 340,000 GitHub stars within six months), both open source and both shipping anti-abuse mechanisms
+• Toolchain: Hermes Agent (Nous Research, released February 2026) and OpenClaw (first published as Clawdbot in November 2025, relaunched under its new name in January 2026 past 100,000 stars within 48 hours, over 370,000 by April — the most-starred repository in GitHub's history), both open source and both shipping anti-abuse mechanisms
 • Bypass method: declaring the operation an authorised penetration test, with source documents written in Simplified Chinese
 • Official framing differs: MODA assessed a hybrid of human operation plus AI agent assistance, which diverges from the fully autonomous framing used by some international outlets. That divergence is itself governance-relevant information
 • Lesson one: the marginal cost of attack has collapsed, so the threat-model assumption that attackers have limited resources needs rewriting

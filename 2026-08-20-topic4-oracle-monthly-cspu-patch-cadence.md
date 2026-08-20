@@ -130,7 +130,7 @@ Three questions worth asking today:
 • 製造業的結構問題一：ERP 停機維護窗口按季排，原廠節奏已改月更，兩者之間的差額就是曝險，且這個差額沒有任何人在正式追蹤
 • 製造業的結構問題二：Fusion Middleware 這類中介層元件通常不在資產清單上獨立列管，被「ERP 系統」一詞含混帶過，於是最高風險的那一段沒有負責人
 • 製造業的結構問題三：對外可達的 EBS 實例往往是歷史遺留（供應商入口、客戶查詢介面），最容易被排除在盤點之外
-• 與本期其他選題的交叉線索：GitLab 8/17 排程外緊急修補、Black Kite 指中型供應商平均 197 天偵測——修補時限的計價單位正在從「季」壓縮到「天」甚至「小時」，而供應鏈末端還停在 197 天
+• 與本期其他選題的交叉線索：GitLab 8/17 排程外緊急修補、Black Kite 供應鏈報告指中型供應商平均 197 天偵測——修補時限的計價單位正在從「季」壓縮到「天」甚至「小時」，而供應鏈末端還停在 197 天
 • 企業行動清單：把 ERP 維護窗口從季改為月並指派缺口責任人、將中介層元件在資產清單中獨立列管、盤點所有對外可達的 EBS 與應用層入口、訂閱 Oracle CSPU 與 CPU 兩條公告線、把「原廠節奏快於維護窗口」列為正式風險項目並定期複審
 
 #PatchManagement #ERPSecurity #ManufacturingCyber #VulnerabilityManagement
@@ -148,7 +148,7 @@ Title: When the Vendor Goes Monthly: What Oracle's Cadence Shift Means for Manuf
 • Structural problem one: ERP maintenance windows are planned quarterly while the vendor now ships monthly, and nobody formally tracks the gap between the two
 • Structural problem two: middleware components such as Fusion Middleware are rarely inventoried separately, folded instead into a single line reading "ERP", which leaves the highest-risk tier without an owner
 • Structural problem three: internet-reachable EBS instances are often legacy surfaces such as supplier portals and customer lookup interfaces, and are the most likely to be left out of an inventory
-• Cross-reference with this issue's other topics: GitLab's out-of-band emergency patch on 17 August and Black Kite's finding that mid-market suppliers still average 197 days to detect together show remediation deadlines compressing from quarters toward days and hours, while the tail of the supply chain remains at 197 days
+• Cross-reference with this issue's other topics: GitLab's out-of-band emergency patch on 17 August and Black Kite's supply-chain report finding that mid-market suppliers still average 197 days to detect together show remediation deadlines compressing from quarters toward days and hours, while the tail of the supply chain remains at 197 days
 • Enterprise action list: move the ERP maintenance window from quarterly to monthly and assign an owner for the residual gap, inventory middleware components separately, enumerate every internet-reachable EBS and application-tier entry point, subscribe to both the CSPU and CPU advisory streams, and register "vendor cadence exceeds maintenance window" as a formal, periodically reviewed risk item
 
 #PatchManagement #ERPSecurity #ManufacturingCyber #VulnerabilityManagement
