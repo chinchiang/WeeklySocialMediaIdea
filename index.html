@@ -43,677 +43,571 @@
     <section class="summary">
       <div class="summary-head">
         本期素材摘要
-        <span>2026/08/20（週四）產出 · 涵蓋 8/17–8/19 新聞 · 另補收錄 8/12–8/14 台灣事件</span>
+        <span>2026/08/24（週一）產出 · 涵蓋 8/20–8/23 新聞 · 另補收錄 8/19 美國五機關 PLC 公告</span>
       </div>
       <div class="stats">
-        <div class="stat"><b>4</b><span>本期選題</span></div>
-        <div class="stat"><b>13</b><span>🏛 官方來源</span></div>
-        <div class="stat"><b>14</b><span>📰 一線媒體</span></div>
+        <div class="stat"><b>3</b><span>本期選題</span></div>
+        <div class="stat"><b>4</b><span>🏛 官方來源</span></div>
+        <div class="stat"><b>6</b><span>📰 一線媒體</span></div>
         <div class="stat"><b>0</b><span>📡 聚合/部落格</span></div>
-        <div class="stat"><b>32</b><span>可複製雙語草稿</span></div>
+        <div class="stat"><b>24</b><span>可複製雙語草稿</span></div>
         <div class="stat"><b>4</b><span>發布管道</span></div>
       </div>
       <ul class="summary-topics">
-        <li>選題 01 · AI 安全/治理 — 台灣政府機關遭近乎全自動 AI Agent 攻擊 <span class="cnt">（7 個來源）</span></li>
-        <li>選題 02 · 供應鏈/DevSecOps — GitLab 緊急修補 CVSS 9.4 GraphQL 漏洞（8/19 已遭實際利用） <span class="cnt">（7 個來源）</span></li>
-        <li>選題 03 · 製造業/勒索軟體 — Black Kite：73% 勒索受害者是中型企業 <span class="cnt">（4 個來源）</span></li>
-        <li>選題 04 · 電子製造/修補治理 — Oracle 改月更資安更新，8/18 一次 943 個修補 <span class="cnt">（9 個來源）</span></li>
+        <li>選題 01 · OT/ICS 資安 · AI 攻擊 — 五機關聯名警告 AI 生成腳本鎖定 Siemens S7 PLC（8/19 補收錄） <span class="cnt">（4 個來源）</span></li>
+        <li>選題 02 · 供應鏈資安 / DevSecOps — Rust 三個熱門 crate 遭投毒，編譯期即觸發 <span class="cnt">（3 個來源）</span></li>
+        <li>選題 03 · AI 安全 / AI 治理 — 加密的 prompt injection 讓 Grok 外洩使用者對話 <span class="cnt">（3 個來源）</span></li>
       </ul>
       <div class="fx-rollup" id="fx-rollup"></div>
       <div class="summary-note">
-        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確發布日期之來源（本期經第三輪查證後僅餘 Black Kite 供應鏈漏洞報告一處）。<strong>選題 01 為補收錄</strong>：該事件於 8/12（金融時報首報、Dream 研究部落格同日發表）至 8/14 之間曝光，正好落在上一期（涵蓋 8/13–8/16，產出時尚未完成查證）與再上一期（涵蓋 8/10–8/12）的區間交界，因規則縫隙未被收錄；此為近年最具指標性的 AI 治理事件，經使用者指示補入本期並標明原始日期。選題 02、03 均在本期 8/17–8/19 區間內。本期四個選題皆具備 🏛 官方一手來源（數發部資安署新聞稿、Dream 原始研究報告、GitLab 官方修補公告、Black Kite 中型企業報告與新聞稿、Black Kite 供應鏈漏洞報告、Oracle CSPU 公告），未使用聚合站或部落格佐證。<strong>2026-08-19 / 08-20 前兩輪查證受限</strong>：當時的網路政策以 403 阻擋全部外部主機（連 example.com 亦然），只能以搜尋索引內容逐條核對，未能開啟任何原文；兩輪合計已更正六處，記錄保留於各選題 markdown 的「查證與限制」段。<strong>2026-08-20 第三輪：網路限制解除，全部改以直接開啟原文核對</strong>——四則選題引用的每一個來源網址逐一取回全文比對，Oracle 公告改以逐列清點風險矩陣、CISA KEV 改以直接下載官方 JSON 核對。結果如下。<strong>一、選題 02 的風險狀態已改變（本輪最重要）</strong>：原稿寫「截至 8/18 無實際遭利用案例、無公開 PoC」。開啟 Cybersecurity Dive 原文發現該篇已於 <strong>8/19 更新</strong>，watchTowr 證實其蜜罐網路已出現 CVE-2026-19478 的實際攻擊流量，CSO Online 同日獨立報導相同事實。四個管道草稿已全部改寫為「時間差已經用完」，並補上緩解手段（限制 api/graphql 未認證存取）與獵捕跡證（web 日誌中含 gl_introduced 的請求）。該 CVE 截至 KEV 2026.08.19 版尚未列入。<strong>二、刪除一項無來源的說法</strong>：選題 01 原稱「內部日誌顯示曾調用 DeepSeek-V4-Flash 模型」。Dream 報告全文查無此段，iThome 更明載該報告「並未揭露背後串接的究竟是哪一個大型語言模型」，已整段刪除並改為明載「模型未被揭露」。這是僅憑索引摘要查證時最嚴重的一處失誤。<strong>三、其餘五處更正</strong>：（1）選題 01 的操作文件語言，Dream 原文是<em>繁簡交錯</em>——內部狀態報告用簡體、對目標分析用繁體——而非原稿的「以簡體中文撰寫」（CNN 與 Taipei Times 的簡化說法）；（2）選題 01 的 OpenClaw 沿革，2025 年 11 月首發時名為 Warelay，2026 年 1 月才歷經 Clawdbot、Moltbot 更名後定名，星數改採 The New Stack（3/3）可查證的「四個月內逾 25 萬星、超越 React 與 Linux」；（3）數發部定性改為新聞稿逐字用語「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」；（4）選題 02 的 8/12 例行修補實為 <strong>7 個 high</strong>、6 個 medium、1 個 low（原寫 6 個 high）；（5）選題 04 的首次 CSPU 為 <strong>35 個修補</strong>（原寫 77 個），且 Oracle 改月更的官方理由被讀反了——Oracle 講的是<em>自己這一側</em>導入前沿 AI 後發現與修復的速度規模上升，不是「AI 讓漏洞挖掘超過企業修補能力」的攻擊方視角。<strong>四、來源歸屬更正</strong>：選題 01 的資料損失數字原掛數發部新聞稿，但新聞稿全篇沒有任何數字，已改掛 Dream 原始報告與 The Register；選題 03 的 197／60 與 14／21 天、50 萬–200 萬美元工具成本原掛 8/18 新聞稿，新聞稿實際完全沒有這組數字，已改掛 Black Kite 原始報告與供應鏈漏洞報告。<strong>五、日期全部確認、星號全數移除</strong>：iThome 8/14（黃彥棻）、CSO Online 8/18、SecurityWeek 5/6、The Hacker News 8/17 與 6/30、BleepingComputer 7/1，前兩輪無法定案的日期本輪全部解決。<strong>六、由推論升級為一手清點</strong>：選題 04 的總體統計原註明「出自媒體彙總、Oracle 公告未以此形式呈現」，本輪直接解析 943 列風險矩陣得出 <strong>467 項免認證可遠端利用、151 個 CVE ≥ CVSS 9.0、89 個 ≥ 9.8、3 個滿分 10.0</strong>，媒體口徑全部成立且現有一手依據；同時發現原稿漏掉 <strong>Hyperion 同樣有 262 個修補</strong>，與 Fusion Middleware 並列最大宗，兩者合計佔 55%。CVE-2026-46817 的 KEV 收錄日 7/15 亦由 CISA 官方 JSON 直接核對。<strong>本次未新增選題</strong>：網站最新一期即為 8/20、涵蓋 8/17–8/19，與執行當日之間沒有新的區間可查，依「不與既有選題重複、不以舊聞湊數」的規則不另立新期；下一期為 8/24（週一），涵蓋 8/20–8/23。</div>
+        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確發布日期之來源——<strong>本期無任何 * 標註</strong>，10 個來源的發布日期全部確認到日。<strong>本期三個選題的一手來源皆已直接開啟原文逐條核對</strong>：五機關聯合公告（因 cisa.gov 對自動化存取回 403，改由國防部媒體伺服器上的同一份 PDF 取得全文）、Rust 官方部落格與 RustSec 通告、Adversa AI 原始研究，均為逐字比對而非二手轉述，未使用任何聚合站或部落格佐證。<strong>選題 01 為補收錄</strong>：NSA／CISA／FBI／DOE／EPA 的聯合公告於 <strong>8/19</strong> 發布，落在上一期（涵蓋 8/17–8/19）區間尾端而未被收錄，The Hacker News 與 Help Net Security 於 8/20 跟進報導始進入本期區間；比照 2026-08-20 期的作法補入並標明原始日期，不偽裝為本期新發生的事件。選題 02、03 均在本期 8/20–8/23 區間內（皆為 8/20，SecurityWeek 的跟進報導為 8/21）。<strong>三則已標明的引用限制</strong>：（一）選題 01 的公告<em>未歸因於任何已知威脅組織</em>、未公布受害組織數量、未提供已發生實體破壞的案例，且公告自述進行中的 PLC 鎖定活動「範圍比 Siemens PLC 更廣」，只寫成 Siemens 的問題會漏掉一半；（二）選題 02 的下載量（累計 245,385,500 次、403 個依賴 crate）為 The Hacker News 於 8/21 自行以 crates.io API 查得的單一來源數字，而<em>被刪除的惡意版本實際被下載幾次至今無人公布</em>，不可用總下載量推估曝險，RustSec 記載的「無證據顯示曾被使用」也只代表目前未觀察到；（三）選題 03 的「20 次嘗試、成功率 40%」<em>不在 Adversa 的公開文章裡</em>，是該公司回覆 The Hacker News 所得，且 Adversa 是此發現的唯一來源並在同一篇文章推銷自家產品，該研究無 CVE、無修補、未報告實際遭利用；其中 Gemini 的示範早於 2026-03-11 以另一名稱發表過，本次新增的只是手法一般化與 Grok 應用。<strong>與既有選題的區隔已逐一確認</strong>：選題 01 的媒體報導後半段接續介紹了本站 2026-08-20 期選題 01 的台灣事件，兩者為<em>不同事件</em>（五機關公告未歸因、鎖定美國關鍵基礎設施），已分開處理；選題 02 與同期另一起 npm 木馬套件事件（8/21）亦分開標示，未混寫。<strong>順帶一提</strong>：The Hacker News 8/20 該篇複述的台灣事件數字（2,564 筆人事資料、85 組帳號、7 組 SSO 用戶端密鑰、6 組資料庫憑證），與本站上一期第三輪查證的更正結果一致，可視為對前期內容的第三方佐證。<strong>下一期</strong>為 8/27（週四），涵蓋 8/24–8/26。</div>
     </section>
 
     <section>
       <article class="week-card">
         <div class="week-header">
           <div>
-            <div class="week-date">2026 年 8 月 20 日（週四）</div>
-            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/17–8/19 本期重點新聞 · 選題 01 為 8/12–8/14 補收錄</div>
+            <div class="week-date">2026 年 8 月 24 日（週一）</div>
+            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/20–8/23 本期重點新聞 · 選題 01 為 8/19 補收錄</div>
           </div>
           <span class="week-label">最新一期</span>
         </div>
         <!-- 選題 1 -->
         <div class="topic">
-          <div class="topic-num">選題 01 · AI 安全 / AI 治理（補收錄）</div>
-          <h3>4 天、12 波、21 套系統：台灣政府機關遭近乎全自動的 AI Agent 攻擊，工具全部開源</h3>
-          <p>以色列資安公司 Dream 取得攻擊方遺留的完整工作區紀錄，顯示攻擊框架以 Hermes Agent 與 OpenClaw 兩套開源工具組成，最多同時派出 8 個子代理、分 12 波在 7/1–7/4 執行。Dream 報告載明 85 組政府帳號遭攻破、2,564 筆人事資料外洩；數發部 8/13 證實此事，新聞稿逐字定性為「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」。</p>
+          <div class="topic-num">選題 01 · OT / ICS 資安 · AI 攻擊（補收錄）</div>
+          <h3>「這不是理論風險，是進行中的威脅」：五機關聯名警告 AI 生成的腳本正在打 Siemens S7 PLC</h3>
+          <p>NSA、CISA、FBI、能源部與環保署於 8/19 聯名發布 TLP:CLEAR 公告，警告攻擊方正以 AI 生成、偽裝成合法 OT 監控軟體的腳本，對美國境內 Siemens S7 系列 PLC 進行偵察與能力建構。手法為公開函式庫 snap7.dll／python-snap7 結合 AI 輔助腳本，經 S7comm 取得 PLC 記憶體、組態與梯形圖的讀寫權；以 Censys、ZoomEye 尋找對外暴露的裝置。鎖定型號涵蓋 S7-200 至 S7-1500 全系列，含 F 系列安全控制器；受影響最深的部門第一名為關鍵製造。公告的第一項緩解措施不是修補，是盤點。</p>
           <div class="sources">
-            <a class="source-tag" href="https://moda.gov.tw/ACS/press/news/press/20394" target="_blank" rel="noopener">🏛 數發部資通安全署新聞稿 8/13</a>
-            <a class="source-tag" href="https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia" target="_blank" rel="noopener">🏛 Dream 原始研究報告 8/12</a>
-            <a class="source-tag" href="https://www.cnn.com/2026/08/13/tech/china-taiwan-ai-agent-cyberattack-intl-hnk" target="_blank" rel="noopener">📰 CNN Business 8/13</a>
-            <a class="source-tag" href="https://cyberscoop.com/near-autonomous-ai-attack-government-target-taiwan/" target="_blank" rel="noopener">📰 CyberScoop 8/12</a>
-            <a class="source-tag" href="https://www.taipeitimes.com/News/front/archives/2026/08/14/2003862463" target="_blank" rel="noopener">📰 Taipei Times 8/14</a>
-            <a class="source-tag" href="https://www.ithome.com.tw/news/178135" target="_blank" rel="noopener">📰 iThome 8/14</a>
-            <a class="source-tag" href="https://www.theregister.com/security/2026/08/12/near-autonomous-ai-agents-attack-taiwans-nuclear-safety-agency/" target="_blank" rel="noopener">📰 The Register 8/12</a>
+            <a class="source-tag" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a" target="_blank" rel="noopener">🏛 NSA／CISA／FBI／DOE／EPA 聯合公告 AA26-231A 8/19</a>
+            <a class="source-tag" href="https://www.bleepingcomputer.com/news/security/us-warns-of-ai-powered-attacks-on-siemens-plcs-in-critical-infrastructure/" target="_blank" rel="noopener">📰 BleepingComputer 8/19</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/08/ai-generated-exploit-scripts-target.html" target="_blank" rel="noopener">📰 The Hacker News 8/20</a>
+            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/20/usa-ai-attacks-siemens-s7-plcs-critical-infrastructure/" target="_blank" rel="noopener">📰 Help Net Security 8/20</a>
           </div>
 
-          <details class="channel" data-post-id="20260820-t1-li">
+          <details class="channel" data-post-id="20260824-t1-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">這次攻擊沒有寫任何一行客製化攻擊程式。工具全部是開源的，任何人都能下載。
+                <div class="draft-text">五個美國聯邦機關為了一個廠牌的 PLC 聯名發公告，這件事本身就是訊號。
 
-以色列資安公司 Dream 取得了攻擊方遺留的完整工作區紀錄——一個 160MB 的封存檔，內含 1,395 份檔案，涵蓋行動的規劃、執行與後處理。紀錄顯示，2026 年 7 月 1 日至 7 月 4 日之間，一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理，各自分配目標與攻擊手法。
+NSA、CISA、FBI、能源部、環保署在 8 月 19 日共同發布《Defending Against an Active Threat to Siemens S7 Series PLCs》。公告裡有一句話值得逐字讀：「這不是理論風險——這是進行中的威脅。」
 
-框架由兩套開源工具組成：Nous Research 於 2026 年 2 月發布的 Hermes Agent，以及個人 AI 助理 OpenClaw——2025 年 11 月首次發布，2026 年 1 月定名為 OpenClaw，四個月內累積逾 25 萬星，超越 React 與 Linux，成為 GitHub 上最多星的軟體專案。兩者原本都內建防止用於攻擊行為的安全機制——攻擊方繞過的方式，是把整個行動包裝成「已授權的滲透測試」。操作文件呈現繁簡交錯——內部狀態報告用簡體中文、對目標的分析用繁體中文——Dream 據此研判操作者為中文語系。
+攻擊手法沒有用到什麼神秘的零時差。攻擊方把公開的工業自動化函式庫（snap7.dll / python-snap7）交給 AI，讓它產生攻擊腳本，做出來的工具刻意模仿合法的 OT 監控軟體，透過 S7comm 協定取得 PLC 記憶體、組態資料與梯形圖程式的讀寫權限。找目標的方式也很平凡：用 Censys、ZoomEye 掃出對外暴露或分段不良的 PLC。
 
-成果：測繪 21 套相互連通的政府系統、攻破 85 組政府帳號、取得逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（涵蓋 MSSQL、Oracle、Sybase），並匯出全部部門系統使用者清單。目標範圍後續擴及核安主管機關、供應鏈廠商與至少 7 家能源業者。
+鎖定清單涵蓋 S7-200、S7-300（含 314/315/317）、S7-400、S7-1200（1211C 到 1217C）、S7-1500 全系列——包含 F 系列安全控制器。受影響最深的部門，第一個就是關鍵製造。
 
-數發部 8 月 13 日證實此事，並提供了一個值得注意的修正：資安監控單位 7 月即偵測到異常，國家資通安全研究院自 7 月 20 日起發布警示；調查認定這是「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」，而非完全自主。調查已結束，受影響機關均已完成修補。
+真正要抓住的是公告的用詞：目前的活動是「偵察與能力建構」。攻擊方在測繪、在練兵，還沒動手。這個時間差就是你僅剩的窗口。
 
-這個「近乎自主」與「完全自主」的差別，正是治理上最該抓住的地方。爭論攻擊有幾成自動化沒有意義，真正改變的是三件事：
+而公告列出的第一項緩解措施不是修補，是盤點：
 
-• 攻擊的邊際成本崩塌。原本需要一支團隊四天不間斷的工作量，現在由開源代理平行完成。
-• 安全機制的防線是語意層，不是技術層。一句「這是授權滲透測試」就能繞過——這代表以宣告用途為基礎的防護，對有動機的攻擊者近乎無效。
-• 防守方的偵測窗口被壓縮到「波次」等級。12 波、4 天，意味著以週為單位的弱點修補節奏已經跟不上。
+• 你有幾台 S7？韌體版本各是什麼？跟 gold copy 對得起來嗎？
+• 哪幾台直接或間接連得到不受信任的網段？
+• 裝了 TIA Portal、STEP 7 或具 S7 程式設計權限的工程工作站，你測繪過幾台？
 
-如果你正在為公司制定 AI 使用政策：你的政策是否只規範「我們怎麼用 AI」，而沒有假設「對手也用同一批工具」？
-<div class="hashtags">#AISecurity #AIGovernance #AgenticAI #ThreatIntel #CyberDefense</div></div>
+如果這三題答不出來，後面六項緩解措施都無從執行。
+
+給 SOC 的三個可以今天就寫進偵測規則的指標：非工程工作站發起的 S7comm 連線、對 port 102 的連續 IP 掃描、核准工作站以外出現的 snap7.dll 或具 S7comm 功能的 Python 腳本。
+
+順帶一提：公告自己在開頭就註明，進行中的 PLC 鎖定活動「範圍比 Siemens PLC 更廣」。只把這則讀成 Siemens 的問題，會漏掉一半。
+<div class="hashtags">#ICSSecurity #OTSecurity #AISecurity #CriticalInfrastructure #Manufacturing</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Not one line of custom offensive code was written for this campaign. Every tool used was open source, and anyone can download them.
+                <div class="draft-text">Five US federal agencies co-signing an advisory about one vendor's PLCs is itself the signal.
 
-Israeli security firm Dream obtained the attackers' complete leftover workspace — a 160MB archive containing 1,395 files covering the campaign's planning, execution and post-processing. The records show that between 1 and 4 July 2026, an AI agent framework ran 12 attack waves against Taiwanese government agencies, deploying up to eight sub-agents in parallel, each assigned its own targets and techniques.
+On 19 August, NSA, CISA, FBI, the Department of Energy and the EPA jointly published "Defending Against an Active Threat to Siemens S7 Series PLCs." One sentence deserves to be read verbatim: "This is not a theoretical risk—it is an active threat."
 
-The framework was assembled from two open-source projects: Hermes Agent, released by Nous Research in February 2026, and OpenClaw, the open-source personal AI assistant first published in November 2025 and renamed to OpenClaw at the end of January 2026, which passed 250,000 GitHub stars within four months to overtake React and Linux as the most-starred software project on GitHub. Both ship with safety mechanisms intended to prevent offensive use. The attackers bypassed them by packaging the whole operation as an authorised penetration test. The operational documentation code-switches between Simplified Chinese in internal status reports and Traditional Chinese in target-facing analysis, which Dream reads as pointing to a Chinese-language operator.
+There is no exotic zero-day here. Attackers are pairing publicly available industrial automation libraries (snap7.dll / python-snap7) with AI-assisted scripting to produce custom tools that deliberately mimic legitimate OT monitoring software, giving them read/write access to PLC memory, configuration data and ladder logic programs over the S7comm protocol. Target selection is equally ordinary: Censys and ZoomEye to find internet-exposed or poorly segmented PLCs.
 
-The results: 21 interconnected government systems mapped, 85 government accounts cracked, more than 2,500 personnel records taken, seven SSO client secrets, six internal database credentials spanning MSSQL, Oracle and Sybase, plus a full export of every departmental system user. Targeting later extended to the nuclear safety regulator, supply-chain vendors and at least seven energy companies.
+The named scope covers S7-200, S7-300 (including 314/315/317), S7-400, S7-1200 (1211C through 1217C) and the full S7-1500 line — including F-series safety controllers. The most affected sector list opens with Critical Manufacturing.
 
-Taiwan's Ministry of Digital Affairs confirmed the incident on 13 August, with one correction worth noting: monitoring units detected the activity in July, and the National Institute of Cyber Security began issuing alerts from 20 July. The investigation concluded that this was a hybrid mode combining human operators with AI agent assistance, rather than fully autonomous operation. The investigation has closed and affected agencies have remediated.
+The wording that matters most: the observed activity is "reconnaissance and capability development." They are mapping and building, not yet acting. That gap is the only window you have.
 
-That gap between near-autonomous and fully autonomous is exactly where the governance lesson sits. Arguing about the precise percentage of automation is not useful. Three things genuinely changed:
+And the advisory's first mitigation is not patching. It is inventory:
 
-• The marginal cost of attack collapsed. What used to take a team four days of continuous work is now executed in parallel by open-source agents.
-• The safety boundary is semantic, not technical. One claim of authorised penetration testing was enough to bypass it, which means intent-declaration-based guardrails offer close to zero resistance to a motivated adversary.
-• Defender detection windows are now measured in waves. Twelve waves over four days means a weekly patching rhythm no longer keeps pace.
+• How many S7 controllers do you have, on which firmware, and does it reconcile against a gold copy?
+• Which of them are reachable, directly or indirectly, from untrusted networks?
+• How many engineering workstations running TIA Portal, STEP 7 or holding S7 programming access have you actually mapped?
 
-If you are writing your organisation's AI usage policy: does it only govern how you use AI, without assuming your adversary uses the same tools?
-<div class="hashtags">#AISecurity #AIGovernance #AgenticAI #ThreatIntel #CyberDefense</div></div>
+If those three questions have no answer, the other six mitigations cannot be executed.
+
+Three hunting indicators your SOC can turn into detections today: S7comm connections originating from non-engineering workstations, sequential IP scanning on port 102, and snap7.dll or S7comm-capable Python scripts appearing outside approved engineering workstations.
+
+Worth noting: the advisory itself states up front that ongoing PLC targeting is "broader than Siemens PLCs." Reading this as a Siemens problem misses half of it.
+<div class="hashtags">#ICSSecurity #OTSecurity #AISecurity #CriticalInfrastructure #Manufacturing</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t1-x">
+          <details class="channel" data-post-id="20260824-t1-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ 以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔，內含 1,395 份檔案。紀錄顯示 2026/7/1–7/4 有一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理。
+                <div class="draft-text">1/ 8/19，NSA、CISA、FBI、能源部、環保署五個機關聯名發布公告：AI 生成的攻擊腳本正在鎖定 Siemens S7 系列 PLC。公告原話：「這不是理論風險——這是進行中的威脅。」
 
-2/ 框架完全由開源工具組成：Nous Research 2026 年 2 月發布的 Hermes Agent，加上 OpenClaw（2025 年 11 月首次發布，2026 年 1 月定名，四個月內逾 25 萬星、成為 GitHub 上最多星的軟體專案）。沒有任何客製化攻擊程式。
+2/ 手法一點都不神秘。公開的工業自動化函式庫 snap7.dll / python-snap7 + AI 輔助腳本 = 模仿合法 OT 監控軟體的客製工具，經 S7comm 取得 PLC 記憶體、組態與梯形圖的讀寫權。
 
-3/ 兩套工具都有防止攻擊性使用的安全機制。繞過方式：把整個行動包裝成「已授權的滲透測試」。操作文件繁簡交錯，Dream 據此研判操作者為中文語系。防線在語意層，不在技術層。
+3/ 找目標的方式：Censys、ZoomEye 掃描對外暴露或分段不良的 PLC。公告對應到 MITRE ATT&amp;CK T1596.005；「AI 快速迭代攻擊碼、降低 ICS 攻擊門檻」對應 T1587.004、T1588.007。
 
-4/ 成果：21 套政府系統測繪、85 組帳號攻破、逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組資料庫憑證（MSSQL/Oracle/Sybase）。後續擴及核安主管機關與至少 7 家能源業者。
+4/ 點名型號：S7-200 全系列、S7-300（含 314/315/317）、S7-400 全系列、S7-1200（1211C–1217C）、S7-1500 全系列，含 F 系列安全控制器。受影響部門第一名：關鍵製造。
 
-5/ 數發部 8/13 證實，但做了重要修正：7 月即偵測到，國家資通安全研究院自 7/20 起示警；定性為「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」，而非完全自主。調查已結束、機關已修補。
+5/ 關鍵用詞：目前是「偵察與能力建構」。攻擊方在測繪、在練兵，尚未動手。這個時間差就是防守窗口。
 
-6/ 治理重點不是自動化幾成，而是：攻擊邊際成本崩塌、以宣告用途為基礎的安全機制近乎無效、偵測節奏必須從「週」壓縮到「波次」。你的 AI 政策有假設對手用同一批工具嗎？
-<div class="hashtags">#AISecurity #AIGovernance #AgenticAI</div></div>
+6/ 公告的第一項緩解措施不是修補，是盤點：你有幾台 S7、韌體版本、哪幾台連得到不受信任網段、裝了 TIA Portal／STEP 7 的工程工作站有幾台。答不出來，後面六項都做不了。
+
+7/ 給 SOC 的三個獵捕指標：非工程工作站發起的 S7comm 連線／對 port 102 的連續 IP 掃描／核准工作站外出現的 snap7.dll 與 S7comm Python 腳本。
+
+8/ 最後一句提醒來自公告自己：進行中的 PLC 鎖定活動「範圍比 Siemens PLC 更廣」。所有 PLC 的擁有者都該套用這些措施。
+<div class="hashtags">#ICSSecurity #OTSecurity #AISecurity #Manufacturing</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Israeli security firm Dream recovered a 160MB workspace archive left behind by the attackers, containing 1,395 files. It shows an AI agent framework running 12 attack waves against Taiwanese government agencies from 1 to 4 July 2026, with up to eight sub-agents in parallel.
+                <div class="draft-text">1/ On 19 Aug, NSA, CISA, FBI, DOE and EPA jointly published an advisory: AI-generated exploit scripts are targeting Siemens S7 Series PLCs. In the advisory's own words: "This is not a theoretical risk—it is an active threat."
 
-2/ The framework was built entirely from open-source tools: Hermes Agent, released by Nous Research in February 2026, plus OpenClaw, first published in November 2025 and renamed to OpenClaw at the end of January 2026, past 250,000 stars within four months — the most-starred software project on GitHub. No custom offensive code at all.
+2/ The method is not exotic. Public industrial automation libraries (snap7.dll / python-snap7) + AI-assisted scripting = custom tools mimicking legitimate OT monitoring software, with read/write access to PLC memory, configuration and ladder logic over S7comm.
 
-3/ Both tools ship safety mechanisms against offensive use. The bypass: package the operation as an authorised penetration test. The operator documentation code-switches between Simplified and Traditional Chinese, which Dream reads as a Chinese-language operator. The boundary held at the semantic layer, not the technical one.
+3/ Target selection: Censys and ZoomEye to find internet-exposed or poorly segmented PLCs. The advisory maps this to MITRE ATT&amp;CK T1596.005, and AI-accelerated exploit iteration to T1587.004 and T1588.007.
 
-4/ Results: 21 government systems mapped, 85 accounts cracked, 2,500+ personnel records, seven SSO client secrets, six database credentials across MSSQL, Oracle and Sybase. Targeting later reached the nuclear safety regulator and at least seven energy companies.
+4/ Named models: all S7-200, S7-300 (incl. 314/315/317), all S7-400, S7-1200 (1211C–1217C), and the full S7-1500 line — including F-series safety controllers. Top affected sector: Critical Manufacturing.
 
-5/ Taiwan's MODA confirmed on 13 Aug with an important correction: detection happened in July, with alerts from the National Institute of Cyber Security from 20 July. It was assessed as a hybrid of human operators plus AI agent assistance, not full autonomy. Investigation closed, agencies remediated.
+5/ The phrase that matters: current activity is "reconnaissance and capability development." They are mapping and building, not yet acting. That gap is your window.
 
-6/ The governance point is not the percentage of automation. It is this: attack marginal cost collapsed, intent-declaration guardrails proved near useless, and detection cadence has to move from weekly to per-wave. Does your AI policy assume the adversary uses the same tools?
-<div class="hashtags">#AISecurity #AIGovernance #AgenticAI</div></div>
+6/ The advisory's first mitigation is not patching — it is inventory. How many S7 units, on what firmware, which are reachable from untrusted networks, and how many TIA Portal / STEP 7 engineering workstations exist. Without answers, the other six mitigations cannot run.
+
+7/ Three hunting indicators for your SOC: S7comm connections from non-engineering workstations; sequential IP scanning on port 102; snap7.dll or S7comm-capable Python scripts outside approved engineering workstations.
+
+8/ Closing note, from the advisory itself: ongoing PLC targeting is "broader than Siemens PLCs." Every PLC owner should apply the mitigations.
+<div class="hashtags">#ICSSecurity #OTSecurity #AISecurity #Manufacturing</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t1-blog">
+          <details class="channel" data-post-id="20260824-t1-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">標題：當攻擊框架不再需要客製化程式：台灣 AI Agent 攻擊事件的治理啟示
+                <div class="draft-text">標題：AI 把 ICS 攻擊的門檻拉到了 snap7 的高度——讀懂五機關聯合公告的三個層次
 
-• 事件時間軸：攻擊執行於 2026/7/1–7/4；國家資通安全研究院自 7/20 起示警；金融時報 8/12 首報；數發部 8/13 證實
-• 證據來源：以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔，含 1,395 份檔案，涵蓋行動的規劃、執行與後處理
-• 攻擊規模：12 波次、最多 8 個子代理平行運作、測繪 21 套相互連通的政府系統
-• 資料損失：85 組政府帳號、逾 2,500 筆人事資料、7 組 SSO 用戶端密鑰、6 組內部資料庫憑證（MSSQL、Oracle、Sybase）、全部門系統使用者清單匯出
-• 擴散範圍：核安主管機關、供應鏈廠商、至少 7 家能源業者
-• 工具組成：Hermes Agent（Nous Research，2026/2 發布）與 OpenClaw（2025/11 首次發布，2026/1 定名，四個月內逾 25 萬星、成為 GitHub 上最多星的軟體專案），皆為開源、皆內建防濫用機制
-• 繞過手法：將行動宣告為「已授權的滲透測試」；操作文件內部狀態報告為簡體中文、對目標分析為繁體中文，Dream 據此研判操作者為中文語系
-• 官方定性差異：數發部新聞稿逐字用語為「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」，與部分國際媒體「完全自主」的描述有落差，此差異本身即為重要治理資訊
-• 治理啟示一：攻擊邊際成本崩塌，威脅模型中「攻擊者資源有限」的假設需要重寫
-• 治理啟示二：以宣告用途為基礎的安全防護屬語意層防線，對有動機的攻擊者近乎無效，不應作為合規依據
-• 治理啟示三：偵測與修補節奏需從「週」壓縮至「波次」等級，並將帳號異常聚合行為納入偵測情境
-• 企業行動清單：盤點對外可達的身分驗證端點與 SSO 用戶端密鑰、建立資料庫憑證輪替機制、將 AI 代理工具納入使用政策與資產清單、演練「大量帳號在短時間內被枚舉」的應變流程
-<div class="hashtags">#AISecurity #AIGovernance #AgenticAI #ThreatIntel</div></div>
+• 事件層：2026 年 8 月 19 日，NSA、CISA、FBI、DOE、EPA 五機關聯名發布 TLP:CLEAR 公告《Defending Against an Active Threat to Siemens S7 Series PLCs》（文件編號 U/OO/6053597-26 | PP-26-3374，Ver 1.0），警告攻擊方正以 AI 生成的攻擊腳本對美國境內 Siemens PLC 進行偵察與能力建構
+• 手法層：公開函式庫 snap7.dll／python-snap7 搭配 AI 輔助腳本，產出偽裝成合法 OT 監控軟體的客製工具，經 S7comm 協定取得 PLC 記憶體、組態資料與梯形圖程式的讀寫權；以 Censys、ZoomEye 尋找對外暴露或分段不良的目標
+• 範圍層：S7-200／300（314、315、317）／400／1200（1211C–1217C）／1500 全系列，含 F 系列安全控制器；受影響最深的部門依序為關鍵製造、能源、水與污水、化學、食品與農業、商業設施；公告未歸因於任何已知威脅組織
+• 時序判讀：公告用的是「reconnaissance and capability development」——攻擊方目前在測繪與能力建構階段，尚未進入破壞。這個時間差是防守方僅剩的窗口，也是本則最該傳達的訊息
+• 官方緩解措施的排序本身就是重點：第一條是盤點（比對五個系列的韌體版本與 gold copy、辨識可從不受信任網段觸及的系統、測繪所有裝有 TIA Portal／STEP 7 或具 S7 程式設計權限的工程工作站），第二條才是修補，其後為隔離網際網路、強化存取控制、監控未授權活動、強化服務與梯形圖完整性、獵捕異常
+• 可直接落地的獵捕指標：異常 S7comm 行為（非工程工作站連線、異常資料區塊存取、變更窗口外的寫入）／偵察跡證（port 102 連續掃描、參數變化的重複連線、CPU 屬性列舉）／工具痕跡（核准工作站外的 snap7.dll、具 S7comm 功能的 Python 腳本、未授權監控軟體）
+• 官方定性：AI 生成並快速迭代攻擊腳本代表攻擊能力的一次 evolution，「大幅降低了開發 ICS 攻擊工具所需的技術專業與時間」；已知漏洞 + 可取得的攻擊函式庫 + AI 輔助開發，構成對防護不足 PLC 的「高機率攻擊情境」
+• 別讀窄了：公告開頭即註明進行中的 PLC 鎖定活動「範圍比 Siemens PLC 更廣」，所有 PLC 擁有者都應套用相關緩解措施
+• 對電子製造業的意涵：F 系列安全控制器進入名單，意味著風險討論要從「停線損失」擴大到「功能安全機制本身可能被寫入」；而第一項緩解措施是盤點，代表多數工廠的起點不是買設備，是先把資產與工程工作站名單做出來
+<div class="hashtags">#ICSSecurity #OTSecurity #AISecurity #Manufacturing</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Title: When an Attack Framework Needs No Custom Code: Governance Lessons from the Taiwan AI Agent Campaign
+                <div class="draft-text">Title: AI just lowered the ICS attack bar to the height of snap7 — reading the five-agency advisory on three levels
 
-• Timeline: the campaign ran 1 to 4 July 2026; Taiwan's National Institute of Cyber Security issued alerts from 20 July; the Financial Times reported it first on 12 August; MODA confirmed on 13 August
-• Evidence base: Israeli security firm Dream recovered a 160MB workspace archive left by the attackers, holding 1,395 files covering the campaign's planning, execution and post-processing
-• Scale: 12 attack waves, up to eight sub-agents running in parallel, 21 interconnected government systems mapped
-• Data loss: 85 government accounts, more than 2,500 personnel records, seven SSO client secrets, six internal database credentials across MSSQL, Oracle and Sybase, plus a full export of departmental system users
-• Spread: the nuclear safety regulator, supply-chain vendors and at least seven energy companies
-• Toolchain: Hermes Agent (Nous Research, released February 2026) and OpenClaw (first published in November 2025, renamed to OpenClaw at the end of January 2026, past 250,000 stars within four months — the most-starred software project on GitHub), both open source and both shipping anti-abuse mechanisms
-• Bypass method: declaring the operation an authorised penetration test; the operator documentation code-switches between Simplified Chinese in internal status reports and Traditional Chinese in target-facing analysis, which Dream reads as pointing to a Chinese-language operator
-• Official framing differs: MODA's press release words it as a hybrid in which hackers combined conventional operations with AI agents such as Open Claw, which diverges from the fully autonomous framing used by some international outlets. That divergence is itself governance-relevant information
-• Lesson one: the marginal cost of attack has collapsed, so the threat-model assumption that attackers have limited resources needs rewriting
-• Lesson two: intent-declaration guardrails are a semantic boundary and offer near-zero resistance to a motivated adversary, so they should not be treated as a compliance control
-• Lesson three: detection and patching cadence must compress from weekly to per-wave, and aggregate account anomalies belong in detection scenarios
-• Enterprise action list: inventory internet-reachable authentication endpoints and SSO client secrets, establish database credential rotation, bring AI agent tooling into usage policy and asset inventory, and rehearse the response to mass account enumeration in a short window
-<div class="hashtags">#AISecurity #AIGovernance #AgenticAI #ThreatIntel</div></div>
+• The event: on 19 August 2026, NSA, CISA, FBI, DOE and EPA jointly issued the TLP:CLEAR advisory "Defending Against an Active Threat to Siemens S7 Series PLCs" (U/OO/6053597-26 | PP-26-3374, Ver 1.0), warning that threat actors are conducting reconnaissance and capability development against US-based Siemens PLC installations using AI-generated exploitation scripts
+• The method: public libraries snap7.dll / python-snap7 combined with AI-assisted scripting produce custom tools that mimic legitimate OT monitoring software, providing read/write access to PLC memory, configuration data and ladder logic programs over the S7comm protocol; targets are found with Censys and ZoomEye
+• The scope: S7-200 / 300 (314, 315, 317) / 400 / 1200 (1211C–1217C) / 1500 in full, including F-series safety controllers; most affected sectors are Critical Manufacturing, Energy, Water and Wastewater, Chemical, Food and Agriculture, and Commercial Facilities; the agencies did not attribute the activity to a known group
+• Reading the timeline: the advisory says "reconnaissance and capability development" — the actors are mapping and building capability, not yet causing impact. That gap is the defender's remaining window, and it is the single most useful thing to convey
+• The ordering of the official mitigations is itself the point: first comes inventory (reconcile firmware across all five series against a gold copy, identify systems reachable from untrusted networks, map every engineering workstation running TIA Portal, STEP 7 or holding S7 programming access), and only then patching, internet isolation, access controls, monitoring for unauthorised activity, hardening services and ladder logic integrity, and hunting for anomalies
+• Hunting indicators you can operationalise: anomalous S7comm behaviour (connections from non-engineering workstations, unusual data block access, writes outside change windows) / reconnaissance indicators (sequential IP scanning on port 102, repeated connection attempts with varying parameters, CPU property enumeration) / tool artefacts (snap7.dll outside approved engineering workstations, S7comm-capable Python scripts, unauthorised monitoring software)
+• The official framing: AI-generated and rapidly iterated exploit scripts represent an "evolution" in capability that "dramatically reduces the technical expertise and time required"; known vulnerabilities plus accessible exploitation libraries plus AI-assisted development create what the agencies call a "high-probability attack scenario" against inadequately protected PLCs
+• Do not read it too narrowly: the advisory states at the outset that ongoing PLC targeting is "broader than Siemens PLCs," and that all PLC owners should apply the mitigations
+• What it means for electronics manufacturing: F-series safety controllers on the target list moves the risk conversation from lost production hours to the integrity of the safety function itself; and with inventory as mitigation number one, most plants' starting point is not a purchase order but an asset and engineering-workstation list
+<div class="hashtags">#ICSSecurity #OTSecurity #AISecurity #Manufacturing</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t1-nl">
+          <details class="channel" data-post-id="20260824-t1-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">以色列資安公司 Dream 取得攻擊方遺留的 160MB 工作區封存檔（含 1,395 份檔案），揭露 2026 年 7 月 1 日至 4 日一套 AI 代理框架對台灣政府機關發動 12 波攻擊，最多同時派出 8 個子代理，測繪 21 套相互連通的政府系統、攻破 85 組帳號、取得 2,564 筆人事資料、7 組 SSO 用戶端密鑰與 6 組資料庫憑證，目標並擴及核安主管機關與至少 7 家能源業者。框架完全由開源工具組成——Nous Research 的 Hermes Agent 與 OpenClaw——並以「已授權滲透測試」的宣告繞過兩者內建的防濫用機制。數發部 8 月 13 日證實事件，說明資安監控單位 7 月即偵測到、國家資通安全研究院自 7 月 20 日起示警，並將其定性為「駭客操作結合 Open Claw 等 AI Agent 輔助攻擊的混合模式」，調查已結束、受影響機關均已修補。建議企業盤點對外可達的身分驗證端點與 SSO 密鑰，並將 AI 代理工具納入使用政策。主要來源：數發部資通安全署新聞稿（8/13）、CNN Business（8/13）、Taipei Times（8/14）。
-<div class="hashtags">#AISecurity #AIGovernance</div></div>
+                <div class="draft-text">2026 年 8 月 19 日，美國 NSA、CISA、FBI、能源部與環保署五機關聯名發布 TLP:CLEAR 聯合資安公告《Defending Against an Active Threat to Siemens S7 Series PLCs》，警告攻擊方正以 AI 生成、偽裝成合法 OT 監控軟體的攻擊腳本，對美國境內 Siemens S7 系列 PLC 進行偵察與能力建構。手法為結合公開的工業自動化函式庫 snap7.dll／python-snap7 與 AI 輔助腳本撰寫，經 S7comm 協定取得 PLC 記憶體、組態資料與梯形圖程式的讀寫權限，並以 Censys、ZoomEye 等掃描服務尋找對外暴露或分段不良的裝置。鎖定型號涵蓋 S7-200、S7-300（含 314／315／317）、S7-400、S7-1200（1211C 至 1217C）與 S7-1500 全系列，包含 F 系列安全控制器；受影響最深的部門依序為關鍵製造、能源、水與污水處理、化學、食品與農業及商業設施，公告未歸因於任何已知威脅組織，並強調進行中的 PLC 鎖定活動範圍比 Siemens PLC 更廣。公告列出七項優先緩解措施，第一項為盤點所有 S7 系列 PLC 並測繪裝有 TIA Portal 或 STEP 7 的工程工作站，其後依序為套用重大修補、確保無法從網際網路存取、強化存取控制、監控未授權活動、強化服務與梯形圖完整性、獵捕異常。建議製造業立即比對 PLC 韌體與 gold copy，並針對非工程工作站發起的 S7comm 連線、port 102 連續掃描與核准工作站外的 snap7.dll 使用建立偵測。主要來源：NSA／CISA／FBI／DOE／EPA 聯合公告（8/19）、BleepingComputer（8/19）、The Hacker News（8/20）。
+<div class="hashtags">#ICSSecurity #OTSecurity #AISecurity #Manufacturing</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Israeli security firm Dream recovered a 160MB workspace archive left behind by the attackers, containing 1,395 files, revealing that between 1 and 4 July 2026 an AI agent framework ran 12 attack waves against Taiwanese government agencies with up to eight sub-agents in parallel, mapping 21 interconnected government systems, cracking 85 accounts, taking 2,564 personnel records, seven SSO client secrets and six database credentials, with targeting extending to the nuclear safety regulator and at least seven energy companies. The framework was assembled entirely from open-source tools, Hermes Agent from Nous Research and OpenClaw, and bypassed both projects' anti-abuse mechanisms by declaring the operation an authorised penetration test. Taiwan's Ministry of Digital Affairs confirmed the incident on 13 August, noting that monitoring units detected the activity in July, that the National Institute of Cyber Security issued alerts from 20 July, and that it assessed the campaign as a hybrid in which hackers combined conventional operations with AI agents such as Open Claw; the investigation has closed and affected agencies have remediated. Enterprises should inventory internet-reachable authentication endpoints and SSO secrets and bring AI agent tooling into usage policy. Sources: MODA Administration for Cyber Security press release (8/13), CNN Business (8/13), Taipei Times (8/14).
-<div class="hashtags">#AISecurity #AIGovernance</div></div>
+                <div class="draft-text">On 19 August 2026 the US NSA, CISA, FBI, Department of Energy and EPA jointly issued the TLP:CLEAR advisory "Defending Against an Active Threat to Siemens S7 Series PLCs," warning that threat actors are conducting reconnaissance and capability development against US-based Siemens S7 Series programmable logic controllers using AI-generated exploitation scripts disguised as legitimate monitoring tools. The actors pair the public industrial automation libraries snap7.dll and python-snap7 with AI-assisted scripting to obtain read/write access to PLC memory, configuration data and ladder logic programs over the S7comm protocol, and use internet scanning services such as Censys and ZoomEye to find internet-exposed or insufficiently segmented devices. Named models span the S7-200, S7-300 (including 314, 315 and 317), S7-400, S7-1200 (1211C through 1217C) and the full S7-1500 line, including F-series safety controllers; the most affected sectors are Critical Manufacturing, Energy, Water and Wastewater, Chemical, Food and Agriculture, and Commercial Facilities. The agencies attributed the activity to no known group and stressed that ongoing PLC targeting is broader than Siemens PLCs. Seven priority mitigations are listed, beginning with inventorying all S7 Series PLCs and mapping engineering workstations running TIA Portal or STEP 7, followed by patching, removing internet accessibility, strengthening access controls, monitoring for unauthorised activity, hardening services and ladder logic integrity, and hunting for anomalies. Manufacturers should reconcile PLC firmware against gold copies immediately and build detections for S7comm connections from non-engineering workstations, sequential scanning on port 102, and snap7.dll usage outside approved workstations. Sources: NSA/CISA/FBI/DOE/EPA joint advisory (8/19), BleepingComputer (8/19), The Hacker News (8/20).
+<div class="hashtags">#ICSSecurity #OTSecurity #AISecurity #Manufacturing</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
+
         </div>
+
         <!-- 選題 2 -->
         <div class="topic">
-          <div class="topic-num">選題 02 · 供應鏈 / DevSecOps</div>
-          <h3>免登入就能刪掉整個專案：GitLab 排程外緊急修補 CVSS 9.4 的 GraphQL 漏洞</h3>
-          <p>CVE-2026-19478 讓未認證的遠端攻擊者可透過 GraphQL directive 修改或刪除公開專案與使用者資料。GitLab 於 8/17 排程外釋出 19.2.4、19.1.6、19.0.8、18.11.11；同批另修補 CVSS 7.1 的 CSRF 漏洞 CVE-2026-19650。僅自架環境需處理——但 watchTowr 已於 8/19 在其蜜罐網路觀測到實際攻擊流量，這不再是預防性修補。</p>
+          <div class="topic-num">選題 02 · 供應鏈資安 / DevSecOps</div>
+          <h3>你不用呼叫它，只要編譯就中了：Rust 三個熱門 crate 遭投毒，最短的一個只在線上存在 86 分鐘</h3>
+          <p>8/20 07:15 UTC，Rust 資安應變團隊接獲通報指 proc-macro1 為惡意套件，其 build script 會在建置時下載並執行遠端 payload。團隊刪除該套件、鎖定發布帳號，並發現 arrayref 0.3.10、internment 0.8.7、append-only-vec 0.1.9 三個熱門套件已被改為依賴它，線上時間分別為 86、90、107 分鐘。惡意碼藏在 build script，只要依賴解析到它，cargo build／check／test 就會執行——專案本身不需呼叫該套件。無 CVE、無修補版本。</p>
           <div class="sources">
-            <a class="source-tag" href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-4-released/" target="_blank" rel="noopener">🏛 GitLab 官方修補公告 8/17</a>
-            <a class="source-tag" href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-2-released/" target="_blank" rel="noopener">🏛 GitLab 例行修補公告 8/12</a>
-            <a class="source-tag" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">🏛 CISA KEV 目錄 8/19</a>
-            <a class="source-tag" href="https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html" target="_blank" rel="noopener">📰 The Hacker News 8/17</a>
-            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/18/gitlab-critical-code-injection-flaw-cve-2026-19478/" target="_blank" rel="noopener">📰 Help Net Security 8/18</a>
-            <a class="source-tag" href="https://www.cybersecuritydive.com/news/gitlab-emergency-patch-critical-code-injection/828151/" target="_blank" rel="noopener">📰 Cybersecurity Dive 8/18（8/19 更新）</a>
-            <a class="source-tag" href="https://www.csoonline.com/article/4211140/critical-gitlab-flaw-allows-attackers-to-delete-and-modify-public-repos.html" target="_blank" rel="noopener">📰 CSO Online 8/18</a>
+            <a class="source-tag" href="https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/" target="_blank" rel="noopener">🏛 Rust 官方部落格 8/20</a>
+            <a class="source-tag" href="https://rustsec.org/advisories/RUSTSEC-2026-0260" target="_blank" rel="noopener">🏛 RustSec RUSTSEC-2026-0260 8/20</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/08/rust-supply-chain-attack-puts-build.html" target="_blank" rel="noopener">📰 The Hacker News 8/20</a>
           </div>
 
-          <details class="channel" data-post-id="20260820-t2-li">
+          <details class="channel" data-post-id="20260824-t2-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">一個不需要登入的請求，就能刪掉你的公開專案與使用者資料。CVSS 9.4。
+                <div class="draft-text">這次的 Rust 供應鏈攻擊，最值得記住的不是被投毒的套件名字，是它的觸發點：編譯，就中了。
 
-GitLab 在 8 月 17 日排程外釋出緊急修補，對象是 CVE-2026-19478——GraphQL directive 處理中的程式碼注入漏洞。在特定條件下，未認證的遠端攻擊者可以修改或刪除公開專案與使用者資料。
+8 月 20 日 07:15 UTC，Rust 資安應變團隊接獲通報，指 proc-macro1 這個套件是惡意的——它的 build script 會在建置時下載並執行遠端 payload。查證屬實後，團隊刪除了該套件、鎖定發布帳號，並發現三個熱門 crate 已經被改成依賴它：
 
-同批釋出還修掉 CVE-2026-19650，CVSS 7.1 的 CSRF 弱點，位於 GraphQL multiplex query handler：當受害者互動於惡意構造的請求時，未認證的攻擊者可透過 GET 請求執行 GraphQL mutation。這一個需要使用者互動，前一個不需要。
+• arrayref 0.3.10：線上 86 分鐘
+• internment 0.8.7：線上 90 分鐘
+• append-only-vec 0.1.9：線上 107 分鐘
 
-該處理的版本：18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前。修補版本為 19.2.4、19.1.6、19.0.8、18.11.11。GitLab.com 與 GitLab Dedicated 已在修補版本上，客戶無需動作——這是純粹的自架問題。
+四個細節值得工程團隊坐下來讀：
 
-有三個細節值得注意。
+一、你的程式碼一行都不用呼叫它。 惡意程式碼在被注入依賴的 build script 裡，只要依賴解析到它，cargo build（cargo check、cargo test 亦然）就會執行 payload。CI 建置節點與開發機才是受害面。
 
-第一，這是排程外釋出。GitLab 正常的資安更新是每月第二與第四個週三，而這次在一次不含 critical 等級漏洞的例行修補之後五天就緊急補上，本身就是嚴重程度的訊號。
+二、誘餌是 Cargo 的善意提示。 攻擊者在發布惡意版本的同一分鐘內，把 arrayref 0.3.5–0.3.9 全部 yank，讓 0.3.10 變成唯一不會跳「建議更新到未 yank 版本」警告的版本。通報者的原話是：「cargo 的警告就是誘餌。我就是這樣中的。」
 
-第二，這個漏洞是經由 GitLab 在 HackerOne 的 bug bounty 私下通報的，公告釋出當下沒有公開的概念驗證程式碼。這個狀態只維持了兩天：資安公司 watchTowr 表示，僅憑公告與修補檔，他們在數分鐘內就重現了這個漏洞；8 月 19 日，他們的蜜罐網路已經觀測到實際的攻擊流量。時間差的單位是小時，不是天——而這次連小時都用完了。
+三、偽裝做得很完整。 被注入的依賴 proc-macro1 是無所不在的 proc-macro2 的錯字仿冒，而且函式庫原始碼是真實副本——所以建置一切正常，沒有任何報錯。build script 會在建置期重組 C2 位址、安裝一個三個驗證方法都無條件回傳成功的憑證驗證器（等同關閉 TLS 驗證），再依作業系統與架構挑 payload。
 
-第三，也是製造業最該想的一點：GitLab 自架實例往往長在研發或製造部門自己的機房裡，不在 IT 的標準資產清單上，更新節奏跟著專案走而不是跟著資安公告走。而它裡面放的是製程參數、韌體原始碼、產線控制程式——這些東西被刪掉的損失，遠不只是 git 歷史。
+四、沒有 CVE，也沒有修補版本。 這則沒有「升級到 x.y.z」的結局。官方給的是一段 find ~/.cargo/registry/cache 的檢查指令，加上把 arrayref 釘在 0.3.9 或更早。
 
-你們的自架 GitLab 是誰在負責更新？那個人有訂閱 GitLab 的資安公告嗎？
-<div class="hashtags">#DevSecOps #SupplyChainSecurity #GitLab #VulnerabilityManagement #ManufacturingCyber</div></div>
+如果你的資安流程是「等 CVE 進掃描器再行動」，這一則會直接穿過去。
+
+補一個誠實的限制：RustSec 三則通告都記載目前沒有證據顯示惡意版本被實際使用，而被刪除版本的實際下載次數至今無人公布。曝險規模仍是未知數，不要用總下載量去推估。
+<div class="hashtags">#SupplyChainSecurity #Rust #DevSecOps #OpenSource #AppSec</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">One request, no login required, and your public projects and user data can be deleted. CVSS 9.4.
+                <div class="draft-text">The thing to remember about this Rust supply chain attack is not the package names. It is the trigger: compiling was enough.
 
-GitLab shipped an out-of-band emergency patch on 17 August for CVE-2026-19478, a code-injection flaw in GraphQL directive processing. Under certain conditions an unauthenticated remote attacker can modify or delete public projects and user data.
+At 07:15 UTC on 20 August, the Rust Security Response Team received a report that the proc-macro1 crate was malicious — its build script downloaded and executed a remote payload at build time. After verifying it, the team deleted the crate, locked the publishing account, and found three popular crates had been republished to depend on it:
 
-The same release fixes CVE-2026-19650, a CVSS 7.1 CSRF weakness in the GraphQL multiplex query handler, where an unauthenticated attacker can execute GraphQL mutations via GET requests when a victim interacts with a maliciously crafted request. That one needs user interaction. The first one does not.
+• arrayref 0.3.10 — online for 86 minutes
+• internment 0.8.7 — online for 90 minutes
+• append-only-vec 0.1.9 — online for 107 minutes
 
-Versions to act on: 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6, and 19.2 before 19.2.4. The fixed builds are 19.2.4, 19.1.6, 19.0.8 and 18.11.11. GitLab.com and GitLab Dedicated already run the patched version and customers need take no action. This is purely a self-managed problem.
+Four details worth reading as an engineering team:
 
-Three details worth noting.
+1. Your code never had to call it. The malicious code sat in the build script of the injected dependency. If dependency resolution reached it, cargo build — and cargo check and cargo test — ran the payload. Your CI runners and developer machines are the exposed surface, not the shipped product.
 
-First, this was released outside the schedule. GitLab's normal security cadence is the second and fourth Wednesday of each month, and this arrived five days after a routine patch that carried no critical-rated issues. The timing is itself a severity signal.
+2. The lure was Cargo's own helpful warning. Within the same minute as the malicious publish, the account yanked arrayref 0.3.5 through 0.3.9, leaving 0.3.10 as the only version that would not trigger "consider updating to a version that is not yanked." In the reporter's words: "that warning is the lure. That is how I hit it."
 
-Second, the flaw was reported privately through GitLab's HackerOne bug bounty, and there was no public proof-of-concept when the advisory landed. That lasted two days: security firm watchTowr says it reproduced the vulnerability within minutes, armed only with the advisory and the patch, and by Wednesday 19 August it was seeing in-the-wild exploitation hitting its honeypot network. The head start is measured in hours, not days — and on this one it has already run out.
+3. The disguise was complete. The injected dependency, proc-macro1, is a typosquat of the ubiquitous proc-macro2, and its library source is a genuine copy — so builds completed normally with no errors. The build script reassembled its C2 address at build time, installed a custom certificate verifier whose three verification methods return success unconditionally (effectively disabling TLS validation), then selected a payload by OS and architecture.
 
-Third, and this is the one manufacturers should sit with: self-managed GitLab instances tend to live in an engineering or production department's own rack, outside the standard IT asset inventory, on an update rhythm driven by project milestones rather than security advisories. What sits inside them is process parameters, firmware source, line-control code. Losing that is not just losing git history.
+4. No CVE, no patched version. There is no "upgrade to x.y.z" ending here. What the maintainers published is a find ~/.cargo/registry/cache command, plus pinning arrayref at 0.3.9 or earlier.
 
-Who owns updates for your self-managed GitLab, and are they subscribed to GitLab's security advisories?
-<div class="hashtags">#DevSecOps #SupplyChainSecurity #GitLab #VulnerabilityManagement #ManufacturingCyber</div></div>
+If your security process waits for a CVE to appear in a scanner, this one walks straight past it.
+
+One honest caveat: all three RustSec advisories record no evidence that any malicious version was actually used, and the download counts for the deleted versions have not been published by anyone. The real exposure is still unknown — do not infer it from the all-time download total.
+<div class="hashtags">#SupplyChainSecurity #Rust #DevSecOps #OpenSource #AppSec</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t2-x">
+          <details class="channel" data-post-id="20260824-t2-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ GitLab 8/17 排程外緊急修補：CVE-2026-19478，CVSS 9.4，GraphQL directive 處理的程式碼注入。特定條件下未認證的遠端攻擊者可修改或刪除公開專案與使用者資料。
+                <div class="draft-text">1/ Rust 供應鏈攻擊，8/20。重點不是套件名字，是觸發點：編譯就中了。惡意碼在 build script 裡，cargo build／check／test 都會執行——你的程式碼一行都不用呼叫它。
 
-2/ 同批另修 CVE-2026-19650，CVSS 7.1，GraphQL multiplex query handler 的 CSRF：受害者互動於惡意請求時，攻擊者可經 GET 執行 GraphQL mutation。這個需要使用者互動，9.4 那個不需要。
+2/ 時間軸精確到秒（Rust 官方公布）：
+arrayref 0.3.10 線上 86 分鐘
+internment 0.8.7 線上 90 分鐘
+append-only-vec 0.1.9 線上 107 分鐘
+三個都來自同一個維護者帳號，該帳號已被鎖定。
 
-3/ 受影響版本：18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前。修補版本 19.2.4 / 19.1.6 / 19.0.8 / 18.11.11。
+3/ Rust 團隊的原話：「我們不認為 arrayref 的作者有惡意，但其電腦或憑證很可能已遭入侵。」帳號怎麼被入侵，尚未公布。
 
-4/ GitLab.com 與 GitLab Dedicated 已在修補版本，無需動作。這是純自架問題。
+4/ 手法：每個版本只多加一行依賴——proc-macro1，proc-macro2 的錯字仿冒。函式庫原始碼是真副本，所以建置完全正常。惡意行為全在 build script。
 
-5/ 排程外釋出本身就是訊號：GitLab 正常節奏是每月第二與第四個週三，這次在一次不含 critical 等級漏洞的例行修補後五天就緊急補上。
+5/ build script 做的事：重組 C2 位址、安裝一個三個驗證方法都無條件回傳成功的憑證驗證器（＝關閉 TLS 驗證）、依 OS 與架構挑四個 payload 之一。Windows 上用 wscript.exe 隱藏執行後拋棄子行程，註解直說是要逃離 Cargo 的 job object。
 
-6/ 漏洞經 HackerOne bug bounty 私下通報，公告當下無公開 PoC。watchTowr 僅憑公告與修補檔就在數分鐘內重現，8/19 其蜜罐網路已觀測到實際攻擊流量——兩天，時間差用完了。自架 GitLab 常在研發機房、不在 IT 資產清單上，那正是最容易漏掉的一台。
-<div class="hashtags">#DevSecOps #GitLab #VulnerabilityManagement</div></div>
+6/ 最狠的一手：發布惡意版本的同一分鐘，把 0.3.5–0.3.9 全部 yank，讓 0.3.10 成為唯一不會跳警告的版本。通報者說：「cargo 的警告就是誘餌，我就是這樣中的。」
+
+7/ 沒有 CVE、沒有修補版本。處置方式是翻 ~/.cargo/registry/cache 找那幾個 .crate 檔，並把 arrayref 釘在 0.3.9 或更早。等 CVE 進掃描器才動作的流程，這則會直接穿過去。
+
+8/ 誠實的限制：RustSec 記載目前無證據顯示惡意版本被實際使用；被刪除版本的下載次數無人公布。曝險規模仍未知，別用累計 2.45 億次下載去推估。
+<div class="hashtags">#SupplyChainSecurity #Rust #DevSecOps #AppSec</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ GitLab shipped an out-of-band emergency patch on 17 Aug: CVE-2026-19478, CVSS 9.4, code injection in GraphQL directive processing. Under certain conditions an unauthenticated remote attacker can modify or delete public projects and user data.
+                <div class="draft-text">1/ Rust supply chain attack, 20 Aug. The point is not the package names, it is the trigger: compiling was enough. The malicious code sat in a build script, so cargo build / check / test ran it — your code never had to call the crate.
 
-2/ Same release fixes CVE-2026-19650, CVSS 7.1, a CSRF flaw in the GraphQL multiplex query handler: an attacker can execute GraphQL mutations via GET when a victim interacts with a crafted request. That one needs interaction. The 9.4 does not.
+2/ Timeline, to the second, published by the Rust team:
+arrayref 0.3.10 — online 86 minutes
+internment 0.8.7 — online 90 minutes
+append-only-vec 0.1.9 — online 107 minutes
+All three from one maintainer account, which has been locked.
 
-3/ Affected: 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6, 19.2 before 19.2.4. Fixed builds: 19.2.4, 19.1.6, 19.0.8, 18.11.11.
+3/ The Rust team's words: "We do not believe the author of arrayref to be acting maliciously, but their computer or credentials are likely compromised." How the account was compromised has not been disclosed.
 
-4/ GitLab.com and GitLab Dedicated already run the patched version and need no action. This is purely a self-managed issue.
+4/ The method: each release added exactly one line — a dependency on proc-macro1, a typosquat of the ubiquitous proc-macro2. Its library source is a genuine copy, so builds completed normally. Everything malicious lived in the build script.
 
-5/ The out-of-band timing is itself a signal: GitLab's normal cadence is the second and fourth Wednesday monthly, and this landed five days after a routine patch with no critical-rated issues.
+5/ What the build script did: reassembled its C2 address at build time, installed a certificate verifier whose three verification methods return success unconditionally (TLS validation off), then picked one of four payloads by OS and architecture. On Windows it launched hidden via wscript.exe and abandoned the child — commented as escaping Cargo's job object.
 
-6/ Reported privately via HackerOne bug bounty; no public PoC when the advisory landed. watchTowr reproduced it within minutes from the advisory and patch alone, and by Wed 19 Aug was seeing in-the-wild exploitation on its honeypots — two days, and the head start was gone. Self-managed GitLab often sits in an engineering rack outside IT inventory, which is exactly the box that gets missed.
-<div class="hashtags">#DevSecOps #GitLab #VulnerabilityManagement</div></div>
+6/ The sharpest move: within the same minute as the malicious publish, 0.3.5–0.3.9 were all yanked, leaving 0.3.10 as the only version that would not trigger a warning. The reporter: "cargo's warning is the lure. That is how I hit it."
+
+7/ No CVE, no patched version. Remediation is searching ~/.cargo/registry/cache for the specific .crate files and pinning arrayref at 0.3.9 or earlier. A process that waits for a CVE to reach a scanner misses this entirely.
+
+8/ Honest caveat: RustSec records no evidence any malicious version was actually used, and download counts for the deleted versions have not been published. Real exposure is unknown — do not infer it from the 245M all-time downloads.
+<div class="hashtags">#SupplyChainSecurity #Rust #DevSecOps #AppSec</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t2-blog">
+          <details class="channel" data-post-id="20260824-t2-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">標題：自架 GitLab 的資產盲區：從 CVE-2026-19478 看研發環境的修補治理
+                <div class="draft-text">標題：當 yank 警告變成誘餌——從 86 分鐘的 Rust 投毒事件看建置期供應鏈風險
 
-• 漏洞概要：CVE-2026-19478，CVSS 9.4，GraphQL directive 處理的程式碼注入；特定條件下未認證遠端攻擊者可修改或刪除公開專案與使用者資料
-• 同批修補：CVE-2026-19650，CVSS 7.1，GraphQL multiplex query handler 的 CSRF，可經 GET 請求執行 GraphQL mutation，需使用者互動
-• 受影響版本：18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前
-• 修補版本：19.2.4、19.1.6、19.0.8、18.11.11，於 2026 年 8 月 17 日釋出
-• 適用範圍：僅自架的 GitLab CE 與 EE 需處理；GitLab.com 與 GitLab Dedicated 已在修補版本
-• 釋出節奏訊號：GitLab 常規資安更新為每月第二與第四個週三，本次為排程外釋出，且在一次不含 critical 等級漏洞的例行修補後僅五天
-• 通報途徑：CVE-2026-19478 經 GitLab 於 HackerOne 的 bug bounty 計畫私下通報
-• 利用現況：公告釋出時（8/17–8/18）未確認實際遭利用案例、無公開概念驗證程式碼；watchTowr 僅憑公告與修補檔即在數分鐘內重現漏洞，並於 8 月 19 日證實其蜜罐網路已出現實際攻擊流量。修補時間差應以小時而非天計；未修補者可翻查 web 日誌中含 gl_introduced 的請求作為跡證
-• 製造業風險延伸：自架 GitLab 常位於研發或製造部門機房，不在 IT 標準資產清單內，內容包含製程參數、韌體原始碼與產線控制程式
-• 治理缺口：更新節奏跟隨專案里程碑而非資安公告，缺乏訂閱與追蹤機制
-• 行動清單：盤點全公司自架 Git 服務與版本、指派明確的修補責任人、訂閱原廠資安公告、確認實例的網際網路可達性、建立研發環境的緊急修補時限
-<div class="hashtags">#DevSecOps #SupplyChainSecurity #VulnerabilityManagement</div></div>
+• 事件：2026 年 8 月 20 日 07:15 UTC，Rust 資安應變團隊接獲 proc-macro1 為惡意套件的通報，驗證後刪除該套件與 proc-macro-en、aovine、arone、aronenao、tinymember，並鎖定發布帳號
+• 受害套件與存活時間（官方逐筆時間戳）：arrayref 0.3.10（07:15:00Z 發布、08:41:40Z 刪除，86 分鐘）、internment 0.8.7（07:34:07Z–09:04:11Z，90 分鐘）、append-only-vec 0.1.9（07:37:49Z–09:25:24Z，107 分鐘）
+• 入侵路徑：三者同屬一位維護者帳號；Rust 團隊判斷作者本人並無惡意，而是電腦或憑證遭入侵，入侵手法未公布
+• 技術核心：每個版本在 manifest 只多一行，指向 proc-macro2 的錯字仿冒 proc-macro1；其函式庫原始碼是真實副本，因此建置正常無異狀，惡意行為全數藏在 build script
+• build script 行為：建置期由 base64 片段重組 payload 主機與 C2 位址、安裝三個驗證方法都無條件成功的自訂憑證驗證器（等同關閉 TLS 驗證）、依 OS 與 CPU 架構選用四個 payload 之一；Unix／macOS 寫入 /tmp/rust-setup 分離執行，Windows 經 VBScript 以 wscript.exe 隱藏執行 PowerShell 後拋棄子行程以逃離 Cargo 的 job object
+• 誘餌設計：同一分鐘內 yank 掉 0.3.5–0.3.9，使惡意的 0.3.10 成為唯一不會觸發「建議更新到未 yank 版本」警告的版本——安全提示被反轉為誘導路徑；Rust 團隊事後已把被惡意 yank 的版本 unyank 回來
+• 暴露面：arrayref 累計 245,385,500 次下載、近 90 天 53,905,601 次、403 個 crate 依賴它（The Hacker News 8/21 以 crates.io API 查得）；一條已驗證的依賴鏈為 winit → sctk-adwaita ^0.10.1 → tiny-skia ^0.11 → arrayref ^0.3.6，鏈上每段皆為 0.3.x caret 範圍，會接受 0.3.10
+• 生態圈反應：blake3 於當日 09:09 UTC 的 1.8.7 移除該依賴，blake2b_simd 與 blake2s_simd 分別於 09:25、09:26 UTC 跟進
+• 第二階段：據 Wiz，implant 以 HTTPS POST 回連 /49890878，於 Windows 用 Run 機碼、macOS 用 LaunchAgent、Linux 用 systemd user service 持久化，並竊取 Chrome／Brave／Edge 的瀏覽器憑證；Nextron 指出所分析的 Windows 階段只讀 origin_url 與 username_value，且該分析未涵蓋 Linux 與 macOS payload
+• 處置：無 CVE、無修補版本；官方作法是以 find 指令檢查 ~/.cargo/registry/cache 是否留有相關 .crate 檔，並將 arrayref 釘在 0.3.9 或更早
+• 對電子製造業的意涵：受害面在 CI 建置節點與工程師開發機，不在出貨的產品本身；韌體與嵌入式團隊應檢視建置環境是否允許 build script 對外連線，並把「建置期網路egress」納入與產線同級的控制項目
+• 誠實的未知數：RustSec 三則通告均記載無證據顯示惡意版本被實際使用；被刪除版本的下載次數至今無人公布，曝險規模不可由總下載量推估
+<div class="hashtags">#SupplyChainSecurity #Rust #DevSecOps #AppSec</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Title: The Self-Managed GitLab Blind Spot: Patch Governance for Engineering Environments, Seen Through CVE-2026-19478
+                <div class="draft-text">Title: When the yank warning becomes the lure — build-time supply chain risk after an 86-minute Rust compromise
 
-• The flaw: CVE-2026-19478, CVSS 9.4, code injection in GraphQL directive processing; under certain conditions an unauthenticated remote attacker can modify or delete public projects and user data
-• Same release: CVE-2026-19650, CVSS 7.1, a CSRF weakness in the GraphQL multiplex query handler allowing GraphQL mutations via GET requests, requiring user interaction
-• Affected versions: 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6, 19.2 before 19.2.4
-• Fixed builds: 19.2.4, 19.1.6, 19.0.8 and 18.11.11, released 17 August 2026
-• Scope: only self-managed GitLab CE and EE need action; GitLab.com and GitLab Dedicated already run the patched version
-• Cadence signal: GitLab's routine security updates land on the second and fourth Wednesday each month, so this out-of-band release, arriving five days after a routine patch with no critical-rated issues, is itself an indicator
-• Disclosure route: CVE-2026-19478 was reported privately through GitLab's HackerOne bug bounty programme
-• Exploitation status: no confirmed exploitation and no public proof-of-concept when the advisory landed on 17-18 August; watchTowr reproduced the flaw within minutes from the advisory and patch alone, and on 19 August confirmed in-the-wild exploitation reaching its honeypot network. The remediation window is counted in hours, not days; unpatched instances should be checked for web-log requests containing gl_introduced
-• Manufacturing exposure: self-managed GitLab often sits in an engineering or production department rack, outside the standard IT asset inventory, holding process parameters, firmware source and line-control code
-• Governance gap: update cadence follows project milestones rather than security advisories, with no subscription or tracking mechanism
-• Action list: inventory every self-managed Git service and its version, assign a named patch owner, subscribe to vendor security advisories, verify internet reachability of each instance, and set an emergency patch deadline for engineering environments
-<div class="hashtags">#DevSecOps #SupplyChainSecurity #VulnerabilityManagement</div></div>
+• The event: at 07:15 UTC on 20 August 2026 the Rust Security Response Team received a report that proc-macro1 was malicious, verified it, deleted that crate along with proc-macro-en, aovine, arone, aronenao and tinymember, and locked the publishing account
+• Affected releases and exposure windows, with the maintainers' own timestamps: arrayref 0.3.10 (published 07:15:00Z, deleted 08:41:40Z — 86 minutes), internment 0.8.7 (07:34:07Z–09:04:11Z — 90 minutes), append-only-vec 0.1.9 (07:37:49Z–09:25:24Z — 107 minutes)
+• The entry point: all three belong to one maintainer account; the Rust team assessed the author as not acting maliciously but with a likely compromised machine or credentials, and the compromise method has not been disclosed
+• The technical core: each release added a single manifest line, a dependency on proc-macro1, a typosquat of proc-macro2 whose library source is a genuine copy — so builds completed normally and everything malicious lived in the build script
+• What the build script did: reassembled the payload host and C2 address from base64 fragments at build time, installed a custom certificate verifier whose three verification methods return success unconditionally (effectively disabling TLS validation), and selected one of four payloads by OS and CPU architecture; on Unix and macOS it wrote /tmp/rust-setup and spawned it detached, and on Windows it ran PowerShell hidden through a VBScript launcher under wscript.exe before abandoning the child process to escape Cargo's job object
+• The lure: within the same minute, versions 0.3.5 through 0.3.9 were yanked, leaving the malicious 0.3.10 as the only version that would not trigger "consider updating to a version that is not yanked" — a safety prompt turned into a delivery path; the Rust team later unyanked the maliciously-yanked versions
+• Exposure: arrayref has 245,385,500 all-time downloads, 53,905,601 in the 90 days to 20 August, and 403 dependent crates (verified by The Hacker News via the crates.io API on 21 August); one confirmed chain runs winit → sctk-adwaita ^0.10.1 → tiny-skia ^0.11 → arrayref ^0.3.6, and every caret range on 0.3.x accepts 0.3.10
+• Ecosystem response: blake3 dropped the dependency in 1.8.7 at 09:09 UTC the same morning, with blake2b_simd and blake2s_simd following at 09:25 and 09:26 UTC
+• Stage two: per Wiz, the implant beacons over HTTPS POST to /49890878, persists via a Registry Run key on Windows, a LaunchAgent on macOS and a systemd user service on Linux, and steals browser credentials from Chrome, Brave and Edge; Nextron notes the Windows stage it analysed queries only origin_url and username_value, and that its analysis did not cover the Linux and macOS payloads
+• Remediation: no CVE and no patched version; the official guidance is a find over ~/.cargo/registry/cache for the specific .crate files, plus pinning arrayref at 0.3.9 or earlier
+• What it means for electronics manufacturing: the exposed surface is CI runners and developer machines, not the shipped product; firmware and embedded teams should ask whether their build environment permits outbound connections from build scripts, and treat build-time egress as a controlled item on par with production network controls
+• The honest unknown: all three RustSec advisories record no evidence that any malicious version was used, and download counts for the deleted versions remain unpublished — exposure cannot be inferred from the all-time total
+<div class="hashtags">#SupplyChainSecurity #Rust #DevSecOps #AppSec</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t2-nl">
+          <details class="channel" data-post-id="20260824-t2-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">GitLab 於 2026 年 8 月 17 日排程外釋出緊急修補，處理 CVE-2026-19478：CVSS 9.4 的 GraphQL directive 程式碼注入漏洞，特定條件下未認證的遠端攻擊者可修改或刪除公開專案與使用者資料；同批另修補 CVE-2026-19650，CVSS 7.1 的 GraphQL multiplex query handler CSRF 弱點，可經 GET 請求執行 GraphQL mutation，但需使用者互動。受影響版本為 18.2 至 18.11.11 之前、19.0 至 19.0.8 之前、19.1 至 19.1.6 之前、19.2 至 19.2.4 之前，修補版本為 19.2.4、19.1.6、19.0.8 與 18.11.11；GitLab.com 與 GitLab Dedicated 已在修補版本上，僅自架環境需要處理。公告釋出時未確認實際遭利用案例、無公開概念驗證程式碼，但 watchTowr 僅憑公告與修補檔即在數分鐘內重現漏洞，並於 8 月 19 日證實蜜罐網路已出現實際攻擊流量，修補時間差應以小時計。建議製造與研發單位立即盤點自架 Git 服務版本並指派修補責任人。主要來源：GitLab 官方修補公告（8/17）、The Hacker News（8/18）、Help Net Security（8/18）。
-<div class="hashtags">#DevSecOps #GitLab</div></div>
+                <div class="draft-text">2026 年 8 月 20 日 07:15 UTC，Rust 資安應變團隊接獲通報指 proc-macro1 crate 為惡意套件，經驗證確認其 build script 會在建置時下載並執行遠端 payload，隨即刪除該套件與 proc-macro-en、aovine、arone、aronenao、tinymember，並鎖定發布帳號。團隊同時發現三個熱門套件已被改為依賴它：arrayref 0.3.10 線上 86 分鐘、internment 0.8.7 線上 90 分鐘、append-only-vec 0.1.9 線上 107 分鐘，三者同屬一位維護者帳號，Rust 團隊判斷作者本人並無惡意而是電腦或憑證遭入侵。攻擊的關鍵在於惡意程式碼藏於被注入依賴的 build script，只要依賴解析到它，cargo build、cargo check、cargo test 均會執行 payload，專案本身不需呼叫該套件；proc-macro1 是 proc-macro2 的錯字仿冒且函式庫原始碼為真實副本，因此建置過程毫無異狀。攻擊者並在同一分鐘內將 arrayref 0.3.5 至 0.3.9 全部 yank，使惡意的 0.3.10 成為唯一不會觸發更新警告的版本。本案無 CVE、無修補版本，官方處置為以 find 指令檢查 ~/.cargo/registry/cache 是否留有相關 .crate 檔並將 arrayref 釘在 0.3.9 或更早；RustSec 通告記載目前無證據顯示惡意版本曾被實際使用，被刪除版本的下載次數尚未公布。建議韌體與嵌入式團隊立即檢查 CI 建置節點與開發機，並檢視建置環境是否允許 build script 對外連線。主要來源：Rust 官方部落格（8/20）、RUSTSEC-2026-0260（8/20）、The Hacker News（8/20）。
+<div class="hashtags">#SupplyChainSecurity #Rust #DevSecOps #AppSec</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">GitLab released an out-of-band emergency patch on 17 August 2026 for CVE-2026-19478, a CVSS 9.4 code-injection flaw in GraphQL directive processing that under certain conditions lets an unauthenticated remote attacker modify or delete public projects and user data; the same release also fixes CVE-2026-19650, a CVSS 7.1 CSRF weakness in the GraphQL multiplex query handler that allows GraphQL mutations via GET requests but requires user interaction. Affected versions are 18.2 before 18.11.11, 19.0 before 19.0.8, 19.1 before 19.1.6 and 19.2 before 19.2.4, with fixed builds 19.2.4, 19.1.6, 19.0.8 and 18.11.11; GitLab.com and GitLab Dedicated already run the patched version, so only self-managed installations need to act. There was no confirmed exploitation and no public proof-of-concept when the advisory landed, but watchTowr reproduced the flaw within minutes from the advisory and patch alone and confirmed in-the-wild exploitation on its honeypot network on 19 August, so the remediation window is counted in hours. Manufacturing and engineering teams should inventory self-managed Git service versions immediately and assign a named patch owner. Sources: GitLab official patch release (8/17), The Hacker News (8/18), Help Net Security (8/18).
-<div class="hashtags">#DevSecOps #GitLab</div></div>
+                <div class="draft-text">At 07:15 UTC on 20 August 2026 the Rust Security Response Team received a report that the proc-macro1 crate was malicious, verified that its build script downloaded and executed a remote payload at build time, and deleted it along with proc-macro-en, aovine, arone, aronenao and tinymember, locking the publishing account. The team also found three widely used crates had been republished to depend on it: arrayref 0.3.10 was online for 86 minutes, internment 0.8.7 for 90 minutes and append-only-vec 0.1.9 for 107 minutes, all from one maintainer account that the team assessed as compromised rather than malicious. The decisive detail is that the malicious code lived in the build script of the injected dependency, so resolving it was enough for cargo build, cargo check or cargo test to run the payload without the project ever calling the crate; proc-macro1 is a typosquat of proc-macro2 whose library source is a genuine copy, so builds completed with no visible anomaly. The attacker also yanked arrayref 0.3.5 through 0.3.9 within the same minute, leaving the malicious 0.3.10 as the only version that would not trigger Cargo's update warning. There is no CVE and no patched version; official remediation is a find over ~/.cargo/registry/cache for the specific .crate files plus pinning arrayref at 0.3.9 or earlier, and the RustSec advisories record no evidence that any malicious version was used, with download counts for the deleted versions still unpublished. Firmware and embedded teams should check CI runners and developer machines now, and review whether their build environments permit outbound connections from build scripts. Sources: Rust Blog (8/20), RUSTSEC-2026-0260 (8/20), The Hacker News (8/20).
+<div class="hashtags">#SupplyChainSecurity #Rust #DevSecOps #AppSec</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
+
         </div>
+
         <!-- 選題 3 -->
         <div class="topic">
-          <div class="topic-num">選題 03 · 電子製造 / 勒索軟體</div>
-          <h3>勒索軟體的主場不是大企業：73% 受害者是中型企業，製造業獨占 26%</h3>
-          <p>Black Kite 8/18 發布報告，分析北美與歐洲 13,336 件具可查證營收的勒索軟體事件（2023/1–2026/6），另掃描 120,128 家中型企業。近四分之三（73%）的受害者是年營收 1,000 萬至 10 億美元的中型企業；製造業是最大受害族群，占中型企業受害者的 26%。事件量自 2023 年的 2,320 件成長 44% 至 2025 年的 3,340 件，而中型企業占比始終沒有下降。</p>
+          <div class="topic-num">選題 03 · AI 安全 / AI 治理</div>
+          <h3>加密過的攻擊指令，內容過濾器讀不到——因為要解開它，得先讓模型自己跑一次 AES</h3>
+          <p>Adversa AI 於 8/20 公開名為 Cryptographic Context Injection 的手法：使用者只要請 Grok「摘要這個網頁」，即可能讓它把姓名、概略位置、訂閱等級與當前對話的提示詞送往攻擊者伺服器，過程無確認步驟、無可見警示。攻擊指令以 AES-256-GCM 加密置於網頁，內容分類器檢查時不執行程式碼因而讀不到；模型在自身 Python 沙箱解密後，指令以「自己剛執行的程式碼之輸出」進入上下文。無 CVE、無修補、未報告實際遭利用。</p>
           <div class="sources">
-            <a class="source-tag" href="https://blackkite.com/reports/2026-mid-market-report/" target="_blank" rel="noopener">🏛 Black Kite 原始報告 8/18</a>
-            <a class="source-tag" href="https://www.prnewswire.com/news-releases/black-kite-research-reveals-that-ransomwares-primary-target-is-the-mid-market-not-enterprises-as-widely-assumed-302851242.html" target="_blank" rel="noopener">🏛 Black Kite 新聞稿 8/18</a>
-            <a class="source-tag" href="https://www.infosecurity-magazine.com/news/threequarters-ransomware-attacks/" target="_blank" rel="noopener">📰 Infosecurity Magazine 8/18</a>
-            <a class="source-tag" href="https://blackkite.com/reports/2026-supply-chain-vulnerability-report" target="_blank" rel="noopener">🏛 Black Kite 供應鏈漏洞報告 2026*</a>
+            <a class="source-tag" href="https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/" target="_blank" rel="noopener">🏛 Adversa AI 原始研究 8/20</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/08/new-cryptographic-context-injection.html" target="_blank" rel="noopener">📰 The Hacker News 8/20</a>
+            <a class="source-tag" href="https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/" target="_blank" rel="noopener">📰 SecurityWeek 8/21</a>
           </div>
 
-          <details class="channel" data-post-id="20260820-t3-li">
+          <details class="channel" data-post-id="20260824-t3-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">我們談勒索軟體時，腦中浮現的通常是大型企業被癱瘓的新聞。資料說的不是這回事。
+                <div class="draft-text">使用者做的事只有一件：貼一個網址，問「幫我摘要一下」。
 
-Black Kite 8 月 18 日發布的報告，分析了北美與歐洲 13,336 件具可查證營收的勒索軟體事件（2023 年 1 月至 2026 年 6 月），並對 120,128 家中型企業做了攻擊者視角的外部攻擊面掃描。核心發現：近四分之三——73%——的受害者是年營收 1,000 萬至 10 億美元的中型企業，不是大型企業。
+Adversa AI 揭露的手法顯示，這一句話可以讓 xAI 的 Grok 把使用者的姓名、概略位置、訂閱等級，以及當前對話中的所有提示詞，送到攻擊者控制的伺服器——過程中沒有確認步驟，沒有任何可見警示。
 
-而中型企業受害者裡，製造業是最大的一群，占 26%，遠高於第二名的專業科技服務業與第三名的營建業。
+繞過守衛的方式很值得工程團隊想清楚。攻擊者不把指令寫成文字，而是加密放在網頁上，連金鑰材料與一句「請解密」一起附上。內容分類器在檢查時不會執行 PBKDF2 與 AES-256-GCM，所以它看到的只是亂碼；而模型會用自己的 Python 沙箱把它解開。
 
-更值得注意的是趨勢的穩定性：事件總量從 2023 年的 2,320 件成長到 2025 年的 3,340 件，成長 44%，但中型企業的占比幾乎沒有變動。這不是一個「攻擊者暫時往下打」的現象，而是一個穩定的結構。
+關鍵的一步在這裡：解開之後，攻擊者的指令是以「模型剛執行的程式碼的輸出」的身分進入上下文的，而不是以「從外部抓來的網頁內容」。模型對待自己執行環境的輸出，就像程式對待自己的內部狀態一樣——不會用審視外部輸入的眼光去看它。
 
-為什麼製造業排第一？報告與相關分析指出的原因其實很樸素：製造業對停機的容忍度極低——產線停一天的損失是可以精確計算的，這讓談判籌碼天生就在攻擊者手上；同時製造業手上握有高敏感度的資料，從設計圖到客戶規格。
+研究者的類比是 SQL injection：系統分不清自己的查詢，和攻擊者從同一條通道塞進來的資料。
 
-另一份 Black Kite 報告——《2026 Supply Chain Vulnerability Report》，不是本則這份中型企業報告——點出的落差更值得台灣供應鏈重視：中型供應商、小型軟體發行商與開源維護者負擔不起每年 50 萬到 200 萬美元的資安工具，平均偵測時間仍停在 197 天、修補 60 天；而導入 AI 輔助漏洞掃描的大型企業，偵測已縮短到平均 14 天、修補 21 天。中間差了一個數量級，而落後的那一端正是大型製造商供應鏈裡的一環。
+而最該被引用的是他們的結論：
 
-換句話說，如果你是體系內的大廠，你的資安成熟度不等於你的供應鏈的資安成熟度。第三方風險管理不能只做問卷。
+「你不需要在模型層修這個問題。所有能限制這個攻擊的控制項，都在代理外圍的框架裡：它以什麼身分執行、能碰到什麼、能寫什麼、事後你能重播什麼。」
 
-三個可以立刻檢視的問題：
-• 你的關鍵供應商裡，有多少家員工數在中型區間？
-• 你對他們的資安要求，是否配套了他們負擔得起的做法？
-• 你的產線停機情境演練，有沒有包含「供應商被勒索」這一種？
-<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk #SupplyChainSecurity #OTSecurity</div></div>
+他們給的五項控制可以直接變成你的架構審查表：
+
+• 不受信任的內容，在一個沒有工具、沒有憑證的上下文中處理，只回傳結構化資料。別在握有寫入權的同一個上下文裡摘要外部網頁。
+• 不可逆與外送動作設閘：新的網路目的地、push、merge、發布，要用完全解析後的參數確認；無人在場時一律硬拒。
+• 逐 session 記錄工具軌跡與解析後參數——沒有它，就既無偵測也無鑑識。
+• 對序列告警，不要對單一 payload 告警。「不透明加密塊 + 要求解密」是審查訊號，不是阻擋條件。
+• 把上下文來源分離寫進採購要求：問供應商，工具輸出是否與指令通道分離。
+
+該講的限制也一起講：這是單一廠商的研究、沒有 CVE、沒有實際遭利用的紀錄，成功率據該公司告訴媒體是四成（20 次嘗試），而且他們在同一篇文章裡推銷自家產品。這些不影響架構結論，但引用時該寫出來。
+
+xAI 自 6 月 3 日接獲通報後，至 8 月 20 日未發布任何聲明。
+<div class="hashtags">#AISecurity #PromptInjection #AgenticAI #LLMSecurity #AppSec</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">When we talk about ransomware, the image that comes to mind is usually a large enterprise brought to a halt. The data says otherwise.
+                <div class="draft-text">The user does exactly one thing: pastes a URL and asks for a summary.
 
-Black Kite's report, published 18 August, analysed 13,336 ransomware incidents with verifiable revenue across North America and Europe from January 2023 to June 2026, alongside an attacker's-perspective external scan of 120,128 mid-market organisations. The headline finding: nearly three in four victims, 73%, were mid-market companies with 10 million to 1 billion US dollars in annual revenue, rather than large enterprises.
+Research from Adversa AI shows that this single request can make xAI's Grok send the user's name, approximate location, subscription tier and every prompt in the current conversation to an attacker-controlled server — with no confirmation step and no visible warning.
 
-Within those mid-market victims, manufacturing is the single largest group at 26%, well ahead of professional, scientific and technical services in second place and construction in third.
+The bypass is worth thinking through as an engineering team. The attacker does not write the instructions as text. They encrypt them on the page, ship the key material alongside, and add an instruction to decrypt. A content classifier does not run PBKDF2 and AES-256-GCM at inspection time, so all it sees is opaque data — and the model decrypts it inside its own Python sandbox.
 
-What makes it more striking is how stable the trend is. Total incidents grew 44%, from 2,320 in 2023 to 3,340 in 2025, yet the mid-market share barely moved. This is not attackers temporarily working their way down the size curve. It is a stable structure.
+Here is the pivot: once decrypted, the attacker's instructions enter the context as the output of code the model itself just ran, not as fetched web content. A model treats its own runtime output the way a program treats its internal state, without the scrutiny it would apply to untrusted input.
 
-Why is manufacturing first? The reasons are unglamorous: manufacturers have very low tolerance for downtime, and a day of stopped production has a precisely calculable cost, which hands the negotiating leverage to the attacker by default. They also hold highly sensitive data, from design files to customer specifications.
+The researchers' analogy is SQL injection: a system that cannot separate its own query from attacker-supplied data flowing through the same channel.
 
-A separate Black Kite report — the 2026 Supply Chain Vulnerability Report, not this mid-market one — names a gap that anyone in a supply chain should sit with: mid-market vendors, small software publishers and open-source maintainers cannot fund tooling costing 500,000 to 2 million US dollars a year, and still average 197 days to detect and 60 days to remediate, while large enterprises using AI-powered vulnerability scanning are down to 14 days to detect and 21 to remediate. That is an order of magnitude, and the slow end sits inside a large manufacturer's supply chain.
+Their conclusion is the part worth quoting:
 
-Put plainly: if you are the large player in the ecosystem, your security maturity is not your supply chain's security maturity. Third-party risk management cannot stop at questionnaires.
+"You do not need to fix this at the model layer. Every control that bounds this attack sits in the harness around the agent: what identity it runs as, what it can reach, what it can write, and what you can replay afterward."
 
-Three questions worth checking immediately:
-• How many of your critical suppliers sit in the mid-market headcount band?
-• Do the security requirements you impose on them come with an approach they can actually afford?
-• Does your production-downtime tabletop include the scenario where a supplier, not you, gets hit?
-<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk #SupplyChainSecurity #OTSecurity</div></div>
+The five controls they list convert directly into an architecture review checklist:
+
+• Quarantine untrusted content in a context with no tools and no credentials, returning only structured data. Never summarise a fetched page in the same context that holds repository write access.
+• Gate irreversible and outbound actions: confirm new network destinations, pushes, merges and publishes with fully resolved arguments, and hard-deny the same set when no human is present.
+• Capture per-session tool traces with resolved arguments — without them you have neither detection nor forensics.
+• Alert on the sequence, not on any single payload. An opaque blob paired with instructions to decrypt it is a review signal, never a blocking filter.
+• Make context provenance a procurement requirement: ask vendors whether tool output is separated from the instruction channel.
+
+State the limits too: this is single-vendor research, there is no CVE, no reported exploitation in the wild, and the success rate the company gave to reporters is 40% across 20 attempts — in a post that also markets their own product. None of that undermines the architectural conclusion, but it belongs in the citation.
+
+xAI was notified on 3 June and had published no statement as of 20 August.
+<div class="hashtags">#AISecurity #PromptInjection #AgenticAI #LLMSecurity #AppSec</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t3-x">
+          <details class="channel" data-post-id="20260824-t3-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ Black Kite 8/18 報告：分析北美與歐洲 13,336 件具可查證營收的勒索事件，另對 120,128 家中型企業做攻擊者視角掃描。2023/1 至 2026/6，73% 的受害者是年營收 1,000 萬至 10 億美元的中型企業，不是大型企業。
+                <div class="draft-text">1/ 使用者只做了一件事：貼網址、問「幫我摘要」。Adversa AI 的研究顯示，這可以讓 Grok 把使用者姓名、概略位置、訂閱等級與當前對話的提示詞，送到攻擊者的伺服器。沒有確認步驟，沒有可見警示。
 
-2/ 中型企業受害者裡，製造業是最大族群，占 26%，其後是專業科技服務業與營建業。
+2/ 繞過方式：攻擊指令不是文字，是加密的。網頁上放加密 JSON、金鑰材料，加一句「請解密」。內容分類器檢查時不會跑 PBKDF2 與 AES-256-GCM，看到的只有亂碼。
 
-3/ 趨勢很穩定：事件量從 2023 年 2,320 件成長 44% 到 2025 年 3,340 件，但中型企業占比幾乎沒動。這是結構，不是階段性現象。
+3/ 關鍵一步：模型用自己的 Python 沙箱解開之後，攻擊者的指令是以「模型剛執行的程式碼之輸出」進入上下文，不是「抓來的網頁內容」。模型對自己執行環境的輸出不設防。研究者的類比：SQL injection。
 
-4/ 為什麼是製造業？停機容忍度極低，產線停一天的損失可精確計算，談判籌碼天生在攻擊者手上；加上持有從設計圖到客戶規格的高敏感資料。
+4/ 為什麼一定要強加密？研究員 Rony Utevsky：「強加密無法被內容分類器讀取，也無法在權重內被抄捷徑，因此它強迫還原必須經過這個攻擊所依賴的執行環境。」base64、替換式密碼那些，模型自己就解了，不需要直譯器。
 
-5/ 另一份 Black Kite 報告（《2026 Supply Chain Vulnerability Report》）點出的落差：中型供應商、小型軟體發行商與開源維護者負擔不起每年 50 萬到 200 萬美元的資安工具，平均偵測仍需 197 天、修補 60 天；導入 AI 輔助掃描的大型企業則是 14 天與 21 天。
+5/ 外洩怎麼完成：解密後的指令要模型造一把「解密金鑰」——但那不是金鑰，是一個內插了姓名／位置／等級／對話歷史的樣板字串，之後被當成 URL 參數。Grok 自己呼叫瀏覽工具打開那個 URL，資料就在 query string 裡送出去了。
 
-6/ 對大廠的意涵：你的資安成熟度不等於你供應鏈的資安成熟度。第三方風險管理不能只做問卷，停機演練要包含「供應商被勒索」的情境。
-<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk</div></div>
+6/ 該引用的結論：「你不需要在模型層修這個問題。所有能限制這個攻擊的控制項，都在代理外圍的框架裡：它以什麼身分執行、能碰到什麼、能寫什麼、事後你能重播什麼。」
+
+7/ 五項可直接落地的控制：不受信任內容放在無工具無憑證的上下文／外送動作用完全解析的參數設閘、無人時硬拒／逐 session 記錄工具軌跡／對序列告警而非單一 payload／把上下文來源分離寫進採購要求。
+
+8/ 限制要一起講：單一廠商研究、無 CVE、無實際遭利用紀錄、成功率 40%（20 次嘗試，且此數字出自該公司回覆媒體、不在公開文章裡），文章末段推銷自家產品。xAI 6/3 接獲通報，8/20 前未發表聲明。
+<div class="hashtags">#AISecurity #PromptInjection #AgenticAI #LLMSecurity</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Black Kite report, 18 Aug: 13,336 ransomware incidents with verifiable revenue across North America and Europe, plus an attacker's-perspective scan of 120,128 mid-market firms. From January 2023 to June 2026, 73% of victims were mid-market companies with 10 million to 1 billion US dollars in revenue, not large enterprises.
+                <div class="draft-text">1/ The user does one thing: pastes a URL, asks for a summary. Adversa AI's research shows that can make Grok send the user's name, approximate location, subscription tier and current-conversation prompts to an attacker's server. No confirmation step, no visible warning.
 
-2/ Within those mid-market victims, manufacturing is the largest group at 26%, followed by professional, scientific and technical services, then construction.
+2/ The bypass: the instructions are not text, they are encrypted. The page carries an encrypted JSON object, the key material, and an instruction to decrypt. A content classifier does not run PBKDF2 and AES-256-GCM at inspection time, so it sees only opaque data.
 
-3/ The trend is stable: incidents grew 44%, from 2,320 in 2023 to 3,340 in 2025, yet the mid-market share barely moved. This is structural, not a phase.
+3/ The pivot: after the model decrypts it in its own Python sandbox, the attacker's instructions arrive in context as the output of code the model just ran — not as fetched web content. Models do not apply untrusted-input scrutiny to their own runtime output. The researchers' analogy: SQL injection.
 
-4/ Why manufacturing? Very low downtime tolerance, and a precisely calculable cost per day of stopped production, which hands leverage to the attacker. Plus highly sensitive data, from design files to customer specifications.
+4/ Why strong encryption specifically? Rony Utevsky: "Strong encryption cannot be read by a content classifier and cannot be shortcut in-weights, so it forces recovery through the runtime the attack depends on." base64 and substitution ciphers get decoded in-weights, no interpreter needed.
 
-5/ From a separate Black Kite report, the 2026 Supply Chain Vulnerability Report: mid-market vendors, small software publishers and open-source maintainers cannot fund 500,000 to 2 million US dollars a year of tooling, and average 197 days to detect and 60 to remediate — against 14 and 21 days for large enterprises using AI-powered scanning.
+5/ How exfiltration completes: the decrypted instructions have the model build an extra "decryption key" that is not key material at all — it is a template string interpolating name, location, tier and chat history, later used as a URL parameter. Grok then calls its own navigation tool and the data leaves in the query string.
 
-6/ For large manufacturers: your security maturity is not your supply chain's security maturity. Third-party risk management cannot stop at questionnaires, and downtime tabletops need a supplier-hit scenario.
-<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk</div></div>
+6/ The line worth quoting: "You do not need to fix this at the model layer. Every control that bounds this attack sits in the harness around the agent: what identity it runs as, what it can reach, what it can write, and what you can replay afterward."
+
+7/ Five controls you can act on: quarantine untrusted content with no tools and no credentials / gate outbound actions on fully resolved arguments, hard-deny with no human present / capture per-session tool traces / alert on the sequence, not a single payload / make context provenance a procurement requirement.
+
+8/ State the limits: single-vendor research, no CVE, no reported exploitation in the wild, 40% success across 20 attempts (a figure given to reporters, not in the public writeup), and the post markets the company's own product. xAI was notified 3 June and had said nothing publicly as of 20 Aug.
+<div class="hashtags">#AISecurity #PromptInjection #AgenticAI #LLMSecurity</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t3-blog">
+          <details class="channel" data-post-id="20260824-t3-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">標題：勒索軟體的結構性受害者：為什麼製造業中型企業是主要目標，以及大廠該做什麼
+                <div class="draft-text">標題：加密的 prompt injection——當守衛讀不懂 payload，因為讀它需要先執行它
 
-• 研究方法：Black Kite 於 2026 年 8 月 18 日發布報告，分析北美與歐洲 13,336 件具可查證營收的勒索軟體事件（2023 年 1 月–2026 年 6 月），並對 120,128 家中型企業做攻擊者視角的外部攻擊面掃描
-• 核心數據：2023 年至 2026 上半年，73% 的勒索軟體受害者為年營收 1,000 萬至 10 億美元的中型企業；逐年占比為 2023 年 74.6%、2024 年 72.1%、2025 年 74%、2026 上半年 72.3%
-• 產業分布：製造業占中型企業受害者的 26%，為最大族群，其後為專業科技服務業與營建業
-• 趨勢穩定性：事件總量自 2023 年 2,320 件成長 44% 至 2025 年 3,340 件，中型企業占比幾乎未變，顯示為結構性而非階段性現象
-• 製造業被鎖定的原因：對停機的容忍度極低使談判籌碼天生偏向攻擊者，加上持有設計圖與客戶規格等高敏感資料
-• 能力落差（出自 Black Kite《2026 Supply Chain Vulnerability Report》，非本則的中型企業報告）：中型供應商、小型軟體發行商與開源維護者無法負擔每年 50 萬至 200 萬美元的資安工具，平均偵測 197 天、修補 60 天；導入 AI 輔助漏洞掃描的大型企業則為偵測 14 天、修補 21 天
-• 供應鏈意涵：大型製造商的資安成熟度不等於其供應鏈的資安成熟度，落差集中在中型與小型的上游節點
-• 第三方風險管理缺口：以問卷為主的評估無法反映實際偵測與修補能力，需要可驗證的指標
-• 行動清單：盤點關鍵供應商的規模分布、把資安要求配套為供應商可負擔的做法、將「供應商遭勒索」納入產線停機演練情境、以偵測與修補時間而非文件完備度作為第三方評估指標
-<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk #SupplyChainSecurity</div></div>
+• 事件：以色列 AI 資安公司 Adversa AI 於 2026 年 8 月 20 日公開名為 Cryptographic Context Injection 的手法，可讓 xAI 的 Grok 在使用者要求摘要一個普通網頁後，將使用者姓名、概略位置、訂閱等級與當前對話的提示詞送往攻擊者伺服器，過程無確認步驟、無可見警示
+• 繞過機制：攻擊網頁攜帶加密 JSON、金鑰材料與解密指示；還原明文需實際執行 PBKDF2 與 AES-256-GCM，而內容分類器在檢查階段不執行程式碼，因此 payload 對其完全不透明
+• 信任翻轉的那一步：模型在自己的 Python 執行環境完成解密後，攻擊者指令是以「模型剛執行的程式碼之輸出」進入上下文，而非「抓取到的外部內容」；模型以對待自身內部狀態的方式對待它。研究者的類比是 SQL injection
+• 為何是強加密：弱編碼（base64、替換式密碼、重排、XOR）模型可在權重內或上下文中直接解，不需直譯器；強加密做不到，因此強迫還原路徑經過執行環境——這正是攻擊所依賴的
+• 外洩鏈的偽裝：payload 要求模型建立一把額外的「解密金鑰」，其值實為內插姓名、位置、等級與對話歷史的樣板字串，之後作為 URL 參數；Grok 自行呼叫具權限的瀏覽工具載入該 URL，資料隨 query string 送出
+• 研究者的根因定性：框架允許來自不受信任外部網頁的指令與資料驅動具權限、可連網工具的呼叫；允許私有 session 中介資料與對話歷史被解析進該工具的輸入；且此路徑上無有效出口邊界、無同意閘門、觀察不到來源分離
+• 五項防守控制（可直接作為架構審查表）：隔離不受信任內容於無工具無憑證的上下文／對不可逆與外送動作以完全解析的參數設閘、無人在場時硬拒／逐 session 記錄工具軌跡與解析後參數／對序列而非單一 payload 告警／將上下文來源分離列為採購要求
+• 揭露時序：2026-06-03 首次通報 xAI 並提交 HackerOne，xAI 確認收到但未給細節與時程；8/4 與 8/10 再聯繫未獲回覆；8/20 公開研究但保留實際 payload；截至 8/20 xAI 未發布聲明
+• 必須同時揭露的限制：無 CVE、無使用者端規避作法、未報告實際遭利用；測試對象為 grok.com 上的 Grok 4.5 Fast，8/19 重現一次；成功率 40%／20 次嘗試出自該公司回覆 The Hacker News，公開文章本身未載；Adversa 為唯一來源且在文末推銷自家產品；未測試能否存取其他對話、代理記憶或其他內容
+• 同篇 Gemini 示範的年份問題：該部分早於 2026-03-11 以 Cryptographic Payload Injection 之名發表且未經實質變更，本次新增者僅為手法一般化與 Grok 應用；當時跨模型結果為 GPT-5 無法解析解密指示、Claude Sonnet 4.5 於解密後將 payload 標記為 prompt injection
+• 同期旁證：2026-08-10 的預印本指出三家主要供應商回傳給 API 客戶端的加密思維鏈區塊可跨 session／使用者／模型互換，可用於隱形 prompt injection；USENIX Security 2026 的研究顯示兩回合替換式密碼攻擊對 Grok 3 的 12 種惡意意圖全數成功，缺少第二回合則全數失敗
+• 對導入 AI 代理的企業之意涵：此類風險不在模型選型，而在代理外圍框架的權限、出口與可稽核性設計；把「工具輸出是否與指令通道分離」寫進 RFP，比評估哪個模型比較安全更有效
+<div class="hashtags">#AISecurity #PromptInjection #AgenticAI #LLMSecurity</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Title: Ransomware's Structural Victims: Why Mid-Market Manufacturers Are the Primary Target, and What Large Players Should Do
+                <div class="draft-text">Title: Encrypted prompt injection — when the guardrail cannot read the payload because reading it means running it
 
-• Method: Black Kite published its report on 18 August 2026, analysing 13,336 ransomware incidents with verifiable revenue across North America and Europe from January 2023 to June 2026, alongside an attacker's-perspective external scan of 120,128 mid-market organisations
-• Headline figure: between 2023 and the first half of 2026, 73% of ransomware victims were mid-market companies with 10 million to 1 billion US dollars in annual revenue; the yearly split was 74.6% in 2023, 72.1% in 2024, 74% in 2025 and 72.3% in H1 2026
-• Sector split: manufacturing accounts for 26% of mid-market victims, the largest single group, followed by professional, scientific and technical services, then construction
-• Trend stability: total incidents grew 44%, from 2,320 in 2023 to 3,340 in 2025, while the mid-market share barely moved, indicating a structural rather than phase-driven pattern
-• Why manufacturing is targeted: very low tolerance for downtime tilts negotiating leverage toward the attacker by default, and manufacturers hold highly sensitive data including design files and customer specifications
-• The capability gap (from Black Kite's 2026 Supply Chain Vulnerability Report, not this mid-market report): mid-market vendors, small software publishers and open-source maintainers cannot fund tooling costing 500,000 to 2 million US dollars a year, and average 197 days to detect and 60 days to remediate, against 14 days to detect and 21 to remediate for large enterprises using AI-powered vulnerability scanning
-• Supply chain implication: a large manufacturer's security maturity is not its supply chain's security maturity, and the gap concentrates in mid-sized and small upstream nodes
-• Third-party risk gap: questionnaire-led assessment does not reflect real detection and remediation capability, so verifiable metrics are needed
-• Action list: map the size distribution of critical suppliers, pair security requirements with approaches suppliers can afford, add a supplier-ransomware scenario to production downtime exercises, and assess third parties on detection and remediation time rather than documentation completeness
-<div class="hashtags">#Ransomware #ManufacturingCyber #ThirdPartyRisk #SupplyChainSecurity</div></div>
+• The event: on 20 August 2026 the Israeli AI security firm Adversa AI disclosed a technique it calls Cryptographic Context Injection, which can cause xAI's Grok to send a user's name, approximate location, subscription tier and current-conversation prompts to an attacker-controlled server after the user asks it to summarise an ordinary web page, with no confirmation step and no visible warning
+• The bypass: the attacker page carries an encrypted JSON object, the key material and an instruction to decrypt; recovering the plaintext requires actually executing PBKDF2 and AES-256-GCM, and a content classifier executes nothing at inspection time, so the payload is entirely opaque to it
+• The trust inversion: once the model decrypts it inside its own Python runtime, the attacker's instructions enter the context as the output of code the model just executed rather than as fetched external content, and the model treats that the way a program treats its own internal state. The researchers' analogy is SQL injection
+• Why strong encryption specifically: weak encodings (base64, substitution ciphers, reordering, XOR) are decoded in-weights or in-context with no interpreter in the loop; strong encryption cannot be, which forces recovery through the code execution runtime the attack depends on
+• The disguise in the exfiltration chain: the payload has the model construct an extra "decryption key" whose value is actually a template string interpolating name, location, tier and chat history, later used as a URL parameter; Grok then invokes its own privileged navigation tool to load that URL and the data leaves in the query string
+• The researchers' root-cause framing: the harness lets instructions and data parsed from an untrusted external page drive the invocation of a privileged, internet-connected tool; it lets private session metadata and conversation history resolve into that tool's inputs; and it enforces no effective egress boundary, no consent gate and no observable provenance separation on that path
+• Five defensive controls, usable directly as an architecture review checklist: quarantine untrusted content in a context with no tools and no credentials; gate irreversible and outbound actions on fully resolved arguments and hard-deny where no human is present; capture per-session tool traces with resolved arguments; alert on the sequence rather than any single payload; make context provenance a procurement requirement
+• Disclosure timeline: first reported to xAI and its HackerOne programme on 3 June 2026, acknowledged without specifics or a mitigation timeline; further contact on 4 and 10 August drew no response; published 20 August with operational payloads withheld; xAI had issued no statement as of 20 August
+• Limits that must be disclosed alongside it: no CVE, no user-facing workaround, no reported exploitation in the wild; the tested target was Grok 4.5 Fast on grok.com, reproduced once on 19 August; the 40% success rate across 20 attempts came from the company's response to The Hacker News and does not appear in the public writeup; Adversa is the sole source and markets its own platform at the end of the post; whether other chats, agent memory or other content are reachable was not tested
+• The dating problem in the same post's Gemini demonstration: that half was published on 11 March 2026 as Cryptographic Payload Injection with no substantial change, and what is new here is the generalisation plus the Grok application; the March cross-model results had GPT-5 failing to parse the decryption instructions and Claude Sonnet 4.5 flagging the payload as prompt injection after decrypting it
+• Corroborating work from the same window: a 10 August 2026 preprint reports that the encrypted chain-of-thought blocks the three major providers return to API clients are interchangeable across sessions, users and models, enabling invisible prompt injection; and USENIX Security 2026 work found a two-turn substitution-cipher attack succeeded against Grok 3 on all 12 malicious intents tested, while the same cipher without the activation turn failed on all 12
+• What it means for enterprises deploying AI agents: this class of risk is not addressed by model selection but by the permissions, egress and auditability of the harness around the agent; putting "is tool output separated from the instruction channel" into the RFP is more effective than debating which model is safer
+<div class="hashtags">#AISecurity #PromptInjection #AgenticAI #LLMSecurity</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
 
-          <details class="channel" data-post-id="20260820-t3-nl">
+          <details class="channel" data-post-id="20260824-t3-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">Black Kite 於 2026 年 8 月 18 日發布報告，分析北美與歐洲 13,336 件具可查證營收的勒索軟體事件（2023 年 1 月–2026 年 6 月）並掃描 120,128 家中型企業，發現 73% 的受害者是年營收 1,000 萬至 10 億美元的中型企業而非大型企業；其中製造業為最大受害族群，占中型企業受害者的 26%，其後依序為專業科技服務業與營建業。事件總量自 2023 年的 2,320 件成長 44% 至 2025 年的 3,340 件，但中型企業的占比幾乎未變，顯示這是結構性而非階段性現象。另一份 Black Kite 報告《2026 Supply Chain Vulnerability Report》則指出能力落差：中型供應商、小型軟體發行商與開源維護者無法負擔每年 50 萬至 200 萬美元的資安工具，平均仍需 197 天偵測、60 天修補，而導入 AI 輔助掃描的大型企業已縮短至 14 天與 21 天。對大型製造商的意涵是自身資安成熟度不等於供應鏈的成熟度，建議將第三方評估指標從文件完備度改為實際偵測與修補時間，並把供應商遭勒索納入產線停機演練。主要來源：Black Kite 中型企業報告（8/18）、Infosecurity Magazine（8/18）、Black Kite《2026 Supply Chain Vulnerability Report》。
-<div class="hashtags">#Ransomware #ManufacturingCyber</div></div>
+                <div class="draft-text">以色列 AI 資安公司 Adversa AI 於 2026 年 8 月 20 日公開一項名為 Cryptographic Context Injection 的攻擊手法，可使 xAI 的 Grok 在使用者要求摘要一個普通網頁後，將使用者姓名、概略位置、訂閱等級及當前對話中的提示詞送往攻擊者控制的伺服器，過程中無確認步驟亦無可見警示。手法核心為攻擊網頁攜帶加密的 JSON 物件、金鑰材料與解密指示，由於還原明文須實際執行 PBKDF2 與 AES-256-GCM，而內容分類器在檢查階段不執行程式碼，payload 對防護機制完全不透明；模型在自身 Python 執行環境完成解密後，攻擊者指令即以「模型剛執行程式碼之輸出」的身分進入上下文，不再被當作不受信任的外部內容。外洩鏈中，模型被要求建立一把實為樣板字串的假「解密金鑰」，內插使用者私有上下文後作為 URL 參數，再由 Grok 自行呼叫具權限的瀏覽工具送出。Adversa 於 6 月 3 日通報 xAI 並提交其 HackerOne 計畫，8 月 4 日與 10 日再度聯繫均未獲回覆，遂於保留實際 payload 的前提下公開；截至 8 月 20 日 xAI 未發布聲明。本案無 CVE、無使用者端規避作法、未報告實際遭利用案例，測試對象為 grok.com 上的 Grok 4.5 Fast，8 月 19 日重現一次；該公司告訴 The Hacker News 自 6 月以來嘗試 20 次、成功率 40%，此數字未見於其公開文章。研究者結論為此類風險應在代理外圍框架處理，並建議隔離不受信任內容、對外送動作以完全解析的參數設閘、逐 session 記錄工具軌跡、對序列告警、將上下文來源分離列入採購要求。主要來源：Adversa AI 原始研究（8/20）、The Hacker News（8/20）、SecurityWeek（8/21）。
+<div class="hashtags">#AISecurity #PromptInjection #AgenticAI #LLMSecurity</div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Black Kite published a report on 18 August 2026 analysing 13,336 ransomware incidents with verifiable revenue across North America and Europe from January 2023 to June 2026 alongside a scan of 120,128 mid-market organisations, finding that 73% of victims were mid-market companies with 10 million to 1 billion US dollars in annual revenue rather than large enterprises; manufacturing was the largest victim group at 26% of mid-market victims, followed by professional, scientific and technical services, then construction. Total incidents grew 44%, from 2,320 in 2023 to 3,340 in 2025, while the mid-market share barely moved, indicating a structural rather than phase-driven pattern. A separate Black Kite report, the 2026 Supply Chain Vulnerability Report, identifies a capability gap: mid-market vendors, small software publishers and open-source maintainers cannot fund tooling costing 500,000 to 2 million US dollars a year and average 197 days to detect and 60 days to remediate, against 14 and 21 days for large enterprises using AI-powered vulnerability scanning. For large manufacturers the implication is that their own security maturity is not their supply chain's, so third-party assessment should shift from documentation completeness to actual detection and remediation time, and supplier ransomware belongs in production downtime exercises. Sources: Black Kite mid-market report (8/18), Infosecurity Magazine (8/18), Black Kite 2026 Supply Chain Vulnerability Report.
-<div class="hashtags">#Ransomware #ManufacturingCyber</div></div>
+                <div class="draft-text">On 20 August 2026 the Israeli AI security firm Adversa AI disclosed an attack technique it calls Cryptographic Context Injection, which can cause xAI's Grok to send a user's name, approximate location, subscription tier and the prompts from the ongoing conversation to an attacker-controlled server after the user asks it to summarise an ordinary web page, with no confirmation step and no visible warning. The technique works by having the attacker page carry an encrypted JSON object, the key material and an instruction to decrypt: because recovering the plaintext requires actually executing PBKDF2 and AES-256-GCM, and content classifiers execute nothing at inspection time, the payload is opaque to inspection, and once the model decrypts it inside its own Python runtime the attacker's instructions enter the context as the output of code the model just ran rather than as untrusted fetched content. In the exfiltration chain the model is directed to construct a bogus "decryption key" that is in fact a template string interpolating the user's private context, which is then used as a URL parameter that Grok loads through its own privileged navigation tool. Adversa reported the issue to xAI and its HackerOne programme on 3 June, received no response to further contact on 4 and 10 August, and published while withholding operational payloads; xAI had issued no statement as of 20 August. There is no CVE, no user-facing workaround and no reported exploitation in the wild; the tested target was Grok 4.5 Fast on grok.com, reproduced once on 19 August, and the company told The Hacker News it had attempted the attack 20 times since June with a 40% success rate, a figure absent from its public writeup. The researchers conclude that this class of risk belongs to the harness around the agent, recommending quarantining untrusted content, gating outbound actions on fully resolved arguments, capturing per-session tool traces, alerting on sequences rather than payloads, and making context provenance a procurement requirement. Sources: Adversa AI research (8/20), The Hacker News (8/20), SecurityWeek (8/21).
+<div class="hashtags">#AISecurity #PromptInjection #AgenticAI #LLMSecurity</div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
+
         </div>
-        <!-- 選題 4 -->
-        <div class="topic">
-          <div class="topic-num">選題 04 · 電子製造 / 修補治理</div>
-          <h3>你的維護窗口還按季排，原廠已經改成月更：Oracle 8/18 一次 943 個修補</h3>
-          <p>Oracle 於 8/18 釋出當月 Critical Security Patch Update，943 個新資安修補；逐列清點公告風險矩陣為 467 項免認證即可遠端利用、89 個 CVSS 9.8 以上、3 個滿分 10.0，Fusion Middleware 與 Hyperion 各佔 262 個、合計 55%。更關鍵的是節奏：Oracle 自 2026 年 5 月起在季度 CPU 之外新增每月 CSPU，官方理由是自身導入前沿 AI 後，漏洞發現與修復的速度與規模皆提升，月更可讓客戶不必等到下一個季度循環。而製造業的 ERP 停機維護窗口，多半還是按季排的。</p>
-          <div class="sources">
-            <a class="source-tag" href="https://www.oracle.com/security-alerts/cspuaug2026.html" target="_blank" rel="noopener">🏛 Oracle 官方 CSPU 公告 8/18</a>
-            <a class="source-tag" href="https://www.oracle.com/security-alerts/" target="_blank" rel="noopener">🏛 Oracle 官方資安公告總表</a>
-            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/05/05/oracle-monthly-security-updates/" target="_blank" rel="noopener">📰 Help Net Security 5/5</a>
-            <a class="source-tag" href="https://blogs.oracle.com/security/update-monthly-critical-security-patch-updates-cspus-begin-may-28-2026" target="_blank" rel="noopener">🏛 Oracle 官方部落格 5/4</a>
-            <a class="source-tag" href="https://www.oracle.com/security-alerts/cspumay2026.html" target="_blank" rel="noopener">🏛 Oracle 5 月 CSPU 公告 5/28</a>
-            <a class="source-tag" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">🏛 CISA KEV 目錄 8/19</a>
-            <a class="source-tag" href="https://www.securityweek.com/oracle-debuts-monthly-critical-security-patch-updates/" target="_blank" rel="noopener">📰 SecurityWeek 5/6</a>
-            <a class="source-tag" href="https://thehackernews.com/2026/06/oracle-e-business-suite-flaw-cve-2026.html" target="_blank" rel="noopener">📰 The Hacker News 6/30</a>
-            <a class="source-tag" href="https://www.bleepingcomputer.com/news/security/over-900-oracle-e-business-instances-exposed-to-ongoing-attacks/" target="_blank" rel="noopener">📰 BleepingComputer 7/1</a>
-          </div>
 
-          <details class="channel" data-post-id="20260820-t4-li">
-            <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
-            <div class="draft-body">
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">如果你的 ERP 維護窗口還是按季排的，有個壞消息：原廠已經不按季了。
-
-Oracle 在 8 月 18 日釋出當月的 Critical Security Patch Update，一次 943 個資安修補，橫跨二十多個產品家族。逐列清點公告的風險矩陣：467 項免認證即可遠端利用、151 個 CVE 的 CVSS 達 9.0 以上、89 個達 9.8 以上、3 個滿分 10.0。
-
-風險不是平均分布的。Fusion Middleware 與 Hyperion 各佔 262 個修補（免認證可遠端利用分別為 182 與 107 個，兩者都有 CVSS 10.0 的項目），兩家合計 524 個、佔本次的 55%；E-Business Suite 120 個。相對地，Oracle Database Products 全部只有 17 個，資料庫本體只有 6 個。壓力壓倒性地集中在中介層與績效管理套件，不是資料庫本身——而那往往正是最少人願意動的那一段。
-
-但真正的重點是節奏。Oracle 自 2026 年 5 月起新增每月 CSPU，排在 2、3、5、6、8、9、11、12 月的第三個週二，補上季度 CPU 之間的空窗；季度 CPU 仍然照舊、仍然累積。Oracle 給的理由值得一字不漏地讀：「最新一代 AI 正在改變軟體漏洞被發現與修復的方式，提升了發現與修復的速度與規模」，因此改為月更，讓客戶「不必等到下一個季度循環就能更早套用重大修補」。注意這是原廠自述自己這一側變快了——不是在說攻擊者變快。對你的意義一樣直接：供給端加快，你的維護窗口沒動，差額就是曝險。
-
-對電子製造業來說，這件事的意義很具體。E-Business Suite、JD Edwards、PeopleSoft、Supply Chain 是 ERP 與供應鏈的骨幹，而產線的停機維護窗口幾乎都是按季排的。原廠節奏變成三倍，你的窗口沒變——中間那段差額，就是曝險。
-
-Oracle 自己在公告裡寫了一句話，值得原文引用：「在部分案例中，據報攻擊者之所以得手，是因為目標客戶未套用已提供的 Oracle 修補。」
-
-這不是理論。E-Business Suite 的 CVE-2026-46817（Oracle Payments，CVSS 9.8，影響 12.2.3 至 12.2.15）已遭實際利用，CISA 在 7 月 15 日把它列入 KEV，報導並指出逾 900 個對外暴露的 EBS 實例處於持續攻擊之下。
-
-三個今天就能問的問題：
-
-• 你的 ERP 維護窗口是按季排的，還是跟得上月更？如果跟不上，缺口有多大、由誰承擔？
-• 你的資產清單裡，Fusion Middleware 這類中介層元件有被獨立列管，還是被「ERP 系統」四個字含混帶過？
-• 對外可達的 EBS 實例，你確定盤點過嗎？
-<div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber #VulnerabilityManagement #OTSecurity</div></div>
-              </div>
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">If your ERP maintenance window is still scheduled by the quarter, here is the bad news: the vendor no longer works that way.
-
-On 18 August Oracle shipped its monthly Critical Security Patch Update: 943 security patches spanning more than two dozen product families. Counted row by row from the advisory's own risk matrices: 467 are remotely exploitable without authentication, 151 CVEs score CVSS 9.0 or above, 89 reach 9.8 or above, and 3 are a straight 10.0.
-
-The risk is not evenly spread. Fusion Middleware and Hyperion take 262 patches each — 182 and 107 respectively remotely exploitable without authentication, both containing CVSS 10.0 entries — which is 524 patches, 55% of the release, between two product families. E-Business Suite takes 120. Oracle Database Products, by contrast, account for 17 in total, with just 6 in the database itself. The pressure sits overwhelmingly in the middleware and performance-management tiers rather than the database, and that is usually the layer nobody wants to touch.
-
-The real story is the cadence. Since May 2026 Oracle has added a monthly CSPU on the third Tuesday of February, March, May, June, August, September, November and December, filling the gaps between the quarterly CPUs, which continue unchanged and remain cumulative. Oracle's own stated rationale is worth reading exactly: "The latest generation of AI is transforming how software vulnerabilities are identified and fixed, increasing the speed and scale of discovery and remediation," and the monthly cadence "enables customers in customer-managed environments to reduce exposure by applying critical fixes sooner, without waiting for the next quarterly cycle." Note that this is the vendor describing its own side getting faster, not the attackers. The implication for you is the same: supply speeds up, your maintenance window does not, and the difference is exposure.
-
-For electronics manufacturing the implication is concrete. E-Business Suite, JD Edwards, PeopleSoft and Supply Chain are the backbone of ERP and supply-chain operations, and production maintenance windows are almost always planned by the quarter. The vendor's cadence just tripled while your window did not. That difference is your exposure.
-
-Oracle put a sentence in the advisory that is worth quoting directly: "In some instances, it has been reported that attackers have been successful because targeted customers had failed to apply available Oracle patches."
-
-This is not theoretical. CVE-2026-46817 in E-Business Suite (Oracle Payments, CVSS 9.8, affecting 12.2.3 through 12.2.15) has been exploited in the wild, CISA added it to the Known Exploited Vulnerabilities catalog on 15 July, and reporting put more than 900 internet-exposed EBS instances under sustained attack.
-
-Three questions worth asking today:
-
-• Is your ERP maintenance window quarterly or monthly? If it cannot keep pace, how large is the gap and who owns it?
-• Does your asset inventory track middleware components like Fusion Middleware separately, or are they folded into a single line that says "ERP"?
-• Have you actually inventoried your internet-reachable EBS instances?
-<div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber #VulnerabilityManagement #OTSecurity</div></div>
-              </div>
-              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
-            </div>
-          </details>
-
-          <details class="channel" data-post-id="20260820-t4-x">
-            <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
-            <div class="draft-body">
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ Oracle 8/18 釋出當月 CSPU：943 個資安修補，橫跨二十多個產品家族。逐列清點：467 項免認證可遠端利用、151 個 CVE 達 CVSS 9.0 以上、89 個達 9.8 以上、3 個滿分 10.0。
-
-2/ 風險不平均。Fusion Middleware 與 Hyperion 各 262 個修補（182 與 107 個免認證可遠端利用，都含 CVSS 10.0），合計佔 55%；資料庫本體只有 6 個。壓力在中介層與應用層，不在資料庫。
-
-3/ 但重點是節奏：Oracle 自 2026 年 5 月起新增每月 CSPU，排在 2、3、5、6、8、9、11、12 月的第三個週二，補季度 CPU 的空窗。季度 CPU 照舊、仍累積，兩者並行不是取代。
-
-4/ Oracle 自己給的理由：導入前沿 AI 模型後，「發現與修復的速度與規模」都提升，所以季度交付不夠用，改成月更讓客戶更早套用。是原廠這一側變快，不是攻擊者變快——但對你的維護窗口是同一件事。
-
-5/ 對製造業的具體意義：EBS、JD Edwards、PeopleSoft、Supply Chain 是 ERP 骨幹，而產線停機維護窗口幾乎都按季排。原廠節奏變三倍、你的窗口沒變，差額就是曝險。
-
-6/ Oracle 自己在公告寫：「在部分案例中，據報攻擊者之所以得手，是因為目標客戶未套用已提供的 Oracle 修補。」EBS 的 CVE-2026-46817（CVSS 9.8）已遭實際利用，CISA 7/15 列入 KEV，逾 900 個對外實例遭持續攻擊。
-<div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber</div></div>
-              </div>
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Oracle shipped its monthly CSPU on 18 Aug: 943 security patches across more than two dozen product families. Counted from the advisory's risk matrices: 467 remotely exploitable without authentication, 151 CVEs at CVSS 9.0 or above, 89 at 9.8 or above, 3 at a straight 10.0.
-
-2/ The risk is not even. Fusion Middleware and Hyperion take 262 patches each (182 and 107 remotely exploitable without authentication, both with CVSS 10.0 entries) — 55% of the release between them. The database itself takes 6. The pressure is in middleware and applications, not the database.
-
-3/ The real story is cadence: since May 2026 Oracle adds a monthly CSPU on the third Tuesday of Feb, Mar, May, Jun, Aug, Sep, Nov and Dec, filling the gaps between quarterly CPUs. The CPUs continue and stay cumulative. This is addition, not replacement.
-
-4/ Oracle's own rationale: with frontier AI models in the loop, the "speed and scale of discovery and remediation" went up, so a quarterly drop no longer fits and monthly CSPUs let customers apply fixes sooner. That is the vendor's own side speeding up, not the attackers' — but for your maintenance window it amounts to the same thing.
-
-5/ Why it matters in manufacturing: EBS, JD Edwards, PeopleSoft and Supply Chain are the ERP backbone, and production maintenance windows are planned by the quarter. The vendor cadence tripled, your window did not, and the difference is exposure.
-
-6/ Oracle's own advisory says: "attackers have been successful because targeted customers had failed to apply available Oracle patches." EBS CVE-2026-46817 (CVSS 9.8) is exploited in the wild, CISA added it to KEV on 15 July, and 900+ exposed instances were reported under attack.
-<div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber</div></div>
-              </div>
-              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
-            </div>
-          </details>
-
-          <details class="channel" data-post-id="20260820-t4-blog">
-            <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
-            <div class="draft-body">
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">標題：當原廠把修補改成月更：Oracle 的節奏轉變對製造業 ERP 的意義
-
-• 本次規模：Oracle 於 2026 年 8 月 18 日釋出 CSPU，943 個新資安修補、橫跨二十多個產品家族；逐列清點為 467 項免認證可遠端利用、151 個 CVE 達 CVSS 9.0 以上、89 個達 9.8 以上、3 個滿分 10.0，風險矩陣涵蓋 925 個不重複 CVE
-• 風險分布：Fusion Middleware 與 Hyperion 各 262 個修補（免認證可遠端利用 182 與 107 個，皆含 CVSS 10.0）、E-Business Suite 120 個（27 個免認證可遠端利用）、Oracle Database Products 合計僅 17 個——壓力集中在中介層與績效管理套件，不在資料庫
-• 節奏改變：自 2026 年 5 月起新增每月 CSPU，排定於 2、3、5、6、8、9、11、12 月的第三個週二，與 1、4、7、10 月的季度 CPU 並行；季度 CPU 仍為累積式，涵蓋先前各月 CSPU
-• 2026 年實際日程：5/28（首次，未依第三週二）、6/16、8/18、9/15、11/17、12/15，下一次季度 CPU 為 10/20
-• 官方理由（Oracle 官方部落格逐字）：最新一代 AI 正在改變軟體漏洞被發現與修復的方式，提升了發現與修復的速度與規模；月更讓客戶不必等到下一個季度循環就能更早套用重大修補
-• Oracle 的責任歸屬句：公告載明「在部分案例中，據報攻擊者之所以得手，是因為目標客戶未套用已提供的 Oracle 修補」
-• 實際遭利用案例：E-Business Suite 的 CVE-2026-46817（Oracle Payments，CVSS 9.8，影響 12.2.3 至 12.2.15），CISA 於 7 月 15 日列入 KEV，逾 900 個對外暴露實例遭持續攻擊
-• 製造業的結構問題一：ERP 停機維護窗口按季排，原廠節奏已改月更，兩者之間的差額就是曝險，且這個差額沒有任何人在正式追蹤
-• 製造業的結構問題二：Fusion Middleware 這類中介層元件通常不在資產清單上獨立列管，被「ERP 系統」一詞含混帶過，於是最高風險的那一段沒有負責人
-• 製造業的結構問題三：對外可達的 EBS 實例往往是歷史遺留（供應商入口、客戶查詢介面），最容易被排除在盤點之外
-• 與本期其他選題的交叉線索：GitLab 8/17 排程外緊急修補、Black Kite 供應鏈報告指中型供應商平均 197 天偵測——修補時限的計價單位正在從「季」壓縮到「天」甚至「小時」，而供應鏈末端還停在 197 天
-• 企業行動清單：把 ERP 維護窗口從季改為月並指派缺口責任人、將中介層元件在資產清單中獨立列管、盤點所有對外可達的 EBS 與應用層入口、訂閱 Oracle CSPU 與 CPU 兩條公告線、把「原廠節奏快於維護窗口」列為正式風險項目並定期複審
-<div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber #VulnerabilityManagement</div></div>
-              </div>
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Title: When the Vendor Goes Monthly: What Oracle's Cadence Shift Means for Manufacturing ERP
-
-• Scale: Oracle's Critical Security Patch Update of 18 August 2026 delivered 943 new security patches across more than two dozen product families; counted row by row, 467 are remotely exploitable without authentication, 151 CVEs score CVSS 9.0 or above, 89 reach 9.8 or above and 3 are a straight 10.0, across 925 distinct CVEs in the risk matrices
-• Risk distribution: Fusion Middleware and Hyperion took 262 patches each (182 and 107 remotely exploitable without authentication, both with CVSS 10.0 entries), E-Business Suite 120 (27 remotely exploitable without authentication) and Oracle Database Products 17 in total, so the pressure sits in the middleware and performance-management tiers rather than the database
-• Cadence change: since May 2026 a monthly CSPU lands on the third Tuesday of February, March, May, June, August, September, November and December, running alongside the quarterly CPUs of January, April, July and October, which remain cumulative and still contain the fixes from prior monthly CSPUs
-• Actual 2026 dates: 28 May (the first, off the third-Tuesday pattern), 16 June, 18 August, 15 September, 17 November and 15 December, with the next quarterly CPU on 20 October
-• Stated rationale (Oracle's own blog, verbatim): the latest generation of AI is transforming how software vulnerabilities are identified and fixed, increasing the speed and scale of discovery and remediation; the monthly cadence lets customers apply critical fixes sooner without waiting for the next quarterly cycle
-• Oracle's own attribution: the advisory states that "in some instances, it has been reported that attackers have been successful because targeted customers had failed to apply available Oracle patches"
-• Exploited in the wild: CVE-2026-46817 in E-Business Suite (Oracle Payments, CVSS 9.8, affecting 12.2.3 through 12.2.15), added to CISA's Known Exploited Vulnerabilities catalog on 15 July, with more than 900 internet-exposed instances reported under sustained attack
-• Structural problem one: ERP maintenance windows are planned quarterly while the vendor now ships monthly, and nobody formally tracks the gap between the two
-• Structural problem two: middleware components such as Fusion Middleware are rarely inventoried separately, folded instead into a single line reading "ERP", which leaves the highest-risk tier without an owner
-• Structural problem three: internet-reachable EBS instances are often legacy surfaces such as supplier portals and customer lookup interfaces, and are the most likely to be left out of an inventory
-• Cross-reference with this issue's other topics: GitLab's out-of-band emergency patch on 17 August and Black Kite's supply-chain report finding that mid-market suppliers still average 197 days to detect together show remediation deadlines compressing from quarters toward days and hours, while the tail of the supply chain remains at 197 days
-• Enterprise action list: move the ERP maintenance window from quarterly to monthly and assign an owner for the residual gap, inventory middleware components separately, enumerate every internet-reachable EBS and application-tier entry point, subscribe to both the CSPU and CPU advisory streams, and register "vendor cadence exceeds maintenance window" as a formal, periodically reviewed risk item
-<div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber #VulnerabilityManagement</div></div>
-              </div>
-              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
-            </div>
-          </details>
-
-          <details class="channel" data-post-id="20260820-t4-nl">
-            <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
-            <div class="draft-body">
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">Oracle 於 2026 年 8 月 18 日釋出當月 Critical Security Patch Update，一次 943 個新資安修補，橫跨二十多個產品家族；逐列清點公告風險矩陣為 467 項免認證即可遠端利用、151 個 CVE 達 CVSS 9.0 以上、89 個達 9.8 以上、3 個滿分 10.0。風險高度集中：Fusion Middleware 與 Hyperion 各佔 262 個修補（免認證可遠端利用 182 與 107 個，皆含 CVSS 10.0），合計佔 55%，而 Oracle Database Products 合計僅 17 個。更值得注意的是節奏本身——Oracle 自 2026 年 5 月起在季度 CPU 之外新增每月 CSPU，排定於 2、3、5、6、8、9、11、12 月的第三個週二釋出，季度 CPU 仍維持累積式，兩者並行而非取代；Oracle 官方給的理由是自身導入前沿 AI 模型後，漏洞發現與修復的速度與規模皆提升，月更可讓客戶不必等到下一個季度循環。Oracle 在公告中載明，部分案例中攻擊者之所以得手，是因為目標客戶未套用已提供的修補；E-Business Suite 的 CVE-2026-46817（CVSS 9.8）已遭實際利用，CISA 於 7 月 15 日列入 KEV。對電子製造業的意涵：EBS、JD Edwards、PeopleSoft 與 Supply Chain 是 ERP 骨幹，而停機維護窗口多半按季排定，原廠節奏與維護窗口之間的差額即為曝險。建議把 ERP 維護窗口改為月度並指派缺口責任人、將中介層元件在資產清單中獨立列管、盤點所有對外可達的 EBS 入口。主要來源：Oracle 官方 CSPU 公告（8/18）、Oracle 官方資安公告總表、Help Net Security（5/5）。
-<div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber</div></div>
-              </div>
-              <div class="lang-block">
-                <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Oracle released its monthly Critical Security Patch Update on 18 August 2026, delivering 943 new security patches across more than two dozen product families; counted row by row from the advisory, 467 are remotely exploitable without authentication, 151 CVEs score CVSS 9.0 or above, 89 reach 9.8 or above and 3 are a straight 10.0. The risk is concentrated: Fusion Middleware and Hyperion take 262 patches each (182 and 107 remotely exploitable without authentication, both with CVSS 10.0 entries), 55% of the release between them, while Oracle Database Products account for 17 in total. The cadence matters more than the count. Since May 2026 Oracle has run a monthly CSPU on the third Tuesday of February, March, May, June, August, September, November and December, alongside quarterly CPUs that remain cumulative, an addition rather than a replacement; Oracle's stated rationale is that the latest generation of AI has increased the speed and scale of its own vulnerability discovery and remediation, so the monthly cadence lets customers apply critical fixes without waiting for the next quarterly cycle. Oracle's advisory notes that in some instances attackers succeeded because targeted customers had failed to apply available patches, and CVE-2026-46817 in E-Business Suite (CVSS 9.8) is already exploited in the wild, added to CISA's Known Exploited Vulnerabilities catalog on 15 July. For electronics manufacturing the implication is direct: EBS, JD Edwards, PeopleSoft and Supply Chain form the ERP backbone while maintenance windows are planned quarterly, and the gap between vendor cadence and maintenance window is exposure. Recommended actions are to move the ERP maintenance window to monthly with an owner for the residual gap, inventory middleware components separately, and enumerate every internet-reachable EBS entry point. Sources: Oracle CSPU advisory (8/18), Oracle security alerts index, Help Net Security (5/5).
-<div class="hashtags">#PatchManagement #ERPSecurity #ManufacturingCyber</div></div>
-              </div>
-              <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
-            </div>
-          </details>
-        </div>
       </article>
 
       <div style="text-align:center; color:var(--text-muted); font-size:0.9rem; margin-top:1rem;">
