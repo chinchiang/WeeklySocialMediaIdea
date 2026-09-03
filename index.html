@@ -43,608 +43,665 @@
     <section class="summary">
       <div class="summary-head">
         本期素材摘要
-        <span>2026/08/31（週一）產出 · 涵蓋 8/27–8/30 新聞</span>
+        <span>2026/09/03（週四）產出 · 涵蓋 8/31–9/2 新聞</span>
       </div>
       <div class="stats">
         <div class="stat"><b>3</b><span>本期選題</span></div>
-        <div class="stat"><b>6</b><span>🏛 官方來源</span></div>
+        <div class="stat"><b>15</b><span>🏛 官方來源</span></div>
         <div class="stat"><b>3</b><span>📰 一線媒體</span></div>
         <div class="stat"><b>0</b><span>📡 聚合/部落格</span></div>
         <div class="stat"><b>24</b><span>可複製雙語草稿</span></div>
         <div class="stat"><b>4</b><span>發布管道</span></div>
       </div>
       <ul class="summary-topics">
-        <li>選題 01 · AI 安全 / 能力評估 — 代理進了前 25 強的 17 支隊伍，但全解題板的是人類 <span class="cnt">（3 個來源）</span></li>
-        <li>選題 02 · 供應鏈資安 / 執法 — TeamPCP 兩人遭澳洲與 FBI 聯手起訴，逾千家組織受害 <span class="cnt">（3 個來源）</span></li>
-        <li>選題 03 · 電子製造 / 營運持續 — Boston Scientific 公告寫明「影響製造產品的能力」 <span class="cnt">（3 個來源）</span></li>
+        <li>選題 01 · AI 治理 / 前沿模型 — 三家實驗室同一週把「攻擊級能力」關進審查名單 <span class="cnt">（7 個來源）</span></li>
+        <li>選題 02 · AI 安全 / 開發工具鏈 — 一個 git 設定值打穿七款 AI coding agent <span class="cnt">（7 個來源）</span></li>
+        <li>選題 03 · AI 治理 / 開源社群 — Debian 以 425 張選票決定 LLM 政策，禁用案出局 <span class="cnt">（4 個來源）</span></li>
       </ul>
       <div class="fx-rollup" id="fx-rollup"></div>
       <div class="summary-note">
-        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確發布日期、或本次無法開啟原文核對之來源——<strong>本期無任何 * 標註</strong>。<strong>本期三個選題的一手來源皆已直接開啟原文核對</strong>：澳洲聯邦警察媒體發布、Aikido Security 分析、Boston Scientific 官方更新頁與其 SEC Form 8-K，均為逐字比對；未使用任何聚合站或部落格佐證。三則彼此不重疊——選題 01 是 AI 代理的能力量測，選題 02 是供應鏈攻擊集團遭執法起訴，選題 03 是單一製造商的營運中斷。<strong>選題 02 是「同一條線的重大新進展」，不是重複</strong>：TeamPCP 被指涉的受害專案清單中包含 <em>LiteLLM 與 Aqua 的 Trivy</em>——正是本站 2026-08-17 期選題 01 的主題。當時寫的是攻擊本身，本期寫的是執法結果、規模量化與行為者側寫，兩者不共用事實。與 2026-08-24 期選題 02（Rust crates 投毒）亦無關聯證據，未混寫。<strong>本期三處必須連同數字一起引用的限定</strong>：（一）選題 01 的 Hack The Box 報告 PDF 約 10.7 MB 且以圖像為主，<em>本次未能擷取文字逐字比對</em>，主要數字改以兩份獨立報導對同一份報告的引述互相印證；NeuroGrid CTF 的四項數字（3.2 倍、1.69 倍、三到四倍速度、36 對 32 題）<em>目前為單一來源</em>；且該數據由賽事主辦方自行蒐集發布，原始資料未公開複驗。（二）選題 02 的全部指控<em>均為涉嫌、尚未經法院審判</em>，「數億美元全球修復成本」為媒體引述的估計值而非查核金額；另須保留一項長期被誤報的澄清——TeamPCP <em>並非</em> 2025 年夏天原始 S1ngularity／Shai-Hulud 攻擊的行為者，他們是複製了該蠕蟲，原始行為者至今未知。（三）選題 03 的 8-K 明載公司<em>尚未判定</em>事件是否具重大性，既非確認重大也非確認不重大；攻擊手法、行為者與是否有資料外洩均未公開，無人宣稱犯案，本站不推測攻擊類型；所述狀態為截至 <strong>8/29 16:55（美東）</strong>，事件仍在進行中。<strong>兩處官方與媒體的細節差異，本期採官方</strong>：AFP 原文載明搜索地點為 Cottesloe、Hamilton Hill 與 Mandurah <em>三處</em>（媒體只提兩處）；刑度採 AFP 逐項數字（3LA 條最高 10 年），不引用媒體「3 至 20 年」的區間概括。<strong>下一期</strong>為 9/3（週四），涵蓋 8/31–9/2。</div>
+        來源分級：🏛 官方一手來源 · 📰 一線媒體 · 📡 聚合站/部落格（僅作輔助佐證）。標註 * 者為未能取得原文精確發布日期、或本次無法開啟原文核對之來源——<strong>本期有 2 處 * 標註，皆集中在選題 01</strong>。<strong>本期絕大多數一手來源已直接開啟原文逐字核對</strong>：Google 的 Gemini 3.8 Flash／Cyber 與 Fairwind Program 公告、Anthropic 的 Fable 5.1／Mythos 5.1、Enterprise Frontier Safeguards 與 alignment 三份公告、Manifold Security 的 GitSpawn 研究、goose 的 GitHub 安全諮詢、Sonar 的技術分析，以及 Debian 的 GR 結果公告、官方投票頁與 tally sheet 原始檔；三項 CVE 另直接查詢 <em>NVD API</em> 取得原始 JSON，未經媒體轉手。未使用任何聚合站或部落格佐證。三則彼此不重疊——選題 01 是模型供應商如何限制能力的流向，選題 02 是開發者本機的 git 設定與代理啟動流程被利用，選題 03 是使用端組織如何規範自己的貢獻者。<strong>本期兩處無法開啟的一手來源</strong>：openai.com 對自動化用戶端回傳 HTTP 403 並附 <em>cf-mitigated: challenge</em>（Cloudflare 人機驗證），多次嘗試皆未能取得內文，故選題 01 中 OpenAI 的全部陳述改以 SecurityWeek（9/2）為依據，撰稿時須寫成「OpenAI 表示（經 SecurityWeek 報導）」；Anthropic 的 Fable 5.1／Mythos 5.1 公告頁僅能確認為 2026 年 9 月，未能取得精確日期。<strong>本期三處媒體與一手來源的差異，全部採一手來源</strong>：（一）媒體稱 Gemini 3.8 Flash Cyber「超越 Anthropic Mythos 5 與 OpenAI GPT-5.6 Sol」，Google 原文<em>並未點名</em>任何競品，且自承在外部修補基準 CWE-Bench 上 pass@1 為 <strong>47.2%</strong>、<em>低於</em>「一個領先前沿模型的 47.8%」——本期保留此落後數字。（二）媒體把 CVE-2026-72718 寫成「CVSS 4.0」，查 NVD 與 GitHub 諮詢，<em>4.0 是 CVSS 版本號、分數為 7.0（High）</em>。（三）媒體把 CVE-2026-55607 歸類為「Claude Code fsmonitor」，NVD 原始描述其核心為 <em>worktree 目錄混淆</em>（影響 2.1.38–2.1.163），與 Manifold 表中 2.1.196 修補的 core.fsmonitor 路徑不是同一項，本期分列處理。<strong>本期三處必須連同數字一起引用的限定</strong>：（一）選題 01 的全部效能數字（CyberGym、20 語言內部基準、CWE-Bench、Chrome 團隊 2.6 倍、ExploitBench 滿分、91.5% 越獄拒絕率）<em>皆為廠商自述或其合作夥伴回報，無任何獨立第三方複現</em>；且「Critical」是 OpenAI 內部框架的<em>自訂自評</em>分級，非外部機構認證。（二）選題 02 的修補狀態為 <strong>9/1 的快照</strong>，AI 工具更新極快，再利用前必須重新確認版本，不可把「未修」寫成持續事實；CVE-2026-71963（Hermes）本期查詢 NVD <em>查無資料</em>，「VulnCheck 指派」「廠商未分流」僅有研究方單方陳述。（三）選題 03 的 <strong>425 張選票為本站依官方 tally sheet 清點</strong>而非官方公布統計值；另須避免一個常見誤植——網路流傳的「LLM 使用難以甚至不可能偵測」出自<em>落選的選項 6</em>，不是勝出的選項 5；且「不對著作權表態」<em>不等於</em>「沒有著作權問題」。<strong>與本站既有選題的關係</strong>：選題 01 <em>不重複</em> 2026-08-13 期的 Anthropic 評測事件揭露（該則寫的是三起入侵本身，本期僅作脈絡引用），亦不重複 2026-08-03 期的 OpenAI–Hugging Face 事件；選題 02 <em>不重複</em> 2026-08-24 期的 Rust crates 投毒與 2026-08-27 期的 NemoClaw／Ollama 模型投毒，載體與修補責任方均不同；選題 03 <em>不重複</em> EU AI Act 系列選題，前者為法規強制義務、本則為社群自治規範。<strong>下一期</strong>為 9/7（週一），涵蓋 9/3–9/6。</div>
     </section>
 
     <section>
       <article class="week-card">
         <div class="week-header">
           <div>
-            <div class="week-date">2026 年 8 月 31 日（週一）</div>
-            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/27–8/30 本期重點新聞</div>
+            <div class="week-date">2026 年 9 月 3 日（週四）</div>
+            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.2rem;">涵蓋 8/31–9/2 本期重點新聞</div>
           </div>
           <span class="week-label">最新一期</span>
         </div>
         <!-- 選題 1 -->
         <div class="topic">
-          <div class="topic-num">選題 01 · AI 安全 / 能力評估</div>
-          <h3>AI 代理出現在前 25 強的 17 支隊伍裡——但把整張題板做完的，還是人類隊伍</h3>
-          <p>Hack The Box 公布 2026 Global Cyber Skills Benchmark（Project Nightfall）的代理使用數據：代理帳號僅佔全部註冊帳號的 2.7%，卻出現在前 25 強中的 17 支隊伍（68%），產出 4.2% 的旗標與 4.6% 的分數——AI 出現在最強的實踐者身旁，而非取代他們。條件更乾淨的 2025 年 11 月 NeuroGrid CTF 則顯示：全場 AI 側破題率 3.2 倍、前 5% 之中僅 1.69 倍，最佳 AI 隊速度快三到四倍，但唯一做完全部 36 題的是人類隊伍。AI 買到的是速度，不是完整度。</p>
+          <div class="topic-num">選題 01 · AI 治理 / 前沿模型</div>
+          <h3>同一個模型，兩套安全封套——三家前沿實驗室在同一週把「攻擊級能力」關進審查名單</h3>
+          <p>9/1–9/2，Google、Anthropic、OpenAI 各自發布網路安全相關公告，結構一致：把模型能力與安全封套拆開，較寬鬆的那一套只給通過審查的對象。Google 的 Gemini 3.8 Flash Cyber「只提供給可信的防守方」，經 Fairwind Program 開放給政府與國家級網路主管機關、關鍵基礎設施營運者、核心技術平台三類（逾 650 家夥伴）；Anthropic 直言 Fable 5.1 與 Mythos 5.1「是同一個模型，但安全防護的層級不同」，且 Fable 5.1「可以用來發現軟體漏洞——但不能用來為它們開發 exploit」；OpenAI 則表示 Astra 首次觸及自家 Preparedness Framework 的「Critical」網路安全等級，完整能力發布時不廣泛開放。治理的主軸從「模型能不能做」換成了「誰可以用」。</p>
           <div class="sources">
-            <a class="source-tag" href="https://www.hackthebox.com/hubfs/The_AI-Accelerated_Cyber_Team.pdf" target="_blank" rel="noopener">🏛 Hack The Box 報告《The AI-Accelerated Cyber Team》</a>
-            <a class="source-tag" href="https://ctf.hackthebox.com/event/details/global-cyber-skills-benchmark-ctf-2026-project-nightfall-3296" target="_blank" rel="noopener">🏛 Hack The Box：GCSB CTF 2026（Project Nightfall）活動頁</a>
-            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/27/ai-ctf-security-teams/" target="_blank" rel="noopener">📰 Help Net Security 8/27</a>
+            <a class="source-tag" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener">🏛 Google 官方部落格：Gemini 3.8 Flash 與 3.8 Flash Cyber 9/2</a>
+            <a class="source-tag" href="https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/" target="_blank" rel="noopener">🏛 Google 官方部落格：Fairwind Program 9/2</a>
+            <a class="source-tag" href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank" rel="noopener">🏛 Anthropic：Enterprise Frontier Safeguards 9/1</a>
+            <a class="source-tag" href="https://www.anthropic.com/news/improving-alignment-security-efforts" target="_blank" rel="noopener">🏛 Anthropic：Improving our alignment and security efforts 8/31</a>
+            <a class="source-tag" href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">🏛* Anthropic：Claude Fable 5.1 與 Mythos 5.1（未能確認精確日期）</a>
+            <a class="source-tag" href="https://openai.com/index/path-to-astra/" target="_blank" rel="noopener">🏛* OpenAI：Path to Astra（Cloudflare 阻擋，本站未能開啟）</a>
+            <a class="source-tag" href="https://www.securityweek.com/openais-astra-becomes-first-model-to-cross-critical-cybersecurity-threshold/" target="_blank" rel="noopener">📰 SecurityWeek 9/2</a>
           </div>
 
-          <details class="channel" data-post-id="20260831-t1-li">
+          <details class="channel" data-post-id="20260903-t1-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">你會預期 AI 代理是拿來補弱隊的。數據說剛好相反。
+                <div class="draft-text">9 月 1 日到 2 日，Google、Anthropic、OpenAI 各自發了公告。三家用的詞不一樣，做的事是同一件。
 
-Hack The Box 公布了 2026 全球資安技能基準賽（代號 Project Nightfall）的代理使用情況：
+Anthropic 講得最直白：「Claude Fable 5.1 與 Claude Mythos 5.1 是同一個模型，但安全防護的層級不同。」
 
-• 代理帳號只佔全部註冊帳號的 2.7%
-• 但前 25 強中，有 17 支隊伍（68%）用了代理
-• 前 100 強中有 33 支
-• 代理產出了 4.2% 的提交旗標、4.6% 的獲得分數
+同一個模型。兩個名字。差別在封套。
 
-最不需要幫手的那群人，是最早把它用起來的人。而可能真的需要幫手的隊伍，多半沒有用——差距也沒有因此縮小。
+Google 的版本是 Gemini 3.8 Flash 和 Gemini 3.8 Flash Cyber。官方原文說 Cyber 版「配備一組較寬鬆的網路安全緩解措施，因此只提供給可信的防守方」——取得方式是申請 Fairwind Program，對象排成三類：政府與國家級網路主管機關、關鍵基礎設施營運者、核心技術平台。參與組織要同意把存取權限制在內部資安、事件應變或滲透測試團隊，並部署多因素驗證。官方說目前有逾 650 家夥伴。
 
-Hack The Box 執行長 Haris Pylarinos 的定調值得整段引用：「我們的數據顯示，AI 最常出現在一些最強的實踐者身旁，而不是取代他們。隨著代理變得更有能力，人的判斷、驗證與動手的技術能力會變得更重要，而不是更不重要。」
+OpenAI 的版本是把自己的新模型 Astra 放進 Preparedness Framework 的「Critical」網路安全等級——這是該公司模型第一次進到這一類。那個等級的定義是：能在眾多防護良好的系統上獨立找出並利用零日漏洞，或只憑一句高階指令對強化過的目標執行完整攻擊。OpenAI 說完整的網路安全能力發布時不會廣泛開放，先給一組測試者，之後透過 Daybreak Blue 擴大。
 
-但我更欣賞這份報導的另一件事：它主動把因果關係講死了。
+所以，過去兩年安全討論的主軸是「模型能不能做這件事」。這一週三家給的答案一致：模型當然能做，問題是誰可以用。
 
-「靠近頂端不等於造成頂端。」最強的隊伍只是早就把 AI 折進他們的工作方式了。
+有兩件事我覺得值得停下來想。
 
-同樣地，中位破題時間從兩年前的 26 小時掉到 13.8 小時——聽起來很驚人，但題板規模、題型組合、參賽者、準備方式與工具在這兩年全都變了，資料無法把這些因素分開。所以那個下降告訴你的是「有效工作發生在什麼時候」，不是「誰變強了」。
+第一，能力邊界被切在一個很具體的位置上。Anthropic 的原文是 Fable 5.1「現在可以用來發現軟體漏洞——但不能用來為它們開發 exploit」。Google 也說他們「從一開始就投資在漏洞修補，並把它的優先序放在利用這類攻擊性能力之前」。找得到，但打不出來。這條線在工程上非常難維持，而目前沒有任何獨立第三方的紅隊結果可以告訴我們它能撐多久。
 
-真正接近對照試驗的，是一年前的 NeuroGrid CTF：AI 輔助隊與純人類隊做同一組題目。
+第二，這些數字全部是廠商自己測的。Gemini 3.8 Flash Cyber 在 CyberGym 上超越更大的前沿模型、在 20 種語言的內部基準上成功率超過 70%、Chrome 團隊回報正確修補數是 2.6 倍；Astra 在 ExploitBench 拿到滿分、自己找到 2 個零日、拒絕 91.5% 的網路安全越獄嘗試（前代是 59%）。沒有一項來自獨立複現。
 
-結果是分裂的：
+而且 Google 自己也放了一個不利於自己的數字：在 Collinear 執行的外部修補基準 CWE-Bench 上，3.8 Flash Cyber 的 pass@1 是 47.2%，官方原文寫的是「相較於一個領先前沿模型的 47.8%」——它是輸的，主張的優勢是同等表現下成本低很多。這種自己揭露落後數字的作法，比任何一項超越都更值得注意。
 
-• 全場來看，AI 那側的破題率是 3.2 倍
-• 但在前 5% 的隊伍中，只剩 1.69 倍
-• 速度相反：最好的 AI 輔助隊快了三到四倍
-• 而唯一把 36 題全做完的，是人類隊伍。最好的 AI 隊停在 32 題
+如果你的組織屬於那三類，Fairwind 是現在就該去申請的。如果不屬於，你要面對的現實是：你的防守方拿到的工具，和被排進名單的同業不是同一套——而攻擊方那邊沒有名單。
 
-一句話：AI 買到的是速度，不是完整度。而在最強的那一群人之間，連速度的相對優勢都會收斂。
-
-如果你在排紅隊、滲透測試或弱點管理的工作分配，這組數字可以直接當判準：哪些任務適合交給代理跑得快，哪些必須留給人做最終驗證與收尾。
-
-兩個誠實的限定：NeuroGrid 那四個數字目前只有單一來源；而這整份數據是賽事主辦方自行蒐集與發布的，原始資料未公開供第三方複驗。
-<div class="hashtags">#AISecurity #RedTeam #CyberSkills #AgenticAI #SecOps</div></div>
+Google 自己的說法是，提早給可信防守方能力，是給他們「一段關鍵的調適窗口」。這句話反過來讀，就是這個窗口有期限。
+<div class="hashtags">#AIGovernance #AISecurity #FrontierAI #CyberDefense #RiskManagement</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">You would expect AI agents to be propping up the struggling teams. The data says the opposite.
+                <div class="draft-text">Between 1 and 2 September, Google, Anthropic and OpenAI each published an announcement. They used different words. They did the same thing.
 
-Hack The Box published agent usage figures from the 2026 Global Cyber Skills Benchmark, run as Project Nightfall:
+Anthropic put it most plainly: "Claude Fable 5.1 and Claude Mythos 5.1 are the same model, but with different levels of safeguards."
 
-• Agent accounts were just 2.7% of all registered accounts
-• But 17 of the Top 25 teams (68%) had one
-• So did 33 of the Top 100
-• Agents produced 4.2% of submitted flags and 4.6% of awarded points
+One model. Two names. The difference is the envelope.
 
-The people who least needed help were the ones who brought it. The teams who might have used a hand mostly did not — and the gap did not close.
+Google's version is Gemini 3.8 Flash and Gemini 3.8 Flash Cyber. The Cyber variant, in Google's own words, "ships with a more permissive set of mitigations for cybersecurity, and as such, is only available to trusted defenders." You get it by applying to the Fairwind Program, which is staged across three categories: governments and national cyber authorities, critical infrastructure operators, and core technology platforms. Participating organisations must agree to limit access to employees in their internal cybersecurity, incident response or penetration testing teams, and to deploy protections such as multi-factor authentication. Google reports more than 650 participating partners globally.
 
-Hack The Box CEO Haris Pylarinos framed it well: "Our data shows that AI is appearing most often alongside some of the strongest practitioners, not instead of them. As agents become more capable, human judgment, validation and hands-on technical skill become more important, not less."
+OpenAI's version is that its newest model, Astra, has reached the "Critical" cybersecurity capability level under its Preparedness Framework — the first time any of its models has been placed there. That level applies when a model can independently find and exploit zero-day vulnerabilities across many well-defended systems, or carry out a complete cyberattack against a hardened target from only a high-level instruction. OpenAI says full cybersecurity capabilities will not be widely available at launch: a group of testers gets early access first, with wider availability through the Daybreak Blue program.
 
-What I appreciate more is that the reporting shut down the causal reading itself.
+For two years the safety conversation has been about whether a model can do this. This week all three gave the same answer: of course it can. The question is who gets to use it.
 
-"Being near the top is not the same as causing it." The best teams had simply already folded AI into how they work.
+Two things are worth stopping on.
 
-Likewise, median time-to-solve fell from 26 hours two years ago to 13.8 — striking, until you note that board size, challenge mix, who showed up, how they prepared and what tooling they had all changed over that stretch, and the data cannot separate them. The drop tells you when useful work happened, not how skilled anyone became.
+First, the capability boundary is being drawn in a very specific place. Anthropic's wording is that Fable 5.1 "can now be used to discover software vulnerabilities — though not to develop exploits for them." Google says it "invested in vulnerability fixing from the start, and prioritized it over offensive capabilities like exploitation." Find it, but don't weaponise it. That line is extremely hard to hold in engineering terms, and there is currently no independent red-team result telling us how long it holds.
 
-The cleaner test was a year earlier, at NeuroGrid CTF, putting AI-augmented and human-only teams on the same challenge set.
+Second, every one of these numbers is vendor-reported. Gemini 3.8 Flash Cyber surpassing significantly larger frontier models on CyberGym, exceeding a 70% success rate on an internal benchmark spanning 20 languages, Chrome Security reporting 2.6 times more correct patches; Astra scoring a perfect result on ExploitBench, finding two zero-days on its own, declining 91.5% of cyber jailbreak attempts against 59% for its predecessor. Not one of these has been independently reproduced.
 
-The result splits:
+And Google published a number that works against it: on CWE-Bench, the external patching benchmark run by Collinear, 3.8 Flash Cyber reaches pass@1 of 47.2% "compared to a leading frontier model at 47.8%." It loses. The claimed advantage is comparable performance at significantly lower cost. That willingness to publish the losing number is more notable than any of the wins.
 
-• Across the whole field, the AI side solved at 3.2 times the rate
-• Among the Top 5%, that shrank to 1.69
-• Speed went the other way: the best AI-augmented teams worked three to four times faster
-• And the team that finished all 36 challenges was human. The best AI team stopped at 32
+If your organisation falls into one of those three categories, Fairwind is an application to file now. If it does not, the reality is that your defenders and your listed peers are not holding the same tools — and there is no vetting list on the attacker's side.
 
-In one line: AI buys speed, not completeness. And among the strongest practitioners, even the speed advantage converges.
-
-If you are allocating red team, pentest or vulnerability management work, that is directly usable: which tasks benefit from an agent running fast, and which need a human for final validation and the last mile.
-
-Two honest qualifiers: those four NeuroGrid figures currently rest on a single source, and the whole dataset is self-collected and self-published by the event organiser, with the underlying data not open for third-party replication.
-<div class="hashtags">#AISecurity #RedTeam #CyberSkills #AgenticAI #SecOps</div></div>
+Google's own framing is that giving trusted defenders early access provides "a vital adaptation window." Read the other way, that means the window has an expiry date.
+<div class="hashtags">#AIGovernance #AISecurity #FrontierAI #CyberDefense #RiskManagement</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t1-x">
+          <details class="channel" data-post-id="20260903-t1-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ 你會預期 AI 代理是拿來補弱隊的。2026 全球資安技能基準賽（Project Nightfall）的數據剛好相反：代理只佔全部註冊帳號的 2.7%，卻出現在前 25 強中的 17 支隊伍（68%）。
+                <div class="draft-text">1/ 9/1–9/2，Google、Anthropic、OpenAI 各發了一份公告。三家的詞不一樣，做的事一樣：把模型能力和安全封套拆開，較寬鬆的那一套只給通過審查的人。
 
-2/ 其他數字：93 個代理帳號分佈在 54 支隊伍、46 個活躍；產出 4.2% 的提交旗標、4.6% 的分數；前 100 強有 33 支隊伍用了代理。最不需要幫手的人，最早把它用起來。
+2/ Anthropic 講得最直白：「Claude Fable 5.1 與 Claude Mythos 5.1 是同一個模型，但安全防護的層級不同。」同一個模型，兩個名字，差別在封套。
 
-3/ Hack The Box 執行長 Haris Pylarinos：「AI 最常出現在一些最強的實踐者身旁，而不是取代他們。隨著代理變得更有能力，人的判斷、驗證與動手的技術能力會變得更重要，而不是更不重要。」
+3/ Google：Gemini 3.8 Flash Cyber「配備一組較寬鬆的網路安全緩解措施，因此只提供給可信的防守方」。取得方式是 Fairwind Program，對象三類：政府與國家級網路主管機關、關鍵基礎設施營運者、核心技術平台。官方稱逾 650 家夥伴。
 
-4/ 但報導自己把因果講死了：「靠近頂端不等於造成頂端。」最強的隊伍只是早就把 AI 折進工作流程了。
+4/ 參與 Fairwind 的義務也寫得很清楚：把存取權限制在內部資安、事件應變或滲透測試團隊的員工，並部署多因素驗證等保護。資格審查本身就是治理介面。
 
-5/ 中位破題時間：兩年前 26 小時 → 2026 年 13.8 小時。少一半。但題板、題型、參賽者、準備、工具全都變了，資料無法分離——這個下降說的是「有效工作何時發生」，不是「誰變強了」。
+5/ OpenAI：新模型 Astra 首次達到自家 Preparedness Framework 的「Critical」網路安全等級。定義是能在眾多防護良好的系統上獨立找出並利用零日，或只憑高階指令對強化目標執行完整攻擊。完整能力發布時不廣泛開放，先給測試者，再經 Daybreak Blue 擴大。
 
-6/ 全解題板的隊伍：2024 年 2 支 → 2025 年 3 支 → 2026 年 15 支。同樣要加註：題板設計也變了，這追蹤的是廣度、協作與耐力。
+6/ 能力邊界被切在一個很具體的位置：Fable 5.1「可以用來發現軟體漏洞——但不能用來為它們開發 exploit」。Google 也說把修補的優先序放在利用之前。找得到但打不出來。這條線在工程上很難維持，而且目前沒有獨立紅隊結果可以說它能撐多久。
 
-7/ 更乾淨的對照在一年前的 NeuroGrid CTF——同一組題目，AI 輔助隊 vs 純人類隊：全場 AI 側破題率 3.2 倍；但前 5% 之中只剩 1.69 倍。
+7/ 所有效能數字都是廠商自述：CyberGym 超越更大的前沿模型、20 語言內部基準成功率超過 70%、Chrome 團隊回報 2.6 倍正確修補；Astra ExploitBench 滿分、自行找到 2 個零日、拒絕 91.5% 網路安全越獄（前代 59%）。沒有一項獨立複現。
 
-8/ 速度相反：最好的 AI 輔助隊快三到四倍。而唯一把 36 題全做完的是人類隊伍，最好的 AI 隊停在 32 題。
+8/ 但 Google 也放了對自己不利的數字：外部修補基準 CWE-Bench 上，3.8 Flash Cyber 的 pass@1 是 47.2%，官方原文寫「相較於一個領先前沿模型的 47.8%」。它是輸的，賣點是成本。願意寫出落後數字，比任何一項超越都值得注意。
 
-9/ 一句話：AI 買到的是速度，不是完整度。排工作分配時可以直接用。限定：NeuroGrid 那四個數字目前單一來源，且整份數據由賽事主辦方自行蒐集發布。
-<div class="hashtags">#AISecurity #RedTeam #AgenticAI #SecOps</div></div>
+9/ 提醒一件事：「Critical」是 OpenAI 自家框架的分級，由 OpenAI 自訂、自評，不是任何外部機構的認證。轉述時不要省略這一層。
+
+10/ 對企業的實務結論：屬於那三類就現在去申請 Fairwind；不屬於的，要接受你的防守方和被排進名單的同業拿的不是同一套工具。而攻擊方那邊沒有名單。Google 自己說這是給防守方「一段關鍵的調適窗口」——反過來讀，窗口有期限。
+<div class="hashtags">#AIGovernance #AISecurity #FrontierAI #CyberDefense</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ You would expect AI agents to prop up the struggling teams. The 2026 Global Cyber Skills Benchmark (Project Nightfall) says the opposite: agents were 2.7% of registered accounts but appeared in 17 of the Top 25 teams (68%).
+                <div class="draft-text">1/ Between 1–2 Sept, Google, Anthropic and OpenAI each shipped an announcement. Different words, same move: split model capability from its safeguard envelope, and gate the permissive envelope behind vetting.
 
-2/ More numbers: 93 agent accounts across 54 teams, 46 active; 4.2% of submitted flags and 4.6% of awarded points; 33 of the Top 100 had one. The people who least needed help brought it first.
+2/ Anthropic said it most plainly: "Claude Fable 5.1 and Claude Mythos 5.1 are the same model, but with different levels of safeguards." One model, two names, the difference is the envelope.
 
-3/ Hack The Box CEO Haris Pylarinos: "AI is appearing most often alongside some of the strongest practitioners, not instead of them. As agents become more capable, human judgment, validation and hands-on technical skill become more important, not less."
+3/ Google: Gemini 3.8 Flash Cyber "ships with a more permissive set of mitigations for cybersecurity, and as such, is only available to trusted defenders." Access runs through the Fairwind Program, staged across governments and national cyber authorities, critical infrastructure operators, and core technology platforms. 650+ partners reported.
 
-4/ The reporting shuts down the causal read itself: "Being near the top is not the same as causing it." The best teams had already folded AI into how they work.
+4/ Fairwind's obligations are explicit: limit access to employees in internal cybersecurity, incident response or penetration testing teams, and deploy protections like MFA. Eligibility vetting is itself the governance interface.
 
-5/ Median time-to-solve: 26 hours two years ago, 13.8 in 2026. Half the clock. But board size, challenge mix, entrants, preparation and tooling all changed, and the data cannot separate them — it tells you when useful work happened, not how skilled anyone became.
+5/ OpenAI: Astra is the first of its models to reach "Critical" cybersecurity capability under its Preparedness Framework — independently finding and exploiting zero-days across many well-defended systems, or running a full attack on a hardened target from a high-level instruction. Full capabilities are not widely available at launch.
 
-6/ Full board completions: 2 teams in 2024, 3 in 2025, 15 in 2026. Same caveat: board design changed, so it tracks breadth, coordination and endurance.
+6/ The capability boundary is drawn very specifically: Fable 5.1 "can now be used to discover software vulnerabilities — though not to develop exploits for them." Google likewise prioritised fixing over exploitation. Find it, don't weaponise it. Hard to hold in engineering terms, and no independent red-team result yet says how long it holds.
 
-7/ The cleaner test was NeuroGrid CTF a year earlier — same challenge set, AI-augmented vs human-only. Across the field the AI side solved at 3.2x the rate; among the Top 5%, that shrank to 1.69.
+7/ Every performance figure here is vendor-reported: surpassing larger frontier models on CyberGym, over 70% on an internal 20-language benchmark, Chrome Security reporting 2.6x more correct patches; Astra perfect on ExploitBench, two zero-days found unaided, 91.5% of cyber jailbreaks declined vs 59% for its predecessor. None independently reproduced.
 
-8/ Speed ran the other way: the best AI-augmented teams worked three to four times faster. And the team that finished all 36 challenges was human. The best AI team stopped at 32.
+8/ Google also published a number against itself: on CWE-Bench, 3.8 Flash Cyber reaches pass@1 of 47.2% "compared to a leading frontier model at 47.8%." It loses; the pitch is cost. Publishing the losing number is more notable than any of the wins.
 
-9/ In one line: AI buys speed, not completeness — directly usable when allocating work. Caveats: those four NeuroGrid figures rest on one source, and the dataset is self-collected and self-published by the organiser.
-<div class="hashtags">#AISecurity #RedTeam #AgenticAI #SecOps</div></div>
+9/ Worth keeping straight: "Critical" is a tier in OpenAI's own framework, defined and assessed by OpenAI. It is not certification by an external body. Don't drop that qualifier when you repeat it.
+
+10/ Practical read: if you are in one of those three categories, file the Fairwind application now. If you are not, accept that your defenders and your listed peers are not holding the same tools — and there is no vetting list on the attacker's side. Google calls this "a vital adaptation window." Windows expire.
+<div class="hashtags">#AIGovernance #AISecurity #FrontierAI #CyberDefense</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t1-blog">
+          <details class="channel" data-post-id="20260903-t1-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">標題：AI 買到的是速度，不是完整度——從兩場奪旗賽的代理使用數據讀出可操作的分工判準
+                <div class="draft-text">標題：同一個模型，兩套安全封套——2026 年 9 月第一週，前沿實驗室的治理介面換成了「存取資格」
 
-• 事件：Hack The Box 於 2026 年 8 月 27 日前後公布 2026 Global Cyber Skills Benchmark（活動代號 Project Nightfall）的 AI 代理使用數據，賽事本身舉辦於 2026 年 5 月
-• 規模：93 個指定代理帳號分佈於 54 支隊伍，其中 46 個活躍；代理帳號佔全部註冊帳號 2.7%
-• 最違反直覺的分佈：代理產出 4.2% 的提交旗標與 4.6% 的獲得分數；前 25 強中有 17 支隊伍（68%）、前 100 強中有 33 支隊伍擁有代理帳號——AI 最常出現在最強的實踐者身旁，而非取代他們
-• 主辦方定調：執行長 Haris Pylarinos 表示，隨著代理更有能力，人的判斷、驗證與動手技術能力會變得更重要而非更不重要
-• 因果限定（必須一併轉述）：報導明言「靠近頂端不等於造成頂端」，最強的隊伍只是早已把 AI 折進工作方式
-• 時間曲線：中位破題時間自兩年前的 26 小時（2024 年 26.1 小時）降至 2026 年的 13.8 小時；但題板規模、題型組合、參賽者、準備方式與工具全數改變且資料無法分離，該下降說明的是有效工作發生的時點，而非能力提升
-• 全解隊伍數：2024 年 2 支、2025 年 3 支、2026 年 15 支；題板設計亦有變動，故此數追蹤廣度、協作與整場耐力
-• 更乾淨的對照（2025 年 11 月 NeuroGrid CTF，同一組題目）：全場 AI 側破題率為 3.2 倍；前 5% 隊伍中縮至 1.69 倍；最佳 AI 輔助隊速度快三到四倍；唯一完成全部 36 題者為人類隊伍，最佳 AI 隊停在 32 題
-• 可操作的歸納：AI 的邊際價值集中在速度而非完整度，且在高技能族群中相對優勢會收斂——分配紅隊、滲透測試與弱點管理工作時，可據此決定哪些交給代理加速、哪些保留人力做最終驗證與收尾
-• 查證限制一：報告 PDF 約 10.7 MB 且以圖像為主，本次未能擷取文字逐字比對，數字以兩份獨立報導互相印證
-• 查證限制二：NeuroGrid 的四項數字目前僅單一來源，原始賽事資料未取得
-• 利益關係：Hack The Box 同時是賽事主辦方、報告發布者與商業訓練平台，數據屬利益相關方自我報告，原始資料未公開供第三方複驗
-• 外部效度：CTF 題目有解、有邊界、有計分，與真實環境中目標不明確、資訊不完整、行動具副作用的情況不同，不宜直接外推至真實紅隊或 SOC 表現
-<div class="hashtags">#AISecurity #RedTeam #AgenticAI #SecOps</div></div>
+• 事件：2026 年 9 月 1 日至 2 日，Google、Anthropic、OpenAI 於同一週分別發布網路安全相關的模型與治理公告，三者共同的結構是把模型能力與安全封套拆開，較寬鬆的封套只提供給通過審查的對象
+• Google（9/2）：同時發布 Gemini 3.8 Flash 與 Gemini 3.8 Flash Cyber，前者依 Frontier Safety Framework 配備 CBRN 與網路攻擊面的防護，後者「配備一組較寬鬆的網路安全緩解措施，因此只提供給需要更完整網路安全能力的可信防守方」
+• Google 的效能自述：CyberGym 上超越 3.5 Flash Cyber 與顯著更大的前沿模型；涵蓋 20 種程式語言的內部基準成功率超過 70%；Chrome 安全團隊回報正確修補數為大型商用模型的 2.6 倍；Wiz 回報內部滲透測試基準 recall 高 7.5–9.7%、成本低 2.3–5.2 倍；Google Cloud 漏洞研究團隊以該模型在 2 小時內找到一個通常需數月的關鍵基礎漏洞
+• Google 自承的落後數字：Collinear 執行的外部修補基準 CWE-Bench 上，3.8 Flash Cyber 的 pass@1 為 47.2%，官方原文為「相較於一個領先前沿模型的 47.8%」，其主張為在 Pareto frontier 上以顯著更低成本達到相當表現
+• Fairwind Program：對象為政府與國家級網路主管機關、關鍵基礎設施營運者（醫療、電信、能源、金融）、核心技術平台三類；參與者須同意把存取限制在內部資安、事件應變或滲透測試團隊，並部署多因素驗證；官方稱逾 650 家夥伴，本站可在原始頁面確認的具名夥伴為 CrowdStrike、Palo Alto、Snowflake；產品組合為 Gemini 3.8 Flash Cyber 搭配 CodeMender harness，訴求把數週的人工修補壓縮到數分鐘
+• Anthropic（9 月）：Claude Fable 5.1 與 Claude Mythos 5.1「是同一個模型，但安全防護的層級不同」；網路安全側 Fable 5.1「現在可以用來發現軟體漏洞——但不能用來為它們開發 exploit」；生物側的防護對基礎生物與醫學的良性提問誤觸率下降 85%；網路安全防護另委由兩家外部組織測試並由 Gray Swan 進行自動化測試
+• Anthropic 企業配套（9/1）：Enterprise Frontier Safeguards 結合零資料保留與濫用偵測防護，資料儲存於客戶自控的雲端基礎設施而非 Anthropic，提供自動化安全監控且不需 Anthropic 人工審閱；與逾 100 家客戶共同開發，涵蓋金融、醫療、製造、電信、法律、零售與公部門，秋季起分階段推出
+• OpenAI（經 SecurityWeek 報導）：新模型 Astra 首次達到自家 Preparedness Framework 的「Critical」網路安全等級，該等級定義為能在眾多防護良好的系統上獨立找出並利用零日漏洞，或僅憑高階指令對強化目標執行完整攻擊；ExploitBench 滿分、於另一項評測中自行發現 2 個零日、曾突破瀏覽器沙箱並在強化作業系統上串連漏洞取得 root；拒絕 91.5% 的網路安全越獄嘗試（前代 GPT-5.6 Sol 為 59%）；完整能力發布時不廣泛開放，先給一組測試者，再經 Daybreak Blue 擴大
+• 治理上的意涵一：主軸從「模型能不能做」轉為「誰可以用」。存取資格審查（申請、對象分類、內部使用範圍限制、MFA 要求）成為實質的治理介面，而這個介面由供應商自訂，不是法規
+• 治理上的意涵二：能力邊界被切在「發現／修補」與「利用」之間。Anthropic 與 Google 都採取這條線，但這是一項設計主張，目前沒有獨立第三方紅隊結果可證明其可維持性
+• 引用紀律一：本文所有效能數字均為模型供應商自述或其合作夥伴回報，無任何獨立複現，轉述時必須標明
+• 引用紀律二：「Critical」是 OpenAI 內部 Preparedness Framework 的分級，由 OpenAI 自訂並自評，不是外部機構認證
+• 對企業的實務建議：屬於 Fairwind 三類對象者應即刻評估申請；不屬於者需在威脅模型中納入「同業與攻擊方的能力落差正在被制度性放大」；同時把 Anthropic EFS 這類「資料留在客戶側 + 自動化濫用偵測」的架構，納入採購與資安審查的比較項目
+<div class="hashtags">#AIGovernance #AISecurity #FrontierAI #CyberDefense</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Title: AI buys speed, not completeness — reading two CTF datasets for an actual work-allocation rule
+                <div class="draft-text">Title: One model, two safeguard envelopes — in the first week of September 2026, the frontier labs moved their governance interface to access eligibility
 
-• The event: around 27 August 2026 Hack The Box published AI agent usage figures from the 2026 Global Cyber Skills Benchmark, run as Project Nightfall; the competition itself took place in May 2026
-• Scale: 93 designated agent accounts across 54 teams, 46 of them active, holding 2.7% of registered accounts
-• The counterintuitive distribution: agents produced 4.2% of submitted flags and 4.6% of awarded points, and 17 of the Top 25 teams (68%) plus 33 of the Top 100 had one — AI showed up alongside the strongest practitioners rather than instead of them
-• The organiser's framing: CEO Haris Pylarinos says that as agents become more capable, human judgment, validation and hands-on technical skill become more important, not less
-• The causal caveat, which must travel with the number: the reporting states plainly that "being near the top is not the same as causing it," and that the best teams had simply already folded AI into how they work
-• The time curve: median time-to-solve fell from 26 hours two years ago (26.1 in 2024) to 13.8 in 2026, but board size, challenge mix, entrants, preparation and tooling all changed and the data cannot separate them, so the drop indicates when useful work happened rather than how skilled anyone became
-• Full completions: 2 teams in 2024, 3 in 2025, 15 in 2026, with board design also changing, so the count tracks breadth, coordination and endurance
-• The cleaner comparison (NeuroGrid CTF, November 2025, same challenge set): across the field the AI side solved at 3.2 times the rate; among the Top 5% that shrank to 1.69; the best AI-augmented teams worked three to four times faster; and the only team to finish all 36 challenges was human, with the best AI team stopping at 32
-• The usable conclusion: AI's marginal value concentrates in speed rather than completeness, and the relative advantage converges among high-skill groups — which is a basis for deciding which red team, pentest and vulnerability management tasks go to an agent for pace and which stay with a human for final validation and the last mile
-• Verification limit one: the report PDF is roughly 10.7 MB and largely image-based, so its text could not be extracted for verbatim comparison this run; the figures were cross-checked between two independent reports of the same publication
-• Verification limit two: the four NeuroGrid figures currently rest on a single source, with no underlying event data obtained
-• Interest disclosure: Hack The Box is simultaneously the event organiser, the report publisher and a commercial training platform, so this is self-reported data whose underlying records are not open for third-party replication
-• External validity: CTF challenges are solvable, bounded and scored, unlike real environments with unclear objectives, incomplete information and actions that carry side effects, so these results should not be extrapolated directly to real red team or SOC performance
-<div class="hashtags">#AISecurity #RedTeam #AgenticAI #SecOps</div></div>
+• The event: between 1 and 2 September 2026, Google, Anthropic and OpenAI each published cyber-related model and governance announcements in the same week, sharing one structure — separate model capability from its safeguard envelope, and make the more permissive envelope available only to vetted parties
+• Google (2 Sept): shipped Gemini 3.8 Flash alongside Gemini 3.8 Flash Cyber. The former "ships with safeguards against misuse in the domains of Chemical, Biological, Radiological, and Nuclear (CBRN) and cyber offense... as per our Frontier Safety Framework"; the latter "ships with a more permissive set of mitigations for cybersecurity, and as such, is only available to trusted defenders who require a more comprehensive set of cyber capabilities"
+• Google's self-reported performance: on CyberGym it "surpasses both 3.5 Flash Cyber as well as significantly larger frontier models"; on an internal benchmark spanning 20 programming languages it "reaches a success rate exceeding 70%"; Chrome Security reports 2.6 times more correct patches than much larger commercial models; Wiz reports 7.5–9.7% higher recall on its internal pentest benchmark at 2.3–5.2x lower cost; Google's Cloud Vulnerability Research team used it to find a critical foundational vulnerability in under two hours, work that usually takes months
+• The number Google published against itself: on CWE-Bench, the external patching benchmark run by Collinear, 3.8 Flash Cyber reaches "a pass@1 of 47.2% compared to a leading frontier model at 47.8%", with the claim being comparable performance on the Pareto frontier at significantly lower cost
+• The Fairwind Program: staged across governments and national cyber authorities, critical infrastructure operators (healthcare, telecommunications, energy, finance) and core technology platforms. Participants agree to "strict operational standards, including limiting access to employees within their internal cybersecurity, incident response, or penetration testing teams" and deploying protections like multi-factor authentication. Google reports "more than 650 participating partners globally"; the named partners verifiable on the page itself are CrowdStrike, Palo Alto and Snowflake. The offering pairs Gemini 3.8 Flash Cyber with the CodeMender harness, pitching patches "in minutes" instead of weeks
+• Anthropic (September): "Claude Fable 5.1 and Claude Mythos 5.1 are the same model, but with different levels of safeguards." On the cyber side, Fable 5.1 "can now be used to discover software vulnerabilities—though not to develop exploits for them." On the biology side, the latest safeguards "fire 85% less often for benign requests related to elementary biology and medical questions." Cybersecurity safeguards were stress-tested by two external organisations plus automated testing by Gray Swan
+• Anthropic's enterprise counterpart (1 Sept): Enterprise Frontier Safeguards "combines the privacy of zero data retention (ZDR) with state-of-the-art safeguards for detecting misuse", storing data "in cloud infrastructure controlled by the customer, not Anthropic", with automated safety monitoring and no Anthropic human review. Developed with more than 100 customers across financial services, healthcare, manufacturing, telecom, law, retail and the public sector, rolling out in phases from this autumn
+• OpenAI (as reported by SecurityWeek): Astra is the first OpenAI model to reach the "Critical" cybersecurity capability level under its Preparedness Framework, a designation that applies when a model can independently find and exploit zero-day vulnerabilities across many well-defended systems, or carry out a complete cyberattack against a hardened target from only a high-level instruction. It scored a perfect result on ExploitBench, uncovered two zero-days on its own in a separate evaluation, broke out of a browser sandbox to run commands on the underlying machine, and chained flaws in a hardened operating system to reach root. It declines 91.5% of cyber-related jailbreak attempts, up from 59% for GPT-5.6 Sol. Full cybersecurity capabilities are not widely available at launch: testers first, wider access through Daybreak Blue
+• Governance implication one: the axis has moved from "can the model do this" to "who is allowed to use it." Access vetting — application, category staging, restriction to named internal teams, MFA requirements — has become the operative governance interface, and it is defined by vendors, not regulation
+• Governance implication two: the capability boundary is being drawn between discovery/patching and exploitation. Anthropic and Google both adopt that line, but it is a design claim; no independent third-party red-team result yet establishes that it holds
+• Citation discipline one: every performance figure above is reported by the model vendor or its partners, with no independent reproduction. Say so when you repeat them
+• Citation discipline two: "Critical" is a tier within OpenAI's own Preparedness Framework, defined and assessed by OpenAI. It is not certification by an external body
+• What to do about it: organisations in the three Fairwind categories should assess an application now. Those outside them should add to their threat model the fact that the capability gap between listed peers and everyone else is being institutionally widened — and add architectures like Anthropic's EFS, where data stays customer-side while misuse detection stays automated, to procurement and security review criteria
+<div class="hashtags">#AIGovernance #AISecurity #FrontierAI #CyberDefense</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t1-nl">
+          <details class="channel" data-post-id="20260903-t1-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">Hack The Box 公布 2026 Global Cyber Skills Benchmark（活動代號 Project Nightfall，賽事於 2026 年 5 月舉行）的 AI 代理使用數據：全場 93 個指定代理帳號分佈於 54 支隊伍、其中 46 個活躍，僅佔全部註冊帳號的 2.7%，卻產出 4.2% 的提交旗標與 4.6% 的獲得分數；前 25 強中有 17 支隊伍（68%）、前 100 強中有 33 支隊伍擁有代理帳號。執行長 Haris Pylarinos 表示，AI 最常出現在最強的實踐者身旁而非取代他們，隨著代理更有能力，人的判斷、驗證與動手技術能力會變得更重要。報導同時對因果設下限定：靠近頂端不等於造成頂端，最強的隊伍只是早已把 AI 折進工作方式；中位破題時間雖自兩年前的 26 小時降至 13.8 小時、全解題板隊伍自 2024 年的 2 支增至 2026 年的 15 支，但題板規模、題型、參賽者、準備與工具皆有變動且資料無法分離。條件較乾淨的對照為 2025 年 11 月的 NeuroGrid CTF：同一組題目下，全場 AI 側破題率為 3.2 倍、前 5% 隊伍中縮至 1.69 倍，最佳 AI 輔助隊速度快三到四倍，但唯一完成全部 36 題的是人類隊伍、最佳 AI 隊停在 32 題。可操作的歸納是 AI 的邊際價值集中於速度而非完整度，適合作為紅隊、滲透測試與弱點管理的工作分配判準。引用限制：NeuroGrid 四項數字僅單一來源；數據由賽事主辦方自行蒐集發布，原始資料未公開複驗；CTF 的外部效度有限，不宜直接外推至真實紅隊或 SOC。主要來源：Hack The Box 報告《The AI-Accelerated Cyber Team》、Help Net Security（8/27）。
-<div class="hashtags">#AISecurity #RedTeam #AgenticAI #SecOps</div></div>
+                <div class="draft-text">2026 年 9 月 1 日至 2 日，Google、Anthropic 與 OpenAI 在同一週分別發布網路安全相關的模型與治理公告，三者結構一致：把模型能力與安全封套拆開，較寬鬆的封套只給通過審查的對象。Google 同時推出 Gemini 3.8 Flash 與 Gemini 3.8 Flash Cyber，官方原文說 Cyber 版「配備一組較寬鬆的網路安全緩解措施，因此只提供給可信的防守方」，取得管道是新設的 Fairwind Program，對象為政府與國家級網路主管機關、關鍵基礎設施營運者、核心技術平台三類，參與者須把存取限制在內部資安、事件應變或滲透測試團隊並部署多因素驗證，官方稱逾 650 家夥伴。Anthropic 的說法最直白：Claude Fable 5.1 與 Claude Mythos 5.1「是同一個模型，但安全防護的層級不同」，其中 Fable 5.1「現在可以用來發現軟體漏洞——但不能用來為它們開發 exploit」；同日另發布 Enterprise Frontier Safeguards，把資料存放在客戶自控的雲端基礎設施而非 Anthropic，並提供不需人工審閱的自動化安全監控，秋季起分階段推出。OpenAI 則表示新模型 Astra 首次達到自家 Preparedness Framework 的「Critical」網路安全等級——該等級指模型能在眾多防護良好的系統上獨立找出並利用零日漏洞，或僅憑高階指令對強化目標執行完整攻擊；Astra 在 ExploitBench 取得滿分、於另一項評測中自行找到 2 個零日、並曾突破瀏覽器沙箱與在強化作業系統上串連漏洞取得 root，同時拒絕 91.5% 的網路安全越獄嘗試（前代 GPT-5.6 Sol 為 59%），完整能力發布時不廣泛開放，先給測試者、再經 Daybreak Blue 擴大。兩點必須在引用時保留：一是所有效能數字皆為廠商自述、無獨立複現，且 Google 自承在外部修補基準 CWE-Bench 上 pass@1 為 47.2%、低於「一個領先前沿模型的 47.8%」；二是「Critical」為 OpenAI 內部框架的自訂自評分級，非外部認證。實務上，屬於 Fairwind 三類對象的組織應即刻評估申請，其餘組織則需在威脅模型中納入「同業與攻擊方之間的能力落差正被制度性放大」這項變數。主要來源：Google 官方部落格（9/2）、Anthropic 官方公告（9/1 與 9 月）、SecurityWeek（9/2）。
+<div class="hashtags">#AIGovernance #AISecurity #FrontierAI #CyberDefense</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Hack The Box has published AI agent usage figures from the 2026 Global Cyber Skills Benchmark, run as Project Nightfall and held in May 2026: 93 designated agent accounts across 54 teams, 46 of them active, holding just 2.7% of registered accounts while producing 4.2% of submitted flags and 4.6% of awarded points, with 17 of the Top 25 teams (68%) and 33 of the Top 100 having one. CEO Haris Pylarinos said AI is appearing most often alongside the strongest practitioners rather than instead of them, and that as agents become more capable, human judgment, validation and hands-on technical skill become more important, not less. The reporting attaches an explicit causal caveat: being near the top is not the same as causing it, and the best teams had already folded AI into how they work; median time-to-solve fell from 26 hours two years ago to 13.8, and full board completions rose from two teams in 2024 to fifteen in 2026, but board size, challenge mix, entrants, preparation and tooling all changed and the data cannot separate them. The cleaner comparison was NeuroGrid CTF in November 2025, where AI-augmented and human-only teams faced the same challenge set: across the field the AI side solved at 3.2 times the rate, shrinking to 1.69 among the Top 5%, while the best AI-augmented teams worked three to four times faster — yet the only team to finish all 36 challenges was human, with the best AI team stopping at 32. The usable conclusion is that AI's marginal value sits in speed rather than completeness, which can drive work allocation across red team, pentest and vulnerability management. Citation limits: the four NeuroGrid figures rest on a single source; the data is self-collected and self-published by the organiser without open records for replication; and CTF results should not be extrapolated directly to real red team or SOC performance. Sources: Hack The Box report "The AI-Accelerated Cyber Team", Help Net Security (8/27).
-<div class="hashtags">#AISecurity #RedTeam #AgenticAI #SecOps</div></div>
+                <div class="draft-text">Between 1 and 2 September 2026, Google, Anthropic and OpenAI each published cyber-related model and governance announcements in the same week, sharing one structure: separate model capability from its safeguard envelope, and release the more permissive envelope only to vetted parties. Google shipped Gemini 3.8 Flash alongside Gemini 3.8 Flash Cyber, stating that the Cyber variant "ships with a more permissive set of mitigations for cybersecurity, and as such, is only available to trusted defenders"; access runs through the new Fairwind Program, staged across governments and national cyber authorities, critical infrastructure operators and core technology platforms, with participants required to limit access to internal cybersecurity, incident response or penetration testing teams and to deploy protections such as MFA, and with more than 650 participating partners reported. Anthropic was the most explicit: Claude Fable 5.1 and Claude Mythos 5.1 "are the same model, but with different levels of safeguards", and Fable 5.1 "can now be used to discover software vulnerabilities—though not to develop exploits for them"; the same window brought Enterprise Frontier Safeguards, which stores data "in cloud infrastructure controlled by the customer, not Anthropic" with automated safety monitoring and no Anthropic human review, rolling out in phases from this autumn. OpenAI reported that its newest model, Astra, has reached the "Critical" cybersecurity capability level under its Preparedness Framework — a designation for models that can independently find and exploit zero-days across many well-defended systems, or run a complete attack on a hardened target from only a high-level instruction. Astra scored a perfect result on ExploitBench, uncovered two zero-days unaided in a separate evaluation, escaped a browser sandbox to run commands on the host, and chained flaws in a hardened operating system to reach root, while declining 91.5% of cyber-related jailbreak attempts against 59% for GPT-5.6 Sol; full capabilities are not widely available at launch, going first to testers and then wider through Daybreak Blue. Two qualifiers must survive any retelling: every performance figure is vendor-reported with no independent reproduction — and Google itself published a pass@1 of 47.2% on the external CWE-Bench patching benchmark "compared to a leading frontier model at 47.8%" — and "Critical" is a tier defined and assessed by OpenAI inside its own framework, not an external certification. Practically, organisations in the three Fairwind categories should assess an application now, and everyone else should add to their threat model the fact that the capability gap between listed peers and the rest is being institutionally widened. Sources: Google blog (2 Sept), Anthropic announcements (1 Sept and September), SecurityWeek (2 Sept).
+<div class="hashtags">#AIGovernance #AISecurity #FrontierAI #CyberDefense</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
         </div>
 
         <!-- 選題 2 -->
         <div class="topic">
-          <div class="topic-num">選題 02 · 供應鏈資安 / 執法</div>
-          <h3>兩個二十出頭的年輕人，一千家組織，五十萬組憑證——TeamPCP 被捕，但風險沒有跟著被捕</h3>
-          <p>澳洲聯邦警察與西澳警察於 8/26 在伯斯執行搜索票，起訴兩名西澳男子（21 歲與 23 歲）合計 14 項罪名，指其涉嫌為供應鏈攻擊集團 TeamPCP 成員，FBI 平行參與。AFP 估計該惡意程式碼可能危害全球逾 1,000 家組織、逾 500,000 組憑證遭竊、至少 300 GB 資料外流。被點名的受害專案包含 LiteLLM 與 Aqua 的 Trivy——正是本站 8/17 期選題 01 的主題。Aikido 研究員指該集團「並不特別高明」，危險之處在於把公開技術快速操作化，並認為 LLM 縮短了從看到技術到大規模部署的距離。</p>
+          <div class="topic-num">選題 02 · AI 安全 / 開發工具鏈</div>
+          <h3>你還沒按下「信任這個資料夾」，程式已經跑了——一個 git 設定值打穿七款 AI coding agent</h3>
+          <p>Manifold Security 於 9/1 發表「GitSpawn」，在 7 款 AI coding agent 上提出 8 項發現、發表當下 4 項未修。代理啟動時會執行 git 指令蒐集脈絡，而 git 設定檔的 core.fsmonitor 欄位存放的是一個指令，會在索引刷新時被執行——於是惡意儲存庫決定你的機器跑什麼，且發生在信任提示之前、沙箱之外、不經工具核准。已公開的 CVE 包含 CVE-2026-72718（goose，CVSS v4.0 7.0）與 CVE-2026-19592（OpenAI Codex，CVSS v3.1 7.3，9/1 發布）。最值得注意的是：Sonar 早已記錄同一個 sink，該問題在 2025/12/16 的 v2.0.71 就修過一次——九個月後它在七款代理上重現。</p>
           <div class="sources">
-            <a class="source-tag" href="https://www.afp.gov.au/news-centre/media-release/two-wa-men-charged-following-afp-fbi-wapf-disruption-alleged-global" target="_blank" rel="noopener">🏛 澳洲聯邦警察（AFP）媒體發布 8/27</a>
-            <a class="source-tag" href="https://www.aikido.dev/blog/teampcp-arrested-supply-chain" target="_blank" rel="noopener">🏛 Aikido Security（Charlie Eriksen）分析 8/27</a>
-            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/27/alleged-teampcp-hackers-arrested-australia/" target="_blank" rel="noopener">📰 Help Net Security 8/27</a>
+            <a class="source-tag" href="https://www.manifold.security/blog/ai-coding-agents-git-hijack" target="_blank" rel="noopener">🏛 Manifold Security：GitSpawn 研究 9/1</a>
+            <a class="source-tag" href="https://github.com/aaif-goose/goose/security/advisories/GHSA-r5pp-p5r8-466r" target="_blank" rel="noopener">🏛 GitHub 安全諮詢 GHSA-r5pp-p5r8-466r（goose）7/24</a>
+            <a class="source-tag" href="https://nvd.nist.gov/vuln/detail/CVE-2026-72718" target="_blank" rel="noopener">🏛 NVD：CVE-2026-72718</a>
+            <a class="source-tag" href="https://nvd.nist.gov/vuln/detail/CVE-2026-19592" target="_blank" rel="noopener">🏛 NVD：CVE-2026-19592（OpenAI Codex）9/1</a>
+            <a class="source-tag" href="https://nvd.nist.gov/vuln/detail/CVE-2026-55607" target="_blank" rel="noopener">🏛 NVD：CVE-2026-55607（Claude Code worktree）6/29</a>
+            <a class="source-tag" href="https://www.sonarsource.com/blog/claude-arbitrary-code-execution/" target="_blank" rel="noopener">🏛 Sonar：Claude Code CLI 任意程式碼執行分析 4/30</a>
+            <a class="source-tag" href="https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html" target="_blank" rel="noopener">📰 The Hacker News 9/2</a>
           </div>
 
-          <details class="channel" data-post-id="20260831-t2-li">
+          <details class="channel" data-post-id="20260903-t2-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">兩個二十出頭的人。一千多家組織。五十萬組憑證。三百 GB 資料。
+                <div class="draft-text">你的 AI coding agent 在你按下「信任這個資料夾」之前，已經跑過指令了。
 
-澳洲聯邦警察與西澳警察在 8 月 26 日執行搜索票，起訴兩名西澳男子——21 歲與 23 歲——合計 14 項罪名，指他們涉嫌是供應鏈攻擊集團 TeamPCP 的成員。FBI 平行參與了這項調查。
+Manifold Security 9 月 1 日發表的研究，在 7 款 AI coding agent 上找到 8 項發現，發表當下有 4 項還沒修。機制簡單到令人不安：
 
-AFP 估計，這段惡意程式碼可能危害全球逾 1,000 家組織、造成逾 500,000 組憑證遭竊、至少 300 GB 資料外流。媒體引述的全球修復成本估計是數億美元。
+代理啟動時，會執行 git 指令來搞清楚自己在哪個分支、狀態如何。git 的設定檔裡有一個欄位叫 core.fsmonitor，它的值是一個「指令」，git 會在索引刷新時執行它。
 
-擴散方式一點都不新奇：把惡意程式碼植入開源儲存庫上的軟體，開發者把它拉進自己的專案，於是它散進了政府、學術界與私部門的系統。進去之後，收憑證與驗證權杖。
+所以，如果那個 .git/config 是別人給你的——它就決定了你的機器要跑什麼。
 
-但真正值得停下來讀的，是資安研究員 Charlie Eriksen 對這個團體的側寫。
+不需要 prompt。不需要模型回應。不需要工具核准。而且跑在代理的沙箱之外。
 
-他說他們「並不特別高明」。
+Manifold 的原話我覺得是這則研究最好的一句：
 
-讓他們危險的，是把公開的漏洞利用、技術、研究與惡意程式構想快速操作化的能力。而他的下一句是這則最該被引用的：
+「這個漏洞不在模型裡，也不在任何新東西裡。它在底下那些平凡的管線裡——在代理啟動時為了搞清楚自己在哪，而生出來的那個子行程。」
 
-「LLM 看來幫忙縮短了『看到一個攻擊技術』到『大規模部署它』之間的距離。更多能力，但沒有更多節制。」
+過去一年 AI 工具的資安討論幾乎都在講 prompt injection 和代理自主性。這則把注意力拉回一個更難堪的地方：問題出在 subprocess。
 
-如果你的威脅模型還把「小團體」等同於「低能力」，這就是反例。
+但真正讓我停下來的是時間線。
 
-還有一件事值得說清楚，因為它被誤報很久了：TeamPCP 不是 2025 年夏天原始 S1ngularity 與 Shai-Hulud 攻擊的幕後。他們是複製了那隻蠕蟲。原始攻擊是誰做的，至今未知，Eriksen 說可能永遠不會知道。歸因這件事，值得多花三十秒查證再轉發。
+Sonar 的研究員 Yaniv Nizry 早就寫過同一個 sink。Claude Code CLI 在信任提示之前執行 git status，惡意專案設定 core.fsmonitor 即可執行任意指令——這個問題在 2025 年 12 月 16 日的 v2.0.71 就修掉了。同一篇還記錄了 log.showSignature 搭 gpg.program、.claude/settings.json 的 apiKeyHelper（Sonar 形容它是「一段會在 /bin/sh 執行的自訂腳本」）、還有信任前就會跑的 hooks。
 
-最後，被點名的受害專案清單裡有 LiteLLM 和 Aqua 的 Trivy——那正是我們兩週前寫過的那起攻擊。線終於接起來了，但 Eriksen 的結尾提醒也很清楚：
+九個月後，同一個 sink 在七款不同的代理上重新出現。
 
-「這不會是最後一個像 TeamPCP 的團體。門檻正在降低，工具正在變好，小團隊正在取得幾年前需要遠更多專業與基礎設施才可能有的能力。」
+這正是 CISA 9 月 1 日那份檢討在講的事：逐案修補不會讓一個漏洞類別消失。單點修掉一個產品的一條路徑，別的產品照樣會踩。
 
-逮捕解決的是這兩個人，不是這個模式。
+已經有 CVE 的部分（我直接查了 NVD，不是引用媒體）：
+• CVE-2026-72718，goose，CVSS v4.0 基本分數 7.0 High，1.44.0 修補，通報者是 Manifold 的 Francisco Rosales
+• CVE-2026-19592，OpenAI Codex，9 月 1 日發布，CVSS v3.1 7.3 High，NVD 明確寫「執行於 Codex 的指令沙箱之外、且無使用者核准提示」
+• CVE-2026-71963，Hermes，VulnCheck 指派，NVD 目前查無資料
 
-（全部指控目前均為涉嫌，尚未經法院審判。）
-<div class="hashtags">#SupplyChainSecurity #ThreatIntel #OpenSource #DevSecOps #AISecurity</div></div>
+順帶更正一個已經在流傳的錯誤：有報導把 goose 那項寫成「CVSS 4.0」。4.0 是 CVSS 的版本號，分數是 7.0。
+
+實務上只有一句話要記：在未修版本上，clone 一個別人的 repo 然後在裡面開 agent，等同於執行一個來路不明的執行檔。請照這個等級去對待它。
+
+（各產品的修補狀態是 9 月 1 日的快照，工具更新很快，行動前請重新確認你手上的版本。）
+<div class="hashtags">#AISecurity #DevSecOps #SupplyChainSecurity #AppSec #AICodingAgents</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Two men in their early twenties. More than a thousand organisations. Half a million credentials. Three hundred gigabytes of data.
+                <div class="draft-text">Your AI coding agent has already run a command before you click "trust this folder."
 
-On 26 August the Australian Federal Police and Western Australia Police executed search warrants and charged two WA men, aged 21 and 23, with 14 offences between them, alleging they were members of the supply chain attack group TeamPCP. The FBI worked the investigation in parallel.
+Research published by Manifold Security on 1 September covers eight findings across seven AI coding agents, four of them unpatched at publication. The mechanism is uncomfortably simple:
 
-The AFP estimates the malicious code potentially compromised more than 1,000 organisations globally, enabling the theft of more than 500,000 credentials and the exfiltration of at least 300 GB of data. Reported global remediation costs run into the hundreds of millions of dollars.
+At startup, the agent runs git commands to work out which branch it is on and what state the repo is in. Git config has a field called core.fsmonitor whose value is a command, and git executes it when the index refreshes.
 
-The spread mechanism was entirely unremarkable: plant malicious code in software hosted on an open-source repository, let developers pull it into their own projects, and it propagates into government, academic and private sector systems. Once inside, harvest credentials and authentication tokens.
+So if that .git/config came from someone else, it decides what runs on your machine.
 
-But the part worth stopping on is security researcher Charlie Eriksen's characterisation of the group.
+No prompt. No model response. No tool approval. And it runs outside the agent's sandbox.
 
-He says they were "not especially sophisticated."
+Manifold's own line is the best sentence in the research:
 
-What made them dangerous was their ability to take public exploits, techniques, research and malware ideas and operationalise them quickly. And his next line is the one worth quoting:
+"The vulnerability is not in the model, or in anything new. It is in the ordinary plumbing underneath, the subprocess an agent spawns at session startup to work out where it is."
 
-"LLMs appear to have helped close the gap between seeing an attack technique and deploying it at scale. More capability, without more restraint."
+For a year the security conversation around AI tooling has been prompt injection and agent autonomy. This pulls attention back to somewhere more embarrassing: it is the subprocess.
 
-If your threat model still equates "small group" with "low capability," here is the counterexample.
+What actually made me stop, though, is the timeline.
 
-One more thing worth stating clearly, because it has been misreported for a long time: TeamPCP was not behind the original S1ngularity and Shai-Hulud attacks of summer 2025. They cloned that worm. Who ran the original attacks remains unknown, and Eriksen says we may never know. Attribution deserves thirty seconds of checking before the repost.
+Sonar's Yaniv Nizry documented the same sink months ago. Claude Code CLI ran git status before the trust prompt, so a malicious project setting core.fsmonitor got arbitrary execution — fixed in v2.0.71 on 16 December 2025. The same write-up covers a log.showSignature plus gpg.program variant, the apiKeyHelper setting in .claude/settings.json (which Sonar describes as "a Custom script, to be executed in /bin/sh"), and pre-trust hooks.
 
-Finally, the list of named victim projects includes LiteLLM and Aqua's Trivy — the same attack we wrote about two weeks ago. The thread finally connects, though Eriksen's closing note is just as clear:
+Nine months later the same sink shows up across seven different agents.
 
-"This will not be the last group like TeamPCP. The barriers are getting lower, the tooling is getting better, and small teams are gaining capabilities that would have required far more expertise and infrastructure only a few years ago."
+Which is exactly the argument in CISA's 1 September review: patching case by case does not eliminate a vulnerability class. Closing one path in one product does not stop the next product walking into it.
 
-The arrests resolve these two people. They do not resolve the pattern.
+The CVEs, pulled from NVD directly rather than from coverage:
+• CVE-2026-72718, goose, CVSS v4.0 base score 7.0 High, fixed in 1.44.0, credited to Manifold's Francisco Rosales
+• CVE-2026-19592, OpenAI Codex, published 1 September, CVSS v3.1 7.3 High, with NVD stating the helper "runs outside Codex's command sandbox and without a user-approval prompt"
+• CVE-2026-71963, Hermes, assigned by VulnCheck, currently not found in NVD
 
-(All allegations remain untested in court.)
-<div class="hashtags">#SupplyChainSecurity #ThreatIntel #OpenSource #DevSecOps #AISecurity</div></div>
+One correction worth making, because it is already circulating: some coverage rendered the goose entry as "CVSS 4.0." That is the CVSS version. The score is 7.0.
+
+Practically there is only one thing to remember. On an unpatched version, cloning someone else's repo and opening an agent inside it is equivalent to running an unknown executable. Treat it at that level.
+
+(Patch statuses are a snapshot from 1 September. These tools move fast — re-check your own versions before acting.)
+<div class="hashtags">#AISecurity #DevSecOps #SupplyChainSecurity #AppSec #AICodingAgents</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t2-x">
+          <details class="channel" data-post-id="20260903-t2-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ 兩個二十出頭的人，一千多家組織，五十萬組憑證，三百 GB 資料。澳洲聯邦警察與西澳警察 8/26 執行搜索票，起訴兩名西澳男子（21 歲與 23 歲）合計 14 項罪名，指涉為供應鏈攻擊集團 TeamPCP 成員。FBI 平行參與。
+                <div class="draft-text">1/ Manifold Security（9/1）在 7 款 AI coding agent 上找到 8 項發現，發表當下 4 項未修。攻擊條件只有一個：你用 agent 打開一個別人給的資料夾。
 
-2/ AFP 的估計：惡意程式碼可能危害全球逾 1,000 家組織、逾 500,000 組憑證遭竊、至少 300 GB 資料外流。媒體引述的全球修復成本估計為數億美元。
+2/ 機制：代理啟動時執行 git 指令取得脈絡。git 設定檔的 core.fsmonitor 欄位存的是一個指令，git 會在索引刷新時執行它。所以那個 .git/config 決定你的機器跑什麼——在信任提示之前，在沙箱之外，不經工具核准。
 
-3/ 擴散方式毫不新奇：把惡意碼植入開源儲存庫上的軟體，開發者拉進自己專案，於是散進政府、學術與私部門。進去後收憑證與驗證權杖。調查始於 2026 年 4 月，起因是數家威脅評估公司的通報。
+3/ Manifold 原話：「這個漏洞不在模型裡，也不在任何新東西裡。它在底下那些平凡的管線裡——在代理啟動時為了搞清楚自己在哪，而生出來的那個子行程。」
 
-4/ 但最值得讀的是研究員 Charlie Eriksen 的側寫：他們「並不特別高明」。讓他們危險的是把公開的漏洞利用、技術與惡意程式構想快速操作化的能力。
+4/ CVE（直接查 NVD）：CVE-2026-72718，goose，CVSS v4.0 基本分數 7.0 High，1.44.0 修補，通報者 Manifold 的 Francisco Rosales。
 
-5/ 他的下一句：「LLM 看來幫忙縮短了『看到一個攻擊技術』到『大規模部署它』之間的距離。更多能力，但沒有更多節制。」如果你的威脅模型把「小團體」等同「低能力」，這是反例。
+5/ CVE-2026-19592，OpenAI Codex，9/1 發布，CVSS v3.1 7.3 High。NVD 描述明確：helper「執行於 Codex 的指令沙箱之外、且無使用者核准提示」，以使用者權限執行。
 
-6/ 一個被誤報很久的重點：TeamPCP 不是 2025 年夏天原始 S1ngularity／Shai-Hulud 攻擊的幕後。他們是複製了那隻蠕蟲。原始行為者至今未知，可能永遠不會知道。歸因值得多查三十秒。
+6/ CVE-2026-71963，Hermes，由 VulnCheck 指派，本站查詢 NVD 目前無資料。Manifold 稱廠商在「跨五個管道嘗試聯繫六次」後仍未分流。
 
-7/ 被點名的受害專案包含 GitHub、Telnyx、LiteLLM、Aqua 的 Trivy、Checkmarx 的 KICS、TanStack、MistralAI 與 Red Hat——其中 LiteLLM 與 Trivy 正是本站兩週前寫過的那起。
+7/ 更正一個流傳中的錯誤：有報導把 goose 那項寫成「CVSS 4.0」。4.0 是 CVSS 版本號，分數是 7.0。抄錯會低估嚴重度。
 
-8/ Eriksen 的結尾：「這不會是最後一個像 TeamPCP 的團體。門檻正在降低，工具正在變好，小團隊正在取得幾年前需要遠更多專業與基礎設施才可能有的能力。」逮捕解決的是這兩個人，不是這個模式。
+8/ 也要區分：CVE-2026-55607（Claude Code，6/29 發布，v4.0 7.7／v3.1 8.8）在 NVD 的核心描述是 worktree 目錄混淆（影響 2.1.38–2.1.163），fsmonitor 只是利用鏈一環；和 Manifold 表中 2.1.196 修補的 core.fsmonitor 路徑不是同一項。
 
-（全部指控目前均為涉嫌，尚未經法院審判。AFP 表示查扣資料仍在檢視，未排除後續逮捕。）
-<div class="hashtags">#SupplyChainSecurity #ThreatIntel #OpenSource #DevSecOps</div></div>
+9/ 最值得注意的是時間線：Sonar 的 Yaniv Nizry 早記錄過同一個 sink，Claude Code CLI 在信任提示前跑 git status 的問題，2025/12/16 的 v2.0.71 就修了。九個月後同一個 sink 出現在七款代理上。
+
+10/ 這正是 CISA 9/1 檢討的主張：逐案修補不會消除一個漏洞類別。實務結論一句話：未修版本上，clone 別人的 repo 再開 agent，等同執行來路不明的執行檔。（修補狀態為 9/1 快照，行動前請重新確認版本。）
+<div class="hashtags">#AISecurity #DevSecOps #AppSec #AICodingAgents</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Two men in their early twenties. 1,000+ organisations. 500,000+ credentials. 300+ GB of data. On 26 Aug the AFP and WA Police executed search warrants and charged two WA men (21 and 23) with 14 offences between them, alleging membership of the supply chain group TeamPCP. The FBI worked it in parallel.
+                <div class="draft-text">1/ Manifold Security (1 Sept) reports eight findings across seven AI coding agents, four unpatched at publication. The only precondition: you open a folder someone else gave you, inside an agent.
 
-2/ The AFP's estimate: the malicious code potentially compromised more than 1,000 organisations globally, enabling theft of more than 500,000 credentials and exfiltration of at least 300 GB. Reported global remediation costs run to hundreds of millions of dollars.
+2/ Mechanism: agents run git commands at startup to gather context. Git config's core.fsmonitor field holds a command, and git executes it on index refresh. So that .git/config decides what runs on your machine — before the trust prompt, outside the sandbox, with no tool approval.
 
-3/ The spread mechanism was unremarkable: plant code in software on an open-source repository, let developers pull it in, and it propagates into government, academia and the private sector. Once inside, harvest credentials and auth tokens. The investigation began in April 2026 on referrals from threat assessment firms.
+3/ Manifold's own words: "The vulnerability is not in the model, or in anything new. It is in the ordinary plumbing underneath, the subprocess an agent spawns at session startup to work out where it is."
 
-4/ The part worth reading is researcher Charlie Eriksen's characterisation: they were "not especially sophisticated." What made them dangerous was operationalising public exploits, techniques and malware ideas quickly.
+4/ CVEs, pulled from NVD: CVE-2026-72718, goose, CVSS v4.0 base score 7.0 High, fixed in 1.44.0, credited to Manifold's Francisco Rosales.
 
-5/ His next line: "LLMs appear to have helped close the gap between seeing an attack technique and deploying it at scale. More capability, without more restraint." If your threat model equates "small group" with "low capability," this is the counterexample.
+5/ CVE-2026-19592, OpenAI Codex, published 1 Sept, CVSS v3.1 7.3 High. NVD is explicit that the helper "runs outside Codex's command sandbox and without a user-approval prompt," executing with the user's privileges.
 
-6/ A point long misreported: TeamPCP was not behind the original S1ngularity / Shai-Hulud attacks of summer 2025. They cloned that worm. The original actors remain unknown and may never be identified. Attribution deserves the extra thirty seconds.
+6/ CVE-2026-71963, Hermes, assigned by VulnCheck, currently returns no record in NVD. Manifold reports the vendor never triaged the advisory after "six contact attempts across five channels."
 
-7/ Named victim projects include GitHub, Telnyx, LiteLLM, Aqua's Trivy, Checkmarx's KICS, TanStack, MistralAI and Red Hat — LiteLLM and Trivy being the same attack we covered two weeks ago.
+7/ One correction, because it is already spreading: some coverage renders the goose entry as "CVSS 4.0." That is the CVSS version. The score is 7.0. Copying it wrong understates the severity.
 
-8/ Eriksen's closing: "This will not be the last group like TeamPCP. The barriers are getting lower, the tooling is getting better, and small teams are gaining capabilities that would have required far more expertise and infrastructure only a few years ago." The arrests resolve two people, not the pattern.
+8/ Also keep these apart: CVE-2026-55607 (Claude Code, published 29 June, v4.0 7.7 / v3.1 8.8) is described in NVD as worktree directory confusion affecting 2.1.38–2.1.163, with fsmonitor only one link in the chain. It is not the core.fsmonitor path Manifold lists as fixed in 2.1.196.
 
-(All allegations remain untested in court. The AFP says seized data is still being examined and further arrests are not ruled out.)
-<div class="hashtags">#SupplyChainSecurity #ThreatIntel #OpenSource #DevSecOps</div></div>
+9/ The timeline is the real story. Sonar's Yaniv Nizry documented the same sink earlier: Claude Code CLI running git status before the trust prompt, fixed in v2.0.71 on 16 Dec 2025. Nine months later the same sink appears across seven agents.
+
+10/ Which is precisely CISA's 1 Sept argument: case-by-case patching does not eliminate a vulnerability class. Practical takeaway: on an unpatched version, cloning someone's repo and opening an agent in it equals running an unknown executable. (Patch status is a 1 Sept snapshot — re-check your versions.)
+<div class="hashtags">#AISecurity #DevSecOps #AppSec #AICodingAgents</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t2-blog">
+          <details class="channel" data-post-id="20260903-t2-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">標題：能力上升，節制沒有——TeamPCP 被捕之後，供應鏈風險為什麼沒有跟著結案
+                <div class="draft-text">標題：問題不在模型，在 subprocess——一個 git 設定值如何打穿七款 AI coding agent
 
-• 事件：澳洲聯邦警察（AFP）與西澳警察（WAPF）於 2026 年 8 月 26 日在伯斯執行搜索票（Cottesloe、Hamilton Hill、Mandurah 三處），起訴兩名西澳男子合計 14 項罪名，指其涉嫌為供應鏈攻擊集團 TeamPCP 成員；FBI 平行參與；兩人於 8 月 27 日在伯斯地方法院出庭
-• 被告與刑度：21 歲 Cottesloe 男子被控 8 項罪名，含持有與提供供電腦犯罪使用之資料、未經授權修改資料、未遵守《1914 年刑事法》第 3LA 條命令（該項最高 10 年）、處理 10 萬澳元以上犯罪所得；23 歲 Mandurah 男子被控 6 項電腦相關罪名，最高刑期 5 年
-• 規模：AFP 估計可能危害全球逾 1,000 家組織、逾 500,000 組憑證遭竊、至少 300 GB 資料外流；媒體引述全球修復成本估計達數億美元（屬估計值，非查核金額）
-• 擴散路徑：調查始於 2026 年 4 月，起於數家網路威脅評估公司的通報；集團在開源儲存庫託管的軟體中植入惡意程式碼，開發者拉入自身專案後擴散至政府、學術界與私部門系統，進入後蒐集登入憑證與驗證權杖
-• 官方定調：FBI 網路犯罪部門助理主任 Brett E. Leatherman 指其惡意程式碼可能已危害全球超過一千家組織；AFP 指揮官 Graeme Marshall 指網路犯罪集團愈來愈有組織，且經常像專業企業一樣運作
-• 被點名的受害專案：GitHub、Telnyx、LiteLLM、Aqua 的 Trivy、Checkmarx 的 KICS、TanStack、MistralAI 與 Red Hat，手法為使用自我散布的 Mini Shai-Hulud 蠕蟲竊取憑證並感染更多套件
-• 歸因澄清（長期被誤報）：TeamPCP 並非 2025 年夏天原始 S1ngularity 與 Shai-Hulud 攻擊的行為者，他們是複製了該蠕蟲；原始攻擊者至今未知。原始 Shai-Hulud 於 2025 年 9 月危害逾 180 個 npm 套件，會自動散布、將祕密外洩至公開 GitHub 儲存庫並把私有儲存庫轉為公開
-• 行為者側寫（本則核心）：Aikido 研究員 Charlie Eriksen 指 TeamPCP 難以歸類，介於國家行為者、組織型犯罪與意識形態之間，混合金錢、政治、破壞、自我與博取注意；且「並不特別高明」，危險之處在於把公開的漏洞利用、技術、研究與惡意程式構想快速操作化
-• AI 的角色（研究者評估，非鑑識結論）：Eriksen 認為 LLM 看來幫忙縮短了「看到攻擊技術」到「大規模部署」之間的距離，其歸納為「更多能力，但沒有更多節制」；並指出隨 LLM 加速學習、實驗、工具化與規模化，相對不成熟的行為者能更快造成嚴重傷害
-• 結構性判斷：Eriksen 認為這不會是最後一個像 TeamPCP 的團體，門檻正在降低、工具正在變好，小團隊正取得數年前需要遠更多專業與基礎設施才能有的能力
-• 對企業的意涵：把威脅模型中「小團體＝低能力」的假設移除；供應鏈防護的重點從「辨識高階行為者」轉向「限制任何行為者能造成的擴散半徑」——依賴鎖定、建置環境的對外連線控制、憑證與權杖的最小權限與輪替
-• 引用紀律：全部指控目前均為涉嫌、尚未經法院審判；AFP 表示查扣資料仍在檢視、未排除後續逮捕
-<div class="hashtags">#SupplyChainSecurity #ThreatIntel #OpenSource #DevSecOps</div></div>
+• 事件：Manifold Security 於 2026 年 9 月 1 日發表研究「GitSpawn」，涵蓋 8 項發現、7 款 AI coding agent，發表當下 4 項未修
+• 機制：代理在啟動時執行 git 指令以蒐集脈絡，這常發生在工作區信任提示或驗證之前；git 設定檔可指定執行指令的 sink，其中 core.fsmonitor 會在儲存庫索引刷新時被執行，因而讓儲存庫本身決定在使用者機器上執行什麼指令，且執行於代理沙箱之外、不經工具核准
+• 研究者的定調：「這個漏洞不在模型裡，也不在任何新東西裡。它在底下那些平凡的管線裡——在代理啟動時為了搞清楚自己在哪，而生出來的那個子行程。」以及「如果那個資料夾是別的地方來的，那就由那個儲存庫來決定那個指令跑什麼。」
+• 已修補（依 Manifold 對照表，2026-09-01 快照）：Claude Code 的 core.fsmonitor 路徑（2.1.193 通報，2.1.196 修補）、goose（1.41.0 通報，1.44.0 修補）、OpenAI Codex、Cursor
+• 發表當下未修（同一快照）：Claude Code 的 ultrareview 路徑（7/15 通報，2.1.252）、Qwen Code（7/7 通報，0.22.3）、Grok Build（7/14 通報，1.0.13）、Hermes（7/20 通報，0.21.0）
+• CVE-2026-72718（goose）：GitHub 安全諮詢 GHSA-r5pp-p5r8-466r 於 2026-07-24 發布，High，CVSS v4.0 基本分數 7.0，影響 1.44.0 以下版本，通報者為 Manifold Security 的 Francisco Rosales；諮詢說明該執行會繞過 goose 全部安全控制（含 LLM 工具核准與信任提示），以使用者權限執行並可外洩環境機密與 API 金鑰；NVD 於 2026-08-10 收錄，評分一致
+• CVE-2026-19592（OpenAI Codex）：NVD 於 2026-09-01 發布，CVSS v3.1 7.3 High；描述指 Codex CLI 與 Codex Desktop 自動蒐集 git 中繼資料時未停用儲存庫本地的 core.fsmonitor，helper 執行於 Codex 指令沙箱之外且無使用者核准提示，以使用者權限執行
+• CVE-2026-71963（Hermes）：由 VulnCheck 指派，本站於 2026-09-03 查詢 NVD 無資料；Manifold 稱廠商在跨五個管道六次聯繫後仍未分流
+• 需要區分的另一項：CVE-2026-55607（Claude Code），NVD 於 2026-06-29 發布，CVSS v4.0 7.7／v3.1 8.8，核心為 worktree 目錄混淆（影響 2.1.38 至 2.1.163），可經符號連結與 worktree 操作期間的 git fsmonitor 執行覆寫家目錄檔案（如 .zshenv）並在 seatbelt 沙箱外取得執行；與 Manifold 表中 2.1.196 修補的 core.fsmonitor 路徑不是同一項
+• 這是漏洞類別而非單一 bug 的證據：Sonar 研究員 Yaniv Nizry 於 2026-04-30 發表的分析記錄了同一 sink——Claude Code CLI 在信任提示前執行 git status，惡意專案設定 core.fsmonitor 即可執行任意指令——該問題於 2025-12-16 的 v2.0.71 修補；同文另記錄 log.showSignature 搭 gpg.program 變體，以及 .claude/settings.json 在信任對話框前載入所導致的 apiKeyHelper 與 pre-trust hooks 兩條執行路徑
+• 治理對照：CISA 於 2026-09-01 發表檢討，主張以消除漏洞類別取代逐案修補。本案是該主張的實證——單點修掉一個產品的一條路徑，九個月後同一 sink 在七款代理上重現
+• 廠商回應的品質差異（Manifold 單方紀錄）：五份報告被以與同日獨立提交的發現重複為由退回，Claude Code 的報告以重複結案；Hermes 在跨五個管道六次聯繫後未獲分流
+• 對工程組織的實務結論：在未修版本上，clone 外部儲存庫並在其中啟動代理，其風險等同執行來路不明的執行檔。建議把外部 repo 的首次開啟限制在隔離環境、對代理啟動時的 git 呼叫加上設定隔離（例如以受控的 GIT_CONFIG 環境開啟）、並把 agent 版本納入資產盤點與修補管理
+• 引用紀律：修補狀態為 2026-09-01 快照，工具更新極快，再利用本內容前必須重新確認版本；勿把「未修」寫成持續事實，也勿據此對任何品牌作整體安全評價
+<div class="hashtags">#AISecurity #DevSecOps #AppSec #AICodingAgents</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Title: Capability up, restraint flat — why the supply chain risk did not close with the TeamPCP arrests
+                <div class="draft-text">Title: The problem is not the model, it is the subprocess — how one git config value broke seven AI coding agents
 
-• The event: on 26 August 2026 the Australian Federal Police and Western Australia Police executed search warrants in Perth (at Cottesloe, Hamilton Hill and Mandurah) and charged two WA men with 14 offences between them, alleging membership of the supply chain attack group TeamPCP; the FBI worked the investigation in parallel, and both men appeared in Perth Magistrates Court on 27 August
-• The defendants and penalties: the 21-year-old from Cottesloe faces eight charges including possessing and supplying data for use in computer offences, unauthorised modification of data, failing to comply with a section 3LA order under the Crimes Act 1914 (maximum 10 years on that count), and dealing with proceeds of crime of $100,000 or more; the 23-year-old from Mandurah faces six computer-related charges carrying up to five years
-• Scale: the AFP estimates the malicious code potentially compromised more than 1,000 organisations globally, enabling theft of more than 500,000 credentials and exfiltration of at least 300 GB of data, with reported global remediation costs in the hundreds of millions of dollars (an estimate, not an audited figure)
-• The propagation path: the investigation began in April 2026 on referrals from several cyber threat assessment companies; the syndicate inserted malicious code into software hosted on an open-source repository, developers pulled it into their own projects and spread it into government, academic and private sector systems, and once inside the code harvested credentials and authentication tokens
-• Official framing: FBI Cyber Division Assistant Director Brett E. Leatherman said the group's malicious code potentially compromised more than a thousand organisations worldwide, while AFP Commander Graeme Marshall noted that cybercrime syndicates are becoming increasingly organised and often operate like professional businesses
-• Named victim projects: GitHub, Telnyx, LiteLLM, Aqua's Trivy, Checkmarx's KICS, TanStack, MistralAI and Red Hat, using the self-spreading Mini Shai-Hulud worm to steal credentials and infect further packages
-• The attribution correction, long misreported: TeamPCP was not behind the original S1ngularity and Shai-Hulud attacks of summer 2025 — they cloned the worm, and the original actors remain unknown. The original Shai-Hulud compromised more than 180 npm packages in September 2025, spreading automatically, exfiltrating secrets to public GitHub repositories and turning victims' private repos public
-• The actor profile, which is the core of this story: Aikido researcher Charlie Eriksen describes TeamPCP as hard to categorise, sitting between state actor, organised cybercrime and ideology while mixing money, politics, disruption, ego and attention-seeking — and as "not especially sophisticated," dangerous because of how quickly they operationalised public exploits, techniques, research and malware ideas
-• The role of AI, as a researcher's assessment rather than a forensic conclusion: Eriksen holds that LLMs appear to have helped close the gap between seeing an attack technique and deploying it at scale, summarising it as "more capability, without more restraint," and notes that as LLMs accelerate learning, experimentation, tooling and scaling, relatively immature actors can cause serious harm far faster than before
-• The structural read: Eriksen expects this will not be the last group like TeamPCP, as barriers fall, tooling improves, and small teams acquire capabilities that would have demanded far more expertise and infrastructure only a few years ago
-• What it means for enterprises: drop the "small group equals low capability" assumption from the threat model, and shift supply chain defence from identifying sophisticated actors toward limiting the blast radius any actor can achieve — dependency pinning, egress control on build environments, and least privilege plus rotation for credentials and tokens
-• Citation discipline: all allegations remain untested in court, and the AFP says seized data is still being examined with further arrests not ruled out
-<div class="hashtags">#SupplyChainSecurity #ThreatIntel #OpenSource #DevSecOps</div></div>
+• The event: Manifold Security published "GitSpawn" on 1 September 2026, covering eight findings across seven AI coding agents, four of them unpatched at publication
+• The mechanism: agents run git commands at startup to gather context, frequently before workspace-trust prompts or authentication. Git config can specify command-execution sinks, notably core.fsmonitor, which git executes when the repository index refreshes — so the repository itself decides what runs on the user's machine, outside the agent's sandbox and without any tool-approval step
+• The researchers' framing: "The vulnerability is not in the model, or in anything new. It is in the ordinary plumbing underneath, the subprocess an agent spawns at session startup to work out where it is," and "If that folder came from somewhere else, the repository decides what that command runs."
+• Patched, per Manifold's table as of 1 September 2026: Claude Code's core.fsmonitor path (reported at 2.1.193, fixed in 2.1.196), goose (reported at 1.41.0, fixed in 1.44.0), OpenAI Codex, and Cursor
+• Unpatched at publication, same snapshot: Claude Code's ultrareview path (reported 15 July, still 2.1.252), Qwen Code (reported 7 July, still 0.22.3), Grok Build (reported 14 July, still 1.0.13), and Hermes (reported 20 July, still 0.21.0)
+• CVE-2026-72718 (goose): GitHub advisory GHSA-r5pp-p5r8-466r published 24 July 2026, High severity, CVSS v4.0 base score 7.0, affecting versions below 1.44.0, credited to Francisco Rosales of Manifold Security. The advisory states the execution bypasses all of goose's security controls including LLM tool approval and trust prompts, runs with the privileges of the user, and can exfiltrate environment secrets and API keys. NVD ingested it on 10 August 2026 with matching scoring
+• CVE-2026-19592 (OpenAI Codex): published in NVD on 1 September 2026, CVSS v3.1 7.3 High. Codex CLI and Codex Desktop automatically collected git repository metadata without disabling the repository-local core.fsmonitor setting, and the helper "runs outside Codex's command sandbox and without a user-approval prompt", executing with the user's privileges
+• CVE-2026-71963 (Hermes): assigned by VulnCheck; an NVD query on 3 September 2026 returned no record. Manifold reports the vendor never triaged the advisory after six contact attempts across five channels
+• A separate CVE that should not be conflated: CVE-2026-55607 (Claude Code), published in NVD on 29 June 2026, CVSS v4.0 7.7 / v3.1 8.8, describes worktree directory confusion affecting 2.1.38 through 2.1.163, where symlink manipulation plus git fsmonitor execution during worktree operations could overwrite home-directory files such as .zshenv and achieve execution outside seatbelt sandbox restrictions. This is not the same finding as the core.fsmonitor path Manifold lists as fixed in 2.1.196
+• Evidence that this is a class, not a bug: Sonar researcher Yaniv Nizry documented the same sink in an analysis published 30 April 2026 — Claude Code CLI ran git status before the trust prompt, so a malicious project setting core.fsmonitor achieved arbitrary execution — and that issue was fixed in v2.0.71 on 16 December 2025. The same write-up records a log.showSignature plus gpg.program variant, and two further paths from .claude/settings.json being loaded before the trust dialog: the apiKeyHelper setting and pre-trust hooks
+• The governance parallel: CISA published a review on 1 September 2026 arguing for eliminating vulnerability classes rather than patching case by case. This case is the evidence — one path closed in one product, and nine months later the same sink resurfaces across seven agents
+• Differences in vendor response, as recorded by Manifold alone: five reports were returned as duplicates of independently filed same-day findings, with the Claude Code reports closed as duplicate, while Hermes went untriaged after six contact attempts across five channels
+• What engineering organisations should do: on an unpatched version, cloning an external repository and starting an agent inside it carries the same risk as running an unknown executable. Restrict first-open of external repos to an isolated environment, isolate git configuration around the agent's startup calls (for example by opening with a controlled GIT_CONFIG environment), and bring agent versions into asset inventory and patch management
+• Citation discipline: patch statuses are a 1 September 2026 snapshot and these tools move quickly, so re-verify versions before reusing this content. Do not write "unpatched" as a standing fact, and do not extend any of it into a blanket security judgement about a brand
+<div class="hashtags">#AISecurity #DevSecOps #AppSec #AICodingAgents</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t2-nl">
+          <details class="channel" data-post-id="20260903-t2-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">澳洲聯邦警察（AFP）與西澳警察（WAPF）於 2026 年 8 月 26 日在伯斯執行搜索票，起訴兩名西澳男子合計 14 項罪名，指其涉嫌為供應鏈攻擊集團 TeamPCP 成員，FBI 平行參與此案；21 歲 Cottesloe 男子被控 8 項罪名，含未遵守《1914 年刑事法》第 3LA 條命令（該項最高 10 年）與處理 10 萬澳元以上犯罪所得，23 歲 Mandurah 男子被控 6 項電腦相關罪名，最高刑期 5 年，兩人於 8 月 27 日出庭。AFP 估計該惡意程式碼可能危害全球逾 1,000 家組織、造成逾 500,000 組憑證遭竊、至少 300 GB 資料外流，媒體引述的全球修復成本估計達數億美元。擴散方式為在開源儲存庫託管的軟體中植入惡意程式碼，開發者拉入自身專案後散布至政府、學術界與私部門系統，進入後蒐集登入憑證與驗證權杖；被點名的受害專案包含 GitHub、Telnyx、LiteLLM、Aqua 的 Trivy、Checkmarx 的 KICS、TanStack、MistralAI 與 Red Hat。須特別澄清的是，TeamPCP 並非 2025 年夏天原始 S1ngularity 與 Shai-Hulud 攻擊的行為者，他們是複製了該蠕蟲，原始攻擊者至今未知。Aikido 研究員 Charlie Eriksen 指該集團「並不特別高明」，其危險之處在於快速把公開的漏洞利用與技術操作化，並認為 LLM 看來幫忙縮短了從看到技術到大規模部署的距離，歸納為「更多能力，但沒有更多節制」。全部指控目前均為涉嫌、尚未經法院審判，AFP 並表示未排除後續逮捕。建議企業將威脅模型中「小團體等於低能力」的假設移除，並把供應鏈防護重心放在限制擴散半徑：依賴鎖定、建置環境對外連線控制、憑證與權杖的最小權限與輪替。主要來源：AFP 媒體發布（8/27）、Aikido Security（8/27）、Help Net Security（8/27）。
-<div class="hashtags">#SupplyChainSecurity #ThreatIntel #OpenSource #DevSecOps</div></div>
+                <div class="draft-text">Manifold Security 於 2026 年 9 月 1 日發表研究「GitSpawn」，在 7 款 AI coding agent 上提出 8 項發現，發表當下 4 項未修。攻擊條件只有一個：使用者以代理打開一個外部來源的資料夾。代理啟動時會執行 git 指令蒐集脈絡，而這常發生在工作區信任提示或驗證之前；git 設定檔中的 core.fsmonitor 欄位存放的是一個指令，會在儲存庫索引刷新時被 git 執行，因此惡意儲存庫可決定使用者機器上執行什麼——執行於代理沙箱之外、不經工具核准、不需要任何 prompt 或模型回應。研究者的定調是：「這個漏洞不在模型裡，也不在任何新東西裡。它在底下那些平凡的管線裡——在代理啟動時為了搞清楚自己在哪，而生出來的那個子行程。」CVE 部分（本站直接查 NVD）：CVE-2026-72718（goose）為 CVSS v4.0 基本分數 7.0 High、影響 1.44.0 以下、通報者為 Manifold 的 Francisco Rosales，GitHub 諮詢說明其執行會繞過含 LLM 工具核准與信任提示在內的全部安全控制；CVE-2026-19592（OpenAI Codex）於 9 月 1 日發布、CVSS v3.1 7.3 High，NVD 明確指 helper 執行於 Codex 指令沙箱之外且無使用者核准提示；CVE-2026-71963（Hermes）由 VulnCheck 指派、NVD 目前查無資料。需特別更正兩點：其一，有報導把 goose 那項寫成「CVSS 4.0」，4.0 是 CVSS 版本號、分數為 7.0；其二，CVE-2026-55607（Claude Code，6/29 發布）在 NVD 的核心描述是 worktree 目錄混淆（影響 2.1.38–2.1.163），與 Manifold 表中 2.1.196 修補的 core.fsmonitor 路徑不是同一項。本案最值得注意的是它是漏洞類別而非單一 bug：Sonar 研究員 Yaniv Nizry 在 2026 年 4 月 30 日的分析中記錄過同一個 sink，該問題已於 2025 年 12 月 16 日的 v2.0.71 修補，九個月後同一 sink 在七款代理上重現——正好印證 CISA 於 9 月 1 日提出的「應消除漏洞類別而非逐案修補」。實務結論：在未修版本上，clone 外部儲存庫並在其中啟動代理，風險等同執行來路不明的執行檔；建議把外部 repo 首次開啟限制在隔離環境、對代理啟動時的 git 呼叫做設定隔離，並把 agent 版本納入資產盤點與修補管理。修補狀態為 9 月 1 日快照，行動前請重新確認版本。主要來源：Manifold Security（9/1）、GitHub 安全諮詢（7/24）、NVD、Sonar（4/30）。
+<div class="hashtags">#AISecurity #DevSecOps #AppSec #AICodingAgents</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">On 26 August 2026 the Australian Federal Police and Western Australia Police executed search warrants in Perth and charged two Western Australian men with 14 offences between them, alleging they were members of the supply chain attack group TeamPCP, with the FBI working the investigation in parallel; the 21-year-old from Cottesloe faces eight charges including failing to comply with a section 3LA order under the Crimes Act 1914 (maximum 10 years on that count) and dealing with proceeds of crime of $100,000 or more, while the 23-year-old from Mandurah faces six computer-related charges carrying up to five years, and both appeared in Perth Magistrates Court on 27 August. The AFP estimates the malicious code potentially compromised more than 1,000 organisations globally, enabling theft of more than 500,000 credentials and exfiltration of at least 300 GB of data, with reported global remediation costs in the hundreds of millions of dollars. The propagation path was to insert malicious code into software hosted on an open-source repository so that developers pulled it into their own projects, spreading it into government, academic and private sector systems where it harvested credentials and authentication tokens; named victim projects include GitHub, Telnyx, LiteLLM, Aqua's Trivy, Checkmarx's KICS, TanStack, MistralAI and Red Hat. One clarification matters: TeamPCP was not behind the original S1ngularity and Shai-Hulud attacks of summer 2025 — they cloned that worm, and the original actors remain unknown. Aikido researcher Charlie Eriksen describes the group as "not especially sophisticated," dangerous instead for how quickly it operationalised public exploits and techniques, and assesses that LLMs appear to have helped close the gap between seeing a technique and deploying it at scale, summarised as "more capability, without more restraint." All allegations remain untested in court and the AFP has not ruled out further arrests. Enterprises should drop the assumption that a small group means low capability, and focus supply chain defence on limiting blast radius: dependency pinning, egress control on build environments, and least privilege plus rotation for credentials and tokens. Sources: AFP media release (8/27), Aikido Security (8/27), Help Net Security (8/27).
-<div class="hashtags">#SupplyChainSecurity #ThreatIntel #OpenSource #DevSecOps</div></div>
+                <div class="draft-text">Manifold Security published "GitSpawn" on 1 September 2026, reporting eight findings across seven AI coding agents with four unpatched at publication. The precondition is simply that a user opens an externally sourced folder inside an agent. Agents run git commands at startup to gather context, often before workspace-trust prompts or authentication; git config's core.fsmonitor field holds a command that git executes when the repository index refreshes, so a malicious repository decides what runs on the user's machine — outside the agent's sandbox, without tool approval, and with no prompt or model response involved. The researchers frame it as: "The vulnerability is not in the model, or in anything new. It is in the ordinary plumbing underneath, the subprocess an agent spawns at session startup to work out where it is." On the CVEs, queried directly from NVD: CVE-2026-72718 (goose) carries a CVSS v4.0 base score of 7.0 High, affects versions below 1.44.0 and is credited to Manifold's Francisco Rosales, with the GitHub advisory stating the execution bypasses all of goose's security controls including LLM tool approval and trust prompts; CVE-2026-19592 (OpenAI Codex) was published on 1 September at CVSS v3.1 7.3 High, with NVD stating explicitly that the helper runs outside Codex's command sandbox and without a user-approval prompt; CVE-2026-71963 (Hermes) was assigned by VulnCheck and currently returns no NVD record. Two corrections matter: some coverage rendered the goose entry as "CVSS 4.0", which is the CVSS version rather than the score of 7.0; and CVE-2026-55607 (Claude Code, published 29 June) is described in NVD as worktree directory confusion affecting 2.1.38 through 2.1.163, which is not the core.fsmonitor path Manifold lists as fixed in 2.1.196. The most significant point is that this is a vulnerability class rather than a single bug: Sonar researcher Yaniv Nizry documented the same sink in an analysis published 30 April 2026, with that issue fixed in v2.0.71 on 16 December 2025, and nine months later the same sink resurfaces across seven agents — precisely the argument in CISA's 1 September review that vulnerability classes should be eliminated rather than patched case by case. Practically, on an unpatched version cloning an external repository and starting an agent inside it carries the same risk as running an unknown executable; restrict first-open of external repos to an isolated environment, isolate git configuration around agent startup calls, and bring agent versions into asset inventory and patch management. Patch statuses are a 1 September snapshot — re-verify your versions before acting. Sources: Manifold Security (1 Sept), GitHub advisory (24 July), NVD, Sonar (30 April).
+<div class="hashtags">#AISecurity #DevSecOps #AppSec #AICodingAgents</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
         </div>
 
         <!-- 選題 3 -->
         <div class="topic">
-          <div class="topic-num">選題 03 · 電子製造 / 營運持續</div>
-          <h3>一家年營收 200 億美元的醫材製造商，公告裡寫的是「影響了製造產品的能力」</h3>
-          <p>Boston Scientific 於 8/25 識別到影響部分 IT 系統的資安事件，8/26 向 SEC 提交 Form 8-K，載明中斷影響包括處理與出貨客戶訂單的能力、完全回復時程未知，且尚未判定是否具重大性。公司官方更新頁進一步寫明受影響範圍「包括製造產品的能力」；8/29 更新指雲端系統未受影響、未授權活動僅限於某些地端系統，並與 CrowdStrike 合作。營運上採接單與履行解耦：仍可經 EDI、在地應用與 GHX 收單並排入佇列。</p>
+          <div class="topic-num">選題 03 · AI 治理 / 開源社群</div>
+          <h3>1045 名開發者、425 張選票、8 個選項——Debian 投票決定了 LLM 政策，禁用案在 3:1 門檻前出局</h3>
+          <p>Debian 專案秘書 Kurt Roeckx 於 8/30 公布一般決議 2026/vote_002「LLM usage in Debian」的結果，勝出的是 Choice 5「Responsible Use of Generative AI」。禁用案不是險敗：選項 1 因修改社會契約而需 3:1 絕對多數，官方計算式為「0.560 (144/257) &lt; 3」；選項 3 只需簡單多數也沒過（0.765）。政策核心是不管來源、管責任，揭露為「鼓勵但不要求」，但畫下三條有拘束力的紅線：非公開材料未經授權不得送第三方 AI 服務、大規模自動化須先取得共識並由負責的人類監督、專案不對 AI 產出的著作權表態。這是目前唯一一份可以逐字讀、逐票查的大型開源專案 AI 政策。</p>
           <div class="sources">
-            <a class="source-tag" href="https://news.bostonscientific.com/update-on-recent-cybersecurity-incident" target="_blank" rel="noopener">🏛 Boston Scientific 官方更新頁（8/27、8/28、8/29）</a>
-            <a class="source-tag" href="https://www.sec.gov/Archives/edgar/data/885725/000088572526000056/bsx-20260826.htm" target="_blank" rel="noopener">🏛 SEC Form 8-K（事件日 8/25、申報日 8/26）</a>
-            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/27/boston-scientific-cyberattack-network-outage/" target="_blank" rel="noopener">📰 Help Net Security 8/27</a>
+            <a class="source-tag" href="https://lists.debian.org/debian-devel-announce/2026/08/msg00005.html" target="_blank" rel="noopener">🏛 Debian 郵件列表：GR 結果公告（Kurt Roeckx）8/30</a>
+            <a class="source-tag" href="https://www.debian.org/vote/2026/vote_002" target="_blank" rel="noopener">🏛 Debian 官方投票頁：2026 vote_002</a>
+            <a class="source-tag" href="https://www.debian.org/vote/2026/vote_002_tally.txt" target="_blank" rel="noopener">🏛 Debian 官方 tally sheet（本站據此清點 425 張選票）</a>
+            <a class="source-tag" href="https://www.helpnetsecurity.com/2026/08/31/debian-linux-llm-policy/" target="_blank" rel="noopener">📰 Help Net Security 8/31</a>
           </div>
 
-          <details class="channel" data-post-id="20260831-t3-li">
+          <details class="channel" data-post-id="20260903-t3-li">
             <summary>LinkedIn 草稿（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">多數資安事件公告只寫「IT 系統受到影響」。這一份寫了別的。
+                <div class="draft-text">如果你正在寫公司的 AI 使用規範，這份文件值得你花二十分鐘讀原文。
 
-Boston Scientific 在官方更新中寫道：事件影響到某些作業系統與商業應用的存取，「包括製造產品的能力，以及處理與出貨客戶訂單的能力」。
+Debian 專案秘書 Kurt Roeckx 在 8 月 30 日公布了一般決議 2026/vote_002「LLM usage in Debian」的結果。1045 名具投票權的開發者，實際投出 425 張選票，八個實質選項加上「以上皆非」。
 
-一家員工約 59,000 人、遍及 127 國、2025 年淨銷售額逾 200 億美元的醫材製造商，把 IT 事件與產線停擺之間那條線，直接畫了出來。
+結果是：沒有禁用，沒有強制揭露，但畫了三條有拘束力的紅線。
 
-時序：8 月 25 日識別到事件，8 月 26 日向 SEC 提交 8-K。8-K 的用語值得逐字讀——事件「已經造成、且預期將持續造成」對支援營運之資訊系統與商業應用存取的中斷與限制，而「完全回復的時程尚未可知」。
+先講最容易被誤讀的部分——禁用案不是「以些微差距落敗」。
 
-有三件事我覺得製造業同業可以直接拿去對照自己的營運持續計畫。
+選項 1「透過社會契約禁止 LLM 貢獻」因為要修改 Debian 社會契約，需要 3:1 的絕對多數。官方計算式記下的比值是「0.560 (144/257)」，門檻是 3。它連 1:1 都沒到。
 
-一、雲端與地端的分界被明講了。 8 月 29 日的更新說：調查顯示雲端系統與應用沒有影響，未授權活動僅限於某些地端系統。那麼反過來問自己：你哪些關鍵營運能力還綁在地端？如果地端整片不可用，你還剩下什麼？
+而選項 3「盡可能拒絕 LLM，並更新行為準則」只需要簡單多數，比值是「0.765 (176/230)」，門檻是 1，也沒過。
 
-二、他們把接單與履行解耦了。 訂單沒有停收——仍可透過 EDI 與在地應用電子化接單，排入佇列等待日後履行，包含經由 GHX 進來的訂單，先保留到系統回復。業務連續性不是全有全無，這是很實際的一種樣貌。
+在一個一千多人的技術社群裡，兩個限制性最強的選項都沒有通過。
 
-三、產品安全與企業 IT 安全必須分開溝通。 因為產品是植入式醫材，他們額外說明：未連接到公司網路的裝置沒有已知影響、已植入 CRM 裝置的功能與既有遠端監測不受影響——但新植入裝置的遠端監測啟用受到影響，新的通訊器無法啟用、新的 ICM 無法與病患手機配對。
+最後由選項 5「Responsible Use of Generative AI」以 Condorcet 勝出，Schwartz Set 裡只有它一個。它擊敗次名選項 2 是 203 對 148，對「以上皆非」是 281 對 126。
 
-這兩半必須一起講。只講前半會低估影響，只講後半會製造恐慌。任何有連網產品的製造商，遲早都會面對這個溝通難題。
+它勝出的原因不是最寬鬆，是最具體。
 
-還有一個容易被寫錯的細節：8-K 明載公司「尚未判定」事件是否合理可能造成重大影響。那不是「確認重大」，也不是「確認不重大」，是尚未認定。
+政策的核心是一句話：不管來源，管責任。原文寫得比多數企業內規都重——
 
-目前攻擊手法、行為者與是否有資料外洩都未公開，也沒有組織宣稱犯案。以上為截至 8 月 29 日 16:55（美東）的狀態。
-<div class="hashtags">#Manufacturing #OTSecurity #BusinessContinuity #IncidentResponse #MedTech</div></div>
+「使用生成式 AI 工具，不減損貢獻者對其所提交作品的責任。貢獻者被期待要理解、審查、測試，並在適當時修改 AI 輔助的產出，然後才將其納入 Debian。盲目接受或上傳 AI 生成的材料而未經適當的人類審查，與 Debian 既有的開發實踐不相容。」
+
+揭露則是「鼓勵，不強制」。原文：「我們鼓勵貢獻者揭露一項貢獻是否是在 AI 輔助下完成的，但不要求他們這麼做。」
+
+三條紅線是這份文件最可以直接搬進企業內規的部分：
+
+一、機密資訊、私人通訊、資安敏感資訊（原文明文舉例為「尚未公開的、被禁運的資安漏洞資訊」）、加密金鑰、憑證與其他非公開材料，未經明確授權不得提供給第三方 AI 服務。
+
+二、大規模或自動化的專案行動——大量開 bug、大量送 patch、大規模程式碼修改——須先經適當管道討論取得共識，且該自動化流程須有一名對其行為與產出負責的人類監督。
+
+三、專案不對 AI 產出的著作權歸屬表態，既有的授權與著作權規則照常適用。（注意：這是「不表態」，不是「沒有問題」。）
+
+我覺得對企業最有價值的，是它逼你面對一個資源分配的選擇：
+
+你要花力氣去要求並驗證「這段是不是 AI 寫的」，還是把資源放在「不管誰寫的，送出的人負全責」再加上幾條不可跨越的資料紅線？
+
+Debian 用一千多人的投票選了後者。你不一定要同意，但這是目前唯一一份可以逐字讀、逐票查的答案。
+
+（票數與計算式均取自 Debian 官方投票頁與 tally sheet；425 張選票為本人依 tally sheet 清點所得。）
+<div class="hashtags">#AIGovernance #OpenSource #AIPolicy #Debian #EngineeringLeadership</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Most incident disclosures say "IT systems were affected." This one said something else.
+                <div class="draft-text">If you are drafting your organisation's AI usage policy, this document is worth twenty minutes on the original.
 
-Boston Scientific's own update states that the incident is affecting access to certain operating systems and business applications, "including the ability to manufacture products, as well as process and ship customer orders."
+On 30 August, Debian Project Secretary Kurt Roeckx published the result of General Resolution 2026/vote_002, "LLM usage in Debian." With 1,045 eligible developers, 425 ballots were cast across eight substantive options plus "none of the above."
 
-A medical device manufacturer with roughly 59,000 employees across 127 countries and over $20 billion in 2025 net sales drew the line between an IT incident and a stopped production line explicitly.
+The outcome: no ban, no mandatory disclosure, and three binding red lines.
 
-Timeline: the incident was identified on 25 August and an 8-K was filed with the SEC on 26 August. The filing's language is worth reading verbatim — the incident "has caused, and is expected to continue to cause" disruptions and limitations of access to information systems and business applications supporting operations, and "the timeline for a full restoration is not yet known."
+Start with the part that gets misread. The ban did not narrowly lose.
 
-Three things manufacturers can take straight to their own continuity plans.
+Option 1, "Ban LLM contributions from Debian via Social Contract," required a 3:1 supermajority because it would amend the Social Contract. The official calculation records a ratio of "0.560 (144/257)" against a threshold of 3. It did not even reach 1:1.
 
-1. The cloud / on-premise boundary was stated plainly. The 29 August update says the investigation indicates no impact to cloud-based systems and applications, and that unauthorised activity is limited to certain on-premise systems. So ask the inverse: which of your critical operating capabilities are still tied to on-premise systems, and what is left if that whole layer is unavailable?
+Option 3, "Reject LLMs as far as practical, update Code of Conduct," needed only a simple majority. Its line records a ratio of "0.765 (176/230)" against a threshold of 1. Also failed.
 
-2. They decoupled order intake from fulfilment. Ordering did not stop — orders can still be taken electronically through EDI and local applications and placed in a queue for future fulfilment, including orders through the Global Health Exchange, which are held until systems are back online. Business continuity is not all-or-nothing, and this is a very practical shape for it.
+In a technical community of over a thousand people, both of the most restrictive options fell.
 
-3. Product safety and enterprise IT security have to be communicated separately. Because the products are implantable devices, the company added that there is no known impact to devices not connected to its network, and none to implanted CRM device function or to remote monitoring established before the disruption — but that new remote monitoring activations are affected, with new communicators unable to be activated and newly implanted ICMs unable to pair with a patient's monitoring phone.
+Option 5, "Responsible Use of Generative AI," won by Condorcet, alone in the Schwartz Set. It beat the runner-up, Option 2, by 203 to 148, and beat "none of the above" 281 to 126.
 
-Both halves have to travel together. The first half alone understates the impact; the second alone creates unnecessary alarm. Any manufacturer with connected products will face this communication problem eventually.
+It won not for being the most permissive, but for being the most specific.
 
-One detail that is easy to get wrong: the 8-K states the company "has not yet determined" whether the incident is reasonably likely to have a material impact. That is neither confirmed material nor confirmed immaterial. It is undetermined.
+The core of the policy is one idea: govern responsibility, not provenance. The wording is heavier than most corporate policies manage:
 
-The attack method, the actor and whether data was taken all remain undisclosed, and no group has claimed the attack. The above reflects the position as of 29 August, 4:55 p.m. ET.
-<div class="hashtags">#Manufacturing #OTSecurity #BusinessContinuity #IncidentResponse #MedTech</div></div>
+"The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit. Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian. Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices."
+
+Disclosure is encouraged, not required: "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so." (sic, twice, in the original.)
+
+The three red lines are the part you can lift into an internal policy almost unchanged:
+
+One. Confidential information, private communications, security-sensitive information — the text specifically names "embargoed information about security bugs that is not yet public" — cryptographic keys, credentials and other non-public material must not be disclosed to third-party AI services unless that disclosure has been explicitly authorised.
+
+Two. Actions with broad project impact — mass bug filing or patch submission, large-scale code modifications, other automated changes affecting many packages or contributors — require prior discussion and consensus through the appropriate channels, and any such automated process "should be overseen by a human who remains accountable for its behavior and output."
+
+Three. The project takes no position on whether AI-generated output is copyrightable or derived from copyrighted works, and existing licensing and copyright rules continue to apply. Note what that is: no position, not no problem.
+
+The most useful thing here for a company is that it forces a resource-allocation choice:
+
+Do you spend effort requiring and verifying whether a given passage was AI-written, or do you put that effort into "whoever submits it owns it entirely" plus a short list of data red lines that cannot be crossed?
+
+Debian put a thousand-plus-person vote behind the second answer. You do not have to agree — but this is currently the only answer you can read line by line and check vote by vote.
+
+(All vote counts and calculations come from Debian's official vote page and tally sheet; the 425-ballot figure is my own count from the tally sheet.)
+<div class="hashtags">#AIGovernance #OpenSource #AIPolicy #Debian #EngineeringLeadership</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t3-x">
+          <details class="channel" data-post-id="20260903-t3-x">
             <summary>Twitter / X 推文串（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">1/ 多數資安公告只寫「IT 系統受影響」。Boston Scientific 的官方更新寫的是：影響到某些作業系統與商業應用的存取，「包括製造產品的能力，以及處理與出貨客戶訂單的能力」。IT 事件與產線停擺之間那條線，被直接畫出來了。
+                <div class="draft-text">1/ Debian 用投票決定了自己的 LLM 政策。8/30 公布結果：沒有禁用，沒有強制揭露，但畫了三條有拘束力的紅線。1045 名具投票權的開發者，實際投出 425 張選票，八個實質選項加「以上皆非」。
 
-2/ 時序：8/25 識別到事件，8/26 向 SEC 提交 8-K。申報書用語：事件「已經造成、且預期將持續造成」存取中斷與限制，「完全回復的時程尚未可知」。
+2/ 禁用案不是「險敗」。選項 1「透過社會契約禁止 LLM 貢獻」因涉及修改社會契約，需要 3:1 絕對多數。官方計算式記下的比值：「0.560 (144/257)」，門檻是 3。連 1:1 都沒到。
 
-3/ 雲端與地端的分界被明講：8/29 的更新說調查顯示雲端系統與應用沒有影響，未授權活動僅限於某些地端系統。公司持續與 CrowdStrike 及其他第三方專家合作。
+3/ 選項 3「盡可能拒絕 LLM 並更新行為準則」只需簡單多數，也沒過：比值「0.765 (176/230)」，門檻是 1。在一千多人的技術社群裡，兩個限制性最強的選項都倒了。
 
-4/ 反過來問自己：你哪些關鍵營運能力還綁在地端？如果地端整片不可用，你還剩下什麼？
+4/ 勝出的是選項 5「Responsible Use of Generative AI」，以 Condorcet 方式取勝，Schwartz Set 中只有它。對次名選項 2 是 203：148，對「以上皆非」是 281：126。它勝出不是因為最寬鬆，是因為最具體。
 
-5/ 值得抄的降級運作：訂單沒停收。仍可透過 EDI 與在地應用電子化接單、排入佇列待日後履行，含經由 GHX 進來的訂單，先保留到系統回復。接單與履行解耦。
+5/ 核心原則：不管來源，管責任。原文——「使用生成式 AI 工具，不減損貢獻者對其所提交作品的責任……盲目接受或上傳 AI 生成的材料而未經適當的人類審查，與 Debian 既有的開發實踐不相容。」
 
-6/ 產品面必須完整轉述：未連到公司網路的裝置沒有已知影響、已植入 CRM 裝置功能與既有遠端監測不受影響——但新裝置的遠端監測啟用受影響，新通訊器無法啟用、新 ICM 無法與病患手機配對。
+6/ 揭露條款原文：「我們鼓勵貢獻者揭露一項貢獻是否是在 AI 輔助下完成的，但不要求他們這麼做。」（英文原文含兩處拼字錯誤，引用時照錄並加註 sic。）
 
-7/ 只講前半會低估影響，只講後半會製造恐慌。有連網產品的製造商遲早要面對這個溝通難題。
+7/ 紅線一：機密資訊、私人通訊、資安敏感資訊（原文舉例為「尚未公開的、被禁運的資安漏洞資訊」）、加密金鑰、憑證與其他非公開材料，未經明確授權不得提供給第三方 AI 服務。
 
-8/ 一個易寫錯的細節：8-K 明載公司「尚未判定」事件是否合理可能造成重大影響。不是確認重大，也不是確認不重大，是尚未認定。
+8/ 紅線二：大量開 bug、大量送 patch、大規模程式碼修改等影響廣泛的自動化行動，須先經適當管道討論取得共識，且須有一名對其行為與產出負責的人類監督。
 
-9/ 手法、行為者、是否有資料外洩皆未公開，無人宣稱犯案。以上為截至 8/29 16:55（美東）的狀態。公司規模：約 59,000 員工、127 國、2025 年淨銷售額逾 200 億美元。
-<div class="hashtags">#Manufacturing #OTSecurity #BusinessContinuity #MedTech</div></div>
+9/ 紅線三：專案不對 AI 產出的著作權歸屬表態，既有授權與著作權規則照常適用。請注意這是「不表態」，不是「沒有問題」——這兩件事常被混寫。
+
+10/ 提醒一個容易誤植的地方：網路上流傳的「LLM 使用難以甚至不可能偵測」這句，出自落選的選項 6，不是勝出的選項 5。引用前請對照原文。
+
+11/ 對企業的實務價值：它逼你做一個資源分配選擇——花力氣驗證「這段是不是 AI 寫的」，還是把資源放在「送出的人負全責」加上幾條資料紅線？Debian 用一千多人的投票選了後者。這是目前唯一可以逐票查的答案。
+<div class="hashtags">#AIGovernance #OpenSource #AIPolicy #Debian</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">1/ Most incident disclosures say "IT systems were affected." Boston Scientific's own update says the incident is affecting access to certain operating systems and business applications, "including the ability to manufacture products, as well as process and ship customer orders." The line between an IT incident and a stopped line, drawn explicitly.
+                <div class="draft-text">1/ Debian voted on its own LLM policy. Result published 30 Aug: no ban, no mandatory disclosure, three binding red lines. 1,045 eligible developers, 425 ballots cast, eight substantive options plus "none of the above."
 
-2/ Timeline: identified 25 Aug, 8-K filed with the SEC 26 Aug. The filing's words: the incident "has caused, and is expected to continue to cause" disruptions and limitations of access, and "the timeline for a full restoration is not yet known."
+2/ The ban did not narrowly lose. Option 1, "Ban LLM contributions from Debian via Social Contract," needed a 3:1 supermajority because it amends the Social Contract. Official line records a ratio of "0.560 (144/257)" against a threshold of 3. Not even 1:1.
 
-3/ The cloud / on-prem boundary was stated: the 29 Aug update says the investigation indicates no impact to cloud-based systems and applications, with unauthorised activity limited to certain on-premise systems. The company continues to work with CrowdStrike and other third-party experts.
+3/ Option 3, "Reject LLMs as far as practical, update Code of Conduct," needed only a simple majority and also failed, with a ratio of "0.765 (176/230)" against a threshold of 1. Both of the most restrictive options fell in a community of over a thousand.
 
-4/ So ask the inverse: which of your critical operating capabilities are still tied to on-premise systems, and what is left if that entire layer is unavailable?
+4/ Option 5, "Responsible Use of Generative AI," won by Condorcet, alone in the Schwartz Set. It beat runner-up Option 2 by 203–148 and "none of the above" by 281–126. It won for being the most specific, not the most permissive.
 
-5/ The degraded-mode pattern worth copying: ordering did not stop. Orders are still taken electronically via EDI and local applications and queued for future fulfilment, including Global Health Exchange orders held until systems are back. Intake decoupled from fulfilment.
+5/ Core principle: govern responsibility, not provenance. Verbatim: "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit... Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices."
 
-6/ The product side has to be quoted in full: no known impact to devices not connected to the company network, none to implanted CRM device function or to remote monitoring established before the disruption — but new remote monitoring activations are affected, new communicators cannot be activated and newly implanted ICMs cannot pair with a patient's phone.
+6/ On disclosure: "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so." Two typos are in the original — quote it sic.
 
-7/ The first half alone understates the impact; the second alone creates alarm. Any manufacturer with connected products will hit this communication problem eventually.
+7/ Red line one: confidential information, private communications, security-sensitive information — the text names "embargoed information about security bugs that is not yet public" — cryptographic keys, credentials and other non-public material must not go to third-party AI services without explicit authorisation.
 
-8/ A detail easy to get wrong: the 8-K states the company "has not yet determined" whether the incident is reasonably likely to have a material impact. Not confirmed material, not confirmed immaterial — undetermined.
+8/ Red line two: mass bug filing, mass patch submission, large-scale code modifications and other broadly impactful automation require prior discussion and consensus, and "should be overseen by a human who remains accountable for its behavior and output."
 
-9/ Method, actor and whether data was taken are all undisclosed, and no group has claimed it. This reflects the position as of 29 Aug, 4:55 p.m. ET. Company scale: ~59,000 employees across 127 countries, over $20B in 2025 net sales.
-<div class="hashtags">#Manufacturing #OTSecurity #BusinessContinuity #MedTech</div></div>
+9/ Red line three: the project takes no position on whether AI output is copyrightable or derived from copyrighted works, and existing licensing rules still apply. That is no position, not no problem — the two get conflated constantly.
+
+10/ One attribution trap: the line circulating as "LLM usage can be hard if not impossible to detect" comes from Option 6, which lost. It is not the winning Option 5. Check the original before quoting.
+
+11/ Why it matters for companies: it forces a resource-allocation choice — verify whether a passage was AI-written, or invest in "whoever submits it owns it entirely" plus a short list of hard data red lines? Debian put a thousand-plus-person vote behind the second. It is the only answer you can audit vote by vote.
+<div class="hashtags">#AIGovernance #OpenSource #AIPolicy #Debian</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t3-blog">
+          <details class="channel" data-post-id="20260903-t3-blog">
             <summary>部落格要點（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">標題：當公告寫的是「影響了製造產品的能力」——一份可以拿來對照自家營運持續計畫的事件揭露
+                <div class="draft-text">標題：不管來源，管責任——Debian 用 425 張選票決定的 LLM 政策，以及它為什麼值得企業照抄
 
-• 事件與時序：Boston Scientific 於 2026 年 8 月 25 日識別到影響部分資訊科技系統的資安事件，8 月 26 日向 SEC 提交 Form 8-K；偵測後即啟動事件應變程序並在第三方資安專家協助下展開調查
-• 8-K 的用語：事件「已經造成、且預期將持續造成」對支援營運之資訊系統與商業應用存取的中斷與限制，包括處理與出貨客戶訂單的能力，且完全回復時程尚未可知
-• 重大性：8-K 明載公司尚未判定該事件是否合理可能造成重大影響——既非確認重大，亦非確認不重大，轉述時不可簡化為任一邊
-• 公司更新把製造寫進去了：8/27 23:38 與 8/29 16:55（美東）兩則更新均載明，事件影響某些作業系統與商業應用的存取，「包括製造產品的能力，以及處理與出貨客戶訂單的能力」
-• 範圍：8/29 更新指調查顯示雲端系統與應用未受影響，未授權活動僅限於某些地端系統；公司持續與 CrowdStrike 及其他第三方資安專家合作
-• 降級運作的具體樣貌：客戶仍可下單，訂單可經 EDI 與在地應用電子化接收並排入佇列待日後履行，含經 Global Health Exchange（GHX）進入者，保留至系統回復；客戶亦可循既有管道（業務代表、電子郵件、既有數位平台）繼續溝通
-• 產品面的完整陳述（兩半須並列）：未連接至公司網路的裝置無已知影響、臨床人員使用該類裝置的能力無已知影響、無證據顯示對醫院網路造成額外資安風險；同時，新的遠端監測啟用受影響——新植入 CRM 裝置的新通訊器無法啟用，新植入 ICM 須以 Clinic Assistant 應用程式啟用且無法與病患遠端監測手機配對，資料須待配對或現場讀取才能傳送
-• 規模參照：員工約 59,000 人、遍及 127 國、每年治療約 4,800 萬名病患、2025 年淨銷售額逾 200 億美元（媒體引自公司網站）
-• 尚未公開者：初始入侵途徑、行為者、是否有資料遭竊；截至報導時點無組織宣稱犯案，本則不推測攻擊類型，亦不將其歸類為勒索軟體事件
-• 產業脈絡：Boston Scientific 加入今年一連串遭攻擊的醫療科技公司之列，包括 Stryker、iRhythm Holdings、Novo Nordisk 與 Xsolis
-• 對製造業的三個對照題：（一）哪些關鍵營運能力仍綁在地端，地端整片不可用時還剩什麼；（二）接單與履行是否已解耦，是否有可在系統中斷期間持續收單並排隊的替代路徑；（三）產品安全與企業 IT 安全的對外溝通是否已分軌準備，能否在同一份公告中同時說清楚「裝置本身安全」與「哪些新功能啟用受影響」
-• 時點聲明：本則所述為截至 2026 年 8 月 29 日 16:55（美東）的狀態，事件仍在進行中
-<div class="hashtags">#Manufacturing #OTSecurity #BusinessContinuity #MedTech</div></div>
+• 事件：Debian 專案秘書 Kurt Roeckx 於 2026 年 8 月 30 日 11:07:57 +0200 在 debian-devel-announce 公布一般決議 2026/vote_002「LLM usage in Debian」的結果，勝出選項為 Choice 5「Responsible Use of Generative AI」
+• 投票規模：官方投票頁載明具投票權開發者為 1045 人，法定門檻（3×Q）為 48.4897；本站依官方 tally sheet 清點實際選票為 425 張，投票率約 40.7%；八個實質選項全數達到法定門檻，得票數自選項 1 的 144 至選項 5 的 281
+• 八個實質選項：禁止（經社會契約）、有條件允許、盡可能拒絕並更新行為準則、僅接受 Debian 特定工作的 AI 貢獻、負責任使用生成式 AI、對生成式 AI 採謹慎立場、Debian 由人類創造、因氣候破壞而避免使用 LLM；另有「以上皆非」
+• 兩個限制性選項如何出局：選項 1 因修改社會契約而適用 3:1 絕對多數，其比值為「0.560 (144/257)」而門檻為 3；選項 3 僅需簡單多數，其比值為「0.765 (176/230)」而門檻為 1，兩者皆未通過多數要求
+• 勝出過程：其餘選項通過多數要求後依 Condorcet 方法兩兩對決，選項 5 擊敗選項 2（203:148）、選項 4（232:115）、選項 6（210:130）、選項 7（251:139）、選項 8（244:154）與「以上皆非」（281:126）；官方載明 Schwartz Set 僅含選項 5
+• 法律定位：決議依 Debian 憲章第 4.1(5) 條發出，性質為立場聲明，並明言該立場可隨時間演進而不需再訴諸未來的一般決議
+• 核心立場：Debian 對生成式 AI 工具在軟體開發、維護與文件上的使用「既不背書也不禁止」，並認可負責任使用可顯著提升志願貢獻者的生產力
+• 責任條款（本則最重的一句）：使用生成式 AI 工具不減損貢獻者對其提交作品的責任；貢獻者被期待理解、審查、測試並在適當時修改 AI 輔助的產出，然後才納入 Debian；盲目接受或上傳未經適當人類審查的 AI 生成材料，與 Debian 既有開發實踐不相容
+• 揭露條款：鼓勵但不要求貢獻者揭露一項貢獻是否在 AI 輔助下完成（英文原文含 enourage 與 assitance 兩處拼字錯誤，引用時照錄並註 sic）
+• 紅線一（資料）：機密資訊、私人通訊、資安敏感資訊（原文舉例為尚未公開的禁運資安漏洞資訊）、加密金鑰、憑證及其他關於 Debian 專案、其基礎設施或社群的非公開材料，未經明確授權且不符合 Debian 安全與隱私要求者，不得揭露給第三方 AI 服務
+• 紅線二（自動化）：大量開 bug 或送 patch、大規模程式碼修改，以及其他影響眾多套件或貢獻者的自動化變更或請求，須先經適當專案管道討論並取得共識；任何此類自動化流程須有一名對其行為與產出負責的人類監督
+• 紅線三（著作權）：專案不透過本決議解決 AI 產出的著作權、著作人身分、授權與訓練素材重製等未決法律爭議，也不對 AI 產出是否可受著作權保護表態；既有的授權、著作權、軟體自由與貢獻接受政策照常適用
+• 結論句：本決議確認生成式 AI 既不豁免於、也不額外受制於 Debian 貢獻者既有標準之外的特別規則
+• 對企業的可移植部分：政策內容（責任歸屬、三條紅線、揭露的處理方式）可直接參考；治理程序（憲章、GR、Condorcet）屬 Debian 特有，不宜外推
+• 引用紀律一：425 張選票為本站依官方 tally sheet 清點，非官方公布統計值；投票截止日未在本站取得文件中直接載明，故僅引用結果公布日 8 月 30 日
+• 引用紀律二：「LLM 使用難以甚至不可能偵測」等說法出自落選的選項 6 提案文字，不是勝出的選項 5，切勿混用
+• 引用紀律三：「不對著作權表態」不等於「沒有著作權問題」，兩者不可互換
+<div class="hashtags">#AIGovernance #OpenSource #AIPolicy #Debian</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Title: When the disclosure says "the ability to manufacture products" — an incident write-up you can hold against your own continuity plan
+                <div class="draft-text">Title: Govern responsibility, not provenance — the LLM policy Debian decided with 425 ballots, and why companies should read it
 
-• Event and timeline: Boston Scientific identified a cybersecurity incident affecting certain information technology systems on 25 August 2026 and filed a Form 8-K with the SEC on 26 August, having activated incident response protocols on detection and begun an investigation with third-party cybersecurity experts
-• The 8-K's language: the incident "has caused, and is expected to continue to cause" disruptions and limitations of access to information systems and business applications supporting operations, including the ability to process and ship customer orders, with the timeline for full restoration not yet known
-• Materiality: the 8-K states the company has not yet determined whether the incident is reasonably likely to have a material impact — neither confirmed material nor confirmed immaterial, and it should not be simplified to either
-• The company's updates put manufacturing in writing: the 27 August 11:38 p.m. and 29 August 4:55 p.m. ET updates both state that the incident is affecting access to certain operating systems and business applications, "including the ability to manufacture products, as well as process and ship customer orders"
-• Scope: the 29 August update says the investigation indicates no impact to cloud-based systems and applications and that unauthorised activity is limited to certain on-premise systems, with the company continuing to work with CrowdStrike and other third-party experts
-• What degraded mode actually looked like: customers can still place orders, which are taken electronically through EDI and local applications and queued for future fulfilment, including Global Health Exchange orders held until systems return, while customers continue communicating through normal channels including sales representatives, email and established digital platforms
-• The product statements, which must travel as a pair: no known impact to devices not connected to a Boston Scientific network, none to clinicians' ability to use such devices, and no evidence the affected network environment created increased risk to hospital networks — while new remote monitoring activations are affected, with new communicators unable to be activated for newly implanted CRM devices, and newly implanted ICMs requiring the Clinic Assistant app and unable to pair with a patient's remote monitoring phone until systems are restored
-• Scale for calibration: roughly 59,000 employees across 127 countries, an estimated 48 million patients treated a year, and more than $20 billion in 2025 net sales (media citing the company's website)
-• Still undisclosed: the initial access vector, the actor, and whether data was taken; no group had claimed the attack at the time of reporting, so this write-up does not speculate on attack type or classify it as ransomware
-• Sector context: Boston Scientific joins a run of medtech companies hit this year, among them Stryker, iRhythm Holdings, Novo Nordisk and Xsolis
-• Three questions for manufacturers: which critical operating capabilities remain tied to on-premise systems and what survives if that layer is wholly unavailable; whether order intake is decoupled from fulfilment with a path to keep accepting and queueing during an outage; and whether product safety and enterprise IT security communications are prepared on separate tracks so a single disclosure can say both "the devices are safe" and "these new activations are affected"
-• Timestamp: this reflects the position as of 29 August 2026, 4:55 p.m. ET, with the incident ongoing
-<div class="hashtags">#Manufacturing #OTSecurity #BusinessContinuity #MedTech</div></div>
+• The event: on 30 August 2026 at 11:07:57 +0200, Debian Project Secretary Kurt Roeckx published the result of General Resolution 2026/vote_002, "LLM usage in Debian", on debian-devel-announce. The winning option was Choice 5, "Responsible Use of Generative AI"
+• Scale of the vote: the official vote page records 1,045 eligible developers and a quorum (3×Q) of 48.4897. Counting the official tally sheet gives 425 ballots cast, a turnout of roughly 40.7%. All eight substantive options cleared quorum, from Option 1 at 144 votes to Option 5 at 281
+• The eight substantive options: ban via the Social Contract; allow AI-assisted contributions with conditions; reject LLMs as far as practical and update the Code of Conduct; accept AI contributions for Debian-specific work; responsible use of generative AI; a cautious approach to generative AI; Debian is created by humans; avoid LLMs because climate destruction is a deal breaker — plus "none of the above"
+• How the restrictive options fell: Option 1 required a 3:1 supermajority because it would amend the Social Contract, and the official calculation records a ratio of "0.560 (144/257)" against a threshold of 3. Option 3 needed only a simple majority and still failed with a ratio of "0.765 (176/230)" against a threshold of 1
+• How the winner emerged: the remaining options passed their majority requirements and were then compared pairwise under Condorcet. Option 5 beat Option 2 (203–148), Option 4 (232–115), Option 6 (210–130), Option 7 (251–139), Option 8 (244–154) and "none of the above" (281–126). The page records that the Schwartz Set contains Option 5 alone
+• Legal standing: the resolution is issued under Debian Constitution section 4.1(5) as a position statement, and says explicitly that the position "may evolve as time passes without the need to resort to future general resolutions"
+• The core stance: Debian "neither endorses nor prohibits the use of generative AI tools in the development, maintenance, or documentation of software, packaging, documentation, and other media published within the Debian Project", recognising that responsible use can substantially improve volunteer productivity
+• The responsibility clause, which is the heaviest sentence in the document: "The use of a generative AI tool does not diminish the contributor's responsibility for the work they submit. Contributors are expected to understand, review, test, and, where appropriate, modify AI-assisted output before incorporating it into Debian. Blindly accepting or uploading AI-generated material without appropriate human review is inconsistent with Debian's established development practices."
+• The disclosure clause: "We enourage our contributors to disclose whether a contribution was made with AI assitance, but do not require them to do so." Both misspellings are in the original — quote it sic
+• Red line one, data: confidential information, private communications, security-sensitive information such as "embargoed information about security bugs that is not yet public", cryptographic keys, credentials and other non-public material relating to the project, its infrastructure or its community must not be disclosed to third-party AI services "unless such disclosure has been explicitly authorized and is consistent with Debian's security and privacy requirements"
+• Red line two, automation: mass bug filing or patch submission, large-scale code modifications and other automated changes or requests affecting many packages or contributors "should seek prior discussion and consensus through the appropriate project channels before proceeding", and "any such automated process should be overseen by a human who remains accountable for its behavior and output"
+• Red line three, copyright: the project does not seek to resolve unsettled questions of copyright, authorship, licensing and reproduction of training material through this resolution, "nor does it adopt a position on whether AI-generated output is, in whole or in part, copyrightable or derived from copyrighted works", and existing licensing, copyright, software freedom and contribution policies continue to apply
+• The closing affirmation: generative AI is "neither exempt from nor subject to special rules beyond the standards already expected of Debian contributors"
+• What transfers to a company: the policy content — responsibility allocation, the three red lines, and the treatment of disclosure. The governance process — constitution, General Resolution, Condorcet voting — is specific to Debian and should not be extrapolated
+• Citation discipline one: the 425-ballot figure is counted from the official tally sheet rather than published as an official statistic, and the voting deadline is not stated in the documents obtained, so only the 30 August result date is cited here
+• Citation discipline two: lines circulating as Debian's position, such as "LLM usage can be hard if not impossible to detect", come from the losing Option 6 proposal text, not from the winning Option 5
+• Citation discipline three: "takes no position on copyright" is not "there is no copyright problem" — the two are not interchangeable
+<div class="hashtags">#AIGovernance #OpenSource #AIPolicy #Debian</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
-          <details class="channel" data-post-id="20260831-t3-nl">
+          <details class="channel" data-post-id="20260903-t3-nl">
             <summary>新聞簡報 / 簡訊（中英雙語）<span class="used-flag">✓ 已使用</span></summary>
             <div class="draft-body">
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">中文版</span><button class="copy-btn" type="button">一鍵複製</button></div>
-                <div class="draft-text">Boston Scientific 於 2026 年 8 月 25 日識別到一起影響其部分資訊科技系統的資安事件，並於 8 月 26 日向美國證券交易委員會提交 Form 8-K。申報書載明該事件已經造成、且預期將持續造成對支援公司營運之資訊系統與商業應用存取的中斷與限制，包括處理與出貨客戶訂單的能力，完全回復時程尚未可知，且公司尚未判定該事件是否合理可能造成重大影響。公司官方更新頁在 8 月 27 日與 8 月 29 日的更新中進一步寫明，受影響的範圍「包括製造產品的能力」；8 月 29 日的更新並表示調查顯示雲端系統與應用未受影響、未授權活動僅限於某些地端系統，公司持續與 CrowdStrike 及其他第三方資安專家合作。營運上採取的降級方式為接單與履行解耦：客戶仍可下單，訂單經 EDI 與在地應用電子化接收後排入佇列待日後履行，包含經 Global Health Exchange 進入者。產品面公司作出雙向陳述——未連接至其網路的裝置與已植入心律管理裝置的功能、既有遠端監測均無已知影響，但新植入裝置的遠端監測啟用受到影響，新通訊器無法啟用、新植入的植入式心律監測器無法與病患遠端監測手機配對。初始入侵途徑、行為者與是否有資料遭竊均未公開，截至報導時點無組織宣稱犯案。以上為截至 8 月 29 日 16:55（美東）的狀態。建議製造業以此對照自身營運持續計畫：盤點仍綁在地端的關鍵營運能力、確認接單與履行是否已解耦、並將產品安全與企業 IT 安全的對外溝通分軌準備。主要來源：Boston Scientific 官方更新頁、SEC Form 8-K（8/26）、Help Net Security（8/27）。
-<div class="hashtags">#Manufacturing #OTSecurity #BusinessContinuity #MedTech</div></div>
+                <div class="draft-text">Debian 專案秘書 Kurt Roeckx 於 2026 年 8 月 30 日公布一般決議 2026/vote_002「LLM usage in Debian」的結果，勝出選項為 Choice 5「Responsible Use of Generative AI」。官方投票頁載明具投票權開發者 1045 人、法定門檻 48.4897，本站依官方 tally sheet 清點實際選票 425 張（投票率約 40.7%），八個實質選項全數達到法定門檻。兩個限制性最強的選項均未通過多數要求：選項 1「透過社會契約禁止 LLM 貢獻」因涉及修改社會契約而適用 3:1 絕對多數，其比值為「0.560 (144/257)」而門檻為 3；選項 3「盡可能拒絕 LLM 並更新行為準則」僅需簡單多數，其比值為「0.765 (176/230)」而門檻為 1。其餘選項依 Condorcet 方法兩兩對決，選項 5 擊敗次名選項 2（203:148）並對「以上皆非」取得 281:126，官方載明 Schwartz Set 僅含選項 5。決議依 Debian 憲章第 4.1(5) 條發出，性質為可隨時間演進的立場聲明。內容上，Debian 對生成式 AI「既不背書也不禁止」，但把責任完整留在貢獻者身上：使用 AI 工具不減損貢獻者對其提交作品的責任，貢獻者須理解、審查、測試並在適當時修改 AI 輔助產出，盲目接受或上傳未經人類審查的 AI 生成材料與 Debian 既有開發實踐不相容。揭露為「鼓勵但不要求」。三條有拘束力的紅線分別是：機密資訊、私人通訊、資安敏感資訊（原文舉例為尚未公開的禁運漏洞資訊）、加密金鑰與憑證等非公開材料，未經明確授權不得提供給第三方 AI 服務；大量開 bug、大量送 patch、大規模程式碼修改等影響廣泛的自動化行動須先取得共識並由一名負責的人類監督；專案不對 AI 產出的著作權歸屬表態，既有授權與著作權規則照常適用。三點引用紀律：425 票為本站清點而非官方統計值；網路流傳的「LLM 使用難以偵測」出自落選的選項 6 而非勝出選項 5；「不對著作權表態」不等於「沒有著作權問題」。對企業而言，可移植的是政策內容（責任歸屬、三條紅線、揭露處理），而非 Debian 特有的治理程序。主要來源：Debian 郵件列表公告（8/30）、Debian 官方投票頁與 tally sheet、Help Net Security（8/31）。
+<div class="hashtags">#AIGovernance #OpenSource #AIPolicy #Debian</div></div></div></div>
               </div>
               <div class="lang-block">
                 <div class="lang-head"><span class="lang-tag">English</span><button class="copy-btn" type="button">Copy</button></div>
-                <div class="draft-text">Boston Scientific identified a cybersecurity incident affecting certain of its information technology systems on 25 August 2026 and filed a Form 8-K with the US Securities and Exchange Commission on 26 August. The filing states the incident has caused, and is expected to continue to cause, disruptions and limitations of access to information systems and business applications supporting the company's operations, including the ability to process and ship customer orders, that the timeline for full restoration is not yet known, and that the company has not yet determined whether the incident is reasonably likely to have a material impact. The company's own update page went further in its 27 and 29 August updates, stating that the affected scope includes "the ability to manufacture products"; the 29 August update adds that the investigation indicates no impact to cloud-based systems and applications and that unauthorised activity is limited to certain on-premise systems, with CrowdStrike and other third-party experts engaged. Operationally the company decoupled intake from fulfilment: customers can still place orders, which are taken electronically through EDI and local applications and queued for future fulfilment, including orders through the Global Health Exchange. On the product side the company made paired statements — no known impact to devices not connected to its network, to implanted cardiac rhythm management device function, or to remote monitoring established before the disruption, but new remote monitoring activations are affected, with new communicators unable to be activated and newly implanted insertable cardiac monitors unable to pair with a patient's remote monitoring phone. The initial access vector, the actor and whether data was taken remain undisclosed, and no group had claimed the attack at the time of reporting. This reflects the position as of 29 August, 4:55 p.m. ET. Manufacturers should hold this against their own continuity plans: inventory the critical operating capabilities still tied to on-premise systems, confirm whether order intake is decoupled from fulfilment, and prepare product safety and enterprise IT security communications on separate tracks. Sources: Boston Scientific incident update page, SEC Form 8-K (8/26), Help Net Security (8/27).
-<div class="hashtags">#Manufacturing #OTSecurity #BusinessContinuity #MedTech</div></div>
+                <div class="draft-text">On 30 August 2026, Debian Project Secretary Kurt Roeckx published the result of General Resolution 2026/vote_002, "LLM usage in Debian", with Choice 5, "Responsible Use of Generative AI", winning. The official vote page records 1,045 eligible developers and a quorum of 48.4897; counting the official tally sheet gives 425 ballots cast, a turnout of roughly 40.7%, and all eight substantive options cleared quorum. Both of the most restrictive options failed their majority requirements: Option 1, banning LLM contributions via the Social Contract, required a 3:1 supermajority as a Social Contract amendment and the official line records a ratio of "0.560 (144/257)" against a threshold of 3; Option 3, rejecting LLMs as far as practical and updating the Code of Conduct, needed only a simple majority and still failed with a ratio of "0.765 (176/230)" against a threshold of 1. The remaining options were compared pairwise under Condorcet, with Option 5 beating runner-up Option 2 by 203–148 and "none of the above" by 281–126, and the page recording that the Schwartz Set contains Option 5 alone. The resolution is issued under Constitution section 4.1(5) as a position statement that may evolve without a further General Resolution. Substantively, Debian "neither endorses nor prohibits" generative AI but places responsibility entirely on the contributor: using such a tool "does not diminish the contributor's responsibility for the work they submit", contributors must "understand, review, test, and, where appropriate, modify AI-assisted output", and blindly accepting or uploading unreviewed AI-generated material "is inconsistent with Debian's established development practices". Disclosure is encouraged but not required. The three binding red lines are: confidential information, private communications, security-sensitive information such as "embargoed information about security bugs that is not yet public", cryptographic keys, credentials and other non-public material must not go to third-party AI services without explicit authorisation; mass bug filing or patch submission, large-scale code modifications and similar broadly impactful automation require prior discussion and consensus and "should be overseen by a human who remains accountable for its behavior and output"; and the project takes no position on whether AI-generated output is copyrightable, with existing licensing and copyright rules continuing to apply. Three points of citation discipline: the 425-ballot figure is counted from the tally sheet rather than officially published; the line circulating as "LLM usage can be hard if not impossible to detect" belongs to the losing Option 6, not the winning Option 5; and "takes no position on copyright" is not "there is no copyright problem". For companies, what transfers is the policy content — responsibility allocation, the three red lines and the treatment of disclosure — not Debian's own governance machinery. Sources: Debian mailing list announcement (30 Aug), Debian official vote page and tally sheet, Help Net Security (31 Aug).
+<div class="hashtags">#AIGovernance #OpenSource #AIPolicy #Debian</div></div></div></div>
               </div>
               <div class="post-actions"><button class="used-btn" type="button">標示為已使用</button></div>
             </div>
           </details>
-
         </div>
 
       </article>
