@@ -22,11 +22,12 @@
 
 ## 日期精確度規則
 
-來源日期必須精確到日。拿不到確切日期時，**降級該來源並在分級符號後加註 `*`**，並在「查證與限制」寫明原因——不要改用「8 月初」「late August」這類概括寫法帶過，那會讓未經查證的日期讀起來像已查證。
+來源日期原則上必須精確到日。拿不到確切日期時，**移除模糊日期、降級該來源並在分級符號後加註 `*`**，並在「查證與限制」寫明原因——不要改用「8 月初」「late August」這類概括寫法帶過，那會讓未經查證的日期讀起來像已查證。
 
-`scripts/validate-site.mjs` 會擋下本期（`index.html` 的 week-card 與當期 `<日期>-topic*.md`）中的模糊日期；已發布的 `archive.html` 與歷史 Markdown 不在檢查範圍內。
+`scripts/validate-site.mjs` 會在本期全文（`index.html` 的 week-card 與當期 `<日期>-topic*.md`）攔截已知的中英文模糊日期形式。這是 defense-in-depth 防呆，不是自然語言日期解析器；URL、HTML 註解與 code span/block 不掃描，若文章要討論模糊日期用語，請以 code 標示。已發布的 `archive.html` 與歷史 Markdown 不在檢查範圍內。
 
 ```bash
+node scripts/test-fuzzy-dates.mjs   # 模糊日期 regex 的正反例 regression tests
 node scripts/validate-site.mjs      # 結構、來源分級、post-id、摘要面板、日期精確度
 node scripts/sync-markdown.mjs --check   # 網站草稿與 Markdown 是否一致
 ```
