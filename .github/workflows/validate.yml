@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: '22'
 
+      - name: 測試模糊日期規則的正反例
+        run: node scripts/test-fuzzy-dates.mjs
+
       - name: 檢查版面結構、來源分級與 post-id 完整性
         run: node scripts/validate-site.mjs
 
