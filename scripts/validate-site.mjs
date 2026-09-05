@@ -11,6 +11,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
+import { fuzzyDates } from './fuzzy-dates.mjs';
 
 const root = process.cwd();
 const read = (p) => readFileSync(path.join(root, p), 'utf8');
@@ -163,6 +164,25 @@ if (edition) {
   }
 }
 
+/* ---------- 8. no fuzzy publication dates in the current issue ---------- */
+// When a source's exact date cannot be pinned down it gets downgraded and marked
+// with *, never smoothed over as 「8 月初」or "late August" — an approximate date
+// reads as a verified one. Only the current issue is checked; past issues are
+// already published and some of them predate this rule.
+const cardFuzzy = fuzzyDates(current);
+check(cardFuzzy.length === 0,
+  `index.html: the current issue uses approximate dates (${cardFuzzy.join(', ')}) — ` +
+  'give the exact date; otherwise remove the approximation, downgrade the source, and mark it *');
+
+if (edition) {
+  for (const file of readdirSync(root).filter((f) => f.startsWith(`${edition}-topic`) && f.endsWith('.md'))) {
+    const hits = fuzzyDates(readFileSync(path.join(root, file), 'utf8'));
+    check(hits.length === 0,
+      `${file}: uses approximate dates (${hits.join(', ')}) — ` +
+      'give the exact date; otherwise remove the approximation, downgrade the source, and mark it *');
+  }
+}
+
 /* ---------- report ---------- */
 if (errors.length) {
   console.error(`✗ ${errors.length} problem(s) found:\n` + errors.map((e) => `  - ${e}`).join('\n'));
@@ -171,6 +191,6 @@ if (errors.length) {
 console.log(
   `✓ ${edition}: ${topics.length} topics, ${currentChannels.length} channels, ` +
   `${seen.size} unique post-ids, sources ${tally.official}🏛/${tally.media}📰/${tally.aggregator}📡, ` +
-  `shared assets and markdown drafts all intact.`
+  `shared assets and markdown drafts all intact, no approximate dates.`
 );
 if (!existsSync(path.join(root, 'assets', 'app.js'))) process.exit(1);
