@@ -15,11 +15,11 @@ const FUZZY = [
 ];
 
 const stripIgnored = (text) => text
-  .replace(/<!--[\\s\\S]*?-->/g, ' ')
-  .replace(/<code[\\s>][\\s\\S]*?<\\/code>/gi, ' ')
-  .replace(/```[\\s\\S]*?```/g, ' ')
-  .replace(/`[^`\\n]*`/g, ' ')
-  .replace(/https?:\\/\\/[^\\s<>"')\\]]+/gi, ' ');
+  .replace(/<!--[\s\S]*?-->/g, ' ')
+  .replace(/<code[\s>][\s\S]*?<\/code>/gi, ' ')
+  .replace(/```[\s\S]*?```/g, ' ')
+  .replace(/`[^`\n]*`/g, ' ')
+  .replace(/https?:\/\/[^\s<>"')\]]+/gi, ' ');
 
 export const fuzzyDates = (text) => {
   const searchable = stripIgnored(text);
