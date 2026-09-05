@@ -20,5 +20,16 @@
 
 每週一新增新的 Markdown 與更新 `index.html`。
 
+## 日期精確度規則
+
+來源日期必須精確到日。拿不到確切日期時，**降級該來源並在分級符號後加註 `*`**，並在「查證與限制」寫明原因——不要改用「8 月初」「late August」這類概括寫法帶過，那會讓未經查證的日期讀起來像已查證。
+
+`scripts/validate-site.mjs` 會擋下本期（`index.html` 的 week-card 與當期 `<日期>-topic*.md`）中的模糊日期；已發布的 `archive.html` 與歷史 Markdown 不在檢查範圍內。
+
+```bash
+node scripts/validate-site.mjs      # 結構、來源分級、post-id、摘要面板、日期精確度
+node scripts/sync-markdown.mjs --check   # 網站草稿與 Markdown 是否一致
+```
+
 ---
 資料來源均註明原始發布日期與媒體名稱，不編造新聞。
